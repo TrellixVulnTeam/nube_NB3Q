@@ -1,0 +1,19 @@
+<p>listado works!</p>
+<button routerLink="persona-addmod/:-1">Añadir Persona</button>
+
+<table border=1.5px>
+    <thead>
+        <th>ID</th>
+        <th>DNI</th>
+        <th>NOMBRE</th>
+        <th>APELLIDOS</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of lista">
+            <td>{{p.ID}}</td>
+            <td>{{p.DNI}}</td>
+            <td>{{p.NOMBRE}}</td>
+            <td>{{p.APELLIDOS}}</td>
+        </tr>
+    </tbody>
+</table>
