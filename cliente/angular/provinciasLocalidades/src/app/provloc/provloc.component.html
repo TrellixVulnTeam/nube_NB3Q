@@ -1,0 +1,16 @@
+<h4> Selecciona provincia</h4>
+<select [(ngModel)]="opSelProv" (ngModelChange)="seleccionProv()">
+    <option *ngFor="let op of opcionesProv" [ngValue]="op.CODIGO">
+        {{op.NOMBRE}}
+    </option>
+
+</select>
+
+<h4> Selecciona localidad</h4>
+<select [(ngModel)]="opSelLoc" (ngModelChange)="seleccionLoc()">
+    <option *ngFor="let op of opcionesLoc" [ngValue]="op">
+        {{op.NOMBRE}}
+        
+    </option>
+
+</select>
