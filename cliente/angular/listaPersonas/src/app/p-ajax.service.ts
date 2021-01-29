@@ -16,4 +16,13 @@ export class PAjaxService {
     return this.http.post<Persona[]>(this.url, {servicio:"listar"});
    }
 
+   anade(p:Persona){
+    let nuevo= JSON.parse(JSON.stringify(p));
+    nuevo.servicio="insertar";
+
+    console.log("nuevo(en el servicio): ", nuevo);
+
+    return this.http.post<Array<Persona>>(this.url, nuevo);
+   }
+
   }

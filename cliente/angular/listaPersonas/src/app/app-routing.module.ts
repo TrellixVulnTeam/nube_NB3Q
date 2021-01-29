@@ -6,7 +6,7 @@ import { ListadoComponent} from '../app/listado/listado.component';
 
 const routes: Routes = [
   {
-    path:"", //miura
+    path:"",
     component: ListadoComponent
   },
   {

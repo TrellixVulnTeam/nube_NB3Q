@@ -1,4 +1,16 @@
-<p>form-persona works!</p>
-<p>Aqui estaría el formulario</p>
-<button (click)="addmod()">Guardar</button>
-<button routerLink="/">Cancelar</button>
+<h2>Registro persona</h2>
+
+<fieldset>
+    <legend>Nuevo usuario </legend>
+    <label for="dni">DNI:</label>
+    <input type="text" [(ngModel)]="persona.dni" size="10" maxlength="9" />
+    <br />
+    <label for="nombre">NOMBRE:</label>
+    <input type="text" [(ngModel)]="persona.nombre" />
+    <br />
+    <label for="apellidos">APELLIDOS:</label>
+    <input type="text" [(ngModel)]="persona.apellidos" />
+    <br />
+    <button (click)="addmod()" routerLink="/">Guardar</button>
+    <button routerLink="/">Cancelar</button>
+</fieldset>

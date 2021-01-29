@@ -1,5 +1,7 @@
+import { PAjaxService } from './../p-ajax.service';
 import { Persona } from './../persona';
 import { Component, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -11,12 +13,41 @@ export class FormPersonaComponent implements OnInit {
 
   public persona:Persona;
 
-  constructor() { }
+  constructor(private peti:PAjaxService) {
+    this.persona=<Persona>{};
+  /*
+    this.persona={
+      ID: -1,
+      DNI: "20538956W",
+      NOMBRE: "Manuel",
+      APELLIDOS: "Martín Fernández"
+    }
+    */
+
+  }
 
   ngOnInit(): void {
   }
 
   addmod() {
+    console.log("persona :", this.persona);
+/*
+    let nuevo= JSON.parse(JSON.stringify(this.persona));
+
+    let p = {
+      servicio: "insertar",
+      dni: this.persona.DNI,
+      nombre: this.persona.NOMBRE,
+      apellidos: this.persona.APELLIDOS
+    };
+
+    */
+   this.peti.anade(this.persona).subscribe(
+    datos =>{
+    console.log("datos"+ datos);
+  },
+  error => console.log("Error: ", error));
+
 
   }
 
