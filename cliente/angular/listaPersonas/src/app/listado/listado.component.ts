@@ -27,7 +27,7 @@ export class ListadoComponent implements OnInit {
             <td>{{p.DNI}}</td>
             <td>{{p.NOMBRE}}</td>
             <td>{{p.APELLIDOS}}</td>
-            <td><button (click)="editar(p.id)" routerLink="persona-addmod/{{p.id}}">Edit</button></td>
+            <td><button (click)="editar(p.ID)" routerLink="persona-addmod/{{p.ID}}">Edit</button></td>
   */
 
 }

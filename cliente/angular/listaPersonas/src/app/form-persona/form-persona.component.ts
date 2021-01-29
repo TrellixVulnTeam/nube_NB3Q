@@ -1,7 +1,7 @@
 import { PAjaxService } from './../p-ajax.service';
 import { Persona } from './../persona';
 import { Component, OnInit } from '@angular/core';
-
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class FormPersonaComponent implements OnInit {
 
   public persona:Persona;
 
-  constructor(private peti:PAjaxService) {
+  constructor(private peti:PAjaxService, private ruta:Router, private route:ActivatedRoute) {
     this.persona=<Persona>{};
   /*
     this.persona={
