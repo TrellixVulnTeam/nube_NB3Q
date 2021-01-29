@@ -23,11 +23,6 @@ export class ListadoComponent implements OnInit {
   ngOnInit(): void {
   }
   /*
-   <td>{{p.ID}}</td>
-            <td>{{p.DNI}}</td>
-            <td>{{p.NOMBRE}}</td>
-            <td>{{p.APELLIDOS}}</td>
-            <td><button (click)="editar(p.ID)" routerLink="persona-addmod/{{p.ID}}">Edit</button></td>
-  */
+   */
 
 }
