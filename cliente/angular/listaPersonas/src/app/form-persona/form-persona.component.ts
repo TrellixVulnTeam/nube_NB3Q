@@ -27,11 +27,17 @@ export class FormPersonaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const personaId= this.route.snapshot.params["id"];
+    console.log("personaId :", personaId);
+    this.persona.id= personaId;
   }
 
   addmod() {
     console.log("persona :", this.persona);
-/*
+
+
+    if(this.persona.id==-1){
+ /*
     let nuevo= JSON.parse(JSON.stringify(this.persona));
 
     let p = {
@@ -50,5 +56,6 @@ export class FormPersonaComponent implements OnInit {
 
 
   }
+}
 
 }
