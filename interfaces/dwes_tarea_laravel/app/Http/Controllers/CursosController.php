@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Curso;
+
 class CursosController extends Controller
 {
     /**
@@ -14,7 +16,9 @@ class CursosController extends Controller
     public function index()
     {
         //
+        $cursos = Curso::all();
 
+        return view("cursos.index",compact("cursos"));
     }
 
     /**
@@ -25,6 +29,7 @@ class CursosController extends Controller
     public function create()
     {
         //
+        return view("cursos.create");
     }
 
     /**
@@ -36,6 +41,20 @@ class CursosController extends Controller
     public function store(Request $request)
     {
         //
+        $validaciones = ['nombre' => 'required', 'horas' => 'required', 'plazas' => 'required', 'categoria' => 'required'];
+        $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.', 'horas.required' => 'El campo :attribute no puede estar vacío.', 'plazas.required' => 'El campo :attribute no puede estar vacío.', 'categoria.required' => 'El campo :attribute no puede estar vacío.'];
+
+        $this->validate($request, $validaciones, $mensajes);
+
+        $curso = new Curso;
+        $curso->nombre = $request->nombre;
+        $curso->duracion = $request->horas;
+        $curso->plazas = $request->plazas;
+        $curso->categoria_id = $request->categoria;
+        $curso->save();
+
+        return redirect('/cursos');
+
     }
 
     /**

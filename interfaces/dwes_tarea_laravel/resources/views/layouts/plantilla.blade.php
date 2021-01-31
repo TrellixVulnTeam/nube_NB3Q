@@ -40,7 +40,6 @@
         </style>
     </head>
     <body>
-        <a href="{{ url('') }}">Inicio</a>
     	<div class="cabecera">
     		@yield("cabecera")
 

@@ -1,29 +1,33 @@
 @extends("../layouts.plantilla")
-
+<a href="{{ url('') }}">Inicio</a>
 @section("cabecera")
-	Listado de Centros
+	Listado de Cursos
 @endsection
 
 @section("cuerpo")
 <table border ="1">
 	<tr>
 		<th>Nombre</th>
+        <th>Número de Alumnos</th>
+        <th>Plazas disponibles</th>
 		<th>Acciones</th>
 	</tr>
 
 
-	@foreach ($centros as $centro)
+	@foreach ($cursos as $curso)
 	<tr>
-		<td>{{ $centro->nombre }}</td>
-		<td align="center"><a href="{{ route('centros.edit', $centro->id)}}">editar</a> - <a href="{{ route('centros.show', $centro->id)}}">mostrar</a></td>
-	</tr>
+		<td>{{ $curso->nombre }}</td>
+		<td>{{ $curso->alumnos }}</td>
+		<td>{{ $curso->plazas }}</td>
+		<td align="center"><a href="{{ route('cursos.edit', $curso->id)}}">editar</a> - <a href="{{ route('cursos.show', $curso->id)}}">mostrar</a> - <a href="{{ route('cursos.destroy', $curso->id)}}">borrar</a></td>
+    </tr>
 	@endforeach
 	<tr>
-		<td colspan="2" align="center"><a href="{{ route('centros.create')}}">Nuevo centro</a></td>
+		<td colspan="4" align="center"><a href="{{ route('cursos.create')}}">Nuevo curso</a></td>
 	</tr>
 </table>
 
-@endsection 
+@endsection
 
 @section("pie")
-@endsection 
+@endsection

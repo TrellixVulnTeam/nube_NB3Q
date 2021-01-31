@@ -1,11 +1,11 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-	Insertar un nuevo Centro
+	Insertar un nuevo Curso
 @endsection
 
 @section("cuerpo")
-	<form method="post" action="/centros">
+	<form method="post" action="/cursos">
 		@csrf
 		<table>
 			<tr>
@@ -13,11 +13,19 @@
 				<td><input type="text" name="nombre"></td>
 			</tr>
 			<tr>
-				<td>Dirección</td>
-				<td><input type="text" name="direccion"></td>
+				<td>Horas del curso</td>
+				<td><input type="text" name="horas"></td>
+			</tr>
+            <tr>
+				<td>Plazas disponibles</td>
+				<td><input type="text" name="plazas"></td>
+			</tr>
+            <tr>
+				<td>Categoria</td>
+				<td><input type="text" name="categoria"></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="submit" name="enviar" value="Enviar"></td>
+				<td colspan="4" align="center"><input type="submit" name="enviar" value="Enviar"></td>
 			</tr>
 		</table>
 	</form>
@@ -30,7 +38,7 @@
         </ul>
     </div>
 	@endif
-@endsection 
+@endsection
 
 @section("pie")
-@endsection 
+@endsection

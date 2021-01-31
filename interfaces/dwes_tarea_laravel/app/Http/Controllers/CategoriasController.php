@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Categoria;
+
 class CategoriasController extends Controller
 {
     /**
@@ -14,6 +16,10 @@ class CategoriasController extends Controller
     public function index()
     {
         //
+        $categorias = Categoria::all();
+
+        return view("categorias.index",compact("categorias"));
+
     }
 
     /**
@@ -24,6 +30,7 @@ class CategoriasController extends Controller
     public function create()
     {
         //
+        return view("categorias.create");
     }
 
     /**
@@ -35,6 +42,17 @@ class CategoriasController extends Controller
     public function store(Request $request)
     {
         //
+        $validaciones = ['nombre' => 'required', 'descripcion' => 'required'];
+        $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.', 'descripcion.required' => 'El campo :attribute no puede estar vacío.'];
+
+        $this->validate($request, $validaciones, $mensajes);
+
+        $categoria = new Categoria;
+        $categoria->nombre = $request->nombre;
+        $categoria->descripcion = $request->descripcion;
+        $categoria->save();
+
+        return redirect('/categorias');
     }
 
     /**
@@ -46,6 +64,8 @@ class CategoriasController extends Controller
     public function show($id)
     {
         //
+        $categorias = Categoria::with('departamentos')->where('id',$id)->get();
+        return view("centros.show", compact('centros'));
     }
 
     /**

@@ -1,6 +1,5 @@
 @extends("layouts.plantilla")
 
-
 @section("cuerpo")
 <div style="display: flex">
         <div class="categorias">
