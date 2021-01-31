@@ -2,10 +2,17 @@
 
 namespace App;
 
-//use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Curso extends Model
 {
-    //use HasFactory;
+    public function categoria()
+    {
+        return $this->belongsTo('App\Categoria');
+    }
+
+    public function alumnos()
+    {
+    	return $this->hasMany('App\Alumno');
+    }
 }
