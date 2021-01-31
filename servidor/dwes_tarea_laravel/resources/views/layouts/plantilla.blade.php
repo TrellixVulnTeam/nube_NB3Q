@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel CRUD</title>
+        <title>Tarea Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
                 margin-bottom: 15px;
             }
 
-            .centros, .departamentos {
+            .categorias, .cursos, .alumnos {
                 width: 200px;
                 text-align: center;
                 font-size: 2em;

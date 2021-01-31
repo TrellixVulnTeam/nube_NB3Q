@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Alumno;
+use App\Categoria;
+use App\Curso;
 
 class AlumnosController extends Controller
 {
@@ -14,6 +17,9 @@ class AlumnosController extends Controller
     public function index()
     {
         //
+        $alumno = Alumno::all();
+
+        return view("alumnos.index",compact("alumno"));
     }
 
     /**
