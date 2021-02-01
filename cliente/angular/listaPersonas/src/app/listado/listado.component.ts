@@ -23,8 +23,9 @@ export class ListadoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  delete(id: number){
-    if(confirm("si o k ?")) {
+  delete(id: number, nombre, apellidos){
+    let mensaje=`¿desea borrar a ${nombre} ${apellidos} ?`;
+    if(confirm(mensaje)) {
       this.peti.borrar(id).subscribe(
         datos =>{
           console.log("datos", datos);

@@ -19,7 +19,7 @@
             <td>{{p.NOMBRE}}</td>
             <td>{{p.APELLIDOS}}</td>
             <td><button routerLink="persona-addmod/{{p.ID}}">Edit</button></td>
-            <td><button (click)="delete(p.ID)">Borrar</button></td>
+            <td><button (click)="delete(p.ID, p.NOMBRE, p.APELLIDOS)">Borrar</button></td>
         </tr>
     </tbody>
 </table>

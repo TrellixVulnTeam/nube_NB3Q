@@ -12,6 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class FormPersonaComponent implements OnInit {
 
   public persona:Persona;
+  public accion: string;
 
   constructor(private peti:PAjaxService, private ruta:Router, private route:ActivatedRoute) {
     this.persona=<Persona>{};
