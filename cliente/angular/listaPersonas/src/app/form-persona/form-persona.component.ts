@@ -31,12 +31,15 @@ export class FormPersonaComponent implements OnInit {
     this.persona.id= this.route.snapshot.params["id"];
 
     if(this.persona.id!=-1){
+      this.accion="Editar";
       this.peti.selPersonaId(this.persona.id).subscribe(
         datos =>{
           console.log("datos", datos);
           this.persona=datos;
         },
         error => console.log("Error: ", error));
+    }else {
+      this.accion="Añadir";
     }
   }
 

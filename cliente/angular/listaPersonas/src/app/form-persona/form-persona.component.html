@@ -1,7 +1,7 @@
 <h2>Registro persona</h2>
 
 <fieldset>
-    <legend>Nuevo usuario </legend>
+    <legend>{{accion}} usuario </legend>
     <label for="dni">DNI:</label>
     <input type="text" [(ngModel)]="persona.dni" size="10" maxlength="9" />
     <br />
@@ -11,6 +11,6 @@
     <label for="apellidos">APELLIDOS:</label>
     <input type="text" [(ngModel)]="persona.apellidos" />
     <br />
-    <button (click)="addmod()">Guardar</button>
+    <button (click)="addmod()">{{accion}}</button>
     <button routerLink="/">Cancelar</button>
 </fieldset>
