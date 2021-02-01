@@ -22,7 +22,16 @@ export class ListadoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  /*
-   */
+
+  delete(id: number){
+    if(confirm("si o k ?")) {
+      this.peti.borrar(id).subscribe(
+        datos =>{
+          console.log("datos", datos);
+          this.lista = datos;
+          },
+          error => console.log("Error: ", error));
+    }
+  }
 
 }

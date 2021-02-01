@@ -27,16 +27,23 @@ export class FormPersonaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const personaId= this.route.snapshot.params["id"];
-    console.log("personaId :", personaId);
-    this.persona.id= personaId;
+    this.persona.id= this.route.snapshot.params["id"];
+
+    if(this.persona.id!=-1){
+      this.peti.selPersonaId(this.persona.id).subscribe(
+        datos =>{
+          console.log("datos", datos);
+          this.persona=datos;
+        },
+        error => console.log("Error: ", error));
+    }
   }
 
   addmod() {
-    console.log("persona :", this.persona);
-
 
     if(this.persona.id==-1){
+
+      console.log("persona :", this.persona);
  /*
     let nuevo= JSON.parse(JSON.stringify(this.persona));
 
@@ -50,12 +57,21 @@ export class FormPersonaComponent implements OnInit {
     */
    this.peti.anade(this.persona).subscribe(
     datos =>{
-    console.log("datos"+ datos);
+    console.log("datos", datos);
+    this.ruta.navigate(['/']);
   },
   error => console.log("Error: ", error));
 
 
+  } else {
+    this.peti.modificar(this.persona).subscribe(
+      datos =>{
+      console.log("datos", datos);
+      this.ruta.navigate(['/']);
+      },
+      error => console.log("Error: ", error));
+    }
   }
-}
+
 
 }
