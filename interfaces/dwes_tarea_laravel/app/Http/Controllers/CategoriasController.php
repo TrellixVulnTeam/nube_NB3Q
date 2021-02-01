@@ -41,15 +41,24 @@ class CategoriasController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $validaciones = ['nombre' => 'required', 'descripcion' => 'required'];
         $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.', 'descripcion.required' => 'El campo :attribute no puede estar vacío.'];
+
+        /*
+        $validaciones = ['nombre' => 'required|unique:Categoria|max:100'];
+        $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.',
+        'nombre.unique' => 'Ese :attribute ya está dado de alta.',
+        'nombre.max' => 'El campo :attribute no puede tener más de :max caracteres.'];
+        */
 
         $this->validate($request, $validaciones, $mensajes);
 
         $categoria = new Categoria;
         $categoria->nombre = $request->nombre;
+        //if($_REQUEST("descripcion")!=""){
+      //  if($request->descripcion!=""){
         $categoria->descripcion = $request->descripcion;
+      //  }
         $categoria->save();
 
         return redirect('/categorias');
@@ -63,9 +72,10 @@ class CategoriasController extends Controller
      */
     public function show($id)
     {
-        //
+/*
         $categorias = Categoria::with('departamentos')->where('id',$id)->get();
         return view("centros.show", compact('centros'));
+        */
     }
 
     /**
@@ -76,7 +86,10 @@ class CategoriasController extends Controller
      */
     public function edit($id)
     {
-        //
+        /* */
+        $categoria = Categoria::findOrFail($id);
+        return view("categorias.edit", compact('categoria'));
+
     }
 
     /**
@@ -89,6 +102,27 @@ class CategoriasController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validaciones = ['nombre' => 'required', 'descripcion' => 'required'];
+        $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.', 'descripcion.required' => 'El campo :attribute no puede estar vacío.'];
+
+        /*
+        $validaciones = ['nombre' => 'required|unique:Categoria|max:100'];
+        $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.',
+        'nombre.unique' => 'Ese :attribute ya está dado de alta.',
+        'nombre.max' => 'El campo :attribute no puede tener más de :max caracteres.'];
+        */
+
+        $this->validate($request, $validaciones, $mensajes);
+
+        $categoria = new Categoria;
+        $categoria->nombre = $request->nombre;
+        //if($_REQUEST("descripcion")!=""){
+      //  if($request->descripcion!=""){
+        $categoria->descripcion = $request->descripcion;
+       // }
+        $categoria->save();
+
+        return redirect('/categorias');
     }
 
     /**
@@ -100,5 +134,9 @@ class CategoriasController extends Controller
     public function destroy($id)
     {
         //
+        $categoria = Categoria::findOrFail($id);
+        $categoria->delete();
+
+        return redirect('/categorias');
     }
 }
