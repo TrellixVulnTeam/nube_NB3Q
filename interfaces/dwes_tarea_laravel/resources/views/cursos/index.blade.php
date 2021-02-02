@@ -18,7 +18,7 @@
 	<tr>
 		<td>{{ $curso->nombre }}</td>
 		<td>{{ $curso->alumnos }}</td>
-		<td>{{ $curso->plazas }}</td>
+
 		<td align="center"><a href="{{ route('cursos.edit', $curso->id)}}">editar</a> - <a href="{{ route('cursos.show', $curso->id)}}">mostrar</a> - <a href="{{ route('cursos.destroy', $curso->id)}}">borrar</a></td>
     </tr>
 	@endforeach

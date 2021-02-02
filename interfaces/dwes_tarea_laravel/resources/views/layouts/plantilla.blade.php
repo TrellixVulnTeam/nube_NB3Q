@@ -19,7 +19,7 @@
             }
 
             .cuerpo form, .cuerpo table{
-                width: 400px;
+                width: 600px;
                 margin: 0 auto;
             }
 
@@ -40,7 +40,7 @@
         </style>
     </head>
     <body>
-    	<div class="cabecera">
+    <div class="cabecera">
     		@yield("cabecera")
 
     	</div>

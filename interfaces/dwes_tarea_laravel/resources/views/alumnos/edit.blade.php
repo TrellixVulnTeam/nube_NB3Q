@@ -1,32 +1,34 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-	Actualizar un Centro
+	Actualizar un Alumno
 @endsection
 
 @section("cuerpo")
-	<form method="post" action="/centros/{{ $centro->id }}">
+	<form method="post" action="/alumnos/{{ $alumno->id }}">
 		@method("PUT")
 		@csrf
 		<table>
 			<tr>
 				<td>Nombre</td>
-				<td><input type="text" name="nombre" value="{{ $centro->nombre }}"></td>
+				<td><input type="text" name="nombre" value="{{ $alumno->nombre }}"></td>
 			</tr>
 			<tr>
-				<td>Dirección</td>
-				<td><input type="text" name="direccion" value="{{ $centro->direccion }}"></td>
+				<td>Apellidps</td>
+				<td><input type="text" name="apellidos" value="{{ $alumno->apellidos }}"></td>
+			</tr>
+            <tr>
+				<td>Edad</td>
+				<td><input type="text" name="edad" value="{{ $alumno->edad }}"></td>
+			</tr>
+            <tr>
+				<td>curso</td>
+				<td><input type="hidden" name="curso_id" value="{{ $alumno->curso_id }}">{{ $alumno->curso_id }}</td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="submit" name="enviar" value="Actualizar"></td>
+				<td colspan="4" align="center"><input type="submit" name="enviar" value="Actualizar"></td>
 			</tr>
 		</table>
-	</form>
-	<form method="post" action="/centros/{{ $centro->id }}">
-		@method("DELETE")
-		@csrf
-		<input type="submit" name="borrar" value="Eliminar" 
-		@if (count($centro->departamentos) >0 ) disabled @endif>
 	</form>
 	@if ($errors->any())
     <div>
@@ -38,7 +40,7 @@
     </div>
 	@endif
 
-@endsection 
+@endsection
 
 @section("pie")
-@endsection 
+@endsection

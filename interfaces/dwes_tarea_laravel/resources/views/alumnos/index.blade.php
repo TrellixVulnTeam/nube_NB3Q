@@ -12,12 +12,11 @@
 		<th>Acciones</th>
 	</tr>
 
-
 	@foreach ($alumnos as $alumno)
 	<tr>
 		<td>{{ $alumno->nombre }}</td>
         <td>{{ $alumno->apellidos }}</td>
-		<td align="center"><a href="{{ route('alumnos.edit', $alumno->id)}}">editar</a> - <a href="{{ route('alumnos.show', $alumno->id)}}">mostrar</a> - <a href="{{ route('cursos.destroy', $curso->id)}}">borrar</a></td>
+		<td align="center"><a href="{{ route('alumnos.edit', $alumno->id)}}">editar</a> - <a href="{{ route('alumnos.show', $alumno->id)}}">mostrar</a> - <a href="{{ route('alumnos.destroy', $alumno->id)}}">borrar</a></td>
 	</tr>
 	@endforeach
 	<tr>

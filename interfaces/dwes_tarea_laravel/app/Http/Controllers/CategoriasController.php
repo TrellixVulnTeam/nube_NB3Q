@@ -1,8 +1,19 @@
 <?php
+/*
+Toda página del proyecto salvo la pantalla principal, tiene que tener una cabecera con:
+● Un enlace que me permita volver a la página principal.
+● Un encabezado que me indique donde estoy.  PONERLE LA URL A TODAS CON EL TITULO ?
 
+campo de texto amplio es text ?
+
+FALTA BORRAR
+
+*/
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Illuminate\Validation\Rule;
 
 use App\Categoria;
 
@@ -41,24 +52,20 @@ class CategoriasController extends Controller
      */
     public function store(Request $request)
     {
-        $validaciones = ['nombre' => 'required', 'descripcion' => 'required'];
-        $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.', 'descripcion.required' => 'El campo :attribute no puede estar vacío.'];
-
-        /*
-        $validaciones = ['nombre' => 'required|unique:Categoria|max:100'];
+        $validaciones =['nombre' => ['required','max:100','unique:categorias']];
         $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.',
-        'nombre.unique' => 'Ese :attribute ya está dado de alta.',
-        'nombre.max' => 'El campo :attribute no puede tener más de :max caracteres.'];
-        */
+         'nombre.unique' => 'Ese :attribute ya está dado de alta.',
+         'nombre.max' => 'El campo :attribute no puede tener más de :max caracteres.'];
 
         $this->validate($request, $validaciones, $mensajes);
 
         $categoria = new Categoria;
         $categoria->nombre = $request->nombre;
-        //if($_REQUEST("descripcion")!=""){
-      //  if($request->descripcion!=""){
-        $categoria->descripcion = $request->descripcion;
-      //  }
+        if($request->descripcion!=""){
+            $categoria->descripcion = $request->descripcion;
+        }else {
+            $categoria->descripcion =" ";
+        }
         $categoria->save();
 
         return redirect('/categorias');
@@ -72,10 +79,10 @@ class CategoriasController extends Controller
      */
     public function show($id)
     {
-/*
-        $categorias = Categoria::with('departamentos')->where('id',$id)->get();
-        return view("centros.show", compact('centros'));
-        */
+
+        $categorias = Categoria::with('cursos')->where('id',$id)->get();
+        return view("categorias.show", compact('categorias'));
+
     }
 
     /**
@@ -101,25 +108,21 @@ class CategoriasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $validaciones = ['nombre' => 'required', 'descripcion' => 'required'];
-        $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.', 'descripcion.required' => 'El campo :attribute no puede estar vacío.'];
-
-        /*
-        $validaciones = ['nombre' => 'required|unique:Categoria|max:100'];
+        $validaciones =['nombre' => ['required','max:100',Rule::unique('categorias')->ignore($id)]];
         $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.',
-        'nombre.unique' => 'Ese :attribute ya está dado de alta.',
-        'nombre.max' => 'El campo :attribute no puede tener más de :max caracteres.'];
-        */
+         'nombre.unique' => 'Ese :attribute ya está dado de alta.',
+         'nombre.max' => 'El campo :attribute no puede tener más de :max caracteres.'];
+
 
         $this->validate($request, $validaciones, $mensajes);
 
-        $categoria = new Categoria;
+        $categoria = Categoria::findOrFail($id);
         $categoria->nombre = $request->nombre;
-        //if($_REQUEST("descripcion")!=""){
-      //  if($request->descripcion!=""){
+        if($request->descripcion!=""){
         $categoria->descripcion = $request->descripcion;
-       // }
+        } else {
+            $categoria->descripcion =" ";
+        }
         $categoria->save();
 
         return redirect('/categorias');

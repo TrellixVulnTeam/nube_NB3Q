@@ -1,36 +1,29 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-	Información del Centro
+	Información del Alumno
 @endsection
 
 @section("cuerpo")
 <table border ="1">
-	<tr>
+<tr>
 		<th>Nombre</th>
-		<th>Dirección</th>
-		<th>Departamentos</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Curso</th>
 	</tr>
-	@foreach ($centros as $centro)
+
+	@foreach ($alumnos as $alumno)
 	<tr>
-		<td>{{ $centro->nombre }}</td>
-		<td>{{ $centro->direccion }}</td>
-		<td>
-			@if(count($centro->departamentos) == 0)
-				<p>No tiene departamentos asociados.</p>
-			@else
-				<ul>
-					@foreach ($centro->departamentos as $departamento)
-						<li>{{ $departamento->nombre }}</li>
-					@endforeach
-				</ul>
-			@endif
-		</td>
+		<td>{{ $alumno->nombre }}</td>
+        <td>{{ $alumno->apellidos }}</td>
+        <td>{{ $alumno->edad }}</td>
+        <td>{{ $alumno->curso_id }}</td>
 	</tr>
 	@endforeach
 </table>
 
-@endsection 
+@endsection
 
 @section("pie")
-@endsection 
+@endsection

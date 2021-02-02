@@ -1,33 +1,36 @@
 @extends("../layouts.plantilla")
 
 @section("cabecera")
-	Actualizar un Centro
+	Actualizar un Curso
 @endsection
 
 @section("cuerpo")
-	<form method="post" action="/centros/{{ $centro->id }}">
+	<form method="post" action="/cursos/{{ $curso->id }}">
 		@method("PUT")
 		@csrf
 		<table>
-			<tr>
+            <tr>
 				<td>Nombre</td>
-				<td><input type="text" name="nombre" value="{{ $centro->nombre }}"></td>
+				<td><input type="text" name="nombre" value="{{ $curso->nombre }}"></td>
 			</tr>
 			<tr>
-				<td>Dirección</td>
-				<td><input type="text" name="direccion" value="{{ $centro->direccion }}"></td>
+				<td>Horas del curso</td>
+				<td><input type="text" name="horas" value="{{ $curso->horas }}"></td>
+			</tr>
+            <tr>
+				<td>Plazas disponibles</td>
+				<td><input type="text" name="plazas" value="{{ $curso->plazas }}"></td>
+			</tr>
+            <tr>
+				<td>Categoria</td>
+				<td><input type="text" name="categoria" value="{{ $curso->categoria }}"></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="submit" name="enviar" value="Actualizar"></td>
+				<td colspan="4" align="center"><input type="submit" name="enviar" value="Actualizar"></td>
 			</tr>
 		</table>
 	</form>
-	<form method="post" action="/centros/{{ $centro->id }}">
-		@method("DELETE")
-		@csrf
-		<input type="submit" name="borrar" value="Eliminar" 
-		@if (count($centro->departamentos) >0 ) disabled @endif>
-	</form>
+
 	@if ($errors->any())
     <div>
         <ul>
@@ -38,7 +41,7 @@
     </div>
 	@endif
 
-@endsection 
+@endsection
 
 @section("pie")
-@endsection 
+@endsection
