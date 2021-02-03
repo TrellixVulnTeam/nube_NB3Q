@@ -1,0 +1,18 @@
+<table border="1.5">
+    <thead>
+        <th>NOMBRE</th>
+        <th>APELLIDOS</th>
+        <th>DIRECCIÓN</th>
+        <th>CIUDAD</th>
+        <th>TELEFONO</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of owners">
+            <td>{{p.firstName}}</td>
+            <td>{{p.lastName}}</td>
+            <td>{{p.address}}</td>
+            <td>{{p.city}}</td>
+            <td>{{p.telephone}}</td>
+        </tr>
+    </tbody>
+</table>
