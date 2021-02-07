@@ -1,5 +1,4 @@
 @extends("../layouts.plantilla")
-<a href="{{ url('') }}">Inicio</a>
 
 @section("cabecera")
 	Información de la categoría
@@ -11,12 +10,10 @@
 		<th>Nombre</th>
 		<th>Descripción</th>
 	</tr>
-	@foreach ($categorias as $categoria)
 	<tr>
-		<td>{{ $categoria->nombre }}</td>
-		<td>{{ $categoria->descripcion }}</td>
+		<td>{{ $categorias->nombre }}</td>
+		<td>{{ $categorias->descripcion }}</td>
 	</tr>
-	@endforeach
 </table>
 
 @endsection

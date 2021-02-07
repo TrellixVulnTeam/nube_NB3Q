@@ -20,10 +20,14 @@
 				<td>Plazas disponibles</td>
 				<td><input type="text" name="plazas"></td>
 			</tr>
-            <tr>
-				<td>Categoria</td>
-				<td><input type="text" name="categoria"></td>
-			</tr>
+            <td>Categoria</td>
+				<td><select name="categoria_id">
+						<option value="">Seleccione Categoria</option>
+						@foreach ($categorias as $categoria)
+						<option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+						@endforeach
+					</select>
+				</td>
 			<tr>
 				<td colspan="4" align="center"><input type="submit" name="enviar" value="Enviar"></td>
 			</tr>

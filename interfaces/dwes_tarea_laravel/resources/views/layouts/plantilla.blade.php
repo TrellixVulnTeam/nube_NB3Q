@@ -42,7 +42,7 @@
     <body>
     <div class="cabecera">
     		@yield("cabecera")
-
+            <a href="{{ url('') }}">Inicio</a>
     	</div>
 
     	<div class="cuerpo">
@@ -52,7 +52,7 @@
     	</div>
 
     	<div class="pie">
-            IES Velázquez
+            MANUEL MARTÍN FERNÁNDEZ
     		@yield("pie")
     	</div>
 

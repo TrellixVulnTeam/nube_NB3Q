@@ -4,10 +4,6 @@ Toda página del proyecto salvo la pantalla principal, tiene que tener una cabec
 ● Un enlace que me permita volver a la página principal.
 ● Un encabezado que me indique donde estoy.  PONERLE LA URL A TODAS CON EL TITULO ?
 
-campo de texto amplio es text ?
-
-FALTA BORRAR
-
 */
 namespace App\Http\Controllers;
 
@@ -79,10 +75,8 @@ class CategoriasController extends Controller
      */
     public function show($id)
     {
-
-        $categorias = Categoria::with('cursos')->where('id',$id)->get();
+        $categorias = Categoria::findOrFail($id);
         return view("categorias.show", compact('categorias'));
-
     }
 
     /**
@@ -136,7 +130,6 @@ class CategoriasController extends Controller
      */
     public function destroy($id)
     {
-        //
         $categoria = Categoria::findOrFail($id);
         $categoria->delete();
 

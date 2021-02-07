@@ -3,15 +3,10 @@
 NUMERO DE ALUMNOS MATRICULADO EN PG INDEX
 IF DE SI HAY PLAZAS DISPONIBLES ? EN PG INDEX
 
-SELECT PARA ASOCIAR CURSO A CATEGORIA AL CREAR CURSO ?
-FALTA COMPROBACION DE QUE CURSO TENGA ASOCIADA UNA CATEGORIA, ES CON REQUIRE ??
-
 REPASAR QUE NO FALTE COMPROBACIONES DE CREAR POR EJEMPLO
 EN EDITAR : tener en cuenta que si queremos modificar el número de plazas no inferior al número de alumnos matriculados
 
 EN MOSTRAR FALTA LISTA DE ALUMNOS INSCRITOS Y REDIRIGIR AL MOSTRAR DE ESE ALUMNO
-
-FALTA BORRAR
 
 */
 namespace App\Http\Controllers;
@@ -21,6 +16,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
 use App\Curso;
+
+use App\Categoria;
 
 class CursosController extends Controller
 {
@@ -52,7 +49,8 @@ class CursosController extends Controller
     public function create()
     {
         //
-        return view("cursos.create");
+        $categorias = Categoria::all();
+        return view("cursos.create", compact("categorias"));
     }
 
     /**
@@ -63,13 +61,13 @@ class CursosController extends Controller
      */
     public function store(Request $request)
     {
-        $validaciones =['nombre' => ['required','max:100','unique:categorias'],
-        'horas' => 'required', 'plazas' => 'required'];
+        $validaciones =['nombre' => ['required','max:100'],
+        'horas' => 'required', 'plazas' => 'required', 'categoria_id' => 'required'];
         $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.',
-         'nombre.unique' => 'Ese :attribute ya está dado de alta.',
          'nombre.max' => 'El campo :attribute no puede tener más de :max caracteres.',
          'horas.required' => 'El campo :attribute no puede estar vacío.',
-         'plazas.required' => 'El campo :attribute no puede estar vacío.'];
+         'plazas.required' => 'El campo :attribute no puede estar vacío.',
+         'categoria_id.required' => 'El campo :attribute no puede estar vacío.'];
 
         $this->validate($request, $validaciones, $mensajes);
 
@@ -77,7 +75,7 @@ class CursosController extends Controller
         $curso->nombre = $request->nombre;
         $curso->horas = $request->horas;
         $curso->plazas = $request->plazas;
-        $curso->categoria_id = $request->categoria;
+        $curso->categoria_id = $request->categoria_id;
         $curso->save();
 
         return redirect('/cursos');
@@ -119,13 +117,13 @@ class CursosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validaciones =['nombre' => ['required','max:100',Rule::unique('categorias')->ignore($id)],
-        'horas' => 'required', 'plazas' => 'required'];
+        $validaciones =['nombre' => ['required','max:100'],
+        'horas' => 'required', 'plazas' => 'required', 'categoria_id' => 'required'];
         $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.',
-         'nombre.unique' => 'Ese :attribute ya está dado de alta.',
          'nombre.max' => 'El campo :attribute no puede tener más de :max caracteres.',
          'horas.required' => 'El campo :attribute no puede estar vacío.',
-         'plazas.required' => 'El campo :attribute no puede estar vacío.'];
+         'plazas.required' => 'El campo :attribute no puede estar vacío.',
+         'categoria_id.required' => 'El campo :attribute no puede estar vacío.'];
 
         $this->validate($request, $validaciones, $mensajes);
 
@@ -134,7 +132,7 @@ class CursosController extends Controller
         $curso->horas = $request->horas;
         //if($request->plazas!="")
         $curso->plazas = $request->plazas;
-        $curso->categoria_id = $request->categoria;
+        $curso->categoria_id = $request->categoria_id;
         $curso->save();
 
         return redirect('/cursos');
@@ -149,7 +147,7 @@ class CursosController extends Controller
      */
     public function destroy($id)
     {
-        $curso = Categoria::findOrFail($id);
+        $curso = Curso::findOrFail($id);
         $curso->delete();
 
         return redirect('/cursos');

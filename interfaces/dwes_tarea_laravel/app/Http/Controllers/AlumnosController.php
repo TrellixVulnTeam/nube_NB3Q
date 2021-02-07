@@ -3,10 +3,6 @@
 EN NUEVO ALUMNO FALTA CURSOS EN LOS QUE HUBIERA PLAZA LIBRE :es decir los cursos en los que el número de alumnos
 inscritos es inferior al número de plazas disponibles.
 
-FALTA COMPROBACION DE QUE ALUMNO TENGA ASOCIADA UN CURSO, ES CON REQUIRE ??
-
-FALTA BORRAR
-
 */
 namespace App\Http\Controllers;
 
@@ -51,10 +47,10 @@ class AlumnosController extends Controller
      */
     public function store(Request $request)
     {
-        $validaciones =['nombre' => ['required','max:100','unique:categorias'], 'apellidos' => 'required'];
+        $validaciones =['nombre' => ['required','max:100'], 'apellidos' => 'required', 'curso_id' => 'required'];
         $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.',
         'apellidos.required' => 'El campo :attribute no puede estar vacío.',
-         'nombre.unique' => 'Ese :attribute ya está dado de alta.',
+         'curso_id.required' => 'El campo :attribute no puede estar vacío.',
          'nombre.max' => 'El campo :attribute no puede tener más de :max caracteres.'];
 
         $this->validate($request, $validaciones, $mensajes);
