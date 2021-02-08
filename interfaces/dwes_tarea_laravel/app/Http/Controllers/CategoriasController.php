@@ -1,7 +1,5 @@
 <?php
-/*
-no borrar la categoria si está asociada a un curso
-*/
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -9,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
 use App\Categoria;
+use App\Curso;
+use DB;
 
 class CategoriasController extends Controller
 {
@@ -129,7 +129,13 @@ class CategoriasController extends Controller
     public function destroy($id)
     {
         $categoria = Categoria::findOrFail($id);
-        $categoria->delete();
+        $cursos = Curso::all();
+
+        $cursos = DB::select('SELECT * FROM cursos WHERE categoria_id='.$id);
+
+        if(count($cursos) == 0){
+            $categoria->delete();
+        }
 
         return redirect('/categorias');
     }

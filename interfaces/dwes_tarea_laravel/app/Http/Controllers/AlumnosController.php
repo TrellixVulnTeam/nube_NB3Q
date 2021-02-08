@@ -1,8 +1,5 @@
 <?php
-/*
 
-
-*/
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -126,6 +123,7 @@ class AlumnosController extends Controller
      */
     public function destroy($id)
     {
+
         $alumno = Alumno::findOrFail($id);
         $alumno->delete();
 

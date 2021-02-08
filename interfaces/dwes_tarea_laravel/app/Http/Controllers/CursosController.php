@@ -1,10 +1,5 @@
 <?php
-/*
 
-REPASAR QUE NO FALTE COMPROBACIONES DE CREAR POR EJEMPLO
-EN EDITAR : tener en cuenta que si queremos modificar el número de plazas no inferior al número de alumnos matriculados
-
-*/
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -154,7 +149,13 @@ class CursosController extends Controller
     public function destroy($id)
     {
         $curso = Curso::findOrFail($id);
+        $alumnos = Alumno::all();
+
+        $alumnos = DB::select('SELECT * FROM alumnos WHERE curso_id='.$id);
+
+        if(count($alumnos) == 0){
         $curso->delete();
+        }
 
         return redirect('/cursos');
     }
