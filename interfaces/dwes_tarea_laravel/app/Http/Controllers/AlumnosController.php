@@ -1,7 +1,6 @@
 <?php
 /*
-EN NUEVO ALUMNO FALTA CURSOS EN LOS QUE HUBIERA PLAZA LIBRE :es decir los cursos en los que el número de alumnos
-inscritos es inferior al número de plazas disponibles.
+
 
 */
 namespace App\Http\Controllers;
@@ -37,8 +36,7 @@ class AlumnosController extends Controller
     {
         //
         $cursos = Curso::all();
-        $alumnos = Alumno::all();
-        return view("alumnos.create", compact("cursos","alumnos"));
+        return view("alumnos.create", compact("cursos"));
     }
 
     /**

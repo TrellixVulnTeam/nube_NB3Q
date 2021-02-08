@@ -17,7 +17,12 @@
 	@foreach ($cursos as $curso)
 	<tr>
 		<td>{{ $curso->nombre }}</td>
-		<td>{{ $curso->alumnos }}</td>
+		<td>{{ $curso->alumnos()->count() }}</td>
+		@if (($curso->plazas - $curso->alumnos()->count()) > 0)
+			<td>SI</td>
+		@else
+			<td>NO</td>
+		@endif
 
         <td align="center">
                 <form action="{{ route('cursos.destroy',$curso->id) }}" method="POST">

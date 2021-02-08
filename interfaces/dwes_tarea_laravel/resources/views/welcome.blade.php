@@ -1,4 +1,4 @@
-@extends("layouts.plantilla")
+@extends("layouts.principal")
 
 @section("cuerpo")
 <div style="display: flex">

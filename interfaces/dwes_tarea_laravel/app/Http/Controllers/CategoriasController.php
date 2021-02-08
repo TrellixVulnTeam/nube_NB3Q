@@ -1,9 +1,6 @@
 <?php
 /*
-Toda página del proyecto salvo la pantalla principal, tiene que tener una cabecera con:
-● Un enlace que me permita volver a la página principal.
-● Un encabezado que me indique donde estoy.  PONERLE LA URL A TODAS CON EL TITULO ?
-
+no borrar la categoria si está asociada a un curso
 */
 namespace App\Http\Controllers;
 
@@ -57,6 +54,7 @@ class CategoriasController extends Controller
 
         $categoria = new Categoria;
         $categoria->nombre = $request->nombre;
+        //creo que sería más limpio que el enunciado pidiera poner este atributo como "->nullable($value = true)" en la migaración
         if($request->descripcion!=""){
             $categoria->descripcion = $request->descripcion;
         }else {

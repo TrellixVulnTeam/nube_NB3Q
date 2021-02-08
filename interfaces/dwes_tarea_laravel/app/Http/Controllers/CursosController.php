@@ -1,12 +1,8 @@
 <?php
 /*
-NUMERO DE ALUMNOS MATRICULADO EN PG INDEX
-IF DE SI HAY PLAZAS DISPONIBLES ? EN PG INDEX
 
 REPASAR QUE NO FALTE COMPROBACIONES DE CREAR POR EJEMPLO
 EN EDITAR : tener en cuenta que si queremos modificar el número de plazas no inferior al número de alumnos matriculados
-
-EN MOSTRAR FALTA LISTA DE ALUMNOS INSCRITOS Y REDIRIGIR AL MOSTRAR DE ESE ALUMNO
 
 */
 namespace App\Http\Controllers;
@@ -16,8 +12,9 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
 use App\Curso;
-
 use App\Categoria;
+use App\Alumno;
+use DB;
 
 class CursosController extends Controller
 {
@@ -33,7 +30,6 @@ class CursosController extends Controller
             <td>SI</td>
         @else
             <td>NO</td>
-        @endelse
 	    @endif
         */
         $cursos = Curso::all();
@@ -90,8 +86,10 @@ class CursosController extends Controller
      */
     public function show($id)
     {
+        //también podría establecer la relación en el módulo
         $cursos = Curso::with('alumnos')->where('id',$id)->get();
-        return view("cursos.show", compact('cursos'));
+        $alumnos = Alumno::all();
+        return view("cursos.show", compact('cursos', 'alumnos'));
 
     }
 
@@ -117,12 +115,21 @@ class CursosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validaciones =['nombre' => ['required','max:100'],
-        'horas' => 'required', 'plazas' => 'required', 'categoria_id' => 'required'];
+        $alumnos = DB::select('SELECT * FROM alumnos WHERE curso_id='.$id);
+
+        if(count($alumnos) > 0){
+            $validaciones =['nombre' => ['required','max:100'],
+        'horas' => 'required', 'plazas' => ['required', 'min:'.count($alumnos)], 'categoria_id' => 'required'];
+        } else {
+            $validaciones =['nombre' => ['required','max:100'],
+            'horas' => 'required', 'plazas' => 'required', 'categoria_id' => 'required'];
+        }
+
         $mensajes = ['nombre.required' => 'El campo :attribute no puede estar vacío.',
          'nombre.max' => 'El campo :attribute no puede tener más de :max caracteres.',
          'horas.required' => 'El campo :attribute no puede estar vacío.',
          'plazas.required' => 'El campo :attribute no puede estar vacío.',
+         'plazas.min' => 'El campo :attribute no puede tener menos de :min alumnos.',
          'categoria_id.required' => 'El campo :attribute no puede estar vacío.'];
 
         $this->validate($request, $validaciones, $mensajes);
@@ -130,7 +137,6 @@ class CursosController extends Controller
         $curso = Curso::findOrFail($id);
         $curso->nombre = $request->nombre;
         $curso->horas = $request->horas;
-        //if($request->plazas!="")
         $curso->plazas = $request->plazas;
         $curso->categoria_id = $request->categoria_id;
         $curso->save();

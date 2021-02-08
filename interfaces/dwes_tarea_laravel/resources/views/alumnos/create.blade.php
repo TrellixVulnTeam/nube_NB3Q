@@ -25,10 +25,7 @@
 				<td><select name="curso_id">
 						<option value="">Seleccione Curso</option>
 						@foreach ($cursos as $curso)
-                        @foreach($alumnos as $alumno)
-                        @if(alumno->curso_id == curso->id)
-
-                        @if(curso->plazas > )
+                        @if(($curso->plazas - $curso->alumnos()->count()) > 0)
 						<option value="{{ $curso->id }}">{{ $curso->nombre }}</option>
                         @endif
                         @endforeach

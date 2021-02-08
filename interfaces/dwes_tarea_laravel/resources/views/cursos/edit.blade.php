@@ -23,7 +23,7 @@
 			</tr>
             <tr>
 				<td>Categoria</td>
-				<td><input type="text" name="categoria" value="{{ $curso->categoria }}"></td>
+				<td><input type="text" name="categoria_id" value="{{ $curso->categoria_id }}"></td>
 			</tr>
 			<tr>
 				<td colspan="4" align="center"><input type="submit" name="enviar" value="Actualizar"></td>

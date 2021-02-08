@@ -41,8 +41,10 @@
     </head>
     <body>
     <div class="cabecera">
+        <a href="{{ url('') }}">Inicio</a>
+        <br>
     		@yield("cabecera")
-            <a href="{{ url('') }}">Inicio</a>
+
     	</div>
 
     	<div class="cuerpo">
