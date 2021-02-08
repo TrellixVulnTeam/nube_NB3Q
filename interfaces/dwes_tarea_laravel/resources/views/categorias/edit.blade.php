@@ -1,4 +1,4 @@
-@extends("../layouts.plantilla")
+@extends("../layouts.menus")
 
 @section("cabecera")
 	Actualizar una Categoria

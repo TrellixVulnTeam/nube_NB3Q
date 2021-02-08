@@ -1,4 +1,4 @@
-@extends("../layouts.plantilla")
+@extends("../layouts.menus")
 
 @section("cabecera")
 	Listado de Cursos
@@ -26,7 +26,7 @@
 
                     @csrf
                     @method('DELETE')
-                    <button type="submit">Delete</button>
+                    <button type="submit">Eliminar</button>
                 </form>
             </td>
     </tr>

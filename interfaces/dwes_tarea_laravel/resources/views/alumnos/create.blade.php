@@ -1,4 +1,4 @@
-@extends("../layouts.plantilla")
+@extends("../layouts.menus")
 
 @section("cabecera")
 	Insertar un nuevo alumno
@@ -21,9 +21,20 @@
 				<td><input type="text" name="edad"></td>
 			</tr>
             <tr>
-				<td>curso</td>
-				<td><input type="text" name="curso_id"></td>
-			</tr>
+            <td>Curso</td>
+				<td><select name="curso_id">
+						<option value="">Seleccione Curso</option>
+						@foreach ($cursos as $curso)
+                        @foreach($alumnos as $alumno)
+                        @if(alumno->curso_id == curso->id)
+
+                        @if(curso->plazas > )
+						<option value="{{ $curso->id }}">{{ $curso->nombre }}</option>
+                        @endif
+                        @endforeach
+					</select>
+				</td>
+                </tr>
 			<tr>
 				<td colspan="3" align="center"><input type="submit" name="enviar" value="Enviar"></td>
 			</tr>

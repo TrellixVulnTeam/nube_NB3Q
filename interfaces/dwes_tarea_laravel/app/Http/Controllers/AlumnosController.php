@@ -36,7 +36,9 @@ class AlumnosController extends Controller
     public function create()
     {
         //
-        return view("alumnos.create");
+        $cursos = Curso::all();
+        $alumnos = Alumno::all();
+        return view("alumnos.create", compact("cursos","alumnos"));
     }
 
     /**
