@@ -1,3 +1,4 @@
+import { FormOwnersComponent } from './components/form-owners/form-owners.component';
 import { DetailOwnerComponent } from './components/detail-owner/detail-owner.component';
 import { HomeComponent } from './components/home/home.component';
 import { OwnersComponent } from './components/owners/owners.component';
@@ -15,6 +16,14 @@ const routes: Routes = [
   },
   {
     path: "owners/:id",
+    component: DetailOwnerComponent
+  },
+  {
+    path: "owners-add/:id",
+    component: FormOwnersComponent
+  },
+  {
+    path: "detail-owner/:id",
     component: DetailOwnerComponent
   }
 ];

@@ -5,11 +5,11 @@ import { OwnersService } from './../../servicios/owners.service';
 
 
 @Component({
-  selector: 'app-detail-owner',
-  templateUrl: './detail-owner.component.html',
-  styleUrls: ['./detail-owner.component.css']
+  selector: 'app-form-owners',
+  templateUrl: './form-owners.component.html',
+  styleUrls: ['./form-owners.component.css']
 })
-export class DetailOwnerComponent implements OnInit {
+export class FormOwnersComponent implements OnInit {
 
   public owner : Owner;
 
@@ -18,15 +18,20 @@ export class DetailOwnerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.owner.id =this.route.snapshot.params["id"];
-    console.log( this.owner.id );
 
-    this.servicioOwner.getOwnerId(this.owner.id).subscribe(
+  }
+
+  enviar(owner: Owner){
+    console.log(owner);
+    this.servicioOwner.setOwner(owner).subscribe(
       datos=>{
         console.log(datos);
-        this.owner=datos;
+        this.ruta.navigate(['/owners']);
       },
       error => console.log("error", error));
+
+
   }
+
 
 }

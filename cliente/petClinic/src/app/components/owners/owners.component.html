@@ -1,3 +1,6 @@
+<h1>
+
+    TABLA PROPIETARIOS</h1>
 <table border="1.5">
     <thead>
         <th>NOMBRE</th>
@@ -8,7 +11,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let p of owners">
-            <td><a routerLink="detail-owner/p.id">{{p.firstName}}</a></td>
+            <td><a routerLink="/detail-owner/{{p.id}}">{{p.firstName}}</a></td>
             <td>{{p.lastName}}</td>
             <td>{{p.address}}</td>
             <td>{{p.city}}</td>

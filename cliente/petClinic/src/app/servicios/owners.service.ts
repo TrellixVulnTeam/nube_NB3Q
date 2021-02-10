@@ -1,3 +1,4 @@
+import { Owner } from './../models/owner';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -18,11 +19,21 @@ export class OwnersService {
     return this.http.post<any[]>(this.url, pa);
   }
 
-  getOwnerId(){
+  getOwnerId(id:number){
     let pa= JSON.stringify({
-      accion: "ObtenerOwnersId"
+      accion: "ObtenerOwnerId",
+      id: id
     });
 
-    return this.http.post<any[]>(this.url, pa);
+    return this.http.post<Owner>(this.url, pa);
+  }
+
+  setOwner(owner:Owner){
+    let pa= JSON.stringify({
+      accion: "AnadeOwner",
+      owner: owner
+    });
+
+    return this.http.post<Owner>(this.url, pa);
   }
 }

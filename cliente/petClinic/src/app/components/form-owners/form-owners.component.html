@@ -1,0 +1,25 @@
+<h2>Registro propietario</h2>
+
+<div class="container">
+    <form class="form-horizontal" #ownerForm="ngForm" (ngSubmit)="enviar(ownerForm.value)">
+        <fieldset>
+            <legend></legend>
+            <label for="firstName">nombre:</label>
+            <input type="text" required [(ngModel)]="owner.firstName" name="firstName" />
+            <br />
+            <label for="lastName">apellidos:</label>
+            <input type="text" [(ngModel)]="owner.lastName" name="lastName" />
+            <br />
+            <label for="address">dirección:</label>
+            <input type="text" [(ngModel)]="owner.address" name="address" />
+            <br />
+            <label for="city">ciudad:</label>
+            <input type="text" [(ngModel)]="owner.city" name="city" />
+            <br />
+            <label for="telephone">telefono:</label>
+            <input type="text" [(ngModel)]="owner.telephone" name="telephone" />
+            <br />
+            <button type="submit">Añadir</button>
+        </fieldset>
+    </form>
+</div>
