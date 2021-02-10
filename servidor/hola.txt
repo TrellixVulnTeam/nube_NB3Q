@@ -1,0 +1,11 @@
+comandos Django:
+
+-crear entorno= python -m venv entorno
+-activar entorno= entorno\Scripts\activate.bat
+-instalar librerias necesarias= pip install -r requirements.txt || pip install y una a una
+-crear base de datos
+-generar los archivos de migracion= python manage.py makemigrations
+-aplicar los archivos de migracion= python manage.py migrate
+-crear usuario administrador= python manage.py createsuperuser
+-entrar en el directorio del proyecto y ejecutar (RUN)= python manage.py runserver
+-entrar con el usuario administrador e introducir una entrada en la tabla "Generals".
