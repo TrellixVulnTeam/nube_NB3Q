@@ -25,7 +25,7 @@ class TagAdmin(admin.ModelAdmin):
     
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
-    admin.site.register(General)
-    admin.site.register(Category, CategoryAdmin)
-    admin.site.register(Tag, TagAdmin)
-    admin.site.register(Post, PostAdmin)
+    
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Tag, TagAdmin)
+admin.site.register(Post, PostAdmin)
