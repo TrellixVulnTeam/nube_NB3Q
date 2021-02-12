@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { OwnersService } from './../../servicios/owners.service';
 
-
 @Component({
   selector: 'app-form-owners',
   templateUrl: './form-owners.component.html',

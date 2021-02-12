@@ -8,6 +8,8 @@
         <th>DIRECCIÓN</th>
         <th>CIUDAD</th>
         <th>TELEFONO</th>
+        <th>DEL</th>
+        <th>EDIT</th>
     </thead>
     <tbody>
         <tr *ngFor="let p of owners">
@@ -16,6 +18,12 @@
             <td>{{p.address}}</td>
             <td>{{p.city}}</td>
             <td>{{p.telephone}}</td>
+            <td>
+                <button (click)="borrarOwner(p.id)">DEL</button>
+            </td>
+            <td>
+                <button routerLink="/detail-owner/{{p.id}}">EDIT</button>
+            </td>
         </tr>
     </tbody>
 </table>

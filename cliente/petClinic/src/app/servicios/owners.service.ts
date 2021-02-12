@@ -36,4 +36,24 @@ export class OwnersService {
 
     return this.http.post<Owner>(this.url, pa);
   }
+
+  delOwnerList(id: number){
+    let pa= JSON.stringify({
+      accion: "BorraOwner",
+      id: id,
+      listado: "OK"
+    });
+    console.log("id:", id);
+    return this.http.post<Owner[]>(this.url, pa);
+  }
+
+  delOwner(id:number){
+    let pa= JSON.stringify({
+      accion: "BorrarOwner",
+      id: id,
+      listado: "no"
+    });
+
+    return this.http.post<Owner>(this.url, pa);
+  }
 }

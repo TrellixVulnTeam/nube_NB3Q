@@ -21,4 +21,12 @@ export class OwnersComponent implements OnInit {
       })
   }
 
+  borrarOwner(id: number){
+    this.servicioOwner.delOwnerList(id).subscribe(
+      datos=>{
+        this.owners=datos;
+      }, error => console.log("error", error));
+  }
+
+
 }
