@@ -9,3 +9,8 @@ comandos Django:
 -crear usuario administrador= python manage.py createsuperuser
 -entrar en el directorio del proyecto y ejecutar (RUN)= python manage.py runserver
 -entrar con el usuario administrador e introducir una entrada en la tabla "Generals".
+
+
+WARNINGS:
+?: (mysql.W002) MariaDB Strict Mode is not set for database connection 'default'
+        HINT: MariaDB's Strict Mode fixes many data integrity problems in MariaDB, such as data truncation upon insertion, by escalating warnings into errors. It is strongly recommended you activate it. See: https://docs.djangoproject.com/en/3.1/ref/databases/#mysql-sql-mode

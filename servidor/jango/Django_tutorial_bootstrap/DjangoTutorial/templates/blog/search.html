@@ -11,7 +11,9 @@ initial-scale=1, shrink-to-fit=no">
     <div class="row">
         <!-- Entradas -->
         <div class="col-md-8">
-            <h1 class="my-4">{{ general.name }}
+            <h1 class="my-4">Resultados para la búsqueda:
+
+                <small>{{ query }}</small>
             </h1>
             {% include 'blog/vendor/posts-list.html' %}
         </div>

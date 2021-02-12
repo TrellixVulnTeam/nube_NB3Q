@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,
 initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="{{ general.description }}">
+<meta name="description" content="{{ category.description }}">
 <meta name="author" content=""> {% endblock %} {% block content %}
 
 <!-- Contenido -->
@@ -11,8 +11,9 @@ initial-scale=1, shrink-to-fit=no">
     <div class="row">
         <!-- Entradas -->
         <div class="col-md-8">
-            <h1 class="my-4">{{ general.name }}
+            <h1 class="my-4">{{ category.name }}
             </h1>
+            <p>{{ category.description }}</p>
             {% include 'blog/vendor/posts-list.html' %}
         </div>
         {% include 'blog/vendor/sidebar.html' %}

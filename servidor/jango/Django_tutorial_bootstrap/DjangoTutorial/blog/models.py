@@ -3,16 +3,16 @@ from django.conf import settings
 from ckeditor.fields import RichTextField
 
 # Create your models here.
-class Test(models.Model):
-    text = models.CharField(max_length=100)
-    text_area = models.TextField()
-    integer = models.IntegerField()
-    date = models.DateField()
-    boolean = models.BooleanField()
-    file = models.FileField(upload_to='files/')
+#class Test(models.Model):
+ #   text = models.CharField(max_length=100)
+  #  text_area = models.TextField()
+   # integer = models.IntegerField()
+    #date = models.DateField()
+    #boolean = models.BooleanField()
+    #file = models.FileField(upload_to='files/')
 
-    def __str__(self):
-    	return self.text
+    #def __str__(self):
+    #	return self.text
 
 
 class General(models.Model):
@@ -29,12 +29,11 @@ class Category(models.Model):
     slug = models.SlugField()
     description = models.TextField(blank=True)
     
-
-class Meta:
-    verbose_name_plural = "categories"
-    
-    def __str__(self):
-        return self.name
+    class Meta:
+        verbose_name_plural = "categories"
+        
+        def __str__(self):
+            return self.name
     
 
 class Tag(models.Model):
