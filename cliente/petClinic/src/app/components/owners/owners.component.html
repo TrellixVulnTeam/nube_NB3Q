@@ -1,7 +1,5 @@
-<h1>
-
-    TABLA PROPIETARIOS</h1>
-<table border="1.5">
+<h1>TABLA PROPIETARIOS</h1>
+<table border="1.5" class="table">
     <thead>
         <th>NOMBRE</th>
         <th>APELLIDOS</th>
@@ -19,10 +17,10 @@
             <td>{{p.city}}</td>
             <td>{{p.telephone}}</td>
             <td>
-                <button (click)="borrarOwner(p.id)">DEL</button>
+                <button (click)="borrarOwner(p.id)" class="btn btn-danger">DEL</button>
             </td>
             <td>
-                <button routerLink="/detail-owner/{{p.id}}">EDIT</button>
+                <button routerLink="/owners-add/{{p.id}}" class="btn btn-warning">EDIT</button>
             </td>
         </tr>
     </tbody>
