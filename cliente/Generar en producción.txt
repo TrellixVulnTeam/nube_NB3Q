@@ -1,0 +1,25 @@
+
+Para generar una aplicación web de Angular 7 (y en adelante) en PRODUCCIÓN, 
+esto es, para poner en un servidor Web:
+
+	ng build --prod --base-href=./
+
+
+Con  --base-href=./
+
+Le decimos que el directorio donde lo queremos colocar puede ser cualquiera,
+esto es, no lo tenemos que ubicar en localhost. Si queremos que sea en el raiz,
+le quitamos  --base-href=./  esto es: ng build --prod
+
+
+
+Si queremos ponerlo en una carpeta (y ruta) determinada:
+
+	ng build --prod --base-href=/micarpeta/
+
+
+Si el proyecto es únicamente de Angular, se creará una carpeta con nombre dist. Y ahí está.
+
+Si el proyecto es de ionic (type = angular) entonces se pondrá en la carpeta www dentro
+de la carpeta del proyecto.
+
