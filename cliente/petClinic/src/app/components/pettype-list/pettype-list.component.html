@@ -1,0 +1,38 @@
+<h2>Tipos de Pets:</h2>
+
+<table id="pettypes" class="table table-striped" border=1>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="tablapets">
+        <tr *ngFor="let p of pettypes">
+            <td>
+                <input [id]=element_id [readonly]="editando(element_id)" #name type="text" class="form-control" [(ngModel)]="p.name" name="pettype_name">
+            </td>
+            <td>
+                <button calss="btn btn-default" (click)="editPettype(p, name, element_id)">
+                    <span *ngIf="!editando(element_id)">Cancel</span>
+                    <span *ngIf="editando(element_id)">Edit</span>
+                </button>
+
+                <button *ngIf="!editando(element_id)" class="btn btn-default btCancelar" (click)="updatePettype(p)" [disabled]="editando(element_id)">Modificar</button>
+
+                <button *ngIf="editando(element_id)" class="btn btn-default btCancelar" (click)="deletePettype(p)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="is_insert">
+    <app-pettype-add (onNew)="onNewPettype($event)">...</app-pettype-add>
+</div>
+<div>
+    <a routerLink="/" routerLinkActive="active">
+        <button class="btn btn-default">Inicio</button>
+    </a>
+    <button class="btn btn-default btCancelar" (click)="showAddPettypeComponent()"> Add </button>
+</div>
