@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    {% block meta %}
+
+    {% endblock %}
+
+    <title>Aplicación</title>
+
+    {% load static  %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "/bootstrap-4.6.0/css/bootstrap.min.css" %}" rel="stylesheet">
+
+  
+</head>
+
+<body>
+
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    Mi aplicación
+  </a>
+</nav>
+<div class="container-fluid">
+
+{% block content %}
+
+{% endblock %}
+
+</div>
+<!-- Bootstrap core JavaScript -->
+<script src="{% static "jquery/jquery.min.js" %}"></script>
+<script src="{% static "bootstrap-4.6.0/js/bootstrap.bundle.min.js" %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+
+{% block meta %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="departamentos de {{ centro.nombre }}">
+    <meta name="author" content="">
+
+{% endblock %}
+
+
+{% block content %}
+	<h3>Listado de departamentos del centro {{ centro.nombre }}</h3>
+	{% if departamentos %}
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">Nombre</th>
+		      <th scope="col">Presupuesto</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for departamento in departamentos %}
+		    <tr>
+		      <td>{{ departamento.nombre }}</td>
+		      <td>{{ departamento.presupuesto }}</td>
+		    </tr>
+		    {% endfor %}
+		  </tbody>
+		</table>
+	{% else %}
+		<p>No hay departamentos del centro</p>
+	{% endif %}
+
+{% endblock %}
