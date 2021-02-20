@@ -1,0 +1,43 @@
+<h4>Nueva persona</h4>
+<div>
+  <p>Añadir nueva persona</p>
+
+  <form class="form-horizontal" #personaForm="ngForm" (ngSubmit)="enviar(personaForm.value)">
+    <div class="form-group">
+      <label>DNI: </label>
+      <input type="text" class="form-control" required [(ngModel)]="persona.dni" name="dni" #dni="ngModel">
+      <div [hidden]="dni.valid || dni.pristine" class="alert alert-danger">
+        El DNI es obligatorio
+      </div>
+    </div>
+    <div class="form-group">
+      <label>NOMBRE: </label>
+      <input type="text" class="form-control" required [(ngModel)]="persona.nombre" name="nombre" #nombre="ngModel">
+      <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+        El Nombre es obligatorio
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>APELLIDOS: </label>
+      <input type="text" class="form-control" required [(ngModel)]="persona.apellidos" name="apellidos" #apellidos="ngModel">
+      <div [hidden]="apellidos.valid || apellidos.pristine" class="alert alert-danger">
+        Los Apellidos son obligatorios
+      </div>
+    </div>
+
+
+    <div>
+      <button class="btn btn-primary mr-3" type="submit" [disabled]="!personaForm.valid">
+				{{textoBoton}}
+			</button>
+      <button type="button" class="btn btn-primary" routerLink="/">Cancelar</button>
+      <!--
+				Si queremos que mantenga los parámetros de la ruta sería así:
+				 <button type="button" class="btn btn-primary" routerLink="../">Cancelar</button>
+			-->
+    </div>
+
+  </form>
+
+</div>

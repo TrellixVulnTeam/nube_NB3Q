@@ -1,0 +1,41 @@
+
+<h2>Form Vet</h2>
+
+<h1>{{boton}}</h1>
+
+<div class="container">
+    <form class="form-horizontal  m-3" #registerForm="ngForm">
+        <div class="form-group">
+            <label>FIRST NAME: </label>
+            <input type="text" class="form-control" required [(ngModel)]="vete.firstName" name="nombre" >
+            <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+              El owner es obligatorio
+            </div>
+          </div>
+        <div class="form-group">
+          <label>LAST NAME: </label>
+          <input type="text" class="form-control" required [(ngModel)]="vete.lastName" name="name" #nombre="ngModel">
+          <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+            El name es obligatorio
+          </div>
+        </div>
+           
+        <div class="form-group">
+          <label>SPECIALTIES: </label>
+       
+          <select id="type" name="type" class="form-control selectpicker" [(ngModel)]="vete.specialties" #type="ngModel" multiple>
+            <option *ngFor="let especi of especialidades" [ngValue]="especi">
+              {{especi.name}}
+            </option>
+            
+          </select>
+        
+        </div>
+        
+    </form>
+    <button class="btn btn-primary" (click)="anadeMod()">{{boton}}</button>
+   
+    <button class="btn btn-secondary" routerLink="/vets">Cancelar</button>
+</div>
+
+

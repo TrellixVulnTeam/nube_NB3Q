@@ -1,0 +1,47 @@
+<h2>Formulario del Alumn@</h2>
+
+<div class="container">
+    <form class="form-horizontal  m-3" #registerForm="ngForm">
+        <div class="form-group">
+            <label>Nombre: </label>
+            <input type="text" class="form-control" required [(ngModel)]="alumno.NOMBRE" name="nombre" #nombre="ngModel">
+            <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+                El nombre es obligatorio
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Apellidos: </label>
+            <input type="text" class="form-control" required [(ngModel)]="alumno.APELLIDOS" name="apellidos" #apellidos="ngModel">
+            <div [hidden]="apellidos.valid || apellidos.pristine" class="alert alert-danger">
+                Los apellidos son obligatorios
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Sexo: </label>
+            <select id="sexosel" name="sexo" class="form-control" [(ngModel)]="sexi" #sexo="ngModel" required>
+                <option *ngFor="let sex of sexos" [ngValue]="sex" >
+                    {{sex.NOMBRE}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Fecha Nacimiento: </label>
+            <input type="date" class="form-control" required [(ngModel)]="alumno.FECHA_NACIMIENTO" name="fecha"
+                #fecha="ngModel">
+            <div [hidden]="fecha.valid || fecha.pristine" class="alert alert-danger">
+                La fecha es obligatoria
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Estado Civil: </label>
+            <select id="type" name="estado" class="form-control" [(ngModel)]="ec" #estado="ngModel" required>
+                <option *ngFor="let estado of estados" [ngValue]="estado" required>
+                    {{estado.NOMBRE}}
+                </option>
+            </select>
+        </div>
+    </form>
+    <button class="btn btn-primary" (click)="anadeMod()" [disabled]=!registerForm.valid>{{boton}}</button>
+
+    <button class="btn btn-secondary" routerLink="/alumnos-list">Cancelar</button>
+</div>

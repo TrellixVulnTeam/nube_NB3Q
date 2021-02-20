@@ -1,0 +1,16 @@
+
+<div class="container">
+    <h2>Pet Types</h2>
+<table>
+   
+    <tr *ngFor="let tipo of tipos">
+        <td>
+            <input type="text"  class="form-control" [(ngModel)]="tipo.name" name="nombre" readonly>
+        </td>
+        <td>
+            <button class="btn btn-secondary">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+        </td>
+    </tr>
+</table>
+</div>

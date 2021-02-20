@@ -1,0 +1,46 @@
+<h2>Form Pet</h2>
+
+<h1>{{boton}}</h1>
+
+<div class="container">
+    <form class="form-horizontal  m-3" #registerForm="ngForm">
+        <div class="form-group">
+            <label>OWNER: </label>
+            <input type="text" class="form-control" required [(ngModel)]="nombreProp" name="nombre" readonly>
+            <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+              El owner es obligatorio
+            </div>
+          </div>
+        <div class="form-group">
+          <label>NAME: </label>
+          <input type="text" class="form-control" required [(ngModel)]="pet.name" name="name" #nombre="ngModel">
+          <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+            El name es obligatorio
+          </div>
+        </div>
+        <div class="form-group">
+          <label>BIRTH DATE: </label>
+          <input type="date" class="form-control" required [(ngModel)]="pet.birthDate" name="apellidos" #apellidos="ngModel">
+          <div [hidden]="apellidos.valid || apellidos.pristine" class="alert alert-danger">
+            El birth date es obligatorio
+          </div>
+        </div>
+           
+        <div class="form-group">
+          <label>TYPE: </label>
+       
+          <select id="type" name="type" class="form-control" [(ngModel)]="pet.type" #type="ngModel">
+            <option *ngFor="let type of pet_types" [ngValue]="type">
+              {{type.name}}
+            </option>
+            
+          </select>
+        
+        </div>
+        
+    </form>
+    <button class="btn btn-primary" (click)="anadeMod()">{{boton}}</button>
+   
+    <button class="btn btn-secondary" routerLink="/owners">Cancelar</button>
+</div>
+

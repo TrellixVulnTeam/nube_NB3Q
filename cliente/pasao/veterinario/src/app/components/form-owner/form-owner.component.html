@@ -1,0 +1,44 @@
+<h1>{{boton}}</h1>
+
+<div class="container-fluid">
+    <form class="form-horizontal  m-3" #registerForm="ngForm">
+        <div class="forms-group">
+          <label>NOMBRE: </label>
+          <input type="text" class="form-control" required [(ngModel)]="owner.firstName" name="nombre" #nombre="ngModel">
+          <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+            El Nombre es obligatorio
+          </div>
+        </div>
+        <div class="forms-group">
+          <label>APELLIDOS: </label>
+          <input type="text" class="form-control" required [(ngModel)]="owner.lastName" name="apellidos" #apellidos="ngModel">
+          <div [hidden]="apellidos.valid || apellidos.pristine" class="alert alert-danger">
+            El Apellido es obligatorio
+          </div>
+        </div>
+        <div class="forms-group">
+          <label>DIRECCIÓN: </label>
+          <input type="text" class="form-control" required [(ngModel)]="owner.address" name="direccion" #direccion="ngModel">
+          <div [hidden]="direccion.valid || direccion.pristine" class="alert alert-danger">
+            La Dirección es obligatoria
+          </div>
+        </div>
+        <div class="forms-group">
+          <label>CIUDAD: </label>
+          <input type="text" class="form-control" required [(ngModel)]="owner.city" name="ciudad" #ciudad="ngModel">
+          <div [hidden]="ciudad.valid || ciudad.pristine" class="alert alert-danger">
+            La Ciudad es obligatoria
+          </div>
+        </div>
+        <div class="forms-group">
+          <label>TELÉFONO: </label>
+          <input type="text" class="form-control" required [(ngModel)]="owner.telephone" name="telefono" #telefono="ngModel">
+          <div [hidden]="telefono.valid || telefono.pristine" class="alert alert-danger">
+            El Teléfono es obligatorio
+          </div>
+        </div>
+    </form>
+    <button class="btn btn-primary" (click)="anadeMod()">{{boton}}</button>
+   
+    <button class="btn btn-secondary" routerLink="/owners">Cancelar</button>
+</div>

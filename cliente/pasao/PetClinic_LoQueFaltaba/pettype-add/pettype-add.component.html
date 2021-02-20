@@ -1,0 +1,17 @@
+<h4>New Pet Type</h4>
+<form id="pettype" class="form-horizontal" (ngSubmit)="onSubmit(pettypeForm.value)" #pettypeForm="ngForm">
+  <div class="form-group" hidden="true">
+    <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="pettype.id" name="id" />
+  </div>
+  <div class="form-group has-feedback">
+    <div class="form-group row">
+      <label class="col-1 control-label">Name</label>
+      <div class="col-6">
+        <input id="name" name="name" class="form-control" type="text" [(ngModel)]="pettype.name" />
+      </div>
+      <div class="col-4">
+        <button class="btn btn-default" type="submit">Save</button>
+      </div>
+    </div>
+  </div>
+</form>

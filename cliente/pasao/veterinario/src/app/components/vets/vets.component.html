@@ -1,0 +1,21 @@
+<div class="container">
+    <h3>VETS</h3>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Specialties</th>
+    </tr>
+    <tr *ngFor="let vet of vets">
+        <td>{{vet.firstName}} {{vet.lastName}}</td>
+        <td>
+            <ul class="list-unstyled" *ngFor="let especi of vet.specialties">
+                <li>{{especi.name}}</li>
+            </ul>
+        </td>
+        <td>
+            <button class="bg-success" (click)="iraModVet(vet.id)">Edit</button>
+            <button class="bg-danger" (click)="borraVet(vet.id)">Delete</button>
+        </td>
+    </tr>
+</table>
+</div>

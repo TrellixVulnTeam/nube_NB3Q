@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Pets and Visit</h1>
+    <table class="table">
+        <tr>
+            <th>Name:</th>
+            <th>Visit Date:</th>
+            <th>Description:</th>
+            <th>Actions:</th>
+        </tr>
+        <tr *ngFor="let pet of pets">
+            <td>{{pet.name}}</td>
+        </tr>
+        <tr>
+            <th>Birth Date</th>
+        </tr>
+        <tr *ngFor="let pet of pets">
+            <td>{{pet.birthDate}}</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+        </tr>
+        <tr *ngFor="let pet of pets">
+            <td>{{pet.typeName}}</td>
+        </tr>
+    </table>
+</div>
+

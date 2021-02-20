@@ -1,0 +1,42 @@
+<h2>Form Visit</h2>
+
+<h1>{{boton}}</h1>
+
+<div class="container">
+
+    <table class="table">
+        <tr>
+            <th>Name:</th>
+            <th>Birth Date:</th>
+            <th>Type:</th>
+        </tr>
+        <tr *ngIf="mascota.type!=null">
+            <td>{{mascota.name}}</td>
+            <td>{{mascota.birthDate}}</td>
+            <td>{{mascota.type.name}}</td>
+        </tr>
+    </table>
+    <form class="form-horizontal  m-3" #registerForm="ngForm">
+  
+        <div class="form-group">
+          <label>DATE: </label>
+          <input type="date" class="form-control" required [(ngModel)]="visit.visitDate" name="date" #date="ngModel">
+          <div [hidden]="date.valid || date.pristine" class="alert alert-danger">
+            El campo date es obligatorio
+          </div>
+        </div>
+           
+        <div class="form-group">
+            <label>DESCRIPTION: </label>
+            <input type="text" class="form-control" required [(ngModel)]="visit.description" name="description" #description="ngModel">
+            <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+              El description es obligatorio
+            </div>
+          </div>
+        
+    </form>
+    <button class="btn btn-primary" (click)="anadirModificar(visit)">{{boton}}</button>
+   
+    <button class="btn btn-secondary" routerLink="/owners">Cancelar</button>
+</div>
+

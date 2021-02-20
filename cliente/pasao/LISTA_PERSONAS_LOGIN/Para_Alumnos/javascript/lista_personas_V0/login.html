@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Ejercicio Listado Personas. AJAX</title>
+    <script type="text/javascript">
+		
+			
+			
+			//  Creamos el objeto AJAX:
+      var peticion_http = new XMLHttpRequest();
+			
+      function cargaContenido(url, metodo, funcion, parametros) {    
+        if (peticion_http) {
+          peticion_http.onreadystatechange = funcion;
+          peticion_http.open(metodo, url);
+					
+					peticion_http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			//		peticion_http.setRequestHeader("Content-Type", "application/json");	
+			//		peticion_http.setRequestHeader("Authorization", "Bearer " + miToken);
+			
+          peticion_http.send(parametros);
+        }
+      }
+
+      
+      function crearQuery(){
+				var res =  {
+					servicio: "inicio_sesion",
+					email: document.querySelector("#email").value,
+					clave: document.querySelector("#clave").value
+				}
+				//  console.log(res);
+				return res;
+			}
+      
+      function disparoAjax() {
+        var url = "login.php";
+				//  Le pasamos los parámetros (el json) por post:
+				var pa = JSON.stringify(crearQuery()); 
+        cargaContenido(url, "POST", respuesta, pa) 
+      }
+
+			
+			function respuesta(){
+				if ((peticion_http.readyState == 4) && (peticion_http.status == 200)) {
+					var res = JSON.parse(peticion_http.responseText);
+					console.log(res);
+					if ((res.estado) && (res.estado == "NO")) {
+						alert("Error. Usuario y/o clave incorrectos");
+					} else {
+						//  Login positivo. Guardamos en el localStorage:
+						localStorage.nombreUsuario = res.nombre + " " + res.apellidos;
+						localStorage.JWT = res.JWT;
+						//  Redireccionamos:
+						location.href="lista_personas.html";
+					}
+				}
+			}
+			
+
+      window.onload = function() {
+        document.getElementById("btEnviar").onclick = disparoAjax;
+      }
+			
+    </script>
+  </head>
+  <body>
+    <h1>Registro de Usuarios</h1>
+    <form>
+      <label for="email">EMAIL: </label>
+      <input type="text" id="email" name="email" value="rigo@mail.com" />
+      
+      <br/>
+      <label for="clave">CLAVE:</label>
+      <input type="text" id="clave" name="clave" value="" />
+      <br/>
+      <br/>
+      <br/>
+      <input type="button" value="ENVIAR" id="btEnviar" />
+    </form>
+
+  </body>
+</html>

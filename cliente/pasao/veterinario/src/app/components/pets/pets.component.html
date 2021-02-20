@@ -1,0 +1,21 @@
+<table [hidden]="delete_success" class="table table-striped">
+    <tr>
+        <td valign="top">
+            <dl class="dl-horizontal">
+                <dt>Name:</dt>
+                <dd>{{pet.name}}</dd>
+                <dt>Birth Date</dt>
+                <dd>{{pet.birthDate}}</dd>
+                <dt>Type</dt>
+                <dd *ngIf="!delete_success">{{pet.typeName}}</dd>
+
+                <button class="btn btn-default btCancelar" type="button" (click)="eliminarPet(pet.id)">Del</button>
+                <button class="btn btn-default btCancelar" type="button" (click)="irAmodPet()">Mod</button>
+                <button class="btn btn-default btCancelar" type="button" routerLink="/form-visit-add/{{pet.id}}">Add Visit</button>
+            </dl>
+        </td>
+        <td valign="top">
+            <app-visit-list [visits]="pet.visits" [mascoti]="pet" (eliminar)="actualizaVisitsEliminados($event)"></app-visit-list>
+        </td>
+    </tr>
+</table>

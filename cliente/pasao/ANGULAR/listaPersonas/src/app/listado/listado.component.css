@@ -1,0 +1,41 @@
+/* 
+#formPersonas {
+    position: fixed;
+    top: 70px;
+    left: 100px;
+    padding: 1.5em;
+    background-color: indianred;
+    border: solid 2px red;
+    border-radius: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+    color: white;
+  }
+
+  #formPersonas label,
+  input {
+    margin: 0.3em;
+  }
+
+  .muestra {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  table {
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  th {
+    background-color: limegreen;
+    color: white;
+    text-shadow: grey 2px 1px;
+    padding: 0.3em;
+  }
+
+  td {
+    background-color: palegreen;
+    padding: 0.3em;
+  } */

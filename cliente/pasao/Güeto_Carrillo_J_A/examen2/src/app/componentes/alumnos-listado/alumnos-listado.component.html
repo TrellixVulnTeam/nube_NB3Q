@@ -1,0 +1,28 @@
+<h2>Listado de alumn@s</h2>
+<button routerLink="/alumno-form">Añadir alumn@</button>
+<br><br>
+<table *ngIf="alumnos">
+    <thead>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>APELLIDOS</th>
+        <th>SEXO</th>
+        <th>FECHA_NACIMIENTO</th>
+        <th>ESTADO_CIVIL</th>
+        <th>Del.</th>
+        <th>Mod.</th>
+    </thead>
+    <tbody *ngFor="let alumno of alumnos">
+        <td>{{alumno.ID}}</td>
+        <td>{{alumno.NOMBRE}}</td>
+        <td>{{alumno.APELLIDOS}}</td>
+        <td>{{alumno.SEXO}}</td>
+        <td>{{alumno.FECHA_NACIMIENTO | date:"dd-MM-yyyy"}}</td>
+        <td>{{alumno.ESTADO_CIVIL}}</td>
+        <td><button>Borrar</button></td>
+        <td><button routerLink="/alumno-form-mod/{{alumno.ID}}">Modificar</button></td>
+    </tbody>
+    <tfoot>
+        <th colspan="6">Total {{numAlumnos}} alumnos.</th>
+    </tfoot>
+</table>

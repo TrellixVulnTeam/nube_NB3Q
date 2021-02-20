@@ -1,0 +1,16 @@
+
+<div class="container">
+    <h2>Specialties</h2>
+<table>
+   
+    <tr *ngFor="let espe of especialidades">
+        <td>
+            <input type="text"  class="form-control" [(ngModel)]="espe.name" name="nombre" readonly>
+        </td>
+        <td>
+            <button class="btn btn-secondary">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+        </td>
+    </tr>
+</table>
+</div>

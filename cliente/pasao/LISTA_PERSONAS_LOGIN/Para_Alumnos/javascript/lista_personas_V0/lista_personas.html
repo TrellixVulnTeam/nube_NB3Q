@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Ejercicio Listado Personas. AJAX</title>
+    <script type="text/javascript">
+		
+			//  Lo primero. Comprobamos que existe el JWT (y tiene el formato válido):
+			if ((!localStorage.JWT) || ((localStorage.JWT) && (localStorage.JWT.split(".").length != 3))) {
+				limpiarEIrse();
+			}
+			function limpiarEIrse() {
+				localStorage.JWT = "";  // Borramos lo que pudiera haber del JWT.
+				localStorage.nombreUsuario = "";  //  y también el nombre.
+				alert("Login no realizado, por favor haz login");
+				location.href="login.html";  //  Redireccionamos, nos vamos!!!
+			}
+			
+			
+			
+		
+			function Crea_Fila(aCol) {
+      	var fila =  document.createElement("tr");
+      	var col; var cont;
+      	for (var i in aCol) {
+      		col = document.createElement("td");
+      		cont = document.createTextNode(aCol[i]);
+      		col.appendChild(cont);
+      		fila.appendChild(col);
+      	}
+      	return fila;
+      }
+      
+      function LlenaTabla(filasJSON, cuerpoTabla) {
+				var aTabla = JSON.parse(filasJSON);
+      	var fila;
+      	for (var i=0; i < aTabla.length; i++) {
+      		fila = Crea_Fila(aTabla[i]);
+      		cuerpoTabla.appendChild(fila);
+      	}
+      }
+			
+			
+			//  Creamos el objeto AJAX:
+      var peticion_http = new XMLHttpRequest();
+			
+      function cargaContenido(url, metodo, funcion, parametros) {    
+        if (peticion_http) {
+          peticion_http.onreadystatechange = funcion;
+          peticion_http.open(metodo, url);
+					peticion_http.setRequestHeader("Content-Type", "application/json");	
+					peticion_http.setRequestHeader("Authorization", "Bearer " + localStorage.JWT);
+          peticion_http.send(parametros);
+        }
+      }
+
+      function MuestraPersonas() {
+        if ((peticion_http.readyState == 4) && (peticion_http.status == 200)) {
+				//	console.log(peticion_http.responseText);
+					var res = JSON.parse(peticion_http.responseText);
+					if ((res.sesion) && (res.sesion == "NO")) {
+						//  No se ha validado el JWT, nos vamos al login:
+						limpiarEIrse();
+					}
+					document.getElementById("filas_tabla").innerHTML = "";
+					LlenaTabla(peticion_http.responseText , document.getElementById("filas_tabla"));
+				}	
+      }
+      
+      function disparoAjax() {
+				var url = "servidor.php";
+				var pa = JSON.stringify({
+					servicio: "insertar",
+					dni: document.querySelector("#dni").value,
+					nombre: document.querySelector("#nombre").value,
+					apellidos: document.querySelector("#apellidos").value
+				});
+			//	console.log(pa);
+        cargaContenido(url, "POST", MuestraPersonas, pa) 	
+      }
+
+      window.onload = function() {
+				cargarTabla();
+        document.getElementById("btAnade").onclick = disparoAjax;
+				document.getElementById("btCerrarSesion").onclick = cerrarSesion;
+      }
+			
+			function cargarTabla() {
+				var url = "servidor.php";
+				var pa = JSON.stringify({
+					servicio: "listar"
+				});
+        cargaContenido(url, "POST", MuestraPersonas, pa);
+			}
+			
+			function cerrarSesion(){
+				if (confirm("¿Deseas cerrar sesión?")) {
+					localStorage.JWT = "";  // Borramos lo que pudiera haber del JWT.
+					localStorage.nombreUsuario = "";  //  y también el nombre.
+					location.href="login.html";  //  Redireccionamos, nos vamos!!!
+				}
+			}
+
+    </script>
+  </head>
+  <body>
+    <h1>Registro de Usuarios</h1>
+		<p style="text-align: center;">
+			<input type="button" value="Cerrar Sesión" id="btCerrarSesion" />
+		</p>
+
+    <form>
+      <label for="dni">DNI:</label>
+      <input type="text" id="dni" name="dni" value="27473339T" />
+      <span id="infoDNI"> </span>
+      <br/>
+      <label for="nombre">NOMBRE:</label>
+      <input type="text" id="nombre" name="nombre" value="Marco Elio" />
+      <br/>
+      <label for="apellidos">APELLIDOS:</label>
+      <input type="text" id="apellidos" name="apellidos" value="García Gomariz" />
+      <br/>
+
+      <br/>
+     
+      <table id="tabla_personas" border="1">
+        <tr>
+          <th>ID</th>
+          <th>DNI</th>
+          <th>NOMBRE</th>
+          <th>APELLIDOS</th>
+        </tr>
+        
+        <tbody id="filas_tabla">
+        
+        </tbody>
+      </table>
+
+      <br/>
+      <br/>
+      <input type="button" value="AÑADIR" id="btAnade" />
+    </form>
+
+  </body>
+</html>

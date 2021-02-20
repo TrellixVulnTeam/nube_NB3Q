@@ -1,0 +1,83 @@
+<h4>
+    Nueva persona</h4>
+<div>
+    <p>Añadir nueva persona</p>
+
+    <form class="form-horizontal" #personaForm="ngForm" (ngSubmit)="anadePersona(personaForm.value)">
+        <div class="form-group">
+            <label>DNI: </label>
+            <input type="text" class="form-control" required [(ngModel)]="persona.dni" name="dni" #dni="ngModel">
+            <div [hidden]="dni.valid || dni.pristine" class="alert alert-danger">
+                El DNI es obligatorio
+            </div>
+        </div>
+        <div class="form-group">
+            <label>NOMBRE: </label>
+            <input type="text" class="form-control" required [(ngModel)]="persona.nombre" name="nombre" #nombre="ngModel">
+            <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+                El Nombre es obligatorio
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>APELLIDOS: </label>
+            <input type="text" class="form-control" required [(ngModel)]="persona.apellidos" name="apellidos" #apellidos="ngModel">
+            <div [hidden]="apellidos.valid || apellidos.pristine" class="alert alert-danger">
+                Los Apellidos son obligatorios
+            </div>
+        </div>
+
+
+        <div>
+            <button class="btn btn-primary mr-3" type="submit" [disabled]="!personaForm.valid">
+				{{boton}}
+			</button>
+            <button type="button" class="btn btn-primary" routerLink="/">Cancelar</button>
+            <!--
+				Si queremos que mantenga los parámetros de la ruta sería así:
+				 <button type="button" class="btn btn-primary" routerLink="../">Cancelar</button>
+			-->
+        </div>
+
+    </form>
+
+</div>
+<!--
+<div class="container">
+<form id="formPersonas">
+    <fieldset>
+      <legend id="legend">Añadir Personas</legend>
+      <label for="dni">DNI:</label>
+      <input type="text" id="dni" name="dni" [(ngModel)]="persona.dni"/>
+      <span id="infoDNI"> </span>
+      <br />
+      <label for="nombre">NOMBRE:</label>
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="persona.nombre"/>
+      <br />
+      <label for="apellidos">APELLIDOS:</label>
+      <input type="text" id="apellidos" name="apellidos" [(ngModel)]="persona.apellidos"/>
+      <br />
+      <br />
+
+      <input type="button" value="{{boton}}" name="boton" id="btAnade" (click)="anadePersona()"/>
+      <button id="cancelar" routerLink="">Cancelar</button>
+    </fieldset>
+  </form>
+</div>
+-->
+<h2>Registro persona</h2>
+
+<fieldset>
+    <legend>{{accion}} usuario </legend>
+    <label for="dni">DNI:</label>
+    <input type="text" [(ngModel)]="persona.dni" size="10" maxlength="9" />
+    <br />
+    <label for="nombre">NOMBRE:</label>
+    <input type="text" [(ngModel)]="persona.nombre" />
+    <br />
+    <label for="apellidos">APELLIDOS:</label>
+    <input type="text" [(ngModel)]="persona.apellidos" />
+    <br />
+    <button (click)="addmod()">{{accion}}</button>
+    <button routerLink="/">Cancelar</button>
+</fieldset>

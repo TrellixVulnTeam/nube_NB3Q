@@ -1,0 +1,31 @@
+
+  <div class="container">
+
+  <button routerLink="/personas-add/-1" class="btn btn-secondary mt-2">Añadir con ruta</button>
+  <br>
+  <br>
+  <table id="tabla_personas" border="1" class="table-striped table-hover">
+    <tr>
+      <th>ID</th>
+      <th>DNI</th>
+      <th>NOMBRE</th>
+      <th>APELLIDOS</th>
+      <th>MODIFICAR</th>
+      <th>BORRAR</th>
+    </tr>
+
+    <tbody id="filas_tabla">
+        <tr *ngFor="let persona of listaPer;index as i"> 
+            <td>{{persona.id}}</td>
+            <td>{{persona.dni}}</td>
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellidos}}</td>
+            <td><button (click)=modifica(persona.id)>Modificar</button></td>
+            <td><button (click)=borraPersonas(persona.id)>Eliminar</button></td>
+        </tr>
+    </tbody>
+  </table>
+  <br>
+<button (click)="iraNuevaPersona()" class="btn btn-danger">Añadir programaticamente</button>
+    
+</div>

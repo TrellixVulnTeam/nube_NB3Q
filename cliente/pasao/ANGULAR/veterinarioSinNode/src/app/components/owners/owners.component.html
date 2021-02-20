@@ -1,0 +1,27 @@
+<h3>OWNERS</h3>
+<button (click)="mostrarForm()" routerLink="/form-owner/-1">Añadir Owner</button>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let owner of owners">
+        <td><a routerLink="/owners/{{owner.id}}">{{owner.firstName}}</a></td>
+        <td><a routerLink="/owners/{{owner.id}}">{{owner.lastName}}</a></td>
+        <td><a routerLink="/owners/{{owner.id}}">{{owner.city}} </a></td>
+      </tr>
+ 
+    </tbody>
+  </table>
+
+<ul>
+    <li *ngFor="let owner of owners">
+        <a routerLink="/owners/{{owner.id}}">{{owner.firstName}} {{owner.lastName}} - {{owner.city}} </a>
+        <button (click)="eliminar(owner.id)">Del</button> <button (click)="irAmod(owner.id)">Mod</button>
+    </li>
+</ul>

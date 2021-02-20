@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Details owner:</h1>
+    <table class="table">
+        <tr>
+            <th>Nombre:</th>
+            <td>{{detalles.firstName}} {{detalles.lastName}}</td>
+        </tr>
+        <tr>
+            <th>Dirección:</th>
+            <td>{{detalles.address}}</td>
+        </tr>
+        <tr>
+            <th>Ciudad:</th>
+            <td>{{detalles.city}}</td>
+        </tr>
+        <tr>
+            <th>Teléfono:</th>
+            <th>{{detalles.telephone}}</th>
+        </tr>
+        <tr>
+            <th>Animalicos:</th>
+            <td>{{detalles.pets}}</td>
+        </tr>
+    </table>
+
+    <button class="btn btn-primary mr-5" routerLink="/owners">Volver atrás</button>
+
+    <button class="btn btn-primary mr-5 ml-5" (click)="eliminar(detalles.id)">Eliminar Owner</button>
+
+    <button class="btn btn-primary mr-5 ml-5" (click)="irAmod(detalles.id)">Editar Owner</button>
+
+    <button class="btn btn-primary mr-5 ml-5">Añadir Pet</button>
+
+    <div *ngIf="detalles.pets != undefined">
+        <app-pets-and-visit [ide]="detalles.id"></app-pets-and-visit>
+    </div>
+</div>
