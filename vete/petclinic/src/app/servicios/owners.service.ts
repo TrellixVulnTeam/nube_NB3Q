@@ -1,5 +1,4 @@
-import { environment } from './../../environments/environment';
-import { Owner } from './../models/owner';
+import { Owner } from './../modelos/owners';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,8 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OwnersService {
 
-  //private url: string = "http://localhost/cliente/provinciaslocalidades/serviciosWeb/petclinic/servicios.php"
-  private url: string = environment.API_URL;
+  private url: string = "http://localhost/cliente/provinciaslocalidades/serviciosWeb/petclinic/servicios.php"
 
   constructor(private http: HttpClient) { }
 
@@ -17,10 +15,8 @@ export class OwnersService {
     let pa= JSON.stringify({
       accion: "ListarOwners"
     });
-    //get:
-    //return this.http.post<any[]>(this.url);
-    //post:
-    return this.http.post<Owner[]>(this.url, pa);
+
+    return this.http.post<any[]>(this.url, pa);
   }
 
   getOwnerId(id:number){

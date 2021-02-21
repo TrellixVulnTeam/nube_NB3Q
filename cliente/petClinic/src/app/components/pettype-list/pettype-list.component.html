@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody class="tablapets">
-        <tr *ngFor="let p of pettypes">
+        <tr *ngFor="let p of pettypes; let element_id=index">
             <td>
                 <input [id]=element_id [readonly]="editando(element_id)" #name type="text" class="form-control" [(ngModel)]="p.name" name="pettype_name">
             </td>

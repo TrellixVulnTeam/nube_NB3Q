@@ -1,0 +1,22 @@
+<h1>TABLA PROPIETARIOS</h1>
+<table border="1.5" class="table">
+    <thead>
+        <th>NOMBRE</th>
+        <th>APELLIDOS</th>
+        <th>DIRECCIÓN</th>
+        <th>CIUDAD</th>
+        <th>TELEFONO</th>
+        <th>DEL</th>
+        <th>EDIT</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of owners">
+            <td><a routerLink="/detail-owner/{{p.id}}">{{p.firstName}}</a></td>
+            <td>{{p.lastName}}</td>
+            <td>{{p.address}}</td>
+            <td>{{p.city}}</td>
+            <td>{{p.telephone}}</td>
+
+        </tr>
+    </tbody>
+</table>

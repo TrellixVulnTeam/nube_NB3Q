@@ -1,46 +1,37 @@
-import { PetType } from "../../models/pettype";
-import { environment } from '../../environments/environment';
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Pettype } from './../../models/pettype';
+import { PetTypesService } from './../../servicios/pet-types.service';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-pettype-add',
+  templateUrl: './pettype-add.component.html',
+  styleUrls: ['./pettype-add.component.css']
 })
-export class PetTypeService {
+export class PettypeAddComponent implements OnInit {
 
-  private url = environment.API_URL;
+  public pettype: Pettype;
 
-  constructor(private http: HttpClient) {
+  @Output() onNuevo = new EventEmitter<Pettype>();
+
+  constructor(private servicioPetType: PetTypesService) {
+    this.pettype = <Pettype>{};
+  }
+
+  ngOnInit(): void {
 
   }
 
-  addPetType(type:PetType){
-    let pa = JSON.stringify({
-      accion: "AnadePettype",
-      pettype: type
-    });
+  onSubmit(pettype: Pettype){
+    this.pettype.id = null;
 
-    return this.http.post<PetType>(this.url, pa)
+    this.servicioPetType.addPetType(pettype).subscribe(nuevoTipo => {
+      console.log(nuevoTipo);
+
+      this.pettype = nuevoTipo;
+      this.onNuevo.emit(this.pettype);
+    },
+      error => console.log(error));
   }
 
-  deletePetType(id:number){
-    let pa = JSON.stringify({
-      accion: "BorraPettype",
-      id: id
-    });
 
-    return this.http.post<PetType>(this.url, pa)
-  }
-
-  /*
-  updatePetType(type:PetType){
-    let pa = JSON.stringify({
-      accion: "AnadePettype",
-      pettype: type
-    });
-
-    return this.http.post<PetType>(this.url, pa)
-  } */
 }
-
-

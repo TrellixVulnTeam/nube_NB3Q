@@ -1,0 +1,2 @@
+crear componente, poner la ruta en el app.routing, crear el modelo, crear el servicio, ts y html
+

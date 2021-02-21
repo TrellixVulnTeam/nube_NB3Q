@@ -9,8 +9,8 @@ import { OwnersComponent } from './components/owners/owners.component';
 import { DetailOwnerComponent } from './components/detail-owner/detail-owner.component';
 import { FormOwnersComponent } from './components/form-owners/form-owners.component';
 import { FormsModule } from '@angular/forms';
-import { PettypeAddComponent } from './components/pettype-add/pettype-add.component';
 import { PettypeListComponent } from './components/pettype-list/pettype-list.component';
+import { PettypeAddComponent } from './components/pettype-add/pettype-add.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { PettypeListComponent } from './components/pettype-list/pettype-list.com
     OwnersComponent,
     DetailOwnerComponent,
     FormOwnersComponent,
-    PettypeAddComponent,
     PettypeListComponent,
+    PettypeAddComponent,
   ],
   imports: [
     BrowserModule,
