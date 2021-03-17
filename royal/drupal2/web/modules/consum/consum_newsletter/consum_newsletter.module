@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function consum_newsletter_theme() {
+  return [
+    'consum_newsletter' => [
+      'variables' => [
+        'orientation' => NULL,
+        'heigth' => NULL,
+      ],
+      'template' => 'block--consum-newsletter-block',
+    ],
+  ];
+}

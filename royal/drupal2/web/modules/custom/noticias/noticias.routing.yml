@@ -1,0 +1,15 @@
+noticias.description:
+  path: '/noticias/example'
+  defaults:
+    _controller: '\Drupal\noticias\Controller\NoticiasController::description'
+    _title: 'Noticias'
+  requirements:
+    _permission: 'access config'
+
+noticias.noticia:
+  path: '/noticias/noticia/{idNoticia}/{vista}'
+  defaults:
+    _controller: '\Drupal\noticias\Controller\NoticiasController::getNoticia'
+    _title: 'Detalle de la noticia'
+  requirements:
+    _permission: 'access content'

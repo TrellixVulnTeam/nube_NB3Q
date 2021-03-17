@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function consum_sendgrid_theme() {
+  return [
+    'consum_sendgrid' => [
+      'variables' => [
+        'orientation' => NULL,
+        'heigth' => NULL,
+      ],
+      'template' => 'block--consum-sendgrid-block',
+    ],
+  ];
+}

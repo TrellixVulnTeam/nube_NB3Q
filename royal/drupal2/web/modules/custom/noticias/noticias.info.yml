@@ -1,0 +1,8 @@
+name: noticias
+type: module
+description: Consum Connection SendGrid module
+core: 8.x
+package: 'custom'
+version: 1.0
+dependecies:
+  - block

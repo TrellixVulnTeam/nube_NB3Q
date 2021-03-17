@@ -1,0 +1,5 @@
+name: 'Consum Newsletter'
+type: module
+description: 'Consum Custom Newsletter module'
+core: 8.x
+package: 'Consum'

@@ -1,0 +1,78 @@
+{#
+    Variables
+  social_network: social network name
+  social_network_id: social network id
+  customHeight: customHeight
+  border: image border
+  url_instagram: ID url Instagram
+#}
+{% set sortCustomHeight = customHeight-40 %}
+{% set sortHeight = customHeight-100 %}
+{% set superSortHeight = customHeight-140 %}
+
+
+<div id="social-network-block" class="p-4 bg-white" style="{% if customHeight %} height:{{ sortCustomHeight }}px;{% endif %}
+{% if border %} border-radius: {{ border }};{% endif %} padding-top: 15px;">
+
+  {% if social_network == 'twitter' %}
+
+    <span class="btn-ci ci-consum ml-2 mb-2 float-left" style="background-size: 100%; width: 30px;height: 30px;"></span>
+    <span class="btn-ci ci-twitter mr-2 mb-2 float-right" style=" width: 25px;height: 25px;"></span>    
+    
+    <a {% if customHeight %} data-height="{{ sortHeight }}" {% else %} data-height="555" {% endif %} 
+    class="twitter-timeline" href="https://twitter.com/{{ social_network_id }}">
+      Tweets by @{{ social_network_id }}
+    </a>
+    
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+ 
+  {% elseif social_network == 'facebook' %}
+    
+    <span class="btn-ci ci-consum ml-2 mb-2 float-left" style="background-size: 100%; width: 30px;height: 30px;"></span>
+    <span class="btn-ci ci-facebook mr-2 mb-2 float-right" style=" width: 25px;height: 25px;"></span>
+    
+    <div class="fb-page" data-href="https://www.facebook.com/{{ social_network_id }}" data-tabs="timeline" 
+    data-width="" {% if customHeight %} data-height="{{ superSortHeight  }}" {% else %} data-height="555" {% endif %}
+    data-small-header="false" data-adapt-container-width="true" 
+    data-hide-cover="false" data-show-facepile="true">
+      <blockquote cite="https://www.facebook.com/{{ social_network_id }}" class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/{{ social_network_id }}">Consum</a>
+      </blockquote>
+    </div>
+    <div id="fb-root"></div>
+    
+    <script async defer crossorigin="anonymous" 
+    src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0&appId=228240151550855&autoLogAppEvents=1" 
+    nonce="rhmsWpF6">
+    </script>
+  
+  {% elseif social_network == 'instagram' %}
+    
+    <span class="btn-ci ci-consum ml-2 mb-2 float-left" style="background-size: 100%; width: 30px;height: 30px;"></span>
+    <span class="btn-ci ci-instagram mr-2 mb-2 float-right" style=" width: 25px;height: 25px;"></span>
+
+     <script src="https://www.instagram.com/embed.js"></script>
+
+    <blockquote  {% if customHeight %} style="max-height:{{ superSortHeight  }}px;"  {% else %}  style="max-height: 270px;" {% endif %} class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/{{ url_instagram }}/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="13">
+        
+        <div style="padding:16px;">     
+            <a href="https://www.instagram.com/p/{{ url_instagram }}/?utm_source=ig_embed&amp;utm_campaign=loading" target="_blank">   
+            Ver contenido completo      
+            </a>      
+        </div>
+    </blockquote> 
+   
+    
+  {% elseif social_network == 'youtube' %}
+    <span class="btn-ci ci-consum ml-2 mb-2 float-left" style="background-size: 100%; width: 30px;height: 30px;"></span>
+    <span class="btn-ci ci-youtube mr-2 mb-2 float-right" style=" width: 25px;height: 25px;"></span>
+    
+    <iframe class="youtube mt-2" width="100%" height="{{ superSortHeight }}" src="https://www.youtube.com/embed/videoseries?list={{ social_network_id }}" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  {% else %}
+
+    {{ 'NO redes' }}
+  {% endif %}
+
+</div>

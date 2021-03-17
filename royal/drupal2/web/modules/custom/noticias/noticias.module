@@ -1,0 +1,23 @@
+<?php
+
+use Drupal\core\Routing\RouteMatchInterface;
+/**
+ *
+ */
+function noticias_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.noticias':
+      return t('Esta es la inforamción de ayuda de noticias');
+  }
+
+}
+
+function noticias_permission() {
+  return array(
+    'access content' => array(
+        'title' => 'acceso a las noticias',
+        'description' => 'hola',
+    ),
+  );
+}
+
