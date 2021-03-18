@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Template for a block.
+ */
+#}
+{#
+Variables
+  orientation: Newsletter orientation
+  heigth: Heigth of layer image
+#}
+
+{% set col_1_class = "col-md-4 col-sm-12" %}
+{% set col_2_class = "col-md-8 col-sm-12" %}
+{% if orientation == "vertical" %} 
+    {% set col_1_class = "col-12" %}
+    {% set col_2_class = "col-12" %}
+{% endif  %}
+<div class="container-newsletter d-flex align-items-center{% if heigth %} {{heigth}}{% endif %}">
+    <div class="row row-1 d-flex align-items-start">
+        <div class="{{col_1_class}} col--1">
+            <h4>Subscribete a nuestro newsletter</h4>
+        </div>
+        <div class="{{col_2_class}} col--2">
+            {{
+                {
+                    '#type': 'webform',
+                    '#webform': 'newsletter'
+                }
+            }}
+        </div>
+    </div>
+</div>
