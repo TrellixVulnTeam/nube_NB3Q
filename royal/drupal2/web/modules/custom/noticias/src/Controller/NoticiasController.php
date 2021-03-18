@@ -8,12 +8,13 @@ use Drupal\Core\Url;
 class NoticiasController extends ControllerBase {
 
   public function description(){
+
     $url = Url::fromRoute('block.admin_display');
-    $block_admin_links = this->l(this->'Página de administración de bloques', $url);
+    $block_admin_link = $this->l($this->t('Página de administración de bloques'), $url);
 
     $build = array(
       '#type' => 'markup',
-      '#markup' => '<p>Noticias ofrece un bloque en el que se muestran noticias</p><p></p>',
+      '#markup' => $this->t('<p>Noticias ofrece un bloque en el que se muestran noticias' . '</p><p>!block_admin_link</p>', ['!block_admin_link'=> $block_admin_link]),
     );
 
     return $build;
