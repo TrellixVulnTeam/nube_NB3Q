@@ -1,29 +1,21 @@
 <?php
 
-namespace Drupal\consum_newsletter\Plugin\Block;
+namespace Drupal\consum_sendgrid\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
-
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
 /**
- * Defines Newsletter block.
+ * Defines Sendgrid block.
  *
  * @Block(
- *   id = "newsletter-block",
- *   admin_label = @Translation("Newsletter")
+ *   id = "sendgrid-block",
+ *   admin_label = @Translation("SendGrid")
  * )
  */
-class ConsumNewsletterBlock extends BlockBase {
+class ConsumSendGridBlock extends BlockBase {
 
-  /**
-   * {@inheritdoc}
-   */
-  public function defaultConfiguration() {
-    return [
-      'orientation' => 'horizontal',
-      'heigth' => '',
-    ];
-  }
 
   /**
    * {@inheritdoc}
@@ -62,7 +54,6 @@ class ConsumNewsletterBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['orientation'] = $form_state->getValue('orientation');
     $this->configuration['heigth'] = $form_state->getValue('heigth');
   }
 
@@ -71,9 +62,7 @@ class ConsumNewsletterBlock extends BlockBase {
    */
   public function build() {
     return [
-      '#theme' => 'consum_newsletter',
-      '#orientation' => $this->configuration['orientation'],
-      '#heigth' => $this->configuration['heigth'],
+      '#markup' => 'Sendgrid',
     ];
   }
 
