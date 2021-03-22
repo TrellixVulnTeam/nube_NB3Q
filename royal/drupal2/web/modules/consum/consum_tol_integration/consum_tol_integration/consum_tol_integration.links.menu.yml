@@ -1,0 +1,5 @@
+consum_tol.admin_settings_form:
+  title: 'Consum TOL'
+  parent: system.admin_config_system
+  description: 'Configure consum_tol_integration settings'
+  route_name: consum_tol_integration.form

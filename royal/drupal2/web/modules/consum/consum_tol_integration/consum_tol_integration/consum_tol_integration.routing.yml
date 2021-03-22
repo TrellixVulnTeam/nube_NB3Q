@@ -1,0 +1,14 @@
+consum_tol_integration.form:
+  path: '/admin/config/services/tol-integration'
+  defaults:
+    _title: 'TOL integration'
+    _form: '\Drupal\consum_tol_integration\Form\TolConnectionForm'
+  requirements:
+    _permission: 'access content'
+consum_tol_integration.autocomplete.articles:
+    path: '/admin/tol/autocomplete/articles'
+    defaults:
+        _controller: '\Drupal\consum_tol_integration\Controller\AutocompleteArticles::handleAutocomplete'
+        _format: json
+    requirements:
+        _permission: 'access content'

@@ -8,7 +8,6 @@ function consum_sendgrid_theme() {
     'consum_sendgrid' => [
       'variables' => [
         'orientation' => NULL,
-        'heigth' => NULL,
       ],
       'template' => 'block--consum-sendgrid-block',
     ],

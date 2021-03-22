@@ -1,2 +1,4 @@
 consum
 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
+
+no encuentro la manera de enviar nuestro correo desde el formulario directamente a sendgrid pero si podemos enviar un correo de haberse registrado y al enviarlo si llega la dirección de correo a sendgrid

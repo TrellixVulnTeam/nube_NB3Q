@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function consum_tol_integration_theme() {
+  return [
+    'content_tol' => [
+      'variables' => [
+        'link' => NULL,
+        'popup' => NULL,
+        ],
+      'template' => 'block--shoppingcart',
+    ],
+  ];
+}
