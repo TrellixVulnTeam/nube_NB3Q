@@ -35,17 +35,20 @@ class IamTokenConnection {
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function getIamToken(User $user) {
-    $client  = new GuzzleClient();
-    $request = new GuzzleRequest('POST',  $this->config->get('api_iam_endpoint') . '?scope=openid', [
-      "Content-Type" => 'application/x-www-form-urlencoded',
-      "Authorization" => "Basic dlR5dmVzY3FjNDlYM05QNFNJUTdBYzRkTXRRYTprT3NPbUgxSVRTZm5uMFg4aEZmTFBobEZ0Yjhh",
+    $client  = new GuzzleClient();         //$this->config->get('url')
+    $request = new GuzzleRequest('PUT',  'https://api.sendgrid.com/v3/marketing/contacts', [
+      "Content-Type" => 'application/raw',
+      "Authorization" => "Bearer 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",
     ]);
     try {
       $body = [
-        'grant_type' => 'password',
-        'username' => $user->getUsername(),
-        'password' => 'prueba',
-        'client_id' => $this->config->get('api_iam_client_id'),
+        {
+          "contacts": [
+            {
+              "email": $email
+            }
+          ]
+        }
       ];
       $response = $client->send($request, ['timeout' => 30, 'form_params' => $body]);
       $data = json_decode($response->getBody());

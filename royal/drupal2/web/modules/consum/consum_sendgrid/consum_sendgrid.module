@@ -7,7 +7,7 @@ function consum_sendgrid_theme() {
   return [
     'consum_sendgrid' => [
       'variables' => [
-        'orientation' => NULL,
+        
       ],
       'template' => 'block--consum-sendgrid-block',
     ],
