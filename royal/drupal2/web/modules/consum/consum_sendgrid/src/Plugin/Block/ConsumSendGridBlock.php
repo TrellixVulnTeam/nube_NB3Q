@@ -18,10 +18,8 @@ class ConsumSendGridBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    return [
-      '#type' => 'markup',
-      '#markup' => '',
-    ];
+    $connection = new SendGridConnection();
+    $result = $connection->RequestSendGrid('prueba27@gmail.com');
   }
 
 }

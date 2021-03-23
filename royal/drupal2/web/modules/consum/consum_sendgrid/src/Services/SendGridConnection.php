@@ -33,33 +33,18 @@ class SendGridConnection {
     $request = new GuzzleRequest('PUT',  'https://api.sendgrid.com/v3/marketing/contacts', [
       'Content-Type' => 'application/json',
       'Authorization'=> $token,
-      'body' => json_encode(
-        [
-          {
-            "contacts": [
-              {
-                "email": $email
-              }
-            ]
-          }
-        ]
-    )
     ]);
     try { //encode 
-      $body = [
-        {
-          "contacts": [
-            {
-              "email": $email
-            }
-          ]
-        }
-      ];
+      $body = json_encode([
+        "contacts" => [
+          "email" => $email
+        ]
+      ]);
 
       $estado=$request->getStatusCode();
 
       if($estado=='200'){
-        print("Petición realizada correctamente")
+        print("Petición realizada correctamente");
       } 
 
       $response = $client->send($request, ['timeout' => 30, 'form_params' => $body]);
