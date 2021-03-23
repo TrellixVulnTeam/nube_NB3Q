@@ -23,7 +23,7 @@ class IamTokenConnection {
    * ProductsConnection constructor.
    */
   public function __construct() {
-    $this->config = \Drupal::config('consum_iam_mdm.settings');
+    $this->config = \Drupal::config('consum_iam_mdm.settings'); //CAMBIAR
   }
 
   /**
