@@ -34,7 +34,7 @@ class SendGridConnection {
       'Content-Type' => 'application/json',
       'Authorization'=> $token,
     ]);
-    try { //encode 
+    try { 
       $body = json_encode([
         "contacts" => [
           "email" => $email
