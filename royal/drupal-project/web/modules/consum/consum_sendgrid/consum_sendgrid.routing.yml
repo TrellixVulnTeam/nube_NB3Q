@@ -1,0 +1,15 @@
+consum_sendgrid.config_form:
+  path: '/admin/config/services/consum_sendgrid'
+  defaults:
+    _title: 'Consum SendGrid Config'
+    _form: '\Drupal\consum_sendgrid\Form\ConsumSendGridConfigForm'
+  requirements:
+    _permission: 'access content'
+
+consum_sendgrid.form:
+  path: '/consum_sendgrid'
+  defaults:
+    _title: 'Consum SendGrid Form'
+    _form: '\Drupal\consum_sendgrid\Form\ConsumSendGridForm'
+  requirements:
+    _permission: 'access content'
