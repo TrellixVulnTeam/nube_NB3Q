@@ -3,3 +3,12 @@ type: module
 description: 'Consum Import Localoo module'
 core: 8.x
 package: 'Consum'
+dependencies:
+  - migrate
+  - migrate_plus
+  - migrate_tools
+  - config_devel
+config_devel:
+  install:
+    - migrate_plus.migration.products
+#   - migrate_plus.migration.otra_importacion
