@@ -1,0 +1,394 @@
+id: migrate_recetas
+label: 'Migrate Recetas from the xml file'
+
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: simple_xml
+  urls:
+    - 'modules/custom/royal_migrate/sources/RECETAS.xml'
+  # An xpath-like selector corresponding to the items to be imported.
+  item_selector: /select_rmt_nombre_tipo_plato_r_from_rct_r_rct_m_tipoplato_rmt_where_r_id_platip_rmt_id_/DATA_RECORD
+  constants:
+    file_destination: 'public://images/recetas/'
+  ids:
+    title:
+      type: string
+
+  fields:
+
+    -
+      name: field_necesidades_especificas
+      label: 'Common content'
+      selector: necesidades
+
+#    !! @ToDo no encontramos la tabla referenciada "tipo_comida" en la bbdd original
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: tipo_comida
+
+    -
+      name: field_tipo_de_plato
+      label: 'Tipo plato'
+      selector: tipo_plato
+
+    -
+      name: field_tipo_de_dieta
+      label: 'Tipo de preparacion'
+      selector: perfil
+
+#    !! @ToDo puede ser interesante manter la url original?
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: url_amigable
+
+    -
+      name: field_old_id
+      label: 'Old id'
+      selector: id
+    -
+      name: created_time
+      label: 'Fecha de publicacion'
+      selector: fecha_publi
+    -
+      name: title
+      label: 'Nombre'
+      selector: descripcion
+    -
+      name: body
+      label: 'Descripcion'
+      selector: contenido
+    -
+      name: field_num_comensales
+      label: 'Número de comensales'
+      selector: comensales
+    -
+      name: field_estacion
+      label: 'Common content'
+      selector: estacion
+
+#    !! @ToDo hay varias referencias a diferentes categorizaciones en la bbdd original
+#     Hay que revisar cual es la correcta para cada tipo, ya que hay algunas tablas referenciadas que no existen en la bbdd
+    -
+      name: field_tipo_de_comida
+      label: 'Tipo de Comida'
+      selector: tipo_comida
+#      id_platip
+##############################################################
+
+    -
+      name: field_calorias
+      label: 'Calorías'
+      selector: energia
+    -
+      name: field_hidratos_de_carbono
+      label: 'Hidratos de carbono'
+      selector: carbohidratos
+    -
+      name: field_proteinas
+      label: 'Proteinas'
+      selector: proteinas
+    -
+      name: field_grasas
+      label: 'Grasas'
+      selector: grasas
+    -
+      name: field_resumen
+      label: 'Resumen'
+      selector: descripcion_publi
+    -
+      name: field_fibra
+      label: 'Fibra'
+      selector: fibra
+    -
+      name: field_colesterol
+      label: 'Colesterol'
+      selector: colesterol
+    -
+      name: field_sodio
+      label: 'Common content'
+      selector: sodio
+    -
+      name: field_azucares_simples_gr_
+      label: 'Azúcares simples'
+      selector: azucares_simples
+    -
+      name: field_grasas_saturadas
+      label: 'Grasas saturadas'
+      selector: ags
+    -
+      name: field_grasas_monosaturadas
+      label: 'Grasas monoinsaturadas'
+      selector: agm
+    -
+      name: field_grasas_polisaturadas
+      label: 'Grasas poli-insaturadas'
+      selector: agp
+
+
+
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: ingrediente_principal
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: basico
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: contenido_v
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: autor
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: descripcion_v
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: descripcion_publi_v
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: localidad
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: almidon
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: grasa_total
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: agp_div_ags
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: agp_mas_agm_div_ags
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: agua
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: alcohol
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: calcio
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: hierro
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: yodo
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: magnesio
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: zinc
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: selenio
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: potasio
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: fosforo
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: fluor
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: vitamina_b1
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: vitamina_b2
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: niacina
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: ac_pantotenico
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: vitamina_b6
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: acido_folico
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: vitamina_b12
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: biotina
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: vitamina_c
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: vitamina_a
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: retinol
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: carotenos
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: vitamina_d
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: vitamina_e
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: vitamina_k
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: omega_3
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: omega_6
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: omega_3_div_6
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: cafeina
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: teobromina
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: fitoesteroles
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: beta_sitosterol
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: campesterol
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: estigmasterol
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: estigmaesterol_d7
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: brasica_esterol
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: avenaesterol_d5
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: avenaesterol_d7
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: quercitina
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: quitar_medicos
+#    -
+#      name: content
+#      label: 'Common content'
+#      selector: lleva_guarnicion
+
+process:
+
+  field_old_id: field_old_id
+  title: title
+  field_subtitle: field_subtitle
+  field_num_comensales: field_num_comensales
+#  field_tipo_de_dieta: field_tipo_de_dieta
+  field_calorias: field_calorias
+  field_hidratos_de_carbono: field_hidratos_de_carbono
+  field_proteinas: field_proteinas
+  field_grasas: field_grasas
+  field_resumen: field_resumen
+  field_fibra: field_fibra
+  field_colesterol: field_colesterol
+  field_sodio: field_sodio
+  field_azucares_simples_gr_: field_azucares_simples_gr_
+  field_grasas_saturadas: field_grasas_saturadas
+  field_grasas_monosaturadas: field_grasas_monosaturadas
+  field_grasas_polisaturadas: field_grasas_polisaturadas
+
+  field_tipo_de_comida:
+    plugin: recetas_manage_recetas_tipo_de_comida
+    source: field_tipo_de_comida
+
+  field_estacion:
+    plugin: recetas_manage_estaciones
+    source: field_estacion
+  field_tipo_de_dieta:
+    plugin: recetas_manage_tipos_dieta
+    source: field_tipo_de_dieta
+  field_tipo_de_plato:
+    plugin: recetas_manage_tipos_plato
+    source: field_tipo_de_plato
+  field_necesidades_especificas:
+    plugin: recetas_manage_necesidades
+    source: field_necesidades_especificas
+
+
+  field_image:
+    plugin: recetas_manage_recetas_image
+    source: field_old_id
+
+  moderation_state:
+    plugin: default_value
+    default_value: published
+
+destination:
+  plugin: entity:node
+  default_bundle: receta
+

@@ -1,0 +1,28 @@
+uuid: cac63d57-3e74-40ca-a71a-133ee1323b06
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_imagenes_usrs_diario_viaje
+    - media.type.image
+    - node.type.diario_de_viaje
+id: node.diario_de_viaje.field_imagenes_usrs_diario_viaje
+field_name: field_imagenes_usrs_diario_viaje
+entity_type: node
+bundle: diario_de_viaje
+label: 'Imágenes Usuarios Diario de Viaje'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

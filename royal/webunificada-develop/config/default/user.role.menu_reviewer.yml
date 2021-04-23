@@ -1,0 +1,19 @@
+uuid: 04990b3e-353f-4ecc-8b6c-3f532c0c21df
+langcode: es
+status: true
+dependencies: {  }
+id: menu_reviewer
+label: 'Menú reviewer'
+weight: 4
+is_admin: false
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'delete any menu content'
+  - 'edit any menu content'
+  - 'use editorial transition archive'
+  - 'use editorial transition publish'
+  - 'use editorial transition review'
+  - 'use moderation sidebar'
+  - 'view any unpublished content'
+  - 'view latest version'

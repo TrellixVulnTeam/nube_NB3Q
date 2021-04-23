@@ -1,0 +1,26 @@
+uuid: 9fff9d45-382e-4639-be40-1449a1ccf924
+langcode: es
+status: true
+dependencies:
+  module:
+    - consum_theme_blocks
+    - system
+  theme:
+    - consum_es
+id: politicasycopyright
+theme: consum_es
+region: footer_fluid
+weight: -36
+provider: null
+plugin: politicas-copyright-block
+settings:
+  id: politicas-copyright-block
+  label: 'Políticas y copyright (Oculto en páginas legales)'
+  provider: consum_theme_blocks
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/2705\r\n/node/2713\r\n/node/2758\r\n/node/2789\r\n/node/2790\r\n/node/2791\r\n/node/2792\r\n/node/2793\r\n/node/2794\r\n/node/2700\r\n/node/2701\r\n/node/2702\r\n/node/2703\r\n/node/2704\r\n/node/2716\r\n/node/2717\r\n/node/2718\r\n/node/2720\r\n/node/2729\r\n/node/2722\r\n/node/2723\r\n/node/2724\r\n/node/2725\r\n/node/2728\r\n/node/80\r\n/node/81\r\n/node/2601\r\n/node/2696\r\n/node/2697\r\n/node/2699\r\n/node/2599"
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,28 @@
+uuid: 715720c1-0317-457a-94e0-20ed6138ed79
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_like
+    - node.type.viaje
+id: node.viaje.field_like
+field_name: field_like
+entity_type: node
+bundle: viaje
+label: Like
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,23 @@
+administracion.description:
+    path: '/administration'
+    defaults:
+        _controller: '\Drupal\consum\Controller\Administracion::description'
+        _title: 'Administración Consum'
+    requirements:
+        _permission: 'access config'
+
+administracion.usuarios:
+    path: '/administration/users'
+    defaults:
+        _controller: '\Drupal\consum\Controller\Administracion::getUsers'
+        _title: 'Gestión de usuarios'
+    requirements:
+        _permission: 'access config'
+
+administracion.usuario:
+    path: '/administration/users/{uid}/user'
+    defaults:
+        _controller: '\Drupal\consum\Controller\Administracion::getUser'
+        _title: 'Edición de usuario'
+    requirements:
+        _permission: 'access config'

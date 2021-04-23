@@ -1,0 +1,19 @@
+uuid: e28aaeab-f13c-4f47-8497-d1d7feeaa5ec
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_destacado_del_viaje
+    - node.type.viaje
+id: node.viaje.field_destacado_del_viaje
+field_name: field_destacado_del_viaje
+entity_type: node
+bundle: viaje
+label: 'Destacado del viaje'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

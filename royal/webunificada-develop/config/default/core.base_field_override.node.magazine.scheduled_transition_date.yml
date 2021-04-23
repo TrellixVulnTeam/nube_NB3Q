@@ -1,0 +1,20 @@
+uuid: 1667e735-0106-4276-bcc0-80a22363f647
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.magazine
+  module:
+    - datetime
+id: node.magazine.scheduled_transition_date
+field_name: scheduled_transition_date
+entity_type: node
+bundle: magazine
+label: 'Scheduled transition date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,147 @@
+uuid: 335fe37c-a439-4e02-8421-2d32ad4f6767
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.card
+    - field.field.node.guia_de_vino.field_categoria_maridaje
+    - field.field.node.guia_de_vino.field_categoria_uva
+    - field.field.node.guia_de_vino.field_comments
+    - field.field.node.guia_de_vino.field_d_o_region
+    - field.field.node.guia_de_vino.field_image
+    - field.field.node.guia_de_vino.field_tipo_vino
+    - field.field.node.guia_de_vino.field_tol_item
+    - field.field.node.guia_de_vino.field_vino_boca
+    - field.field.node.guia_de_vino.field_vino_capacidad
+    - field.field.node.guia_de_vino.field_vino_crianza
+    - field.field.node.guia_de_vino.field_vino_maridaje
+    - field.field.node.guia_de_vino.field_vino_nariz
+    - field.field.node.guia_de_vino.field_vino_vista
+    - image.style.crop_card
+    - node.type.guia_de_vino
+  module:
+    - comment
+    - image
+    - layout_builder
+    - options
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.guia_de_vino.card
+targetEntityType: node
+bundle: guia_de_vino
+mode: card
+content:
+  field_categoria_maridaje:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_categoria_uva:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_comments:
+    weight: 109
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_d_o_region:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_image:
+    weight: 113
+    label: above
+    settings:
+      image_style: crop_card
+      image_link: content
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_tipo_vino:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_vino_boca:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vino_capacidad:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_vino_crianza:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vino_maridaje:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vino_nariz:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vino_vista:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_tol_item: true
+  langcode: true
+  search_api_excerpt: true

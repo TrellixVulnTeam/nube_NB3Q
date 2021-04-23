@@ -1,0 +1,14 @@
+uuid: fb4a55fe-7039-4d11-bbb2-9f957a2e3a0c
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.faq_creator
+  module:
+    - user
+id: user_remove_role_action.faq_creator
+label: 'Elimina el rol FaQ creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: faq_creator

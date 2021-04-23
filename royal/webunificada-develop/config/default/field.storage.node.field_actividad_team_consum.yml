@@ -1,0 +1,20 @@
+uuid: db8dbc06-ecf8-457a-9314-f8be80a8ee9a
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_actividad_team_consum
+field_name: field_actividad_team_consum
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

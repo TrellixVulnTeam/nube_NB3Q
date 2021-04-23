@@ -1,0 +1,14 @@
+uuid: d7260764-fd83-4650-ae87-b0b1d924e3b8
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.team_consum_reviewer
+  module:
+    - user
+id: user_remove_role_action.team_consum_reviewer
+label: 'Elimina el rol Team Consum reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: team_consum_reviewer

@@ -1,0 +1,21 @@
+uuid: 940e580c-25da-4da5-a859-5048810e64eb
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.team_consum
+  module:
+    - text
+id: node.team_consum.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: team_consum
+label: Subtítulo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

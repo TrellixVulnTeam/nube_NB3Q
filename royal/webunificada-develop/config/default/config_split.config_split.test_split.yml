@@ -1,0 +1,34 @@
+uuid: 1ccc455b-7a69-44bc-8581-630bfda45aad
+langcode: es
+status: true
+dependencies: {  }
+id: test_split
+label: 'Test Split'
+description: ''
+folder: ../config/splits/test
+module:
+  dblog: 0
+  devel: 0
+  devel_generate: 0
+  kint: 0
+  varnish: 0
+  views_ui: 0
+  webprofiler: 0
+  adv_varnish: 0
+theme: {  }
+blacklist: {  }
+graylist:
+  - consum_iam_mdm.settings
+  - consum_openid.settings.consum
+  - consum_tol_integration.settings
+  - google_analytics.settings
+  - openid_connect.settings
+  - openid_connect.settings.consum
+  - search_api.server.solr
+  - simple_ldap.role
+  - simple_ldap.server
+  - system.performance
+  - varnish.settings
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

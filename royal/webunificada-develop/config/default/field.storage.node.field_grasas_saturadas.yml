@@ -1,0 +1,20 @@
+uuid: a9bccf65-1a6f-4c2a-ba18-935447903b38
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_grasas_saturadas
+field_name: field_grasas_saturadas
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

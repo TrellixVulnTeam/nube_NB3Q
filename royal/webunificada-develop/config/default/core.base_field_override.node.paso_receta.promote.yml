@@ -1,0 +1,22 @@
+uuid: 9e1660e6-0187-4482-9cf8-35e8c2d02d3a
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.paso_receta
+id: node.paso_receta.promote
+field_name: promote
+entity_type: node
+bundle: paso_receta
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

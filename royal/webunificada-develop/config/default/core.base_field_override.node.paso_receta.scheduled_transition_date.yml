@@ -1,0 +1,20 @@
+uuid: c869f847-2b52-4933-ad1a-3056afa522b1
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.paso_receta
+  module:
+    - datetime
+id: node.paso_receta.scheduled_transition_date
+field_name: scheduled_transition_date
+entity_type: node
+bundle: paso_receta
+label: 'Scheduled transition date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,7 @@
+simple_ldap.role:
+  path: admin/config/people/simple_ldap/role
+  defaults:
+    _form: Drupal\simple_ldap_role\Form\SimpleLdapRoleSettingsForm
+    _title: 'Simple LDAP Role Settings'
+  requirements:
+    _permission: 'administer site configuration'

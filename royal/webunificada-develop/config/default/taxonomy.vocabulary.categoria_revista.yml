@@ -1,0 +1,8 @@
+uuid: 9052fd67-0f92-4050-9be7-3d38ac6cd2ac
+langcode: es
+status: true
+dependencies: {  }
+name: 'Categoría Revista'
+vid: categoria_revista
+description: ''
+weight: 0

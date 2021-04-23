@@ -1,0 +1,19 @@
+uuid: 0e56d44c-4364-4228-8445-6f44065ec6ab
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_codigo_calle
+    - node.type.direccion
+id: node.direccion.field_codigo_calle
+field_name: field_codigo_calle
+entity_type: node
+bundle: direccion
+label: 'Código Calle'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

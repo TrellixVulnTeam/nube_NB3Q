@@ -1,0 +1,8 @@
+uuid: 8e27d0c5-c543-40a2-a030-7547107b6b55
+langcode: es
+status: true
+dependencies: {  }
+name: 'Categoría FAQ'
+vid: categoria_faq
+description: 'Categorías de las preguntas y respuestas de la sección de Atención al cliente'
+weight: 0

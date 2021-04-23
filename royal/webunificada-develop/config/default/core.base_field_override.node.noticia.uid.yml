@@ -1,0 +1,20 @@
+uuid: 6f8fd53d-1e25-4916-858d-91fb13f8f0ad
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.noticia
+id: node.noticia.uid
+field_name: uid
+entity_type: node
+bundle: noticia
+label: 'Escrito por'
+description: 'El nombre de usuario del autor del contenido.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

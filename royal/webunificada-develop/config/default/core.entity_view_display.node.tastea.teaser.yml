@@ -1,0 +1,63 @@
+uuid: d7bea7a1-0d53-47eb-83a1-5dea2184a7cb
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.tastea.body
+    - field.field.node.tastea.field_fecha_caducidad_cupon
+    - field.field.node.tastea.field_fecha_de_finalizacion
+    - field.field.node.tastea.field_image
+    - field.field.node.tastea.field_inf_nutr_grasa
+    - field.field.node.tastea.field_inf_nutr_hidratos
+    - field.field.node.tastea.field_inf_nutr_kcal
+    - field.field.node.tastea.field_inf_nutr_kj
+    - field.field.node.tastea.field_inf_nutr_proteinas
+    - field.field.node.tastea.field_inf_nutr_sal
+    - field.field.node.tastea.field_like
+    - field.field.node.tastea.field_tol_item
+    - field.field.node.tastea.field_usuarios_apuntados
+    - field.field.node.tastea.field_usuarios_seleccionados
+    - node.type.tastea
+  module:
+    - text
+    - user
+id: node.tastea.teaser
+targetEntityType: node
+bundle: tastea
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_fecha_caducidad_cupon: true
+  field_fecha_de_finalizacion: true
+  field_image: true
+  field_inf_nutr_grasa: true
+  field_inf_nutr_hidratos: true
+  field_inf_nutr_kcal: true
+  field_inf_nutr_kj: true
+  field_inf_nutr_proteinas: true
+  field_inf_nutr_sal: true
+  field_like: true
+  field_tol_item: true
+  field_usuarios_apuntados: true
+  field_usuarios_seleccionados: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,383 @@
+<?php
+/*
+Plugin Name: CONSUM
+Description: Panel de Control acciones masivas CONSUM
+Version: 1.0
+Author: Royal Comunicación
+
+*/
+
+
+
+
+add_action('admin_menu', 'my_plugin_menu');
+ 
+function my_plugin_menu() {
+		//add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
+        add_menu_page( 'ACCIONES CONSUM', 'ACCIONES CONSUM', 'edit_posts', 'menu-consum', 'my_plugin_options' );
+}
+ 
+function my_plugin_options() {
+      if (!current_user_can('edit_posts'))  {
+            wp_die( __('No tiene suficientes permisos para acceder a esta página.') );
+      } ?>
+
+<div class="wrap">
+
+
+
+<h3>EXPORTACIÓN CSV</h3>
+
+<form action="#" id="exportar_tiendas" method="post">
+	<input type="hidden" id="exportar-tiendas" name="exportar-tiendas" value="1" />
+	<p><input type="submit" name="crear-csv" id="crear-csv" value="Crear CSV"></p>
+ </form>
+
+<?php
+
+validar_fecha($id_tienda);
+global $wpdb;
+
+  if ($_POST['exportar-tiendas'] && $_POST['exportar-tiendas'] == 1) {
+ exportar_tiendas();
+  }
+
+  /*
+
+global $wpdb;
+$total_ciudades = $_POST['ciudades'];
+echo "<h3><h1>ACCIONES EN MASA: MODIFICACIÓN DE HORARIO</h1></h3>";
+if ($_POST['ciudades']) {
+	
+	$texto = $_POST['texto'];
+	echo "<h3>resultados:</h3>";
+	foreach ($total_ciudades as $tienda) { 
+	echo "<p>Tienda ".$tienda;
+	$festivos = mostrar_dato($tienda, 'estado');
+	echo " - Festivos: ".$festivos." -> ";
+	if ($texto != "" || $texto != null) { $festivos = actualizar_dato($tienda, 'estado', $texto); }
+	$festivos = mostrar_dato($tienda, 'estado');
+	echo $festivos."</p>";
+	
+	echo "<p>Una vez hayas actualizado los campos de las ciudades, debes <a href='".site_url()."/wp-admin/options-general.php?page=sabai/settings'>LIMPIAR LA CACHÉ DE TIENDAS</a> (Clear Caché)</p>";
+
+	}
+}
+
+
+
+
+$consulta = "SELECT post_title,post_id FROM wp_sabai_content_post ORDER BY post_title ASC";
+$resultado = $wpdb->get_results( $consulta );
+$cont = 0; ?>
+
+<form action="#" id="formulario" method="post">
+<p><select name="ciudades[]" size="25" multiple="multiple" id="ciudades">
+<?php foreach ($resultado as $ciudad) { 
+$cont++; ?>
+<option value="<?php echo $ciudad->post_id; ?>" id="ciudad_<?php echo $cont;?>"><?php echo $ciudad->post_title." (Id: ".$ciudad->post_id.")"; ?> </option>
+<?php }		?>	
+</select></p>
+<p>Festivos: <input type="text" id="texto" name="texto" /></p>
+<p><input type="submit" name="enviar" id="enviar" value="Enviar"></p>
+</form>
+
+<?php */ ?> 
+
+<H3>EDITAR TIENDA</H3>
+ <form action='' method='post' enctype="multipart/form-data">
+   Introduce el ID : <input type='text' name='id-tienda' size='20'>
+   <input type='submit' name='editar' value='Editar'>
+  </form>
+
+  <?php  if(isset($_POST['id-tienda']))    {
+	  $id_tienda = $_POST['id-tienda'];
+	  $consulta = "SELECT post_title FROM wp_sabai_content_post WHERE post_id = $id_tienda";
+	  $resultado = $wpdb->get_results( $consulta );
+	  if ($resultado)  {	 
+		$tie = $resultado[0]; 
+	  echo "<p><a href='https://www.consum.es/wp-admin/admin.php?page=sabai%2Fdirectory&q=%2Fdirectory%2F".$_POST['id-tienda']."' target='_blank' >Abrir tienda ".$tie->post_title."</a></p>";
+	  } 
+	  else echo "<p>Ese identificador no se corresponde con ninguna tienda.</p>";
+  }
+ 
+  ?>
+
+  
+  <H3>CAMBIAR ID DE TIENDA</H3>
+ <form action='' method='post' enctype="multipart/form-data">
+   Introduce el ID antiguo: <input type='text' name='id-tienda-ant' size='20'><br />
+   Introduce el ID nuevo: <input type='text' name='id-tienda-new' size='20'>
+   <input type='submit' name='cambiar' value='Cambiar'>
+  </form>
+
+  <?php  if (isset($_POST['id-tienda-ant']))    {
+	  $id_tienda_ant = $_POST['id-tienda-ant'];
+	  $id_tienda_new = $_POST['id-tienda-new'];
+	  $consulta = "SELECT post_title FROM wp_sabai_content_post WHERE post_id = $id_tienda_ant";
+	  $resultado = $wpdb->get_results( $consulta );
+	  if ($resultado)  {	 
+			$tiend = $resultado[0]; 
+			  echo "<p>El Id de la tienda ".$tiend->post_title." ahora es el ".$id_tienda_new."</p>";
+			  
+			  //Actualizamos el id de la tienda
+			  
+			 $wpdb->update( 
+			'wp_sabai_content_post', // Nombre de la tabla
+			array( 'post_id' => $id_tienda_new ), // Valor a actualizar
+			array( 'post_id' => $id_tienda_ant ) // Condición
+			);
+			
+			// Vamos a actualizar el id en todas las tablas que hacen referencia a esa tienda.
+		
+$wpdb->update( 
+'wp_sabai_entity_field_content_activity', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_taxonomy_content_count', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_content_children_count', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_directory_category', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_directory_claim', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_directory_location', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_compradom', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_cpostal', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_direccion', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_ensenya', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_estado', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_gasolinera', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_horario', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_horariov', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_minusvalidos', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_parking', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_poblacion', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_provincia', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_superficie', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_telefono', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_festivo1', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_festivo2', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_festivo3', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_festivo4', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_festivo5', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_festivo6', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_festivo1v', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_festivo2v', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_festivo3v', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_festivo4v', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_festivo5v', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_festivo6v', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_fecha_festivo1', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_fecha_festivo2', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_fecha_festivo3', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_fecha_festivo4', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_fecha_festivo5', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+$wpdb->update( 'wp_sabai_entity_field_field_fecha_festivo6', array( 'entity_id' => $id_tienda_new ), array( 'entity_id' => $id_tienda_ant ));
+
+echo "<p>Una vez hayas actualizado el id de la tienda, debes <a target= '_blank' href='".site_url()."/wp-admin/options-general.php?page=sabai/settings'>LIMPIAR LA CACHÉ DE TIENDAS</a> (Clear Caché)</p>";		
+		
+	} 	  else echo "<p>Ese identificador no se corresponde con ninguna tienda.</p>";
+  }
+  
+  ?>
+  
+
+<H3>IMPORTAR FESTIVOS</H3>
+ <form action='' method='post' enctype="multipart/form-data">
+   Importar Archivo : <input type='file' name='archivo' size='20'>
+   <input type="hidden" id="importar-horarios" name="importar-horarios" value="1" />
+   <input type='submit' name='Importar' value='Importar'>
+  </form>
+
+  <?php 
+ if(isset($_POST['importar-horarios']))    {
+	
+				if (is_uploaded_file($_FILES['archivo']['tmp_name'])) 	{
+			 $ruta = get_home_path()."csv/".$_FILES['archivo']['name'];
+					
+			 move_uploaded_file($_FILES['archivo']['tmp_name'], $ruta);
+			 echo "<p>El archivo ".$_FILES['archivo']['name']." se ha subido correctamente</p>";
+			 
+			  
+			 
+			} else	echo "<p>No se ha podido subir el fichero</p>";
+			
+ 
+						
+				//VAMOS A LEER EL ARCHIVO
+			
+			echo "<p>Borrando datos antiguos...</p>";
+			
+//Borramos todos los valores anteriores
+
+$deletequery = "TRUNCATE TABLE wp_sabai_entity_field_field_festivo1";
+$wpdb->query($deletequery);
+$deletequery = "TRUNCATE TABLE wp_sabai_entity_field_field_festivo2";
+$wpdb->query($deletequery);
+$deletequery = "TRUNCATE TABLE wp_sabai_entity_field_field_festivo3";
+$wpdb->query($deletequery);
+$deletequery = "TRUNCATE TABLE wp_sabai_entity_field_field_festivo4";
+$wpdb->query($deletequery);
+$deletequery = "TRUNCATE TABLE wp_sabai_entity_field_field_festivo1v";
+$wpdb->query($deletequery);
+$deletequery = "TRUNCATE TABLE wp_sabai_entity_field_field_festivo2v";
+$wpdb->query($deletequery);
+$deletequery = "TRUNCATE TABLE wp_sabai_entity_field_field_festivo3v";
+$wpdb->query($deletequery);
+$deletequery = "TRUNCATE TABLE wp_sabai_entity_field_field_festivo4v";
+$wpdb->query($deletequery);
+$deletequery = "TRUNCATE TABLE wp_sabai_entity_field_field_fecha_festivo1";
+$wpdb->query($deletequery);
+$deletequery = "TRUNCATE TABLE wp_sabai_entity_field_field_fecha_festivo2";
+$wpdb->query($deletequery);
+$deletequery = "TRUNCATE TABLE wp_sabai_entity_field_field_fecha_festivo3";
+$wpdb->query($deletequery);
+$deletequery = "TRUNCATE TABLE wp_sabai_entity_field_field_fecha_festivo4";
+$wpdb->query($deletequery);
+
+
+echo "<br />";
+echo "<p>Escribiendo datos nuevos...</p>";
+
+$file_handle = fopen (get_home_url()."/csv/".$_FILES['archivo']['name'],"r");
+if (fopen (get_home_url()."/csv/".$_FILES['archivo']['name'],"r")) {echo "fopen() OK. Continuando con la importación...<br />";} 
+else {
+ echo "FOPEN() DESACTIVADO<br />";
+ exit();
+}
+
+
+
+while (!feof($file_handle) ) { //Segundo while introuduce los datos
+
+$line_of_text = fgetcsv($file_handle, 1024, ";");
+
+$texto1 =  mostrar_dato($line_of_text[0], 'festivo1');
+$texto2 =  mostrar_dato($line_of_text[0], 'festivo2');
+$texto3 =  mostrar_dato($line_of_text[0], 'festivo3');
+$texto4 =  mostrar_dato($line_of_text[0], 'festivo4');
+$texto5 =  mostrar_dato($line_of_text[0], 'festivo5');
+$texto6 =  mostrar_dato($line_of_text[0], 'festivo6');
+$texto_final = utf8_encode($line_of_text[3]);
+$texto_finalv = utf8_encode($line_of_text[4]);
+
+if ($texto1 == "")	{
+	actualizar_dato($line_of_text[0], 'festivo1', $texto_final );
+	actualizar_dato($line_of_text[0], 'festivo1v', $texto_finalv );
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'festivo1');
+	
+	if (!$texto_actualizado) {  insertar_dato($line_of_text[0], 'festivo1', $texto_final );
+								insertar_dato($line_of_text[0], 'festivo1v', $texto_finalv );
+	
+	}
+	
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'festivo1');
+	echo "<p>Cadena actualizada para ID(".$line_of_text[0]."): ".$texto_actualizado."</p>";
+	
+	actualizar_dato($line_of_text[0], 'fecha_festivo1', $line_of_text[2] );
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'fecha_festivo1');
+	
+	if (!$texto_actualizado) {  insertar_dato($line_of_text[0], 'fecha_festivo1', $line_of_text[2] );}
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'fecha_festivo1');
+	echo "<p>Cadena actualizada para ID(".$line_of_text[0]."): ".$texto_actualizado."</p>";
+}
+	
+ else if ($texto2 == "") {
+	actualizar_dato($line_of_text[0], 'festivo2', $texto_final );
+	actualizar_dato($line_of_text[0], 'festivo2v', $texto_finalv );
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'festivo2');
+	if (!$texto_actualizado) {  
+			insertar_dato($line_of_text[0], 'festivo2', $texto_final );
+			insertar_dato($line_of_text[0], 'festivo2v', $texto_finalv );
+	}
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'festivo2');
+	echo "<p>Cadena actualizada para ID(".$line_of_text[0]."): ".$texto_actualizado."</p>";
+	
+	actualizar_dato($line_of_text[0], 'fecha_festivo2', $line_of_text[2] );
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'fecha_festivo2');
+	if (!$texto_actualizado) {  insertar_dato($line_of_text[0], 'fecha_festivo2', $line_of_text[2] );}
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'fecha_festivo2');
+	echo "<p>Cadena actualizada para ID(".$line_of_text[0]."): ".$texto_actualizado."</p>";
+	}
+else if ($texto3 == "") {
+	
+	actualizar_dato($line_of_text[0], 'festivo3', $texto_final );
+	actualizar_dato($line_of_text[0], 'festivo3v', $texto_finalv );
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'festivo3');
+	if (!$texto_actualizado) {  
+					insertar_dato($line_of_text[0], 'festivo3', $texto_final );
+					insertar_dato($line_of_text[0], 'festivo3v', $texto_finalv );
+					}
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'festivo3');
+	echo "<p>Cadena actualizada para ID(".$line_of_text[0]."): ".$texto_actualizado."</p>";
+	
+	actualizar_dato($line_of_text[0], 'fecha_festivo3', $line_of_text[2] );
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'fecha_festivo3');
+	if (!$texto_actualizado) {  insertar_dato($line_of_text[0], 'fecha_festivo3', $line_of_text[2] );}
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'fecha_festivo3');
+	echo "<p>Cadena actualizada para ID(".$line_of_text[0]."): ".$texto_actualizado."</p>";
+	}	
+else if ($texto4 == "") {
+		
+	actualizar_dato($line_of_text[0], 'festivo4', $texto_final );
+	actualizar_dato($line_of_text[0], 'festivo4v', $texto_finalv );
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'festivo4');
+	if (!$texto_actualizado) {  
+					insertar_dato($line_of_text[0], 'festivo4', $texto_final );
+					insertar_dato($line_of_text[0], 'festivo4v', $texto_finalv );
+					}
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'festivo4');
+	echo "<p>Cadena actualizada para ID(".$line_of_text[0]."): ".$texto_actualizado."</p>";
+	
+	actualizar_dato($line_of_text[0], 'fecha_festivo4', $line_of_text[2] );
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'fecha_festivo4');
+	if (!$texto_actualizado) {  insertar_dato($line_of_text[0], 'fecha_festivo4', $line_of_text[2] );}
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'fecha_festivo4');
+	echo "<p>Cadena actualizada para ID(".$line_of_text[0]."): ".$texto_actualizado."</p>"; 
+	}
+	
+else if ($texto5 == "") {
+		
+	actualizar_dato($line_of_text[0], 'festivo5', $texto_final );
+	actualizar_dato($line_of_text[0], 'festivo5v', $texto_finalv );
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'festivo5');
+	if (!$texto_actualizado) {  
+					insertar_dato($line_of_text[0], 'festivo5', $texto_final );
+					insertar_dato($line_of_text[0], 'festivo5v', $texto_finalv );
+					}
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'festivo5');
+	echo "<p>Cadena actualizada para ID(".$line_of_text[0]."): ".$texto_actualizado."</p>";
+	
+	actualizar_dato($line_of_text[0], 'fecha_festivo5', $line_of_text[2] );
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'fecha_festivo5');
+	if (!$texto_actualizado) {  insertar_dato($line_of_text[0], 'fecha_festivo5', $line_of_text[2] );}
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'fecha_festivo5');
+	echo "<p>Cadena actualizada para ID(".$line_of_text[0]."): ".$texto_actualizado."</p>"; 
+	}
+
+else if ($texto6 == "") {
+		
+	actualizar_dato($line_of_text[0], 'festivo6', $texto_final );
+	actualizar_dato($line_of_text[0], 'festivo6v', $texto_finalv );
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'festivo6');
+	if (!$texto_actualizado) {  
+					insertar_dato($line_of_text[0], 'festivo6', $texto_final );
+					insertar_dato($line_of_text[0], 'festivo6v', $texto_finalv );
+					}
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'festivo6');
+	echo "<p>Cadena actualizada para ID(".$line_of_text[0]."): ".$texto_actualizado."</p>";
+	
+	actualizar_dato($line_of_text[0], 'fecha_festivo6', $line_of_text[2] );
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'fecha_festivo6');
+	if (!$texto_actualizado) {  insertar_dato($line_of_text[0], 'fecha_festivo6', $line_of_text[2] );}
+	$texto_actualizado = mostrar_dato($line_of_text[0], 'fecha_festivo6');
+	echo "<p>Cadena actualizada para ID(".$line_of_text[0]."): ".$texto_actualizado."</p>"; 
+	}
+	
+}    
+
+fclose($file_handle);
+	 
+			 echo "</div>";
+			 
+			 }
+} //fin de la función
+ ?>
+
+

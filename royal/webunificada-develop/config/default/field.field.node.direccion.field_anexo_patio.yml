@@ -1,0 +1,19 @@
+uuid: ce919ba4-c206-4736-973e-964be7e2d2be
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_anexo_patio
+    - node.type.direccion
+id: node.direccion.field_anexo_patio
+field_name: field_anexo_patio
+entity_type: node
+bundle: direccion
+label: 'Anexo Patio'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

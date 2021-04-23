@@ -1,0 +1,283 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    'view-mode-card',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+
+{% if node.type.0.target_id == "tastea" %}
+
+  {# Initialize and declare selected_user and signed_user #}
+  {% set selected_user = false %}
+  {% set signed_user = false %}
+
+  {# Get if user is selected #}
+        {% if node.field_usuarios_seleccionados %}
+              {% for key, item in node.field_usuarios_seleccionados if key|first != '#' %}
+                {% if item.target_id == user.id %}
+                    {% set selected_user = true %}
+                {% endif  %}
+            {% endfor %}
+          {% endif %}  
+        
+  {# Get if user is selected #}
+  {% if node.field_usuarios_apuntados %}
+      {% for key, item in node.field_usuarios_apuntados if key|first != '#' %}
+          {% if item.target_id == user.id %}
+            {% set signed_user = true %}
+          {% endif  %}
+      {% endfor %}
+  {% endif %}
+
+  {% set tastea_closed = false %}
+  {% if 'now'|date('U') <= node.field_fecha_de_finalizacion.0.value|date('U') %}
+    {% set tastea_closed = true %}
+  {% endif %}
+  {% set time_rest = false %}
+  {% if 'now'|date('U') < node.field_fecha_de_finalizacion.0.value|date('U') %}
+    {% set time_rest = true %}
+  {% endif %}  
+
+{% endif %} 
+
+
+
+<article{{ attributes.addClass(classes) }}>
+  <div class="justify-content-center align-items-center minh-100 h-100 pb-3 bg-white">
+    {# IMAGE #}
+    <div class="col-12 imagen_destacada">
+      {{ content.field_image.0 }}
+      {% if node.type.0.target_id == "receta" or node.type.0.target_id == "menu" %}
+        <div class="author-picture">
+          {{ author_picture }}
+        </div>
+      {% endif %}
+      {% if node.type.0.target_id == "tastea" %}
+        {% if selected_user == true and time_rest %}
+        <a href="{{ url('entity.node.canonical', { 'node': 2808 }) }}">
+          <div class="container-canjear">
+            Canjea tu cupón
+          </div>
+        </a>  
+        {% elseif selected_user == true %}
+          <div class="container-opinar">
+            Comparte tu opinión
+          </div>
+        {% endif %}
+      {% endif %}
+      {% if node.type.0.target_id == "viaje" %}
+        {% if 'now'|date('U') < node.field_fecha_de_salida.0.value|date('U') %}
+          {% if node.field_aviso_viaje.0.value %}
+            <div class="container-aviso d-flex align-items-center">
+              <span class="ico-aviso"></span> <span>{{ node.field_aviso_viaje.0.value }}</span>
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="container-aviso last d-flex align-items-center">
+            <span class="ico-candado"></span> <span>Viaje concluido</span>
+          </div>
+        {% endif %}
+        <a href="{{url}}">
+        {% if 'now'|date('U') < node.field_fecha_de_salida.0.value|date('U') %}
+          <div class="container-reservar">
+            Reservar
+          </div>
+        {% else %}
+          <div class="container-opinar">
+            ¡Te lo comentamos!
+          </div>
+        {% endif %}
+        </a>
+      {% endif %}
+      {% if node.type.0.target_id == "tastea" %}
+        {% if selected_user == true %}
+          <div class="container-state d-flex align-items-center">
+            <span>Estás seleccionado</span>
+          </div>
+        {% elseif signed_user == true %}
+          <div class="container-state d-flex align-items-center">
+            <span>Estás apuntado</span>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+    {# CARD CONTENT #}
+    <div class="col-12 card-content">
+      {% if content.field_category %}      
+        <h5 class="category-ico category-id-{{ node.field_category.0.target_id }} d-flex align-items-center">
+          {{ content.field_category }}
+        </h5>
+      {% endif %}
+      {% if node.type.0.target_id == "menu" %}
+        <div class="row">
+          <div class="col-5 d-flex justify-content-start">
+              <p class="card-mini-text">{{ content.field_days.0 }} {% if content.field_days.0 == 1 %}{% trans %}day{% endtrans %}{% else %}{% trans %}days{% endtrans %}{% endif %} </p>
+              <img class="menu-card-calendar pl-1" src="/themes/custom/consum_es/assets/img/TEMP_calendar-line.svg">
+            </div>
+          <div class="col-7 d-flex justify-content-end">
+            <p class="card-mini-text">{{ content.field_foods.0 }}  </p>
+            <img class="menu-card-cutlery pl-1" src="/themes/custom/consum_es/assets/img/TEMP_cubiertos.svg">
+          </div>
+        </div>  
+      {% endif %}
+      {% if node.type.0.target_id == "viaje" %}
+        <div class="row">
+          <div class="col-9 d-flex justify-content-start">
+              <span class="ico-salida"></span><p class="card-mini-text font-weight-bold">{{ node.field_fecha_de_salida.0.value|date('d F Y') }}</p>
+            </div>
+          <div class="col-3 d-flex justify-content-end">
+            <p class="card-mini-text font-weight-bold">{{ node.field_duracion_viaje.0.value }} día</p>
+          </div>
+        </div>  
+      {% endif %}
+      {% if node.type.0.target_id == "team_consum" %}
+        <div class="team-category team-category-team-consum">
+          {% if content.field_actividad_team_consum %}
+            {{ content.field_actividad_team_consum }}
+          {% endif %}
+          {% if content.field_edad_team_consum %}
+            {{ content.field_edad_team_consum }}
+          {% endif %}
+          {% if content.field_tematica_team_consum  %}
+            {{ content.field_tematica_team_consum }}
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if node.type.0.target_id == "noticia" %}
+        <div class="date"> 
+          {{ post.published_at|date("d F Y") }}
+        </div>
+      {% endif %}
+      {% if node.type.0.target_id == "tastea" %}
+        <div class="date"> 
+          {% if time_rest %}
+            <div class="container-activo d-flex align-items-center">
+              <span class="ico-reloj"></span> <span>Finaliza el {{node.field_fecha_de_finalizacion.0.value|date('d-m-Y')}}</span>
+            </div>
+          {% else %}
+            <div class="container-activo last d-flex align-items-center">
+              <span class="ico-reloj"></span> <span>Finalizado</span>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if label and not page %}
+        <h1 {{ title_attributes.addClass('node__title') }}>
+          <a href="{{ url }}">{{ label }}</a>
+        </h1>
+      {% endif %}
+      {% if node.type.0.target_id != "team_consum" and node.type.0.target_id != "menu" and node.type.0.target_id != "receta" and node.type.0.target_id != "noticia" %} 
+        {% if node.body.summary %}
+          <p class="truncate-4lines">{{ node.body.summary }}</p>
+        {% endif %}
+        {% if node.body.0.value and node.type.0.target_id == "tastea" %}
+          <p>{{ node.body.0.value|raw }}</p>
+        {% endif %}
+      {% endif %}
+      {% if node.type.0.target_id == "viaje" %}
+        <div class="team-category team-category-team-consum mb-4">
+          {% if content.field_categoria_del_viaje %}
+            {{ content.field_categoria_del_viaje }}
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if node.type.0.target_id == "receta" %}
+        <div class="team-category team-category-receta">
+          {% if content.field_tipo_de_comida.0 %}
+            {{ content.field_tipo_de_comida.0 }}
+          {% endif %}
+          {% if content.field_necesidades_especificas.0 %}
+            {{ content.field_necesidades_especificas.0 }}
+          {% endif %}
+          {% if content.field_tipo_de_plato.0  %}
+            {{ content.field_tipo_de_plato.0 }}
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if node.type.0.target_id == "menu" %}
+        {% if content.field_diet.0 %}
+          <div class="team-category team-category-menu">
+             {{ content.field_diet.0 }}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+    {# CARD FOOTER #}
+      {% include directory ~ '/templates/content/footer--card.html.twig' %}
+    {# END CARD FOOTER #}
+  </div>
+</article>

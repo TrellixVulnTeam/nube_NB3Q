@@ -1,0 +1,361 @@
+{% set objetivos = {
+  'vivir_viajar': {
+    '0': 'Consigue una medalla con 2 comentarios en un contenido tuyo',
+    '1': 'Consigue una medalla con 2 comentarios en 3 contenidos tuyos',
+    '2': 'Consigue una medalla con 2 comentarios en 6 contenidos tuyos',
+    '3': '¡Enhorabuena!'
+  },
+  'bodega': {
+    '0': 'Consigue una medalla con 5 me gusta en 5 reseñas',
+    '1': 'Consigue una medalla con 15 me gusta en 5 reseñas',
+    '2': 'Consigue una medalla con 30 me gusta en 5 reseñas',
+    '3': '¡Enhorabuena!'
+  },
+  'recetas': {
+    '0': 'Consigue una medalla con 2 comentarios en 3 recetas tuyas',
+    '1': 'Consigue una medalla con 2 comentarios en 9 recetas tuyas',
+    '2': 'Consigue una medalla con 2 comentarios en 15 recetas tuyas',
+    '3': '¡Enhorabuena!'
+  },
+  'cuidarnos': {
+    '0': 'Consigue una medalla con 2 comentarios en 2 contenidos tuyos de belleza',
+    '1': 'Consigue una medalla con 2 comentarios en 6 contenidos tuyos de belleza',
+    '2': 'Consigue una medalla con 2 comentarios en 12 contenidos tuyos de belleza',
+    '3': '¡Enhorabuena!'
+  },
+  'nutricion': {
+    '0': 'Consigue una medalla con 1 comentario tuyo destacado.',
+    '1': 'Consigue una medalla con 3 comentarios tuyos destacados.',
+    '2': 'Consigue una medalla con 5 comentarios tuyos destacados.',
+    '3': '¡Enhorabuena!'
+  },
+  'hogar': {
+    '0': 'Consigue una medalla con 2 comentarios en 1 contenidos tuyos de hogar',
+    '1': 'Consigue una medalla con 2 comentarios en 3 contenidos tuyos de hogar',
+    '2': 'Consigue una medalla con 2 comentarios en 6 contenidos tuyos de hogar',
+    '3': '¡Enhorabuena!'
+  },
+  'participacion': {
+    '0': 'Consigue una medalla llegando a 175 puntos de promedio',
+    '1': 'Consigue una medalla llegando a 350 puntos de promedio',
+    '2': 'Consigue una medalla superando 350 puntos de promedio',
+    '3': '¡Enhorabuena!'
+  }
+} %}
+
+{% set niveles = {
+  '0': 'Sin medalla',
+  '1': 'Nivel conocedor',
+  '2': 'Nivel experto',
+  '3': 'Nivel gurú'
+} %}
+
+<div class="container-community-profile">
+  <div class="row-1">
+    <div class="col-12 col--1">
+      <div class="div-user-picture" style="background-image: url({{ user['user_picture'] }});"></div>
+      <span class="btn-ci ci-edit"
+        data-toggle="modal"
+        data-target="#modalEditProfile">
+      </span>
+    </div>
+    <div class="col-12 col--2">
+      <p class="nombre">
+        {{ user['name'] }}
+      </p>
+    </div>
+  </div>
+  <div class="row-2">
+    <div class="col-12 col--1">
+      <p>
+        Mis medallas
+      </p>
+    </div>
+    <div class="col--2">
+      <ul class="nav nav-tabs d-flex justify-content-center">
+        <li class="nav-item">
+          <p class="nav-link active" data-toggle="tab" href="#medalla_vivir_viajar">
+            {% if user["medalla_vivir_viajar"] > 0 %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_vivir_viajar_{{user['medalla_vivir_viajar']}}.svg"></img>
+            {% else %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_vivir_viajar_0.svg"></img>
+            {% endif %}
+          </p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link" data-toggle="tab" href="#medalla_bodega">
+            {% if user["medalla_bodega"] > 0 %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_bodega_{{user['medalla_bodega']}}.svg"></img>
+            {% else %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_bodega_0.svg"></img>
+            {% endif %}
+          </p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link" data-toggle="tab" href="#medalla_recetas">
+            {% if user["medalla_recetas"] > 0 %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_recetas_{{user['medalla_recetas']}}.svg"></img>
+            {% else %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_recetas_0.svg"></img>
+            {% endif %}
+          </p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link" data-toggle="tab" href="#medalla_cuidarnos">
+            {% if user["medalla_cuidarnos"] > 0 %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_cuidarnos_{{user['medalla_cuidarnos']}}.svg"></img>
+            {% else %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_cuidarnos_0.svg"></img>
+            {% endif %}
+          </p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link" data-toggle="tab" href="#medalla_nutricion">
+            {% if user["medalla_nutricion"] > 0 %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_nutricion_{{user['medalla_nutricion']}}.svg"></img>
+            {% else %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_nutricion_0.svg"></img>
+            {% endif %}
+          </p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link" data-toggle="tab" href="#medalla_hogar">
+            {% if user["medalla_hogar"] > 0 %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_hogar_{{user['medalla_hogar']}}.svg"></img>
+            {% else %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_hogar_0.svg"></img>
+            {% endif %}
+          </p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link" data-toggle="tab" href="#medalla_participacion">
+            {% if user["medalla_participacion"] > 0 %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_participacion_{{user['medalla_participacion']}}.svg"></img>
+            {% else %}
+              <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_participacion_0.svg"></img>
+            {% endif %}
+          </p>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="medalla_vivir_viajar">
+          <div class="d-flex align-items-center">
+            <div class="medalla-icon-title">
+              {% if user["medalla_vivir_viajar"] > 0 %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_vivir_viajar_{{user['medalla_vivir_viajar']}}.svg"></img>
+              {% else %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_vivir_viajar_0.svg"></img>
+              {% endif %}
+              <p>Vivir y viajar</p>
+            </div>
+            <div class="level-objetivo">
+              {% if user['medalla_vivir_viajar'] > 0 %}
+                <p class="level">{{ niveles[user['medalla_vivir_viajar']] }}</p>
+                <p class="objetivo">{{ objetivos['vivr_viajar'][user['medalla_vivir_viajar']] }}</p>
+              {% else %}
+                <p class="level">{{ niveles[0] }}</p>
+                <p class="objetivo">{{ objetivos['vivir_viajar'][0] }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="medalla_bodega">
+          <div class="d-flex align-items-center">
+            <div class="medalla-icon-title">
+              {% if user["medalla_bodega"] > 0 %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_bodega_{{user['medalla_bodega']}}.svg"></img>
+              {% else %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_bodega_0.svg"></img>
+              {% endif %}
+              <p>Bodega</p>
+            </div>
+            <div class="level-objetivo">
+              {% if user['medalla_bodega'] > 0 %}
+                <p class="level">{{ niveles[user['medalla_bodega']] }}</p>
+                <p class="objetivo">{{ objetivos['bodega'][user['medalla_bodega']] }}</p>
+              {% else %}
+                <p class="level">{{ niveles[0] }}</p>
+                <p class="objetivo">{{ objetivos['bodega'][0] }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="medalla_recetas">
+          <div class="d-flex align-items-center">
+            <div class="medalla-icon-title">
+              {% if user["medalla_recetas"] > 0 %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_recetas_{{user['medalla_recetas']}}.svg"></img>
+              {% else %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_recetas_0.svg"></img>
+              {% endif %}
+              <p>Recetas</p>
+            </div>
+            <div class="level-objetivo">
+              {% if user['medalla_recetas'] > 0 %}
+                <p class="level">{{ niveles[user['medalla_recetas']] }}</p>
+                <p class="objetivo">{{ objetivos['recetas'][user['medalla_recetas']] }}</p>
+              {% else %}
+                <p class="level">{{ niveles[0] }}</p>
+                <p class="objetivo">{{ objetivos['recetas'][0] }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="medalla_cuidarnos">
+          <div class="d-flex align-items-center">
+            <div class="medalla-icon-title">
+              {% if user["medalla_cuidarnos"] > 0 %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_cuidarnos_{{user['medalla_cuidarnos']}}.svg"></img>
+              {% else %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_cuidarnos_0.svg"></img>
+              {% endif %}
+              <p>Cuidarnos</p>
+            </div>
+            <div class="level-objetivo">
+              {% if user['medalla_cuidarnos'] > 0 %}
+                <p class="level">{{ niveles[user['medalla_cuidarnos']] }}</p>
+                <p class="objetivo">{{ objetivos['cuidarnos'][user['medalla_cuidarnos']] }}</p>
+              {% else %}
+                <p class="level">{{ niveles[0] }}</p>
+                <p class="objetivo">{{ objetivos['cuidarnos'][0] }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="medalla_nutricion">
+          <div class="d-flex align-items-center">
+            <div class="medalla-icon-title">
+              {% if user["medalla_nutricion"] > 0 %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_nutricion_{{user['medalla_nutricion']}}.svg"></img>
+              {% else %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_nutricion_0.svg"></img>
+              {% endif %}
+              <p>Nutrición</p>
+            </div>
+            <div class="level-objetivo">
+              {% if user['medalla_nutricion'] > 0 %}
+                <p class="level">{{ niveles[user['medalla_nutricion']] }}</p>
+                <p class="objetivo">{{ objetivos['nutricion'][user['medalla_nutricion']] }}</p>
+              {% else %}
+                <p class="level">{{ niveles[0] }}</p>
+                <p class="objetivo">{{ objetivos['nutricion'][0] }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="medalla_hogar">
+          <div class="d-flex align-items-center">
+            <div class="medalla-icon-title">
+              {% if user["medalla_hogar"] > 0 %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_hogar_{{user['medalla_hogar']}}.svg"></img>
+              {% else %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_hogar_0.svg"></img>
+              {% endif %}
+              <p>Hogar</p>
+            </div>
+            <div class="level-objetivo">
+              {% if user['medalla_hogar'] > 0 %}
+                <p class="level">{{ niveles[user['medalla_hogar']] }}</p>
+                <p class="objetivo">{{ objetivos['hogar'][user['medalla_hogar']] }}</p>
+              {% else %}
+                <p class="level">{{ niveles[0] }}</p>
+                <p class="objetivo">{{ objetivos['hogar'][0] }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="medalla_participacion">
+          <div class="d-flex align-items-center">
+            <div class="medalla-icon-title">
+              {% if user["medalla_participacion"] > 0 %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_participacion_{{user['medalla_participacion']}}.svg"></img>
+              {% else %}
+                <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_participacion_0.svg"></img>
+              {% endif %}
+              <p>Participación</p>
+            </div>
+              <div class="level-objetivo">
+              {% if user['medalla_participacion'] > 0 %}
+                <p class="level">{{ niveles[user['medalla_participacion']] }}</p>
+                <p class="objetivo">{{ objetivos['participacion'][user['medalla_participacion']] }}</p>
+              {% else %}
+                <p class="level">{{ niveles[0] }}</p>
+                <p class="objetivo">{{ objetivos['participacion'][0] }}</p>
+              {% endif %}  
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="col-12 col--3">
+      <a href="/node/2886">¿Cómo conseguir medallas?</a>
+    </div>
+  </div>
+  <div class="row-3">
+    <div class="col-12 col--1">
+      <p>
+        <span>{{ user['points'] }}</span> | puntos
+      </p>
+      <a class="boton2">Usar puntos</a>
+    </div>
+    <div class="col-12 col--2">
+      <p>
+        {{ user['publicaciones'] }}0 publicaciones
+      </p>
+      <p>
+        {{ user['following'] }} seguidos
+      </p>
+      <p>
+        {{ user['followers'] }}0 seguidores
+      </p>
+    </div>
+    <div class="col-12 col--3 d-flex align-items-center justify-content-center">
+      {% if user['view_facebook'] == 1 %}
+        <a href="{{ user['url_facebook'] }}" target="_blank">
+          <span class="btn-ci ci-facebook"></span>
+        </a>
+      {% endif %}
+      {% if user['view_twitter'] == 1 %}
+        <a href="{{ user['url_twitter'] }}" target="_blank">
+          <span class="btn-ci ci-twitter"></span>
+        </a>
+      {% endif %}
+      {% if user['view_instagram'] == 1 %}
+        <a href="{{ user['url_instagram'] }}" target="_blank">
+          <span class="btn-ci ci-instagram"></span>
+        </a>
+      {% endif %}
+    </div>
+    <div class="col-12 col--4">
+      {{ user['about_me']|raw }}
+    </div>
+    <div class="col-12 col--5">
+      {% for key, interest in user['interests'] %}
+        <a href="/taxonomy/term/{{ key }}" class="interest">{{ interest }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="modal fade" id="modalEditProfile" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h3>
+            Mi Perfil de la Comunidad
+          </h3>
+          {{
+            {
+              '#type': 'webform',
+              '#webform': 'profile'
+            }
+          }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

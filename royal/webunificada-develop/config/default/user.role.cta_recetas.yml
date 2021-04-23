@@ -1,0 +1,25 @@
+uuid: e10a0ede-1177-40c7-b5ec-6644436d0c34
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: 'Grupo de LDAP: recetas-drupal-consum.es'
+id: cta_recetas
+label: 'Cta. Recetas'
+weight: 30
+is_admin: null
+permissions:
+  - 'create paso_receta content'
+  - 'create receta content'
+  - 'create terms in precio_receta'
+  - 'delete any paso_receta content'
+  - 'delete any receta content'
+  - 'delete terms in precio_receta'
+  - 'edit any paso_receta content'
+  - 'edit any receta content'
+  - 'edit terms in precio_receta'
+  - 'view paso_receta revisions'
+  - 'view receta revisions'

@@ -1,0 +1,110 @@
+uuid: cdbff54b-d43b-4f53-b098-80f0fe7f56e9
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.pagina_mundoconsum.body
+    - field.field.node.pagina_mundoconsum.layout_builder__layout
+    - node.type.pagina_mundoconsum
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: layout_builder_blank
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      whitelisted_blocks:
+        'Chaos Tools': {  }
+        'Consum Administration': {  }
+        'Consum HouseWork Organizer': {  }
+        'Content fields': {  }
+        'Custom Blocks':
+          - carousel_taxonomy
+          - carousel_unlimited_block
+          - cta_block
+          - cta_2colblock
+          - custom_breadcrumb
+          - imagenhover
+          - popupcustom
+          - social_networks
+          - customtext_block
+        'Entity Block':
+          - 'entity_block:node'
+          - 'entity_block:media'
+          - 'entity_block:taxonomy_term'
+        'Entity Browser': {  }
+        'Entity Print': {  }
+        Forms: {  }
+        'Geofield Map': {  }
+        'Inline blocks': {  }
+        'Lists (Views)':
+          - 'views_block:my_community_feed-block_1'
+          - 'views_block:my_community_follow_users-block_2'
+          - 'views_block:my_community_follow_users-block_3'
+          - 'views_block:my_community_follow_users-block_1'
+        Menus: {  }
+        'Moderation Dashboard': {  }
+        'Responsive Preview': {  }
+        'Royal Blocks': {  }
+        System: {  }
+        Usuario: {  }
+        Views: {  }
+        Webform: {  }
+        'Webform access': {  }
+        core: {  }
+      blacklisted_blocks: {  }
+      allowed_layouts:
+        - col-12
+        - col-4-8
+        - col-8-4
+        - col-3-9
+        - col-9-3
+        - col-6-6
+        - col-12-12
+        - col-3-6-3
+        - col-4-4-4
+        - col-3-3-3-3
+        - combo-2-1
+        - combo-1-2
+id: node.pagina_mundoconsum.full
+targetEntityType: node
+bundle: pagina_mundoconsum
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  layout_builder__layout: true
+  search_api_excerpt: true

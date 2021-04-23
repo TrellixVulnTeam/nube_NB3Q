@@ -1,0 +1,202 @@
+uuid: 89849d40-9cae-42f8-ae62-b789d62000a7
+langcode: es
+status: open
+dependencies:
+  module:
+    - consum_user_register
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: registro_de_socio_cliente
+title: 'Registro de Socio/Cliente'
+description: ''
+category: ''
+elements: "tus_datos:\n  '#type': webform_wizard_page\n  '#title': 'Tus datos'\n  processed_text_p1_a:\n    '#type': processed_text\n    '#text': |\n      <p>Empieza ya a formar parte de Mundo Consum, un mundo lleno de ventajas en el que ahorrar es muy fácil.</p>\n      \n      <p><br />\n      Aprovéchate de todos los beneficios de ser parte de una cooperativa en la que hacemos las cosas diferentes y, sobre todo, las hacemos pensando en ti.</p>\n      \n    '#format': rich_text\n  tus_datos_registro_socio:\n    '#type': fieldset\n    '#title': 'Tus datos'\n    flexbox_pag1_a:\n      '#type': webform_flexbox\n      nombre:\n        '#type': textfield\n        '#title': Nombre\n        '#size': 4\n        '#required': true\n        '#required_error': 'El campo Nombre es obligatorio, mínimo 2 caracteres, máximo 20 caracteres.'\n        '#counter_type': character\n        '#counter_minimum': 2\n        '#counter_maximum': 20\n        '#flex': 4\n      apellido:\n        '#type': textfield\n        '#title': Apellido\n        '#help_title': 'El campo Apellido es obligatorio, mínimo 2 caracteres, máximo 20 caracteres.'\n        '#size': 4\n        '#required': true\n        '#required_error': 'El campo Apellido es obligatorio, mínimo 2 caracteres, máximo 20 caracteres.'\n        '#counter_type': character\n        '#counter_minimum': 2\n        '#counter_maximum': 20\n        '#flex': 4\n      apellido_2:\n        '#type': textfield\n        '#title': 'Apellido 2'\n        '#size': 4\n        '#flex': 4\n    flexbox_pag1_b:\n      '#type': webform_flexbox\n      tipo_documento:\n        '#type': select\n        '#title': 'Tipo documento'\n        '#options':\n          dni: DNI\n          pasaporte: Pasaporte\n        '#flex': 2\n      documento_identidad:\n        '#type': textfield\n        '#title': 'Documento de identidad'\n        '#size': 4\n        '#flex': 6\n      nacionalidad:\n        '#type': select\n        '#title': Nacionalidad\n        '#options': country_codes\n        '#flex': 4\n    flexbox_pag1_c:\n      '#type': webform_flexbox\n      fecha_de_nacimiento:\n        '#type': datelist\n        '#title': 'Fecha de nacimiento'\n        '#flex': 4\n        '#date_part_order':\n          - day\n          - month\n          - year\n    flexbox_pag1_d:\n      '#type': webform_flexbox\n      sexo:\n        '#type': radios\n        '#title': Sexo\n        '#options':\n          hombre: Hombre\n          mujer: Mujer\n        '#flex': 4\n      telefono_de_contacto:\n        '#type': tel\n        '#title': 'Teléfono de contacto'\n        '#flex': 4\n      telefono_movil:\n        '#type': tel\n        '#title': 'Teléfono móvil'\n        '#flex': 4\n    flexbox_pag1_e:\n      '#type': webform_flexbox\n      direccion_de_email:\n        '#type': webform_email_confirm\n        '#title': 'Dirección de email'\n        '#flex': 6\n        '#confirm__title': 'Confirma el email'\n  direccion_habitual:\n    '#type': fieldset\n    '#title': 'Dirección habitual'\n    flexbox_pag1_f:\n      '#type': webform_flexbox\n      tipo_de_via:\n        '#type': select\n        '#title': 'Tipo de vía'\n        '#options': tipo_de_via\n        '#flex': 4\n        '#required': true\n      nombre_de_la_via:\n        '#type': textfield\n        '#title': 'Nombre de la vía'\n        '#required': true\n        '#flex': 8\n    flexbox_pag1_g:\n      '#type': webform_flexbox\n      numero_via:\n        '#type': textfield\n        '#title': Número\n        '#required': true\n        '#flex': 2\n      escalera:\n        '#type': textfield\n        '#title': Escalera\n        '#flex': 2\n      puerta:\n        '#type': textfield\n        '#title': Puerta\n        '#flex': 2\n      piso:\n        '#type': textfield\n        '#title': Piso\n        '#flex': 2\n    flexbox_pag1_h:\n      '#type': webform_flexbox\n      codigo_postal:\n        '#type': textfield\n        '#title': 'Código Postal'\n        '#flex': 4\n        '#required': true\n      provincia:\n        '#type': select\n        '#title': Provincia\n        '#options': provincias_espanolas\n        '#required': true\n        '#flex': 4\n      poblacion:\n        '#type': textfield\n        '#title': Población\n        '#flex': 4\n        '#required': true\n    flexbox_pag1_i:\n      '#type': webform_flexbox\n      codigo_promocional:\n        '#type': textfield\n        '#title': '¿Tienes algún código promocional?'\n        '#placeholder': 'Ej: 000400000008038208'\n        '#flex': 8\npersonaliza_tu_cuenta:\n  '#type': webform_wizard_page\n  '#title': 'Personaliza tu cuenta'\n  personaliza_cuenta:\n    '#type': fieldset\n    '#title': 'Personaliza tu cuenta'\n    modo_comunicacion:\n      '#type': radios\n      '#title': '¿Cómo quieres que te enviemos tu Cheque Regalo, extracto de compras y ofertas de tienda?'\n      '#options':\n        online: 'Online (Email, App)'\n        offline: 'Offline (Carta postal)'\n      '#required': true\n    processed_text_pag2_a:\n      '#type': processed_text\n      '#states':\n        visible:\n          ':input[name=\"modo_comunicacion\"]':\n            value: offline\n      '#text': |\n        <p>Si escoges el canal Online tendrás alguna ventaja más:<br />\n        - Podrás identificarte y cangear tus descuentos simplemente enseñando el móvil.<br />\n        - Tendrás disponible el Cheque Regalo antes, el día 15 de cada mes.<br />\n        - Te avisaremos por email de cuando tengas&nbsp;disponible tu Cheque Regalo y tu oferta&nbsp;personalizada.<br />\n        &nbsp;</p>\n        \n      '#format': rich_text\n    idioma_comunicacion:\n      '#type': radios\n      '#title': '¿En qué idioma quieres recibir tu Cheque Regalo, extracto de compras y ofertas de tienda?'\n      '#options':\n        castellano: Castellano\n        valenciano: Valenciano\n      '#required': true\n    recibir_la_revista_consum_entrenosotros:\n      '#type': checkbox\n      '#title': 'Recibir la revista Consum Entrenosotros'\n  mi_tienda_habitual:\n    '#type': fieldset\n    '#title': 'Mi tienda Habitual'\n    flexbox_pag2_a:\n      '#type': webform_flexbox\n      provincia_tienda:\n        '#type': select\n        '#title': Provincia\n        '#options': provincias_espanolas\n        '#flex': 4\n      localidad_tienda:\n        '#type': select\n        '#title': Localidad\n        '#options': provincias_espanolas\n        '#flex': 8\n    flexbox_pag2_b:\n      '#type': webform_flexbox\n      tienda:\n        '#type': select\n        '#title': Tienda\n        '#options': provincias_espanolas\n        '#flex': 12\ntu_tarjeta_mundo_consum:\n  '#type': webform_wizard_page\n  '#title': 'Tu tarjeta Mundo Consum'\n  processed_text_p3_a:\n    '#type': processed_text\n    '#text': |\n      <h4>Elije una tarjeta que hable de tí</h4>\n      \n      <p><br />\n      En Consum sabemos que no todas las personas somos iguales y como esta tarjeta es mucho más vuestra que nuestra, queremos que os sintáis a gusto con ella.</p>\n      \n    '#format': rich_text\n  seleccione_tarjeta:\n    '#type': webform_image_select\n    '#title': 'seleccione tarjeta'\n    '#title_display': none\n    '#images':\n      1:\n        text: '1'\n        src: /themes/custom/consum_es/assets/img/tarjetas/01.jpg\n      7:\n        text: '7'\n        src: /themes/custom/consum_es/assets/img/tarjetas/07.jpg\n      4:\n        text: '4'\n        src: /themes/custom/consum_es/assets/img/tarjetas/04.jpg\n      2:\n        text: '2'\n        src: /themes/custom/consum_es/assets/img/tarjetas/02.jpg\n      5:\n        text: '5'\n        src: /themes/custom/consum_es/assets/img/tarjetas/05.jpg\n      3:\n        text: '3'\n        src: /themes/custom/consum_es/assets/img/tarjetas/03.jpg\n    '#filter__placeholder': ''\n    '#filter__singlular': ''\n    '#filter__plural': ''\n    '#filter__no_results': ''\n  processed_text_p3_b:\n    '#type': processed_text\n    '#text': |\n      <h4>Información política de privacidad</h4>\n      \n    '#format': rich_text\n  processed_text_p3_c:\n    '#type': processed_text\n    '#text': |\n      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n      \n    '#format': rich_text\n  acepto_politica_proteccion_datos:\n    '#type': checkbox\n    '#title': 'Acepto los términos y uso de política de protección de datos'\n    '#required': true\n  no_recibir_comerciales:\n    '#type': checkbox\n    '#title': 'NO QUIERO recibir comunicaciones comercials publicitarias sobre servicios y productos de \"CONSUM S.COOP.V\" así como la tarjeta Visa Consum (por correo postal, correo electrónico, y medios de comunicación electrónica equivalente))'\n  no_quiero_habitos_compra:\n    '#type': checkbox\n    '#title': 'NO QUIERO que analicen mis hábitos de compra con la finalidad de ofrecerme ofertas personalizadas según mis gustos y preferencias. Si marcas esta casilla, tu checque regalo mensual no incluirá descuentos personalizados según tus compras.'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Finalizar registro'"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: url
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: '[site:url]'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  consum_socio_register:
+    id: consum_socio_register
+    label: 'Consum socio register'
+    notes: ''
+    handler_id: consum_socio_register
+    status: true
+    conditions: {  }
+    weight: 0
+    settings: {  }
+variants: {  }

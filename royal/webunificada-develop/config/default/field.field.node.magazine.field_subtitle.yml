@@ -1,0 +1,21 @@
+uuid: f3072b15-d94f-40b0-8c9f-159ff5767810
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.magazine
+  module:
+    - text
+id: node.magazine.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: magazine
+label: Subtítulo
+description: 'Texto que se coloca debajo del título, y antes de la imagen/imágenes destacadas.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

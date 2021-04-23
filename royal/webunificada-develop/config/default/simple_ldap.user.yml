@@ -1,0 +1,10 @@
+basedn: 'ou=usuarios,dc=s2,dc=consum'
+user_scope: sub
+object_class:
+  inetorgperson: inetorgperson
+name_attribute: cn
+mail_attribute: mail
+cron_frequency: '0'
+_core:
+  default_config_hash: hHeKe3ouqz8HO8OrBXIQc8I0Qbae8hlBk84P0U67yQI
+langcode: es

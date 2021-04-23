@@ -1,0 +1,460 @@
+<?php
+
+/**
+ * @file
+ * Theme functions.
+ */
+
+use Drupal\user\Entity\User;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\taxonomy\Entity\Term;
+
+// Include all files from the includes directory.
+$includes_path = dirname(__FILE__) . '/includes/*.inc';
+foreach (glob($includes_path) as $filename) {
+  require_once dirname(__FILE__) . '/includes/' . basename($filename);
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function consum_es_preprocess_block(&$variables) {
+  if (!empty($variables['elements']['#id'])) {
+    if ($variables['elements']['#id'] == 'page_title_block') {
+      $variables['#attached']['library'][] = 'src/js/components/components.js';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_comment().
+ */
+function consum_es_preprocess_comment(&$variables) {
+  // Getting the node creation time stamp from the comment object.
+  $date = $variables['comment']->getCreatedTime();
+
+  // Getting the author comment object for extract some fields.
+  $userCommentId = $variables['author_id'];
+  $user_storage = \Drupal::entityTypeManager()->getStorage('user');
+  $userComment = $user_storage->load($userCommentId);
+  $variables['author_comment'] = $userComment;
+  $variables['author_comment_name'] = $userComment->get('field_nombre')->getValue();
+  $variables['author_comment_apellido1'] = $userComment->get('field_apellido1')->getValue();
+
+  $direction_id = $variables['author_comment_direccion'] = $userComment->get('field_direccion')->getValue();
+  $direction = $direction_id[0]['target_id'];
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load($direction);
+  $variables['author_comment_location'] = $node->get('field_provincia')->getValue();
+
+  $variables['created'] = \Drupal::service('date.formatter')->formatInterval(REQUEST_TIME - $date);
+
+}
+
+/**
+ * Implements hook_preprocess_field__comment().
+ */
+function consum_es_preprocess_field__comment(&$variables) {
+
+  // Recorro el array comments.
+  foreach ($variables['comments'] as $key => $items) {
+    // Obtengo los items cuya clave es un numero.
+    $num = preg_match("/[0-9]/", $key);
+
+    if ($num !== 0) {
+      // getParentComment dice si el comentario tiene padre .. null si no.
+      $parents = $variables['comments']['' . $key . '']['#comment']->getParentComment();
+
+      // Obtengo el valor de thread (posicion) de los commentarios padre.
+      if ($parents == NULL) {
+        $parent = $variables['comments']['' . $key . '']['#comment']->get('thread')->getValue()[0]['value'];
+        // Obtengo el id de los comentarios padre para luego pasar la variable.
+        $cid = $variables['comments']['' . $key . '']['#comment']->get('cid')->getValue()[0]['value'];
+        $parent = trim($parent, '/');
+      }
+
+      // Meto en un unico array el valor de thread de todos los comentarios.
+      $hilo = $variables['comments']['' . $key . '']['#comment']->get('thread')->getValue()[0]['value'];
+      $format_hilo = trim($hilo, '/');
+      $boxHilo[] = $format_hilo;
+
+      // Convierto el array boxHilo en un string.
+      $cadena = implode($boxHilo, ';');
+
+      /* Cuento las coincidencias de parent con un punto que son las que hacen
+      referencia al comentario padre.*/
+      $subcomments = (substr_count($cadena, ';' . $parent . '.'));
+      if (trim($variables['comments']['' . $cid . '']['#comment']->get('thread')->getValue()[0]['value'], '/') === $parent) {
+        /* Creo la variable subcomments y guardo en ella el valor de la suma
+        correspondiente.*/
+        $variables['comments']['' . $cid . '']['subcomments'] = $subcomments;
+      }
+    }
+
+  }
+
+  $user = User::load(\Drupal::currentUser()->id());
+
+  if (!$user->user_picture->isEmpty()) {
+    $displayImg = file_create_url($user->user_picture->entity->getFileUri());
+  }
+  else {
+    $displayImg = '';
+  }
+
+  $variables['user_picture'] = $displayImg;
+}
+
+/**
+ * Implements hook_preprocess_links__language_block().
+ */
+function consum_es_preprocess_links__language_block(&$variables) {
+  $currentLanguageCode = \Drupal::languageManager()
+    ->getCurrentLanguage()
+    ->getId();
+  // Replace key of active language with 'activeLink'.
+  foreach ($variables['links'] as $i => $link) {
+    $linkLanguage = $link['link']['#options']['language'];
+    if ($currentLanguageCode == $linkLanguage->get('id')) {
+      $variables['links']['activeLink'] = $link;
+      unset($variables['links'][$i]);
+    }
+  }
+  // If there is only 2 languages remove active one.
+  if (count($variables['links']) == 2) {
+    unset($variables['links']['activeLink']);
+    // Give class 'btn btn-primary' to alternate language.
+    $alternate = current($variables['links']);
+    $alternate['link']['#options']['attributes']['class'][] = 'btn';
+    $alternate['link']['#options']['attributes']['class'][] = 'btn-primary';
+    $variables['links'] = [$alternate];
+  }
+}
+
+/**
+ * Implements hook_form_search_block_form_alter().
+ */
+function consum_es_form_search_block_form_alter(&$form, &$form_state, $form_id) {
+  $form['keys']['#attributes']['placeholder'] = t('Ponnos a prueba...');
+  $form['actions']['submit']['#value'] = '';
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function consum_es_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (!empty($form['#webform_id'])) {
+    if ($form["#webform_id"] == "form_planificador") {
+      if (count($form["elements"]["pagina_2"]["dieta"]["#options"]) >= 10) {
+        $form['#attributes']['class'][] = 'active-more-dieta';
+      }
+      if (count($form["elements"]["pagina_2"]["alergia"]["#options"]) >= 10) {
+        $form['#attributes']['class'][] = 'active-more-alergia';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_webform_confirmation().
+ */
+function consum_es_preprocess_webform_confirmation__recomendador(&$vars) {
+
+  if ($vars['webform']->id() === 'recomendador') {
+
+    // Get data from webform submission.
+    $data = $vars['webform_submission']->getData();
+
+    // Get data values.
+    $tipo_de_vino_quiz = $data['tipo_de_vino_quiz'];
+
+    $maridajes_quiz = $data['maridajes_quiz'];
+    $maridajes = implode(',', $maridajes_quiz);
+
+    $region_quiz = $data['region_quiz'];
+    $region = implode(',', $region_quiz);
+
+    $variedad_quiz = $data['variedad_quiz'];
+    $variedad = implode(',', $variedad_quiz);
+
+    // Queries filters.
+    $query = \Drupal::service('entity.query')->get('node')
+      ->condition('status', 1)
+      ->condition('type', 'guia_de_vino')
+      ->condition('field_tipo_vino', $tipo_de_vino_quiz);
+
+    if ($maridajes) {
+      $query->condition('field_categoria_maridaje', [$maridajes], 'IN');
+    }
+    if ($region) {
+      $query->condition('field_d_o_region', [$region], 'IN');
+    }
+    if ($variedad) {
+      $query->condition('field_categoria_uva', [$variedad], 'IN');
+    }
+
+    $entity_ids = $query->execute();
+
+    // Load node storage and objects.
+    $node_storage = \Drupal::service('entity_type.manager')->getStorage('node');
+    $nodes = $node_storage->loadMultiple($entity_ids);
+
+    // Load view builder for node entity.
+    $view_builder = \Drupal::service('entity_type.manager')->getViewBuilder('node');
+
+    foreach ($nodes as $node) {
+      $view[] = $view_builder->view($node, 'ficha_vino');
+    }
+
+    return $vars['vista'] = $view;
+  }
+}
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function consum_es_preprocess_menu(&$variables) {
+  $entity = \Drupal::routeMatch()->getParameter('node');
+  if ($entity instanceof \Drupal\node\NodeInterface) { // Check if it is a node
+    $node = $entity; // You also have the node object right here
+  }else{
+    $entity = \Drupal::routeMatch()->getParameter('user');
+    if ($entity instanceof \Drupal\user\UserInterface) { // Check if it is a user
+      $user = $entity; // You also have the user object right here
+    }
+  }
+
+  $config = \Drupal::config('consum_theme_blocks.settings');
+
+  //Tipos de nodos que se tratan a la hora de marcar como activo los items del menú
+  $nodeType = [
+    "team_consum" => true,
+    "magazine" => true,
+    "guia_general" => true,
+    "guia_de_vino" => true,
+    "receta" => true,
+    "menu" => true,
+    "centro" => true,
+    "viaje" => true,
+    "tastea" => true
+  ];
+
+  /*$nodeType = $config->get('menusettings.content_types');*/
+
+  $level1 = [
+    "team_consum" => "node/6", //Entrenosotros
+    "magazine" => "node/6", //Entrenosotros
+    "guia_general" => "node/65", //Guías
+    "guia_de_vino" => "node/65", //Guías
+    "receta" => "node/145", //Recetas
+    "menu" => "node/145", //Recetas
+    "centro" => "node/2600", //Centros
+    "viaje" => "node/2797", //Mundo Consum
+    "tastea" => "node/2797" //Mundo Consum
+  ];
+
+  $level2 = [
+    "team_consum" => "node/51", //Entrenosotros -> Team Consum
+    "magazine" => [
+      7 => "node/14", //Entrenosotros -> Alimentación
+      13 => "node/44", //Entrenosotros -> Estilo de vida
+      19 => "node/45", //Entrenosotros -> Salud
+      1 => "node/12", //Entrenosotros -> Belleza
+      23 => "node/49", //Entrenosotros -> Niños y familia
+      24 => "node/7" //Entrenosotros -> Hogar
+    ],
+    "guia_general" => [
+      102 => "node/72", //Guías -> Carnes
+      99 => "", //Guías -> Cereales (No existe el contenido o no está referenciado en el menú)
+      103 => "", //Guías -> Eco (No existe el contenido o no está referenciado en el menú)
+      96 => "node/66", //Guías -> Frutas
+      100 => "", //Guías -> Lácteos y huevos (No existe el contenido o no está referenciado en el menú)
+      98 => "node/68", //Guías -> Legumbres
+      101 => "node/71", //Guías -> Pescasdos y mariscos
+      97 => "node/67" //Guías -> Verduras
+    ],
+    "guia_de_vino" => "node/73", //Guías -> Vinoteca
+    "receta" => "node/145", //Recetas -> Recetas
+    "menu" => "node/147", //Recetas -> Menús
+    "viaje" => "node/2815", //Mundo Consum -> Vivir & Viajar
+    "tastea" => "node/2801" //Mundo Consum -> Tastea
+  ];
+
+  $level3 = [
+    "magazine" => [
+      8 => "node/19", //Alimentación -> Cocina
+      9 => "node/15", //Alimentación -> Frescos
+      10 => "node/16", //Alimentación -> Los 5 de
+      11 => "node/17", //Alimentación -> Mundo vinícola
+      12 => "node/17", //Alimentación -> Actualidad
+      30 => "node/2586", //Alimentación -> Cerveza
+
+      14 => "node/53", //Estilo de vida -> Saber comprar
+      15 => "node/54", //Estilo de vida -> Conócete
+      16 => "node/55", //Estilo de vida -> Viajar
+      17 => "node/56", //Estilo de vida -> Es ECO
+      18 => "node/57", //Estilo de vida -> Mascotas 
+      29 => "node/2585", //Estilo de vida -> A examen
+
+      20 => "node/58", //Salud -> Deporte
+      21 => "node/59", //Salud -> Salud y dieta
+      22 => "", //Salud -> Doctor (No existe el contenido o no está referenciado en el menú)
+
+      2 => "node/42", //Belleza -> Belleza
+      3 => "node/13", //Belleza -> Maquillaje
+      4 => "node/46", //Belleza -> Cabello
+      5 => "node/47", //Belleza -> Hombre
+      6 => "node/48", //Belleza -> Infantil
+
+      25 => "node/11", //Hogar -> Trucos
+      26 => "node/8", //Hogar -> Consejos hogar
+      27 => "node/9", //Hogar -> Consejos ropa
+      28 => "node/10" //Hogar -> Perfiles
+    ],
+    "guia_de_vino" => [
+      116 => "node/143", //Vinoteca -> Vino blanco
+      117 => "node/142", //Vinoteca -> Vino rosado
+      118 => "node/141", //Vinoteca -> Vino tinto
+      119 => "", //Vinoteca -> Vino ecológico (No existe el contenido o no está referenciado en el menú)
+      120 => "", //Vinoteca -> Vino generoso (No existe el contenido o no está referenciado en el menú)
+      121 => "node/144" //Vinoteca -> Vino espumoso
+    ]
+  ];
+
+  $user_pages = [
+    "level1" => "node/2797", //Mundo Consum
+    "level2" => "node/2799", //Mi comunidad
+    "level3" => "user" //User
+  ];
+
+  if ($variables['menu_name'] == 'main') {
+    /*kint($nodeType);*/
+    if ($node) {
+      if ($node->getType() == "magazine") {
+        $taxonomy_level2 = Term::load($node->get("field_category")->getValue()[0]["target_id"]);
+        $id_taxonomy_level2 = $node->get("field_category")->getValue()[0]["target_id"];
+        if (Term::load($taxonomy_level2->get("parent")->getValue()[0]["target_id"])) {
+          $id_taxonomy_level1 = $taxonomy_level2->get("parent")->getValue()[0]["target_id"];
+        }
+      }elseif ($node->getType() == "guia_general") {
+        $id_taxonomy_level1 = $node->get("field_tipo_de_guia")->getValue()[0]["target_id"];
+      }elseif ($node->getType() == "guia_de_vino") {
+        $id_taxonomy_level2 = $node->get("field_tipo_vino")->getValue()[0]["target_id"];
+      }
+    }
+
+    // Bucle para pintar activo el item que coincide con el tipo de nodo.
+    foreach ($variables['items'] as &$item) {
+      $item["is_external"] = $item['url']->isExternal();
+      if (isset($node)){
+        if (isset($nodeType[$node->getType()])){
+          if (!$item["is_external"] && $item['url']->getInternalPath() == $level1[$node->getType()] && $nodeType[$node->getType()]) {
+            $item['is_custom_active'] = TRUE;
+          }
+        }
+      }else if (isset($user)){
+        if (!$item["is_external"] && $item['url']->getInternalPath() == $user_pages["level1"]) {
+          $item['is_custom_active'] = TRUE;
+        }
+      }
+      if ($item["is_expanded"]) {
+        foreach ($item['below'] as &$below_parent) {
+          $below_parent["is_external"] = $below_parent['url']->isExternal();
+          if (!$below_parent["is_external"]){
+            $below_parent['is_custom_class'] = TRUE;
+            if (isset($node)){
+              $below_parent['is_custom_class_name'] = " icon-node-" . $below_parent['url']->getRouteParameters()["node"];
+              $below_parent['is_custom_data'] = "node-" . $below_parent['url']->getRouteParameters()["node"];
+              if (isset($nodeType[$node->getType()])){
+                if (isset($id_taxonomy_level1) && $nodeType[$node->getType()]) {
+                  if ($below_parent['url']->getInternalPath() == $level2[$node->getType()][$id_taxonomy_level1]){
+                    $below_parent['is_custom_active'] = TRUE;
+                  }
+                }else if($nodeType[$node->getType()]){
+                  if ($below_parent['url']->getInternalPath() == $level2[$node->getType()]){
+                    $below_parent['is_custom_active'] = TRUE;
+                  }
+                }
+              }
+            }else if (isset($user)){
+              if (isset($below_parent['url']->getRouteParameters()["node"])){
+                $below_parent['is_custom_class_name'] = " icon-node-" . $below_parent['url']->getRouteParameters()["node"];
+                $below_parent['is_custom_data'] = "node-" . $below_parent['url']->getRouteParameters()["node"];
+              }else{
+                $below_parent['is_custom_class_name'] = " icon-user-" . $below_parent['url']->getRouteParameters()["user"];
+                $below_parent['is_custom_data'] = "user-" . $below_parent['url']->getRouteParameters()["user"];
+              }
+              if ($below_parent['url']->getInternalPath() == $user_pages["level2"]) {
+                $below_parent['is_custom_active'] = TRUE;
+              }
+            }else{
+              $below_parent['is_custom_class_name'] = "";
+              $below_parent['is_custom_data'] = "";
+            }
+          }
+          if ($below_parent["is_expanded"]) {
+            foreach ($below_parent['below'] as &$below_child) {
+              $below_child["is_external"] = $below_child['url']->isExternal();
+              if (!$below_child["is_external"]){
+                $below_child['is_custom_class'] = TRUE;
+                if (isset($node)){
+                  $below_child['is_custom_class_name'] = "icon-node-" . $below_child['url']->getRouteParameters()["node"];
+                  $below_child['is_custom_data'] = "node-" . $below_child['url']->getRouteParameters()["node"];
+                  if (isset($nodeType[$node->getType()])){
+                    if (isset($id_taxonomy_level2) && $nodeType[$node->getType()]) {
+                      if ($below_child['url']->getInternalPath() == $level3[$node->getType()][$id_taxonomy_level2]){
+                        $below_child['is_custom_active'] = TRUE;
+                      }
+                    }else if($nodeType[$node->getType()]){
+                      if ($below_child['url']->getInternalPath() == $level3[$node->getType()]){
+                        $below_child['is_custom_active'] = TRUE;
+                      }
+                    }
+                  }
+                }else if (isset($user)){
+                  if (isset($below_child['url']->getRouteParameters()["node"])){
+                    $below_child['is_custom_class_name'] = "icon-node-" . $below_child['url']->getRouteParameters()["node"];
+                    $below_child['is_custom_data'] = "node-" . $below_child['url']->getRouteParameters()["node"];
+                  }else{
+                    $below_child['is_custom_class_name'] = "icon-user-" . $below_child['url']->getRouteParameters()["user"];
+                    $below_child['is_custom_data'] = "user-" . $below_child['url']->getRouteParameters()["user"];
+                  }
+                  if ($below_child['url']->getInternalPath() == $user_pages["level3"]) {
+                    $below_child['is_custom_active'] = TRUE;
+                  }
+                }else{
+                  $below_child['is_custom_class_name'] = "";
+                  $below_child['is_custom_data'] = "";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }else if (($variables['menu_name'] == 'sobre-nosotros') || ($variables['menu_name'] == 'comprar') || ($variables['menu_name'] == 'mas-consum') || ($variables['menu_name'] == 'unete') || ($variables['menu_name'] == 'menu-accesibilidad')){
+    foreach ($variables['items'] as &$item) {
+      $item["is_external"] = $item['url']->isExternal();
+    }  
+  }else if ($variables['menu_name'] == 'community-navigation'){
+    // Bucle para pintar activo el item que coincide con el tipo de nodo.
+    foreach ($variables['items'] as &$item) {
+      $item["is_external"] = $item['url']->isExternal();
+      if (isset($user)){
+        if (!$item["is_external"] && $item['url']->getInternalPath() == "user") {
+          $item['is_custom_active'] = TRUE;
+        }
+      }
+    }
+  }
+  $variables['#cache']['contexts'][] = 'url.path';
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function consum_es_preprocess_user(&$variables) {
+  $user = User::load(\Drupal::currentUser()->id());
+  if ($user->hasField('field_siguiendo') && !$user->field_siguiendo->isEmpty()) {
+    $variables['current_user']['field_siguiendo'] = $user->field_siguiendo;
+  }
+}

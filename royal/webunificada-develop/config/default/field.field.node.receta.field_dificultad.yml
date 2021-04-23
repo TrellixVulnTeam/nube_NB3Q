@@ -1,0 +1,29 @@
+uuid: 1a588f5f-3463-4dfc-9e44-c79bb7db37b0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dificultad
+    - node.type.receta
+    - taxonomy.vocabulary.dificultad
+id: node.receta.field_dificultad
+field_name: field_dificultad
+entity_type: node
+bundle: receta
+label: Dificultad
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      dificultad: dificultad
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

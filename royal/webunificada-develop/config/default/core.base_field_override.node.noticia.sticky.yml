@@ -1,0 +1,22 @@
+uuid: 1ec7591f-bb26-4a81-8838-a404b370a0ec
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.noticia
+id: node.noticia.sticky
+field_name: sticky
+entity_type: node
+bundle: noticia
+label: 'Fijo al comienzo de las listas'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

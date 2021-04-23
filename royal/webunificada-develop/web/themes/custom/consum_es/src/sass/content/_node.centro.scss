@@ -1,0 +1,124 @@
+.node--centro {
+  .row-1 {
+    .col--1 {
+      padding-left: 0px;
+      padding-right: 0px;
+      border-radius: 10px 10px 0px 0px;
+      background-color: white;
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .div-global-txt-col--1 {
+        padding: 60px 35px 35px 35px;
+        .div-icon {
+          position: relative;
+          img {
+            width: 90px;
+            position: absolute;
+            top: -105px;
+            z-index: 1;
+          }
+        }
+      }
+      .title {
+        font-weight: bold;
+        padding-top: 10px;
+        font-size: 18px;
+      }
+      .div-festivos {
+        border: 1px solid #3a3a41;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 10px;
+        padding: 0px 10px;
+        p {
+          margin-top: 10px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+
+      .div-telefono {
+        .centro__field-telefono {
+          padding-left: 5px;
+        }
+      }
+
+      .ayuda {
+        .icon-ayuda {
+          img {
+            width: 25px;
+            margin-left: 5px;
+            margin-right: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .col--2 {
+      h1 {
+        text-align: center;
+        margin-bottom: 0px;
+      }
+
+      .p-txt-bienvenido {
+        text-align: center;
+        font-size: 25px;
+      }
+
+      .div-global-servicios {
+        background-color: white;
+        border-radius: 10px;
+        padding: 25px;
+        margin-top: 30px;
+        .p-txt-servicios {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        .div-servicios {
+          .div-icon {
+            margin-right: 5px;
+            margin-left: 5px;
+            img {
+              width: 25px;
+              margin-right: 5px;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.supermarket-link {
+  text-align: right;
+}
+
+.supermarket-col {
+  border-bottom-style: dotted;
+  padding: 15px;
+  margin-right: 20px;
+}
+
+.form-item-field-domicilio-value label,
+.form-item-field-domicilio-value input {
+  display: inline;
+}
+
+.form-item-field-domicilio-value {
+  display: inline;
+}
+
+.supermarket-list .views-view-grid {
+  width: 40%;
+  float: left;
+}
+
+.supermarket-list .views-element-container {
+  width: 50%;
+  float: right;
+}

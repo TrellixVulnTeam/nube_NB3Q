@@ -1,0 +1,18 @@
+uuid: 3b30fd09-a752-4c90-9b57-832b0ca24872
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.dificultad
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.dificultad
+target_entity_type_id: taxonomy_term
+target_bundle: dificultad
+default_langcode: site_default
+language_alterable: false

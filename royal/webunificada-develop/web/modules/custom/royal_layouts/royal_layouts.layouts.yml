@@ -1,0 +1,154 @@
+col-12:
+  label: 1 columna
+  category: Columnas Bootstrap
+  path: layouts/col-12
+  template: col-12
+  class: '\Drupal\royal_layouts\Plugin\Layout\LayoutCustomClass'
+  icon: col-12.png
+  regions:
+    sidebar:
+      label: Sidebar
+col-4-8:
+  label: 2 columnas (1/3 - 2/3)
+  category: Columnas Bootstrap
+  path: layouts/col-4-8
+  template: col-4-8
+  class: '\Drupal\royal_layouts\Plugin\Layout\LayoutCustomClass'
+  icon: col-4-8.png
+  regions:
+    sidebar:
+      label: Sidebar
+    contentmain:
+      label: Content
+col-8-4:
+  label: 2 columnas (2/3 - 1/3)
+  category: Columnas Bootstrap
+  path: layouts/col-8-4
+  template: col-8-4
+  class: '\Drupal\royal_layouts\Plugin\Layout\LayoutCustomClass'
+  icon: col-8-4.png
+  regions:
+    sidebar:
+      label: Sidebar
+    contentmain:
+      label: Content
+col-3-9:
+  label: 2 columnas (1/4 - 3/4)
+  category: Columnas Bootstrap
+  path: layouts/col-3-9
+  template: col-3-9
+  class: '\Drupal\royal_layouts\Plugin\Layout\LayoutCustomClass'
+  icon: col-3-9.png
+  regions:
+    sidebar:
+      label: Sidebar
+    contentmain:
+      label: Content
+col-9-3:
+  label: 2 columnas (3/4 - 1/4)
+  category: Columnas Bootstrap
+  path: layouts/col-9-3
+  template: col-9-3
+  class: '\Drupal\royal_layouts\Plugin\Layout\LayoutCustomClass'
+  icon: col-9-3.png
+  regions:
+    sidebar:
+      label: Sidebar
+    contentmain:
+      label: Content
+col-6-6:
+  label: 2 columnas (1/2 - 1/2)
+  category: Columnas Bootstrap
+  path: layouts/col-6-6
+  template: col-6-6
+  class: '\Drupal\royal_layouts\Plugin\Layout\LayoutCustomClass'
+  icon: col-6-6.png
+  regions:
+    column1:
+      label: First Column
+    column2:
+      label: Second Column
+col-12-12:
+  label: 2 filas
+  category: Columnas Bootstrap
+  path: layouts/col-12-12
+  template: col-12-12
+  class: '\Drupal\royal_layouts\Plugin\Layout\LayoutCustomClass'
+  icon: col-12-12.png
+  regions:
+    column1:
+      label: First Column
+    column2:
+      label: Second Column
+col-3-6-3:
+  label: 3 columnas (1/4 - 2/4 -1/4)
+  category: Columnas Bootstrap
+  path: layouts/col-3-6-3
+  template: col-3-6-3
+  class: '\Drupal\royal_layouts\Plugin\Layout\LayoutCustomClass'
+  icon: col-3-6-3.png
+  regions:
+    column1:
+      label: First Column
+    column2:
+      label: Second Column
+    contentmain:
+      label: Content
+col-4-4-4:
+  label: 3 columnas
+  category: Columnas Bootstrap
+  path: layouts/col-4-4-4
+  template: col-4-4-4
+  class: '\Drupal\royal_layouts\Plugin\Layout\LayoutCustomClass'
+  icon: col-4-4-4.png
+  regions:
+      column1:
+        label: First Column
+      column2:
+        label: Second Column
+      column3:
+        label: Third Column
+col-3-3-3-3:
+  label: 4 columnas
+  category: Columnas Bootstrap
+  path: layouts/col-3-3-3-3
+  template: col-3-3-3-3
+  class: '\Drupal\royal_layouts\Plugin\Layout\LayoutCustomClass'
+  icon: col-3-3-3-3.png
+  regions:
+      column1:
+        label: First Column
+      column2:
+        label: Second Column
+      column3:
+        label: Third Column
+      column4:
+        label: Fourth Column
+combo-2-1:
+  label: Combo 2+1 columnas
+  category: Columnas Bootstrap
+  path: layouts/combo-2-1
+  template: combo-2-1
+  class: '\Drupal\royal_layouts\Plugin\Layout\LayoutCustomClass'
+  icon: combo-2-1.png
+  regions:
+    column1:
+      label: First Column
+    column2:
+      label: Second Column
+    contentmain:
+      label: Content
+combo-1-2:
+  label: Combo 1+2 columnas
+  category: Columnas Bootstrap
+  path: layouts/combo-1-2
+  template: combo-1-2
+  class: '\Drupal\royal_layouts\Plugin\Layout\LayoutCustomClass'
+  icon: combo-1-2.png
+  regions:
+    column1:
+      label: First Column
+    column2:
+      label: Second Column
+    contentmain:
+      label: Content

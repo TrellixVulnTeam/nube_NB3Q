@@ -1,0 +1,25 @@
+uuid: dec6eaca-244a-484e-8b00-4f93e8120ab3
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - consum_es
+id: submenu_secciones
+theme: consum_es
+region: menu_personalizado
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Submenú Secciones'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

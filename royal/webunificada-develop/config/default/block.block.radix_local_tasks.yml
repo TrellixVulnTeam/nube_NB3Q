@@ -1,0 +1,22 @@
+uuid: 906a6015-fba2-4dac-a3c1-658aa667fb6f
+langcode: es
+status: true
+dependencies:
+  theme:
+    - radix
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: radix_local_tasks
+theme: radix
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Pestañas
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

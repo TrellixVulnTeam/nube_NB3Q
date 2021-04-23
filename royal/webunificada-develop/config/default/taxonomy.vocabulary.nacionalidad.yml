@@ -1,0 +1,8 @@
+uuid: 4c60b880-c868-413f-bb20-556483302182
+langcode: es
+status: true
+dependencies: {  }
+name: Nacionalidad
+vid: nacionalidad
+description: ''
+weight: 0

@@ -1,0 +1,81 @@
+// Team Consum
+// -----------------------------------------------------------------------------
+
+
+.team-consum {
+    background-color: $white;
+    border-radius: 0.5rem;
+    .team-content-1,
+    .team-content-2 {
+        padding: 2rem;
+        padding-top: 3rem;
+    }
+}
+
+/* category links */
+
+.team-category,
+.team-consum__field-actividad-team-consum,
+.team-consum__field-edad-team-consum,
+.team-consum__field-tematica-team-consum {
+    .field__item {
+        float: left;
+        margin-top: 2rem;
+        margin-right: 0.5rem;
+    }
+}
+
+.team-category a {
+    @extend .boton3;
+    border: 1px solid $gris3;
+}
+
+/* pasos */
+
+.pasos-team-consum {
+    margin: 1rem;
+}
+.pasos-team-consum  .col-md-3{
+    padding: 5px;
+}
+
+.paso-team-consum {
+    background: $fondo2;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 0.5rem;
+
+    h6 {
+       font-family: 'NunitoSans-Bold';
+       padding-top: 10px; 
+    }
+}
+/* Downloads and links */
+
+.team-consum__field-contenido-descargable {
+    a {
+        @extend .boton1;
+    } 
+    .field__item {
+        float: left;
+        margin-top: 2rem;
+        margin-right: 0.5rem;
+    }
+}
+
+.team-consum__field-enlaces-de-descarga {
+    a {
+        @extend .boton2;
+    } 
+    .field__item {
+        float: right;
+        margin-top: 2rem;
+        margin-right: 0.5rem;
+    }
+}
+
+/* commments */
+.count-comments {
+    clear: both;
+    padding-top: 3rem;
+}

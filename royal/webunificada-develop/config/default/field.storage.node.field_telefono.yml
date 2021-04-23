@@ -1,0 +1,21 @@
+uuid: 2d5afa30-6192-47a1-b33c-e2a87229e9fe
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_telefono
+field_name: field_telefono
+entity_type: node
+type: string
+settings:
+  max_length: 20
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,380 @@
+uuid: dd5d9974-d322-42fd-abf9-ef879f9cb990
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.receta.body
+    - field.field.node.receta.field_azucares_simples_gr_
+    - field.field.node.receta.field_calorias
+    - field.field.node.receta.field_colesterol
+    - field.field.node.receta.field_comments
+    - field.field.node.receta.field_dificultad
+    - field.field.node.receta.field_estacion
+    - field.field.node.receta.field_extra
+    - field.field.node.receta.field_fibra
+    - field.field.node.receta.field_grasas
+    - field.field.node.receta.field_grasas_monosaturadas
+    - field.field.node.receta.field_grasas_polisaturadas
+    - field.field.node.receta.field_grasas_saturadas
+    - field.field.node.receta.field_hidratos_de_carbono
+    - field.field.node.receta.field_image
+    - field.field.node.receta.field_ingrediente
+    - field.field.node.receta.field_necesidades_especificas
+    - field.field.node.receta.field_notas_receta
+    - field.field.node.receta.field_num_comensales
+    - field.field.node.receta.field_nutricionista
+    - field.field.node.receta.field_objetivos
+    - field.field.node.receta.field_old_id
+    - field.field.node.receta.field_paso
+    - field.field.node.receta.field_precio_receta
+    - field.field.node.receta.field_proteinas
+    - field.field.node.receta.field_receta_destacada
+    - field.field.node.receta.field_receta_premiada
+    - field.field.node.receta.field_recibir_notificacion
+    - field.field.node.receta.field_sodio
+    - field.field.node.receta.field_tiempo_prep_total
+    - field.field.node.receta.field_tipo_de_comida
+    - field.field.node.receta.field_tipo_de_dieta
+    - field.field.node.receta.field_tipo_de_plato
+    - field.field.node.receta.field_tol_item
+    - field.field.node.receta.field_video_de_la_receta
+    - image.style.thumbnail
+    - node.type.receta
+    - workflows.workflow.editorial
+  module:
+    - comment
+    - consum_fields
+    - consum_tol_integration
+    - content_moderation
+    - image
+    - inline_entity_form
+    - lightning_media
+    - path
+    - text
+id: node.receta.default
+targetEntityType: node
+bundle: receta
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 10
+    settings:
+      rows: 9
+      placeholder: ''
+      summary_rows: 3
+      show_summary: true
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_azucares_simples_gr_:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_calorias:
+    weight: 25
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_colesterol:
+    weight: 35
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_comments:
+    weight: 41
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_dificultad:
+    weight: 36
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_estacion:
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_extra:
+    weight: 16
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_fibra:
+    weight: 30
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_grasas:
+    weight: 29
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_grasas_monosaturadas:
+    weight: 32
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_grasas_polisaturadas:
+    weight: 33
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_grasas_saturadas:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_hidratos_de_carbono:
+    weight: 26
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_image:
+    type: image_image
+    weight: 40
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings:
+      lightning_media:
+        file_links: true
+        remove_button: true
+  field_ingrediente:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: ingrediente_widget_type
+    region: content
+  field_necesidades_especificas:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_notas_receta:
+    weight: 13
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_num_comensales:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_nutricionista:
+    weight: 39
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_objetivos:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_old_id:
+    weight: 42
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_paso:
+    weight: 15
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      revision: false
+      override_labels: false
+      collapsed: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
+    region: content
+  field_precio_receta:
+    weight: 37
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_proteinas:
+    weight: 28
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_receta_destacada:
+    weight: 38
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_receta_premiada:
+    weight: 18
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_recibir_notificacion:
+    weight: 17
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_sodio:
+    weight: 34
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_tiempo_prep_total:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_tipo_de_comida:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_tipo_de_dieta:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_tipo_de_plato:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_tol_item:
+    type: tol_item_widget_type
+    weight: 43
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_video_de_la_receta:
+    weight: 44
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 8
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_like: true

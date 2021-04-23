@@ -1,0 +1,30 @@
+uuid: c8fe2959-ad4b-4607-91a0-ee4097ad6115
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.revistas
+  module:
+    - system
+    - views
+  theme:
+    - consum_es
+id: views_block__revistas_decirhaciendo
+theme: consum_es
+region: content
+weight: -14
+provider: null
+plugin: 'views_block:revistas-decirhaciendo'
+settings:
+  id: 'views_block:revistas-decirhaciendo'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/2648
+    negate: false
+    context_mapping: {  }

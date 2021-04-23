@@ -1,0 +1,31 @@
+uuid: c4b81b69-11bc-41e9-9075-bf1afd49cc90
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: 'Grupo de LDAP: editor-externo-drupal-consum.es'
+id: cta_editor_externo
+label: 'Cta. Editor Externo'
+weight: 32
+is_admin: null
+permissions:
+  - 'access ckeditor_media_browser entity browser pages'
+  - 'access contextual links'
+  - 'access image_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media_browser entity browser pages'
+  - 'access toolbar'
+  - 'create magazine content'
+  - 'create url aliases'
+  - 'edit own magazine content'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition review'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view magazine revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

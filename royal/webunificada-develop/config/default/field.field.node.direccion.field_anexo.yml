@@ -1,0 +1,19 @@
+uuid: c1ec9de2-5a2b-4c1c-97ea-81e25d6ffb9d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_anexo
+    - node.type.direccion
+id: node.direccion.field_anexo
+field_name: field_anexo
+entity_type: node
+bundle: direccion
+label: Anexo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,16 @@
+uuid: 0a780999-9a70-4477-b9f5-7b297c8cce83
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.pagina_mundoconsum
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.pagina_mundoconsum
+target_entity_type_id: node
+target_bundle: pagina_mundoconsum
+default_langcode: site_default
+language_alterable: false

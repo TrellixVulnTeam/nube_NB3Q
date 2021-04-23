@@ -1,0 +1,24 @@
+uuid: b26a46df-d937-45de-b130-d4d37614026b
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: 'Grupo de LDAP: administrador-drupal-consum.es'
+id: cta_guias
+label: 'Cta. Guías'
+weight: 29
+is_admin: null
+permissions:
+  - 'create guia_de_vino content'
+  - 'create guia_general content'
+  - 'create terms in tipo_de_guia'
+  - 'delete any guia_de_vino content'
+  - 'delete any guia_general content'
+  - 'delete terms in tipo_de_guia'
+  - 'edit any guia_de_vino content'
+  - 'edit any guia_general content'
+  - 'edit terms in tipo_de_guia'
+  - 'view guia_general revisions'

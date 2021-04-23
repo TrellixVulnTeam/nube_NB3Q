@@ -1,0 +1,7 @@
+services:
+  products.connection:
+    class: Drupal\consum_tol_integration\ProductsConnection
+    arguments: ['@logger.factory', '@config.factory', '@http_client']
+  shoppingcart.connection:
+    class: Drupal\consum_tol_integration\ShoppingCartConnection
+    arguments: ['@logger.factory', '@config.factory', '@http_client']

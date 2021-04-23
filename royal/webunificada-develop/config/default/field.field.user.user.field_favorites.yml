@@ -1,0 +1,41 @@
+uuid: dfc21f9f-0096-469b-9a6e-d05efc886302
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_favorites
+    - node.type.centro
+    - node.type.guia_de_vino
+    - node.type.guia_general
+    - node.type.magazine
+    - node.type.noticia
+    - node.type.receta
+  module:
+    - user
+_core:
+  default_config_hash: Pv9A5IOlQv8RmVmSwmFgRPRZ4HOAFzGyV6D30fiJiF4
+id: user.user.field_favorites
+field_name: field_favorites
+entity_type: user
+bundle: user
+label: favorites
+description: 'Field for add content to user favorites'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      centro: centro
+      guia_de_vino: guia_de_vino
+      guia_general: guia_general
+      magazine: magazine
+      noticia: noticia
+      receta: receta
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: guia_de_vino
+field_type: entity_reference

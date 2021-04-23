@@ -1,0 +1,14 @@
+uuid: 8606a1c4-fcd0-480a-81c6-f5fb5d87b22e
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.guia_de_vino_reviewer
+  module:
+    - user
+id: user_add_role_action.guia_de_vino_reviewer
+label: 'Añade el rol Guía de vino reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: guia_de_vino_reviewer

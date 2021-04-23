@@ -1,0 +1,13 @@
+consum_theme_blocks.settings:
+    path: '/admin/consum_theme_blocks/settings'
+    defaults:
+        _form: '\Drupal\consum_theme_blocks\Form\ConsumThemeMenuSettingsForm'
+        _title: 'Menú Settings'
+    requirements:
+        _permission: 'access config'
+consum_theme_blocks.subscribe_product_tastea:
+  path: subscribe-product-tastea/{nid}/{uid}
+  defaults:
+    _controller: '\Drupal\consum_theme_blocks\Controller\ConsumThemeBlocksController::subscribe_product_tastea'
+  requirements:
+    _permission: 'access content'

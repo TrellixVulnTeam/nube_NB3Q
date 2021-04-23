@@ -1,0 +1,94 @@
+uuid: c748d5dc-2dc2-429c-a594-c48c98c24cc6
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.card_img_izq_4_8
+    - field.field.node.magazine.body
+    - field.field.node.magazine.field_articulo_destacado
+    - field.field.node.magazine.field_bloque_2
+    - field.field.node.magazine.field_category
+    - field.field.node.magazine.field_comments
+    - field.field.node.magazine.field_especiales
+    - field.field.node.magazine.field_etiquetas
+    - field.field.node.magazine.field_file
+    - field.field.node.magazine.field_image
+    - field.field.node.magazine.field_imagenes_interiores
+    - field.field.node.magazine.field_subtitle
+    - field.field.node.magazine.field_tol_item
+    - field.field.node.magazine.field_video
+    - field.field.node.magazine.field_wp_post_id
+    - field.field.node.magazine.field_wp_thumbnail_id
+    - image.style.large
+    - node.type.magazine
+  module:
+    - comment
+    - image
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.magazine.card_img_izq_4_8
+targetEntityType: node
+bundle: magazine
+mode: card_img_izq_4_8
+content:
+  body:
+    label: visually_hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_category:
+    weight: 2
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_comments:
+    weight: 4
+    label: visually_hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_image:
+    weight: 3
+    label: visually_hidden
+    settings:
+      image_style: large
+      image_link: content
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_articulo_destacado: true
+  field_bloque_2: true
+  field_especiales: true
+  field_etiquetas: true
+  field_file: true
+  field_imagenes_interiores: true
+  field_subtitle: true
+  field_tol_item: true
+  field_video: true
+  field_wp_post_id: true
+  field_wp_thumbnail_id: true
+  langcode: true
+  search_api_excerpt: true

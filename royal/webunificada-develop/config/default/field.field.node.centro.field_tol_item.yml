@@ -1,0 +1,21 @@
+uuid: 2e9a5b71-0b60-4e07-9927-32c40805cce1
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tol_item
+    - node.type.centro
+  module:
+    - consum_tol_integration
+id: node.centro.field_tol_item
+field_name: field_tol_item
+entity_type: node
+bundle: centro
+label: 'Artículos TOL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: tol_item_field_type

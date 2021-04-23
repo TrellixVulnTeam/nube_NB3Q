@@ -1,0 +1,12 @@
+label: 'Contenido reciente'
+description: 'Contenido reciente.'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Reset
+      title: 'Contenido reciente'
+      empty:
+        area_text_custom:
+          content: 'No hay contenido disponible.'

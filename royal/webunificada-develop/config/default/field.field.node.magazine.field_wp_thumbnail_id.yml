@@ -1,0 +1,23 @@
+uuid: b69dc8e5-3ce1-47bc-8fb6-f70c2a721942
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_wp_thumbnail_id
+    - node.type.magazine
+id: node.magazine.field_wp_thumbnail_id
+field_name: field_wp_thumbnail_id
+entity_type: node
+bundle: magazine
+label: wp_thumbnail_id
+description: 'Campo auxiliar para contenidos importados desde un wordpress.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

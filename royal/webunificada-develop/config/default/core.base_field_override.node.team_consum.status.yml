@@ -1,0 +1,22 @@
+uuid: edadb1bc-7443-46cb-9832-fae434d3414d
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.team_consum
+id: node.team_consum.status
+field_name: status
+entity_type: node
+bundle: team_consum
+label: Publicado
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

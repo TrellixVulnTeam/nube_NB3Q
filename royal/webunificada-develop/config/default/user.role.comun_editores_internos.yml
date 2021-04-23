@@ -1,0 +1,32 @@
+uuid: bb1e96fd-d734-4e7c-8f0e-e63d106587d5
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: 'Role con las opciones comunes a todos los grupos LDAP internos de Consum'
+id: comun_editores_internos
+label: 'Común editores internos'
+weight: 35
+is_admin: null
+permissions:
+  - 'access ckeditor_media_browser entity browser pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access image_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media_browser entity browser pages'
+  - 'access toolbar'
+  - 'create url aliases'
+  - 'use editorial transition archive'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use editorial transition review'
+  - 'use moderation sidebar'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view the administration theme'

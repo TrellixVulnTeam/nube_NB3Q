@@ -1,0 +1,20 @@
+uuid: 67d8828c-60ce-4546-b995-e0f53355fe79
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.guia_general
+id: node.guia_general.uid
+field_name: uid
+entity_type: node
+bundle: guia_general
+label: 'Escrito por'
+description: 'El nombre de usuario del autor del contenido.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

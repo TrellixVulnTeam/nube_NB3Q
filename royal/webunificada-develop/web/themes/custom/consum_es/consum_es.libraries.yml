@@ -1,0 +1,16 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/consum_es.style.css: {}
+  js:
+    assets/js/consum_es.script.js: {}
+    assets/js/recipes.js: {}
+    assets/js/planificador.js: {}
+    assets/js/recomendador.js: {}
+    assets/js/baja-socio-cliente.js: {}
+    assets/js/copytoclipboard.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

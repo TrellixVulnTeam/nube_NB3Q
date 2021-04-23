@@ -1,0 +1,30 @@
+uuid: 0f86ed43-2b2a-466d-9763-810f20b738b9
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.mis_favoritos
+  module:
+    - system
+    - views
+  theme:
+    - consum_es
+id: views_block__mis_favoritos_block_1
+theme: consum_es
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:mis_favoritos-block_1'
+settings:
+  id: 'views_block:mis_favoritos-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: '10'
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/2893
+    negate: false
+    context_mapping: {  }

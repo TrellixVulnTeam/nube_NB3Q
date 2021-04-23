@@ -1,0 +1,13 @@
+uuid: 8f135bb7-a8da-4a08-84a8-ff95e0bc5a62
+langcode: es
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: VVyUA6PIaVeGtcIbgEWqJ6SYDiJdReBeojFswURFpKs
+id: media_save_action
+label: 'Almacenar media'
+type: media
+plugin: 'entity:save_action:media'
+configuration: {  }

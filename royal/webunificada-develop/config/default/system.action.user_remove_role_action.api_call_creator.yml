@@ -1,0 +1,14 @@
+uuid: c73f26ba-de5f-47e7-a6b5-b46b083e2270
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.api_call_creator
+  module:
+    - user
+id: user_remove_role_action.api_call_creator
+label: 'Elimina el rol api call creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: api_call_creator

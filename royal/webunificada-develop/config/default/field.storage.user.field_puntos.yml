@@ -1,0 +1,20 @@
+uuid: 2db33840-76af-421b-bc45-cecb6df7f184
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_puntos
+field_name: field_puntos
+entity_type: user
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,14 @@
+uuid: 69ff3ae5-1793-4b1f-a83a-2423e6c0bf22
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.centro_reviewer
+  module:
+    - user
+id: user_remove_role_action.centro_reviewer
+label: 'Elimina el rol Centro reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: centro_reviewer

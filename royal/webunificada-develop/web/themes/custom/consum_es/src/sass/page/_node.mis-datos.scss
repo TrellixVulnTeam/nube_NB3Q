@@ -1,0 +1,118 @@
+.page-mis-datos {
+  .row-form-misdatos {
+    background-color: white;
+    & > div {
+      padding: 75px 100px;
+    }
+    .form-actions {
+      text-align: center;
+      input{
+        margin: 0px;
+      }
+    }
+  }
+  .js-form-item {
+    label {
+      margin-bottom: 0px;
+      font-size: 14px;
+    }
+    input,
+    textarea,
+    select {
+      border-radius: 30px;
+      border: 1px solid #3a3a41;
+      color: #3a3a41;
+    }
+  }
+  fieldset {
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 0px !important;
+    .card-header {
+      border: none;
+      background-color: transparent;
+      padding-bottom: 0px;
+      padding-top: 0px;
+      padding-left: 0px;
+      .fieldset-legend {
+        font-size: 20pt;
+        line-height: 28pt;
+        font-weight: bold;
+      }
+    }
+
+    .card-body {
+      padding-top: 0px;
+      margin-bottom: 20px;
+      .webform-element-description {
+        position: relative;
+        left: -1.25rem;
+        margin-bottom: 40px;
+        color: #a9a7b0;
+      }
+      .webform-element-description {
+        a {
+          text-decoration: underline;
+          color: #ffc653;
+        }
+      }
+    }
+  }
+
+  #edit-datos-acceso {
+    .card-header {
+      margin-bottom: 20px;
+    }
+    .card-body{
+      margin-bottom: calc(40px + 1em);
+    }
+    .change-data-login {
+      position: relative;
+      bottom: -10px;
+      cursor: pointer;
+    }
+  }
+
+  #edit-sexo--wrapper {
+    .card-header {
+      padding: 0px;
+      .fieldset-legend {
+        margin-bottom: 0px;
+        font-size: 14px;
+        font-weight: 100;
+      }
+    }
+    .card-body {
+      margin-bottom: 0px;
+      padding: 0px;
+      padding-left: 0px;
+      #edit-sexo {
+        display: flex;
+        .form-item {
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  #edit-privacidad{
+    .card-body{
+      padding: 0px;
+      margin-bottom: 10px;
+      .js-form-type-checkbox{
+        display: flex;
+        margin-bottom: 15px;
+        input{
+          margin-right: 10px;
+        }
+        label{
+          width: calc(100% - 55px);
+        }
+      }
+      .form-check-label{
+        font-weight: bold;
+      }
+    }
+  }
+}

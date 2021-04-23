@@ -1,0 +1,5 @@
+name: 'Consum Import Localoo'
+type: module
+description: 'Consum Import Localoo module'
+core: 8.x
+package: 'Consum'

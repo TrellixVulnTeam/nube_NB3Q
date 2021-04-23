@@ -1,0 +1,8 @@
+uuid: fba3aa6a-d888-4e5f-85c4-2227db606ce3
+langcode: es
+status: true
+dependencies: {  }
+id: mas-consum
+label: 'Más Consum'
+description: 'Menú Más Consum para el footer.'
+locked: false

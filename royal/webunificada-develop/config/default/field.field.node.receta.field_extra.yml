@@ -1,0 +1,21 @@
+uuid: 1d0372ea-a5f3-4aeb-8bbe-b32fa5f94f9e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_extra
+    - node.type.receta
+  module:
+    - text
+id: node.receta.field_extra
+field_name: field_extra
+entity_type: node
+bundle: receta
+label: 'Información extra, trucos o consejos'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,39 @@
+uuid: b67ba0e4-bbd9-4b5d-b5aa-c00ed801d202
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.embedded
+    - field.field.media.instagram.embed_code
+    - field.field.media.instagram.field_media_in_library
+    - media.type.instagram
+  module:
+    - media_entity_instagram
+_core:
+  default_config_hash: 2r0247fIz1-cJniAb5cEhB6aWuwsBmKlt0MQ3Kjryzg
+id: media.instagram.embedded
+targetEntityType: media
+bundle: instagram
+mode: embedded
+content:
+  embed_code:
+    type: instagram_embed
+    weight: 0
+    label: hidden
+    settings:
+      max_width: 480
+      hidecaption: null
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_in_library: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

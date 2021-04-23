@@ -1,0 +1,14 @@
+uuid: 10305809-6be6-4f9b-a22a-2d1d5e1b3954
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.cta_guias
+  module:
+    - user
+id: user_remove_role_action.cta_guias
+label: 'Elimina el rol Cta. Guías al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cta_guias

@@ -1,0 +1,23 @@
+uuid: 0dda5afb-7490-4e56-8839-9fd767d9137c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_id_poblacion_centro
+    - node.type.centro
+id: node.centro.field_id_poblacion_centro
+field_name: field_id_poblacion_centro
+entity_type: node
+bundle: centro
+label: 'ID población'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

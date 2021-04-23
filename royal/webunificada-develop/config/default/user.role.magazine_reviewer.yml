@@ -1,0 +1,19 @@
+uuid: 9d9175db-0ab8-43ab-8ec8-0ee0b275a411
+langcode: es
+status: true
+dependencies: {  }
+id: magazine_reviewer
+label: 'Magazine reviewer'
+weight: -12
+is_admin: false
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'delete any magazine content'
+  - 'edit any magazine content'
+  - 'use editorial transition archive'
+  - 'use editorial transition publish'
+  - 'use editorial transition review'
+  - 'use moderation sidebar'
+  - 'view any unpublished content'
+  - 'view latest version'

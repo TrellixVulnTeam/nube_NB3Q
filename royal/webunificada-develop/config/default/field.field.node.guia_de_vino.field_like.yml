@@ -1,0 +1,30 @@
+uuid: 75ddbc2f-7f7c-4c63-b93c-2d9ed5d223ad
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_like
+    - node.type.guia_de_vino
+_core:
+  default_config_hash: HrNDccg443a7o1W08sXLWIS9fu-32-KE0jtelFaFffQ
+id: node.guia_de_vino.field_like
+field_name: field_like
+entity_type: node
+bundle: guia_de_vino
+label: Like
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

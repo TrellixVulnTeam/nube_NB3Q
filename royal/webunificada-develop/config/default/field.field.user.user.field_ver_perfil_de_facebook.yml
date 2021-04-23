@@ -1,0 +1,24 @@
+uuid: 2c2cd666-ac0b-481f-a677-ce3e47c5a80c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_ver_perfil_de_facebook
+  module:
+    - user
+id: user.user.field_ver_perfil_de_facebook
+field_name: field_ver_perfil_de_facebook
+entity_type: user
+bundle: user
+label: 'Ver Perfil de facebook'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

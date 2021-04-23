@@ -1,0 +1,10 @@
+uuid: f967dbf4-4da9-486d-96e1-3ebd73b8d0a9
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: I6aL46pRCPwdj90fj4yKCYY9ms3ZcidnCdAtK_LoEWs
+id: google_map
+label: 'Mapa de Google'
+revision: 0
+description: 'Displays a Google map.'

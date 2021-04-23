@@ -1,0 +1,28 @@
+uuid: 9b6593a5-fa33-4ffc-aeeb-f8ab380317c8
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_user_modified
+    - node.type.api_call
+id: node.api_call.field_user_modified
+field_name: field_user_modified
+entity_type: node
+bundle: api_call
+label: user_modified
+description: 'Usuario modificado relacionado a la llamada'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

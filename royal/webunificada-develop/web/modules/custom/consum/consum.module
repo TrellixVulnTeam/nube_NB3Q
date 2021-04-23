@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Contains consum.module.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function consum_help($route_name) {
+  switch ($route_name) {
+    case 'help.page.consum':
+      return t('El módulo Consum se encarga de acoger una amplia variedad de desarrollos del megasite, de uso genérico.
+      Entre otros, definiremos en este módulo plugins que definen nuevos tipos de campos o hooks que procesan la salida de los resultados a determinados formularios.
+      <br><br>Además de esto, este módulo gestiona las páginas de Administración de la plataforma.');
+  }
+}

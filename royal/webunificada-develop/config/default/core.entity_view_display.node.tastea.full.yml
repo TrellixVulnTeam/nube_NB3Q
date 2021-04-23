@@ -1,0 +1,184 @@
+uuid: 80a8da71-43a5-4cbd-9f87-02b980e499a0
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.tastea.body
+    - field.field.node.tastea.field_fecha_caducidad_cupon
+    - field.field.node.tastea.field_fecha_de_finalizacion
+    - field.field.node.tastea.field_image
+    - field.field.node.tastea.field_inf_nutr_grasa
+    - field.field.node.tastea.field_inf_nutr_hidratos
+    - field.field.node.tastea.field_inf_nutr_kcal
+    - field.field.node.tastea.field_inf_nutr_kj
+    - field.field.node.tastea.field_inf_nutr_proteinas
+    - field.field.node.tastea.field_inf_nutr_sal
+    - field.field.node.tastea.field_like
+    - field.field.node.tastea.field_tol_item
+    - field.field.node.tastea.field_usuarios_apuntados
+    - field.field.node.tastea.field_usuarios_seleccionados
+    - image.style.large
+    - node.type.tastea
+  module:
+    - consum_tol_integration
+    - datetime
+    - image
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.tastea.full
+targetEntityType: node
+bundle: tastea
+mode: full
+content:
+  addtoany:
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 1
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_fecha_caducidad_cupon:
+    type: datetime_custom
+    weight: 13
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: d-m-Y
+    third_party_settings: {  }
+  field_fecha_de_finalizacion:
+    weight: 3
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: d-m-Y
+    third_party_settings: {  }
+    type: datetime_custom
+    region: content
+  field_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_inf_nutr_grasa:
+    weight: 6
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_inf_nutr_hidratos:
+    weight: 7
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_inf_nutr_kcal:
+    weight: 4
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_inf_nutr_kj:
+    weight: 5
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_inf_nutr_proteinas:
+    weight: 8
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_inf_nutr_sal:
+    weight: 9
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_like:
+    type: entity_reference_entity_id
+    weight: 14
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_tol_item:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: tol_item_formatter_type
+    region: content
+  field_usuarios_apuntados:
+    weight: 11
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_entity_id
+    region: content
+  field_usuarios_seleccionados:
+    weight: 12
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_entity_id
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

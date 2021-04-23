@@ -1,0 +1,629 @@
+uuid: 6177c376-ec1f-40d1-bb0b-fa8217728d90
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.map_supermarket
+    - field.storage.node.field_coordenadas
+    - field.storage.node.field_domicilio
+    - node.type.centro
+  module:
+    - geofield
+    - geofield_map
+    - node
+    - user
+id: supermarkets
+label: Supermercados
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Filtrar
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        type: full
+        options:
+          items_per_page: 3
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      style:
+        type: default
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: map_supermarket
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          settings:
+            link_to_entity: true
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            centro: centro
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      sorts: {  }
+      title: Supermercados
+      header: {  }
+      footer: {  }
+      empty: {  }
+      relationships: {  }
+      arguments: {  }
+      display_extenders: {  }
+      use_ajax: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  attachment_1:
+    display_plugin: attachment
+    id: attachment_1
+    display_title: Adjunto
+    position: 2
+    display_options:
+      display_extenders: {  }
+      displays:
+        block_1: block_1
+      attachment_position: after
+      inherit_exposed_filters: true
+      style:
+        type: geofield_google_map
+        options:
+          data_source: field_coordenadas
+          entity_source: __base_table
+          map_dimensions:
+            width: 100%
+            height: 450px
+          map_empty:
+            empty_behaviour: '1'
+          map_center:
+            lat: '42'
+            lon: '12.5'
+            center_force: 0
+            geocode: 'Find my location'
+          map_zoom_and_pan:
+            zoom:
+              initial: '6'
+              force: 0
+              min: '1'
+              max: '22'
+              finer: '0'
+            gestureHandling: auto
+            scrollwheel: '1'
+            draggable: '1'
+            map_reset: 0
+            map_reset_position: TOP_RIGHT
+          map_controls:
+            disable_default_ui: 0
+            zoom_control: 1
+            map_type_id: roadmap
+            map_type_control: 1
+            map_type_control_options_type_ids:
+              roadmap: roadmap
+              satellite: satellite
+              hybrid: hybrid
+              terrain: terrain
+            scale_control: 1
+            street_view_control: 1
+            fullscreen_control: 1
+          map_marker_and_infowindow:
+            icon_image_path: ''
+            infowindow_field: '#rendered_entity'
+            multivalue_split: 0
+            view_mode: map_supermarket
+            tooltip_field: title
+            theming:
+              plugin_id: none
+              plugins_descriptions:
+                table: ''
+          map_additional_options: ''
+          map_additional_libraries:
+            places: 0
+            drawing: 0
+            geometry: 0
+            visualization: 0
+          map_geometries_options: '{"strokeColor":"black","strokeOpacity":"0.8","strokeWeight":2,"fillColor":"blue","fillOpacity":"0.1","clickable":false}'
+          map_oms:
+            map_oms_control: 1
+            map_oms_options: '{"markersWontMove":"true","markersWontHide":"true","basicFormatEvents":"true","nearbyDistance":3}'
+          custom_style_map:
+            custom_style_control: 0
+            custom_style_name: ''
+            custom_style_options: ''
+            custom_style_default: 0
+          map_markercluster:
+            markercluster_control: 0
+            markercluster_additional_options: '{"maxZoom":12,"gridSize":50}'
+          map_geocoder:
+            control: 0
+            settings:
+              position: TOP_LEFT
+              input_size: '25'
+              min_terms: '4'
+              delay: '800'
+              zoom: '16'
+              infowindow: 0
+              options: ''
+          map_lazy_load:
+            lazy_load: 0
+      defaults:
+        style: false
+        row: false
+        fields: false
+        css_class: false
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          settings:
+            link_to_entity: true
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_coordenadas:
+          id: field_coordenadas
+          table: node__field_coordenadas
+          field: field_coordenadas
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: geofield_default
+          settings:
+            output_format: wkt
+            output_escape: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_domicilio:
+          id: field_domicilio
+          table: node__field_domicilio
+          field: field_domicilio
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Dirección
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      css_class: col
+      pager:
+        type: full
+        options:
+          items_per_page: 3
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      inherit_pager: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_coordenadas'
+        - 'config:field.storage.node.field_domicilio'
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: Block
+    position: 1
+    display_options:
+      display_extenders: {  }
+      css_class: supermarket-list
+      defaults:
+        css_class: false
+        style: false
+        row: false
+        filters: false
+        filter_groups: false
+      style:
+        type: grid
+        options:
+          uses_fields: false
+          columns: 1
+          automatic_width: true
+          alignment: horizontal
+          col_class_default: false
+          col_class_custom: ''
+          row_class_default: false
+          row_class_custom: ''
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: map_supermarket
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            centro: centro
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_domicilio_value:
+          id: field_domicilio_value
+          table: node__field_domicilio
+          field: field_domicilio_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_domicilio_value_op
+            label: 'Encuentra tu tienda'
+            description: ''
+            use_operator: false
+            operator: field_domicilio_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_domicilio_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              page_creator: '0'
+              layout_manager: '0'
+              page_reviewer: '0'
+              landing_page_creator: '0'
+              landing_page_reviewer: '0'
+              media_creator: '0'
+              media_manager: '0'
+              magazine_creator: '0'
+              magazine_reviewer: '0'
+              direccion_creator: '0'
+              webform_creator: '0'
+              direccion_reviewer: '0'
+              webform_reviewer: '0'
+              team_consum_creator: '0'
+              team_consum_reviewer: '0'
+              guia_general_creator: '0'
+              guia_general_reviewer: '0'
+              guia_de_vino_creator: '0'
+              guia_de_vino_reviewer: '0'
+              paso_receta_creator: '0'
+              paso_receta_reviewer: '0'
+              receta_creator: '0'
+              receta_reviewer: '0'
+              menu_creator: '0'
+              menu_reviewer: '0'
+              noticia_creator: '0'
+              noticia_reviewer: '0'
+              centro_creator: '0'
+              centro_reviewer: '0'
+              revista_creator: '0'
+              revista_reviewer: '0'
+              faq_creator: '0'
+              faq_reviewer: '0'
+            placeholder: 'Dirección o código postal'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: string
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

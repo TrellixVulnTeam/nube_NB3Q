@@ -1,0 +1,22 @@
+uuid: 65934e13-37b9-48a7-ba49-4e5a6fbe5b55
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - consum_es
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: consum_es_messages
+theme: consum_es
+region: navbar_branding
+weight: -3
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Mensajes de estado'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: 5afe14b6-5026-43da-9b55-76b1bd7217f8
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_caducidad_cupon
+    - node.type.tastea
+  module:
+    - datetime
+id: node.tastea.field_fecha_caducidad_cupon
+field_name: field_fecha_caducidad_cupon
+entity_type: node
+bundle: tastea
+label: 'Fecha caducidad cupón'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

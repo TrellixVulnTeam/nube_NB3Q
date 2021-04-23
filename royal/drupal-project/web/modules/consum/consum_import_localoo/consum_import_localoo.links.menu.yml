@@ -1,0 +1,5 @@
+consum_sendgrid.admin_settings_form:
+  title: 'Consum Sendgrid'
+  parent: system.admin_config_system
+  description: 'Configure consum_sendgrid_integration settings'
+  route_name: consum_sendgrid.config_form

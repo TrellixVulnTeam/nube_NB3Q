@@ -1,0 +1,30 @@
+uuid: de402219-fcea-4600-a293-b51717c518e6
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.supermarkets
+  module:
+    - system
+    - views
+  theme:
+    - consum_es
+id: views_block__supermarkets_block_1
+theme: consum_es
+region: content
+weight: -13
+provider: null
+plugin: 'views_block:supermarkets-block_1'
+settings:
+  id: 'views_block:supermarkets-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/supermercados\r\n"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,20 @@
+uuid: cfeeb147-940f-4a79-940c-4646b9c9bb57
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_d_o_region
+field_name: field_d_o_region
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

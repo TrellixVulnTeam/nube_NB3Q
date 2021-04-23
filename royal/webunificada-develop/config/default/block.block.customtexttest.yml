@@ -1,0 +1,42 @@
+uuid: e454d1ed-eb48-4c59-8333-326d4ba42bf1
+langcode: es
+status: true
+dependencies:
+  module:
+    - consum_custom_blocks
+    - system
+  theme:
+    - consum_es
+id: customtexttest
+theme: consum_es
+region: cabeceras_interiores
+weight: -4
+provider: null
+plugin: consum_customtext_block
+settings:
+  id: consum_customtext_block
+  label: 'Landing APP'
+  provider: consum_custom_blocks
+  label_display: visible
+  text1:
+    value: "<!-- bloque 1 -->\r\n<div class=\"container-fluid\" style=\"background-color:#ffa961;\">\r\n<div class=\"container\">\r\n<div class=\"row align-items-center\">\r\n<div class=\"col-md-6 pt-5 pb-5\">\r\n<h2 class=\"blanco\">Te presentamos la App de Mundo Consum</h2>\r\n\r\n<p class=\"blanco\">Descubre todas las ventajas de las que puedes disfrutar teniendo la App de Mundo Consum siempre a mano.</p>\r\n\r\n<p class=\"blanco\">¡Descárgatela ya!</p>\r\n</div>\r\n\r\n<div class=\"col-md-6\"><img alt=\"Te presentamos la APP de Mundo Consum\" src=\"/themes/custom/consum_es/assets/img/landing-app/landing-APP-1.jpg\" /></div>\r\n</div>\r\n</div>\r\n</div>\r\n<!-- bloque 2 -->\r\n\r\n<div class=\"container-fluid\" style=\"background-color:#f1f1f1;\">\r\n<div class=\"container\">\r\n<div class=\"row align-items-center\">\r\n<div class=\"col-md-6\"><img alt=\"Te presentamos la APP de Mundo Consum\" src=\"/themes/custom/consum_es/assets/img/landing-app/landing-APP-2.jpg\" /></div>\r\n\r\n<div class=\"col-md-6 pt-5 pb-5\">\r\n<h2>Haz tu compra online</h2>\r\n\r\n<p>Gracias a la App, podrás realizar tu compra cómodamente desde donde tú quieras, y decidir cuándo es el mejor momento para realizarla. Además, puedes elegir cuándo te la llevamos a casa en franjas de 1 hora.</p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<!-- bloque 3 -->\r\n\r\n<div class=\"container-fluid\" style=\"background-color:#d3c9cd;\">\r\n<div class=\"container\">\r\n<div class=\"row align-items-center\">\r\n<div class=\"col-md-6 pt-5 pb-5\">\r\n<h2>Tus descuentos siempre contigo</h2>\r\n&nbsp;\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Tendrás todas tus ofertas y descuentos siempre a mano para canjearlos cómodamente desde tu móvil y sin necesidad de papel.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Además, podrás disfrutar de descuentos exclusivos escaneando los productos con QR que encuentres en tu tienda.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>También podrás elegir tus 9 productos favoritos cada mes directamente desde la App, y así disfrutar y canjear cómodamente tu oferta personalizada Mis Favoritos.</p>\r\n\t</li>\r\n</ul>\r\n</div>\r\n\r\n<div class=\"col-md-6\"><img alt=\"Te presentamos la APP de Mundo Consum\" src=\"/themes/custom/consum_es/assets/img/landing-app/landing-APP-3.jpg\" /></div>\r\n</div>\r\n</div>\r\n</div>\r\n<!-- bloque 4 -->\r\n\r\n<div class=\"container-fluid\" style=\"background-color:#f1f1f1;\">\r\n<div class=\"container\">\r\n<div class=\"row align-items-center\">\r\n<div class=\"col-md-6\"><img alt=\"Te presentamos la APP de Mundo Consum\" src=\"/themes/custom/consum_es/assets/img/landing-app/landing-APP-4.jpg\" /></div>\r\n\r\n<div class=\"col-md-6 pt-5 pb-5\">\r\n<h2>Consulta y canjea tu Cheque Regalo</h2>\r\n\r\n<p>Podrás consultar en todo momento cuánto llevas acumulado en tu Cheque Regalo. Y si lo recibes por el canal online, tendrás la ventaja de disfrutarlo antes (el 15 de cada mes).</p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<!-- bloque 5 -->\r\n\r\n<div class=\"container-fluid\" style=\"background-color: #eb9077\">\r\n<div class=\"container\">\r\n<div class=\"row align-items-center\">\r\n<div class=\"col-md-6 pt-5 pb-5\">\r\n<h2>Guarda todos tus tickets electrónicos</h2>\r\n&nbsp;\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Todos tus tickets electrónicos quedarán guardados en la App y podrás consultarlos cuando lo necesites.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Los tendrás siempre a mano si quieres hacer una devolución en tienda.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Podrás compartirlos con quien quieras.</p>\r\n\t</li>\r\n</ul>\r\n</div>\r\n\r\n<div class=\"col-md-6\"><img alt=\"Te presentamos la APP de Mundo Consum\" src=\"/themes/custom/consum_es/assets/img/landing-app/landing-APP-5.jpg\" /></div>\r\n</div>\r\n</div>\r\n</div>\r\n<!-- bloque 6 -->\r\n\r\n<div class=\"container-fluid\" style=\"background-color:#f1f1f1;\">\r\n<div class=\"container\">\r\n<div class=\"row align-items-center\">\r\n<div class=\"col-md-6 pt-5 pb-5\"><img alt=\"Te presentamos la APP de Mundo Consum\" src=\"/themes/custom/consum_es/assets/img/landing-app/landing-APP-6.jpg\" /></div>\r\n\r\n<div class=\"col-md-6\">\r\n<h2>Pide tu turno y ahorra tiempo</h2>\r\n\r\n<p>ambién desde la App, podrás pedir turno (en las tiendas disponibles) para la charcutería, la carnicería o la pescadería de tu tienda, y la App te avisará cuando sea tu turno mientras tú sigues comprando tranquilamente.</p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<!-- bloque 7 -->\r\n\r\n<div class=\"container-fluid\" style=\"background-color: #f8951d\">\r\n<div class=\"container\">\r\n<div class=\"row align-items-center\">\r\n<div class=\"col-md-6 pt-5 pb-5\">\r\n<h2>Haz tus listas de la compra</h2>\r\n&nbsp;\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Podrás realizar listas de la compra para llevarlas siempre encima cuando vengas a nuestras tiendas.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Podrás convertirlas en compras online directamente desde la App en las que incluir todos tus descuentos.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Tienes la opción de compartirlas para que otros miembros de la casa puedan ampliarlas con nuevos productos.</p>\r\n\t</li>\r\n</ul>\r\n</div>\r\n\r\n<div class=\"col-md-6\"><img alt=\"Te presentamos la APP de Mundo Consum\" src=\"/themes/custom/consum_es/assets/img/landing-app/landing-APP-7.jpg\" /></div>\r\n</div>\r\n</div>\r\n</div>\r\n"
+    format: rich_text
+  height: _none
+  customHeight: '0'
+  customStyle: bloque-landing-app
+  background_color: sin-fondo
+  custom_color: '#000000'
+  visibility: _none
+  hide:
+    movil: 0
+    tablet: 0
+    escritorio: 0
+  image1: null
+  image2: null
+  border: null
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/2590
+    negate: false
+    context_mapping: {  }

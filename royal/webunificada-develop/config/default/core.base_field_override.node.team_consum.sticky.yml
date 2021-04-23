@@ -1,0 +1,22 @@
+uuid: e5fa275a-7c9d-4de6-83e2-30f6d1c0ebe8
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.team_consum
+id: node.team_consum.sticky
+field_name: sticky
+entity_type: node
+bundle: team_consum
+label: 'Fijo al comienzo de las listas'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

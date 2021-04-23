@@ -1,0 +1,14 @@
+uuid: a03a8cb8-c3e1-4c42-bd9c-c42c280f2e41
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'Modo de visualización para los listados de contenidos de tipo guía'
+id: node.guia_card
+label: 'Guía Card'
+targetEntityType: node
+cache: true

@@ -1,0 +1,19 @@
+uuid: c2d79481-88fd-4eab-82e6-70dc731052e1
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_domicilio
+    - node.type.centro
+id: node.centro.field_domicilio
+field_name: field_domicilio
+entity_type: node
+bundle: centro
+label: Dirección
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

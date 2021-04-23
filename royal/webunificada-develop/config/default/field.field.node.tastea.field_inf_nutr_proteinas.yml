@@ -1,0 +1,23 @@
+uuid: 9f9fb099-26ef-418f-a9b6-33d2b061cc38
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_inf_nutr_proteinas
+    - node.type.tastea
+id: node.tastea.field_inf_nutr_proteinas
+field_name: field_inf_nutr_proteinas
+entity_type: node
+bundle: tastea
+label: 'Información Nutricional (Proteínas)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

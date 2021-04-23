@@ -1,0 +1,14 @@
+uuid: cf8ebe64-63a2-4cb8-8a5e-728dd6877d9b
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - user
+third_party_settings:
+  lightning_core:
+    description: ''
+id: user.follow
+label: 'Seguir Usuario'
+targetEntityType: user
+cache: true

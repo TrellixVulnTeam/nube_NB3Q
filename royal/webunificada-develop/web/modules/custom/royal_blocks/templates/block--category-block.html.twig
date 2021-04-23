@@ -1,0 +1,149 @@
+{#
+  Variables
+  entityType: entity type
+  nameCategory: category name
+  dateFormated: article date created
+  termId: id category term
+  totalComments: total comments for current node
+  addtoany: addtoany plugin block
+  label: current node label
+  path: current node path
+  nid: node id
+  listLikes: array like field
+  flagMatch: favorite match is true else false
+#}
+
+{# VARIABLE NODE ID #}
+{% set node_id = node.id %}
+
+{# VARIABLE LABEL SHARE #}
+{% set label_share = label %}
+
+{# VARIABLE ADDTOANY #}
+{% set add_to_any = label %}
+
+{# VARIABLES AND LOOP FOR FAVORITE MATCH #}
+{% set index = (node.field_favorites|length) %}
+{% set favorite = 'ci-marcador' %}
+
+{% if flagMatch %}
+  {% set favorite = 'ci-marcador-activo' %}
+{% endif %} 
+
+{# VARIABLES FOR LIKE FIELD #}
+{% set likes = (node.field_like.0.value|length) %}
+{% set likeObject = node.field_like.0.value %}
+{% set heart = 'ci-corazon' %}
+
+{# LOOP FOR CURRENT USER LIKE MATCH #}
+{% for key in likeObject %}
+  {% if key == user.id %}
+    {% set heart = 'ci-corazon-activo' %}
+  {% endif %}
+{% endfor %}
+
+{# SET TYPE CONTENT FOR SHARE #}
+{% set type_content = node.type.value.0.target_id %}
+{% if type_content != 'receta' %}
+  {% set text_type = 'el contenido' %}
+{% else %}
+  {% set text_type = 'la receta' %}
+{% endif %}
+
+{# OTHERS VARIABLES #}
+{% set url_absolute = (url('<front>')|render ~ path|slice(1)) %}
+{% set comments = node.field_comments.0.comment_count %}
+
+<!-- Desktop -->
+<div class="text-center category-block">
+  {# CARD CONTENT #}
+  <div class="card-content">  
+    {% if termId %}
+      <h4 class="category-ico category-id-{{ termId }} d-flex align-items-center"></h4>
+    {% else %}
+      <h4 class="category-ico category-id-12 d-flex align-items-center"></h4>
+    {% endif %}
+  
+    {% if entityType == 'team_consum' %}
+      <h4 class="font-weight-bold text-center"> Team Consum </h4>
+    {% else %}
+      <h4 class="font-weight-bold text-center">
+        {% if nameCategory %} 
+          {{ nameCategory }} 
+        {% endif %} 
+      </h4>
+    {% endif %}
+   {# <p class="text-center"> {% if dateFormated %} {{ dateFormated }} {% endif %} </p> #}
+  </div>
+  {# END CARD CONTENT #}
+  {# CARD FOOTER #}
+  <div class="row card-footer">
+    <div class="col-12 d-flex align-items-center justify-content-center likes-comments">
+      {% if likes > 0 %}
+        <span id="{{node_id}}"> {{ likes }} </span>
+      {% else %}
+        <span id="{{node_id}}">0</span>
+      {% endif %}
+      {% if logged_in %}
+        {% if heart %}
+          <a class="use-ajax d-flex align-items-center" href="/like/{{node_id}}/{{user.id}}">
+            <span id="heart-{{node_id}}" class="btn-ci {{ heart }}">
+          </a>
+        {% else %}
+          <a class="use-ajax d-flex align-items-center" href="/like/{{node_id}}/{{user.id}}">
+            <span id="heart-{{node_id}}" class="btn-ci ci-corazon">
+          </a>
+        {% endif %}
+      {% else %}
+        <span class="btn-ci ci-corazon"></span>
+      {% endif %}
+      {% if comments %}
+        <div>{{ comments }}</div>
+      {% else %}
+        <div>0</div>
+      {% endif %}
+      <span class="btn-ci ci-comentario"></span>
+    </div>
+    <div class="col-6 d-flex align-items-center market-share">
+      {% if logged_in %}
+        {% if favorite %}
+          <a class="use-ajax d-flex align-items-center" href="/favorites/{{node_id}}/{{user.id}}">
+            {{'Guardar'|t}} <span id="flag-{{node_id}}" class="btn-ci {{ favorite }}"></span>
+          </a>
+        {% else %}
+          <a class="use-ajax d-flex align-items-center" href="/favorites/{{node_id}}/{{user.id}}">
+            {{'Guardar'|t}} <span id="flag-{{node_id}}" class="btn-ci ci-marcador"></span>
+          </a>
+        {% endif %}
+      {% else %}
+        {{'Guardar'|t}} <span id="flag-{{node_id}}" class="btn-ci ci-marcador"></span>
+      {% endif %}
+    </div>
+    <div class="col-6 d-flex align-items-center justify-content-end market-share">
+      <a href="#" class="btn-ci ci-compartir" data-toggle="modal" data-target="#shareModal{{node_id}}">{{'Compartir'|t}}</a>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="shareModal{{node_id}}" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h5 class="share-modal-title" id="exampleModalLabel">{{ 'Compartir'|t }} {{ text_type|t }}</h5>
+          <div class="share-modal-label"> {{ label_share }} </div>
+          <div class="p-4"> {% if content.addtoany %} {{ content.addtoany }} {% endif %} </div>
+          <div class="pb-4">
+            <span class="box-url">
+              <input readonly class="input-url" id="copy-{{node_id}}" value={% if url_absolute %} {{ url_absolute }} {% endif %} />
+              <button class="boton1 botton-copy" onclick="copyToClipboard({{node_id}})"> {{ 'Copiar'|t }}</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {# END CARD FOOTER #}
+</div>

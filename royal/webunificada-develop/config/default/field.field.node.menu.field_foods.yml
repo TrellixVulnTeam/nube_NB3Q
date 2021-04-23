@@ -1,0 +1,21 @@
+uuid: f2e47b99-3e6e-491f-8f94-cf0e14f195ee
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_foods
+    - node.type.menu
+  module:
+    - options
+id: node.menu.field_foods
+field_name: field_foods
+entity_type: node
+bundle: menu
+label: Comidas
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

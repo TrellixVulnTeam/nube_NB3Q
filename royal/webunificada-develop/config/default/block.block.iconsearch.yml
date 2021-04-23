@@ -1,0 +1,20 @@
+uuid: 88d92e3c-cde3-48c2-9c4e-777ed1db861f
+langcode: es
+status: true
+dependencies:
+  module:
+    - consum_theme_blocks
+  theme:
+    - consum_es
+id: iconsearch
+theme: consum_es
+region: navbar_principal
+weight: -44
+provider: null
+plugin: icon-search-block
+settings:
+  id: icon-search-block
+  label: 'Icon Search'
+  provider: consum_theme_blocks
+  label_display: '0'
+visibility: {  }

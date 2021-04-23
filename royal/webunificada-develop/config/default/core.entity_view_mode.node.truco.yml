@@ -1,0 +1,14 @@
+uuid: b5c17c80-ff50-4a09-bc9c-e73bc2a300df
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'Trucos de hogar (Magazine)'
+id: node.truco
+label: 'Truco Hogar'
+targetEntityType: node
+cache: true

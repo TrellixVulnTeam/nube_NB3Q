@@ -1,0 +1,18 @@
+uuid: d647d3ce-c065-4e84-ad5d-18000f0d94c3
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tipo_de_dieta
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.tipo_de_dieta
+target_entity_type_id: taxonomy_term
+target_bundle: tipo_de_dieta
+default_langcode: site_default
+language_alterable: false

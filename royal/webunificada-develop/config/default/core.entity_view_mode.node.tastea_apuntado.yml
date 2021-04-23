@@ -1,0 +1,14 @@
+uuid: 4ab74c7d-7113-41a5-b745-bbe1c4d4a1f3
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'Modo de visualización para la vista que indica que has sido apuntado a un producto'
+id: node.tastea_apuntado
+label: 'Tastea apuntado'
+targetEntityType: node
+cache: true

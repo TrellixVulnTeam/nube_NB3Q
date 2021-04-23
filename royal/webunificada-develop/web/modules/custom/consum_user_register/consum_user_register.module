@@ -1,0 +1,122 @@
+<?php
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\user\Entity\User;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\user\UserInterface;
+
+function consum_user_register_locale_translation_projects_alter(&$projects)
+{
+  // The translations
+  $projects['consum_user_register'] = array(
+    'info' => array(
+      'interface translation server pattern' => 'modules/custom/consum_user_register/translations/%project.%language.po',
+    ),
+  );
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function consum_user_register_user_update(EntityInterface $account)
+{
+  /** @var UserInterface $account */
+  $user_data = [];
+  $original_numero_socio = $account->original->get('field_codigo_socio')->getValue();
+  $numero_socio = $account->get('field_codigo_socio')->getValue();
+
+  // Actualizamos role "mundo_consum" si el usuario tiene código de socio
+  if (!empty($numero_socio) && !$account->hasRole('mundo_consum')) {
+    if ($user = User::load($account->id())) {
+      $user->addRole('mundo_consum');
+      $user->save();
+    }
+  }
+
+  $documento_principal = '';
+  if ($account->hasField('field_documento_principal_numero') && !$account->field_documento_principal_numero->isEmpty()) {
+    $documento_principal = $account->field_documento_principal_numero->value;
+  }
+  // Cuando desde MDM se añada código de socio-cliente al usuario lite: enviamos el dni al IAM y actualizamos el role
+  if (empty($original_numero_socio) && !empty($numero_socio)) {
+    $user_data['documento_principal_numero'] = $documento_principal;
+    $user_data['email'] = $account->getEmail();
+  }
+
+  // Si se modifica el numero de documento con posterioridad a ser socio tambien lo enviamos a IAM
+  if (!empty($numero_socio) && $documento_principal != $account->original->field_documento_principal_numero->value) {
+    $user_data['documento_principal_numero'] = $documento_principal;
+    $user_data['email'] = $account->getEmail();
+  }
+
+  // Siempre que se modifique el email del usuario hay que informar al IAM y a Mundoconsum
+  if (($account->original->getEmail() != $account->getEmail())) {
+    $user_data['email'] = $account->getEmail();
+    if (!empty($numero_socio)) {
+      $user_data['documento_principal_numero'] = $documento_principal;
+    }
+    // TODO: Hay que informar a mundoconsum (laravel) del cambio de email
+  }
+
+  // si hay cambios que deben actualizarse en IAM, hacemos la llamada
+  if (!empty($user_data)) {
+    $user_data['user_name'] = $account->getUsername();
+    Drupal::service('consum_openid.authmap')->updateExternalAccount($user_data, $account);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function consum_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+  // Desactivamos campos que no se deben poder modificar por interface
+  if ($form_id == 'user_form') {
+    $form["account"]["name"]["#attributes"]["disabled"] = "disabled";
+// TODO: remove comment in lines
+//    $form["field_documento_principal_numero"]["widget"][0]["value"]["#attributes"]["disabled"] = "disabled";
+//    $form["field_codigo_socio"]["widget"][0]["value"]["#attributes"]["disabled"] = "disabled";
+    $form["field_id_mdm"]["widget"][0]["value"]["#attributes"]["disabled"] = "disabled";
+  }
+}
+
+/**
+ * Implements hook_entity_access().
+ * Controlamos el acceso al registro de socio-cliente
+ */
+function consum_user_register_entity_access(EntityInterface $entity, $operation, AccountInterface $account)
+{
+  if ($entity->id() == 'registro_de_socio_cliente' && $operation == 'submission_page') {
+    if ($account->isAnonymous()) {
+      // Si el usuario es anónimo, debe venir del formulario de creación de usuario
+      if (!empty($_SESSION['registerSocioCliente'])) {
+        return AccessResult::allowed();
+      } else {
+        Drupal::messenger()->addWarning(t('Must be registered to apply to be a partner-client.'));
+        return AccessResult::forbidden();
+      }
+    } else {
+      $user = User::load($account->id());
+      // Si el usuario está registrado, no debe tener codigo de socio
+      if ($user instanceof UserInterface) {
+        if ($user->hasField('field_codigo_socio') && !$user->get('field_codigo_socio')->isEmpty()) {
+          Drupal::messenger()->addWarning(t('You’re already a partner. You can’t make this request.'));
+          return AccessResult::forbidden();
+        } else {
+          // Si el usuario está registrado y no es socio aún, no debe tener un registro solicitado
+          if ($user->hasField('field_estado_socio_cliente')
+            && !$user->get('field_estado_socio_cliente')->isEmpty()
+            && $user->field_estado_socio_cliente->value != '0') {
+            Drupal::messenger()->addWarning(t('You already have an request in progress. I’m sorry.'));
+            return AccessResult::forbidden();
+          }
+        }
+        // si llega aquí es porque es usuario registrado, no tiene código de socio y
+        // field_estado_socio_cliente está vacío o contiene '0', en ese caso permitimos la solicitud
+        return AccessResult::allowed();
+      }
+    }
+  }
+}

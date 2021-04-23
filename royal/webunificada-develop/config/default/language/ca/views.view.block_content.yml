@@ -1,0 +1,30 @@
+label: 'Biblioteca de bloques personalizados'
+description: 'Encontrar y administrar bloques personalizados.'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Reset
+      fields:
+        info:
+          label: 'Descripción del bloque'
+        type:
+          label: 'Tipo de bloque'
+        operations:
+          label: Operations
+      filters:
+        info:
+          expose:
+            label: 'Descripción del bloque'
+        type:
+          expose:
+            label: 'Tipo de bloque'
+      title: 'Biblioteca de bloques personalizados'
+      empty:
+        area_text_custom:
+          content: 'No hay bloques personalizados disponibles.'
+  page_1:
+    display_options:
+      menu:
+        title: 'Biblioteca de bloques personalizados'

@@ -1,0 +1,20 @@
+uuid: 4188f15d-efd6-4b1b-9a26-3b0909ab2cfa
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.paso_receta
+  module:
+    - path
+id: node.paso_receta.path
+field_name: path
+entity_type: node
+bundle: paso_receta
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

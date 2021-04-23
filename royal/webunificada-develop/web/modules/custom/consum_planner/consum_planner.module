@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Contains consum_planner.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\node\Entity\NodeType;
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function consum_planner_entity_extra_field_info() {
+  $extra = [];
+
+  foreach (NodeType::loadMultiple() as $bundle) {
+    if ($bundle->id() == 'receta') {
+      $extra['node'][$bundle->Id()]['display']['field_food'] = [
+        'label' => t('Field Food'),
+        'description' => t('Field Food extra-field'),
+        'weight' => 100,
+        'visible' => TRUE,
+      ];
+    }
+  }
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function consum_planner_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('field_food')) {
+    $foods = $entity->field_tipo_de_plato;
+    foreach ($foods as $food) {
+      $terms[] = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($food->target_id);
+    }
+
+    $exit = FALSE;
+    foreach ($terms as $term) {
+      if ((strpos($term->label(), 'Desayuno') !== FALSE) && (!$exit)) {
+        $build['field_food'] = [
+          '#type' => 'markup',
+          '#markup' => 'Desayuno',
+        ];
+        $exit = TRUE;
+      }
+      elseif ((strpos($term->label(), 'Merienda') !== FALSE) && (!$exit)) {
+        $build['field_food'] = [
+          '#type' => 'markup',
+          '#markup' => 'Merienda',
+        ];
+        $exit = TRUE;
+      }
+      else {
+        $build['field_food'] = [
+          '#type' => 'markup',
+          '#markup' => $term->label(),
+        ];
+      }
+    }
+  }
+
+}

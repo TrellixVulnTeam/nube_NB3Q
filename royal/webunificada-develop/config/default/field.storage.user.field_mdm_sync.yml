@@ -1,0 +1,18 @@
+uuid: 61143adf-d954-4529-acc8-8d72ab60aa21
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_mdm_sync
+field_name: field_mdm_sync
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

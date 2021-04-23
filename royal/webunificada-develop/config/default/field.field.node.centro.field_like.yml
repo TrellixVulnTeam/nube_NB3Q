@@ -1,0 +1,30 @@
+uuid: d4a25cb5-75ac-4b36-9b64-f66009a3620a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_like
+    - node.type.centro
+_core:
+  default_config_hash: KcPhGvyCXKm3NSsHH5S04lvPU-bqagDXzXJhcTsxT4Y
+id: node.centro.field_like
+field_name: field_like
+entity_type: node
+bundle: centro
+label: Like
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,5 @@
+services:
+  sendgrid.connection:
+    class: Drupal\consum_sendgrid\Services\SendGridConnection
+    arguments: ['@logger.factory', '@config.factory', '@http_client']
+

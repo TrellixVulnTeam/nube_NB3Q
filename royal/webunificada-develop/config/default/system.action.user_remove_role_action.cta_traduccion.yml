@@ -1,0 +1,14 @@
+uuid: 0edfed02-ecb7-410a-886a-0f32f1c55e7b
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.cta_traduccion
+  module:
+    - user
+id: user_remove_role_action.cta_traduccion
+label: 'Elimina el rol Cta. Traducción al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cta_traduccion

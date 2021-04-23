@@ -1,0 +1,33 @@
+uuid: b2e343b7-ba72-4910-9a72-4a4df6524829
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.noticias_relacionadas
+  module:
+    - node
+    - views
+  theme:
+    - consum_es
+id: views_block__noticias_relacionadas_block_1
+theme: consum_es
+region: content
+weight: -16
+provider: null
+plugin: 'views_block:noticias_relacionadas-block_1'
+settings:
+  id: 'views_block:noticias_relacionadas-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      noticia: noticia
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

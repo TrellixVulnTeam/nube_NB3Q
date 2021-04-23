@@ -1,0 +1,21 @@
+uuid: ed71b0c8-cff2-412f-b693-98e64a87ad00
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_salida
+    - node.type.viaje
+  module:
+    - datetime
+id: node.viaje.field_fecha_de_salida
+field_name: field_fecha_de_salida
+entity_type: node
+bundle: viaje
+label: 'Fecha de salida'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

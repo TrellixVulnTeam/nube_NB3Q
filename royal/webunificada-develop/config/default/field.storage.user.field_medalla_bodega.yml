@@ -1,0 +1,20 @@
+uuid: 7a20b4d2-3efd-405b-9e4a-5c53724cca1d
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_medalla_bodega
+field_name: field_medalla_bodega
+entity_type: user
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: 51de73c9-07a8-418f-b851-0ff570ed5dac
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.noticia
+  module:
+    - datetime
+id: node.noticia.scheduled_transition_date
+field_name: scheduled_transition_date
+entity_type: node
+bundle: noticia
+label: 'Scheduled transition date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

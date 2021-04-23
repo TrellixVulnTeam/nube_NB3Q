@@ -1,0 +1,8 @@
+uuid: a3ed4d74-dc98-4837-9b90-10198f2f43c6
+langcode: es
+status: true
+dependencies: {  }
+name: 'Tipo de dieta'
+vid: tipo_de_dieta
+description: ''
+weight: 0

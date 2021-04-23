@@ -1,0 +1,14 @@
+uuid: 42bc03e7-baf0-4ad4-a4ab-151bf99d0a1e
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - user
+third_party_settings:
+  lightning_core:
+    description: ''
+id: user.follow_compact
+label: 'Seguir Usuario Compacto'
+targetEntityType: user
+cache: true

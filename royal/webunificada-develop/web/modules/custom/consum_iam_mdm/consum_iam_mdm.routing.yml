@@ -1,0 +1,28 @@
+consum_iam_mdm.form:
+  path: '/admin/config/services/mdm'
+  defaults:
+    _title: 'MDM integration'
+    _form: '\Drupal\consum_iam_mdm\Form\ConsumIamMdmAdminSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
+entity.api_call.canonical:
+  path: '/api-call/{api_call}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the contact entity
+    _entity_view: 'api_call'
+    _title: 'Api Call Content'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'api_call.view'
+
+entity.content_entity_example_contact.collection:
+  path: '/api-call/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the contact entity.
+    _entity_list: 'api_call'
+    _title: 'Api Call List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'administer site configuration'

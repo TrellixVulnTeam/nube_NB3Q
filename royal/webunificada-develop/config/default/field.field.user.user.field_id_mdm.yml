@@ -1,0 +1,20 @@
+uuid: 7cee2fb8-6647-41eb-9094-6187759065e5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_id_mdm
+  module:
+    - user
+id: user.user.field_id_mdm
+field_name: field_id_mdm
+entity_type: user
+bundle: user
+label: 'Id MDM'
+description: 'userId del MDM'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

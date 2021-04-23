@@ -1,0 +1,27 @@
+uuid: 10da72d1-791f-426a-a36e-1a83047c0166
+langcode: es
+status: true
+dependencies: {  }
+id: centro_creator
+label: 'Centro creator'
+weight: 7
+is_admin: false
+permissions:
+  - 'access ckeditor_media_browser entity browser pages'
+  - 'access contextual links'
+  - 'access image_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media_browser entity browser pages'
+  - 'access toolbar'
+  - 'configure any layout'
+  - 'create centro content'
+  - 'create url aliases'
+  - 'edit own centro content'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition review'
+  - 'use moderation sidebar'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view centro revisions'
+  - 'view latest version'
+  - 'view own unpublished content'

@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Theme override to display a visual mode.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ * - node.isPublished() will return whether the node is published or not.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. 
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    'view-mode-card-img-der-4-8',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+  <div class="row justify-content-center minh-100 h-100">
+    {# IMAGE #}
+    <div class="col-md-6 imagen_destacada" style="background-image:url('{{ file_url(content.field_image['#items'].entity.uri.value) }}');">
+    </div>
+    {# CARD CONTENT #}
+    <div class="col-md-6 card-content">
+      <div class="col-8 align-left category">
+        <h5 class="category-ico category-id-{{ node.field_category.0.target_id }} d-flex align-items-center">{{ content.field_category }}</h5>
+      </div>
+      <div class="col-12">
+        {% if label and not page %}
+          <h1{{ title_attributes.addClass('node__title') }}>
+            <a href="{{ url }}">{{ label }}</a>
+          </h1>
+        {% endif %}
+        <p class="truncate-4lines">{{ node.body.summary }}</p>
+      </div>
+      {# CARD FOOTER #}
+        {% include directory ~ '/templates/content/footer--card.html.twig' %}
+      {# END CARD FOOTER #}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,23 @@
+uuid: d4819d8e-0767-4573-ae92-b157c2ca6746
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_old_id
+    - node.type.centro
+id: node.centro.field_old_id
+field_name: field_old_id
+entity_type: node
+bundle: centro
+label: old_id
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

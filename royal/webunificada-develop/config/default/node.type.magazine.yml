@@ -1,0 +1,18 @@
+uuid: a08a88a4-3408-426b-a00c-9354f2fb7dce
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:menu_link_content:ebac30d0-2799-4970-8a99-c4c548daf18a'
+name: Magazine
+type: magazine
+description: "Artículo de contenido variable, que unifica las noticias y entradas que se venían publicando eventualmente en https://cuidarnos.consum.es (Revista Cuidarnos), https://entrenosotros.consum.es/ (Magazine digital), https://labodega.consum.es/ (Mundo Vinícola) .\r\n\r\nEstas noticias conformarán los contenidos de la nueva sección Magazine de Consum.es"
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

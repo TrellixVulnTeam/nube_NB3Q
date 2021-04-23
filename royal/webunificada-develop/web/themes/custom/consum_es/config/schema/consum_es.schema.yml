@@ -1,0 +1,5 @@
+# Schema for the configuration files of the consum_es theme.
+
+consum_es.settings:
+  type: theme_settings
+  label: 'consum_es settings'

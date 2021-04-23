@@ -1,0 +1,30 @@
+uuid: eb28a974-e6b5-445f-b9dc-78d66eb6fa55
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_like
+    - node.type.menu
+_core:
+  default_config_hash: 9fXbDKY7jVDmVBYcoxwQbuy7KCOelvEVa1qafMSqCmw
+id: node.menu.field_like
+field_name: field_like
+entity_type: node
+bundle: menu
+label: Like
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

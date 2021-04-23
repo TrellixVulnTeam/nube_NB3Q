@@ -1,0 +1,8 @@
+uuid: 295f5b7e-9aae-491d-9f2d-e65c80b7987d
+langcode: es
+status: true
+dependencies: {  }
+name: Objetivos
+vid: objetivos_menu
+description: 'Objetivos del menú'
+weight: 0

@@ -1,0 +1,88 @@
+.page-comunicaciones {
+  .fieldgroup {
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 0px !important;
+    .card-header {
+      border: none;
+      background-color: transparent;
+      padding-bottom: 0px;
+      padding-top: 0px;
+      margin-top: 20px;
+      .fieldset-legend {
+        font-size: 20pt;
+        line-height: 28pt;
+        font-weight: bold;
+      }
+    }
+
+    .card-body {
+      padding-top: 0px;
+      margin-bottom: 20px;
+      .js-webform-checkboxes {
+        width: 100%;
+      }
+
+      .description {
+        margin-bottom: 30px;
+      }
+
+      .js-form-type-checkbox {
+        padding-left: 0px;
+        margin-bottom: 15px;
+        .form-check-label {
+          padding-left: 10px;
+          font-weight: bold;
+        }
+      }
+
+      #edit-boletin-de-noticias {
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 25px 25px 10px 25px;
+        margin-bottom: 40px;
+        .form-item-boletin-de-noticias-all-boletin {
+          position: absolute;
+          bottom: 12px;
+          right: 20px;
+        }
+      }
+    }
+  }
+  .radios--wrapper {
+    margin-top: 0px;
+    .card-header {
+      margin: 0px;
+    }
+    .description {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 20px !important;
+    }
+    .js-form-type-radio {
+      padding-left: 0px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .form-actions {
+    overflow: hidden;
+    .webform-button--submit {
+      float: right;
+    }
+  }
+
+  .webform-elements > .form-wrapper {
+    border-bottom: 1px solid #3a3a41;
+  }
+
+  .webform-elements > .form-wrapper:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+  #edit-mundo-consum--wrapper {
+    .card-body {
+      margin-bottom: 0px;
+    }
+  }
+}

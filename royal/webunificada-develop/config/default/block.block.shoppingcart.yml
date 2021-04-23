@@ -1,0 +1,20 @@
+uuid: 51251850-c529-4f1c-a895-59648447fb72
+langcode: es
+status: true
+dependencies:
+  module:
+    - consum_tol_integration
+  theme:
+    - consum_es
+id: shoppingcart
+theme: consum_es
+region: navbar_principal
+weight: -40
+provider: null
+plugin: shopping_cart_block
+settings:
+  id: shopping_cart_block
+  label: 'Shopping Cart'
+  provider: consum_tol_integration
+  label_display: visible
+visibility: {  }

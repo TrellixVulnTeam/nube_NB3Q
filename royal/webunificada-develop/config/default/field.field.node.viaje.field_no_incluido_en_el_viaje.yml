@@ -1,0 +1,19 @@
+uuid: d90ae9c8-225a-4d69-ab2c-fe48c26e7e59
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_no_incluido_en_el_viaje
+    - node.type.viaje
+id: node.viaje.field_no_incluido_en_el_viaje
+field_name: field_no_incluido_en_el_viaje
+entity_type: node
+bundle: viaje
+label: 'No incluído en el viaje'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

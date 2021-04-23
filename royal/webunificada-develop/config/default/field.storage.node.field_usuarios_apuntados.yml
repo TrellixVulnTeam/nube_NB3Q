@@ -1,0 +1,20 @@
+uuid: e08cf824-b9dd-47a1-a453-1c0e24ceb7d1
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_usuarios_apuntados
+field_name: field_usuarios_apuntados
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

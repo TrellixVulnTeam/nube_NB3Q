@@ -1,0 +1,21 @@
+uuid: 7cd97edb-c5ea-445a-b54b-d49474ea5b88
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pasos_team_consum
+    - node.type.team_consum
+  module:
+    - options
+id: node.team_consum.field_pasos_team_consum
+field_name: field_pasos_team_consum
+entity_type: node
+bundle: team_consum
+label: Pasos
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

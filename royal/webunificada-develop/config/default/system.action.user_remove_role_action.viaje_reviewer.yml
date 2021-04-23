@@ -1,0 +1,14 @@
+uuid: 06225c64-412d-44bc-bf42-df3c75bc6dd0
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.viaje_reviewer
+  module:
+    - user
+id: user_remove_role_action.viaje_reviewer
+label: 'Elimina el rol Viaje reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: viaje_reviewer

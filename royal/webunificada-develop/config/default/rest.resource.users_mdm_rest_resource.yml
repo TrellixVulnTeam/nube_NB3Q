@@ -1,0 +1,18 @@
+uuid: 13829a68-ff86-4b0b-a352-680caac6bad7
+langcode: es
+status: true
+dependencies:
+  module:
+    - consum_iam_mdm
+    - serialization
+_core:
+  default_config_hash: X8R7ErLqmPRAo1NLXg2EwGgGYhJBMj_SrPVNfh5HbiU
+id: users_mdm_rest_resource
+plugin_id: users_mdm_rest_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth

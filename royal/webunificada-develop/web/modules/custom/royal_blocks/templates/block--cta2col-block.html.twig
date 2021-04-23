@@ -1,0 +1,244 @@
+{#
+  Variables
+  maquetacion: Maquetación del contenido
+  seccion: Sección a que hace referencia el CTA
+  img1: imagen principal
+  gradient: 1 apply gradient and 0 not apply
+  img2: imagen responsiva
+  texto1: texto de área principal
+  texto2: texto de la sección
+  enlace: enlace del botón
+  texto_enlace: Texto que aparece dentro del botón
+  color_bot: estilo del botón
+  target: destino del enlace
+  maquetacion: tipo de maquetación 1- img_izq_33 2- img_der_50 3- img_izq_33 4- img_der_50
+  color_fondo: estilo del color de fondo
+  icon: icono opcional a mostrar antes del texto
+  visibility: Hide block for tye users selected
+  custom_class: Custom class
+  alineacion_icon: Alineación del icono
+  posicion_btn: Posición del botón
+  custom_class: Custom class
+#}
+
+{% if color_fondo != 'fondo-blanco' %} 
+  {% set add_class = 'texto-blanco' %}
+{% endif %}
+
+{% if maquetacion == 'img_izq_33' %}
+	{% set izq = '4' %}
+	{% set der = '8' %}
+	{% set order_izq = '1' %}
+	{% set order_der = '2' %}
+  {% set img_align = 'left' %}
+{% elseif maquetacion == 'img_izq_66' %}
+	{% set izq = '8' %}
+	{% set der = '4' %}
+	{% set order_izq = '1' %}
+	{% set order_der = '2' %}
+  {% set img_align = 'left' %}
+{% elseif maquetacion == 'img_izq_50' %}
+	{% set izq = '6' %}
+	{% set der = '6' %}
+	{% set order_izq = '1' %}
+	{% set order_der = '2' %}
+  {% set img_align = 'left' %}
+{% elseif maquetacion == 'img_der_33' %}
+	{% set izq = '4' %}
+	{% set der = '8' %}
+	{% set order_izq = '2' %}
+	{% set order_der = '1' %}
+  {% set img_align = 'right' %}
+{% elseif maquetacion == 'img_der_66' %}
+	{% set izq = '8' %}
+	{% set der = '4' %}
+	{% set order_izq = '2' %}
+	{% set order_der = '1' %}
+  {% set img_align = 'right' %}
+{% elseif maquetacion == 'img_sup' %}
+	{% set izq = '12' %}
+	{% set der = '12' %}
+	{% set order_izq = '1' %}
+	{% set order_der = '2' %}
+  {% set img_align = 'right' %}
+{% else %}
+	{% set izq = '6' %}
+	{% set der = '6' %}
+	{% set order_izq = '2' %}
+	{% set order_der = '1' %}
+  {% set img_align = 'right' %}
+{% endif %}
+
+{% set build_texto1 = {
+      '#type':   'processed_text',
+      '#text':    texto1.value,
+      '#format': 'rich_text',
+  } 
+%}
+
+{% if gradient == 1 %}
+  {% set style_gradient = 
+    'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),'
+  %}
+{% endif %}
+
+{% if (visibility == 'users') and (logged_in == true) %}
+
+{% elseif (visibility == 'anonymous') and (logged_in == false) %}
+
+{% else %}
+<div class="
+{% if ocultar['escritorio'] %}  d-lg-none d-xl-none {% else %} d-lg-block d-xl-block  {% endif %}
+{% if ocultar['tablet'] %} d-md-none {% else %} d-md-block {% endif %}
+{% if ocultar['movil'] %} d-none d-sm-none {% else %} d-xs-block d-sm-block {% endif %}
+">
+
+  {% if maquetacion == 'img_cen' %}
+
+    {% if img2 %}
+
+    <div class="cta2col {{ maquetacion }} {{ add_class }} image-background row justify-content-center align-items-center minh-100 h-100 {{ color_fondo }} d-none d-sm-none d-md-flex d-lg-flex {{ custom_class }}" 
+    style="background-image: {% if style_gradient %} {{ style_gradient }} {% endif %} url('{{ img1 }}'); background-color:{{ color_fondo }};">
+      <div class="col-md-4 pl-5 text-left {% if img1 is defined %} bg-imagen {% endif %}">
+        {{ build_texto1 }}
+        <p>{{ texto2 }}</p>
+      </div>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        {% if icon is defined %}
+          <div class="icon">
+            <p><img src='{{ icon }}'></p>
+        {% endif %}
+        {% if texto_enlace %}<p><a target="{{ target }}" class='{{ color_bot }}' href='{{ enlace }}' role='button'>{{ texto_enlace }}</a></p>{% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="cta2col {{ maquetacion }} {{ add_class }} image-background row justify-content-center align-items-center minh-100 h-100 {{ color_fondo }} d-flex d-sm-flex d-md-none d-lg-none {{ custom_class }}" 
+    style="background-image: {% if style_gradient %} {{ style_gradient }} {% endif %} url('{{ img2 }}'); background-color:{{ color_fondo }};">
+      <div class="col-md-4 pl-5 text-left {% if img2 is defined %} bg-imagen {% endif %}">
+        {{ build_texto1 }}
+        <p>{{ texto2 }}</p>
+      </div>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        {% if icon is defined %}
+          <div class="icon">
+            <p><img src='{{ icon }}'></p>
+        {% endif %}
+        {% if texto_enlace %}<p><a target="{{ target }}" class='{{ color_bot }}' href='{{ enlace }}' role='button'>{{ texto_enlace }}</a></p>{% endif %}
+        </div>
+      </div>
+    </div>
+
+    {% else %}
+
+    <div class="cta2col {{ maquetacion }} {{ add_class }} image-background row justify-content-center align-items-center minh-100 h-100 {{ color_fondo }} {{ custom_class }}" 
+    style="background-image: {% if style_gradient %} {{ style_gradient }}; {% endif %} url('{{ img1 }}'); background-color:{{ color_fondo }};">
+      <div class="col-md-4 pl-5 text-left {% if img1 is defined %} bg-imagen {% endif %}">
+        {{ build_texto1 }}
+        <p>{{ texto2 }}</p>
+      </div>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        {% if icon is defined %}
+          <div class="icon">
+            <p><img src='{{ icon }}'></p>
+        {% endif %}
+        {% if texto_enlace %}<p><a target="{{ target }}" class='{{ color_bot }}' href='{{ enlace }}' role='button'>{{ texto_enlace }}</a></p>{% endif %}
+        </div>
+      </div>
+    </div>
+
+    {% endif %}
+    
+  {% else %}
+
+  {% if img2 %}
+
+    <div class="cta2col {{ maquetacion }} {{ add_class }}  row justify-content-center align-items-center minh-100 h-100 {{ color_fondo }} d-none d-sm-none d-md-flex d-lg-flex {{ custom_class }}"
+    style="background-color:{{ color_fondo }};">
+      <div class="image-background col-md-{{ izq }} order-md-{{ order_izq }} p-0 text-{{ img_align }}"  
+    style="background-image:{% if style_gradient %} {{ style_gradient }} {% endif %} url('{{ img1 }}');">
+      {% if texto2 is defined and texto2 != "" %} <h4  class="seccion" >{{ texto2 }}</h4> {% endif %}
+      </div>
+      <div class="col-md-{{ der }} order-md-{{ order_der }} pl-5 pr-5 pt-4 pb-4">
+      {% if icon is defined %}
+        <div class="row pb-2 icon">
+          <img src='{{ icon }}'>
+        </div>
+      {% endif %}
+        <div class="row">
+          
+          {{ build_texto1 }}
+          {% if texto_enlace %}<br><a target="{{ target }}" class='{{ color_bot }}' href='{{ enlace }}' role='button'>{{ texto_enlace }}</a>{% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="cta2col {{ maquetacion }} {{ add_class }}  row justify-content-center align-items-center minh-100 h-100 {{ color_fondo }} d-flex d-sm-flex d-md-none d-lg-none {{ custom_class }}"
+    style="background-color:{{ color_fondo }};">
+      <div class="image-background col-md-{{ izq }} order-md-{{ order_izq }} p-0 text-{{ img_align }}"  
+    style="background-image:{% if style_gradient %} {{ style_gradient }} {% endif %} url('{{ img2 }}');">
+      {% if texto2 is defined and texto2 != "" %} <h4  class="seccion" >{{ texto2 }}</h4> {% endif %}
+      </div>
+      <div class="col-md-{{ der }} order-md-{{ order_der }} pl-5 pr-5 pt-4 pb-4">
+      {% if icon is defined %}
+        <div class="row pb-2 icon">
+          <img src='{{ icon }}'>
+        </div>
+      {% endif %}
+        <div class="row">
+          
+          {{ build_texto1 }}
+          {% if texto_enlace %}<br><a target="{{ target }}" class='{{ color_bot }}' href='{{ enlace }}' role='button'>{{ texto_enlace }}</a>{% endif %}
+        </div>
+      </div>
+    </div>
+
+  {% else %}
+
+    <div class="cta2col {{ maquetacion }} {{ add_class }}  row justify-content-center align-items-center minh-100 h-100 {{ color_fondo }} {{ custom_class }}"
+    style="background-color:{{ color_fondo }};">
+      <div class="image-background col-md-{{ izq }} order-md-{{ order_izq }} p-0 text-{{ img_align }} {% if maquetacion == 'img_der_33' and posicion_btn == 'columna_2' %}d-flex align-items-center justify-content-center{%endif%}"  
+    style="background-image:{% if style_gradient %} {{ style_gradient }} {% endif %} url('{{ img1 }}');">
+      {% if texto2 is defined and texto2 != "" %} <h4  class="seccion" >{{ texto2 }}</h4> {% endif %}
+      {% if maquetacion == 'img_der_33' and posicion_btn == 'columna_2' %} 
+        {% if texto_enlace %}<br><a target="{{ target }}" class='{{ color_bot }}' href='{{ enlace }}' role='button'>{{ texto_enlace }}</a>{% endif %}
+      {%endif%}
+      </div>
+      <div class="col-md-{{ der }} order-md-{{ order_der }} pl-5 pr-5 pt-4 pb-4">
+      {% if icon is defined and alineacion_icon != 'middle'%}
+        <div class="row pb-2 icon">
+          <img src='{{ icon }}'>
+        </div>
+      {% endif %}
+        <div class="row">
+          {% if icon is defined and alineacion_icon == 'middle' %}
+          <div class="d-flex">
+            <div class="icon" style="padding-right: 20px;">
+              <img src='{{ icon }}'>
+            </div>
+            <div class="txt">
+              {{ build_texto1 }}
+            </div>
+          </div> 
+          {% else %}
+            {{ build_texto1 }}
+          {% endif %}
+          {% if posicion_btn != 'columna_2' %} 
+            {% if texto_enlace %}<br><a target="{{ target }}" class='{{ color_bot }}' href='{{ enlace }}' role='button'>{{ texto_enlace }}</a>{% endif %}
+          {%endif%}
+        </div>
+      </div>
+    </div>
+
+  {% endif %}
+
+  {% endif %}
+
+</div>
+{% endif %}

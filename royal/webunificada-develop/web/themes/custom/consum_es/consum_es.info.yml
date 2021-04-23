@@ -1,0 +1,45 @@
+name: consum_es
+description: Custom theme from Consum environment toolkit
+screenshot: logo_consum.png
+core: 8.x
+# version: VERSION
+engine: twig
+type: theme
+base theme: radix
+
+regions:
+  navbar_accessibility: Navbar Accessibility
+  navbar_principal: Navbar Principal
+  sidebar: Sidebar
+  menu_personalizado: Menú Personalizado
+  cabeceras_interiores: Cabeceras Interiores
+  navbar_branding: Navbar branding
+  navbar_left:  Navbar left
+  navbar_right: Navbar right
+  header: Header
+  sidebar_first: Sidebar First
+  content: Content
+  content_fluid: Content Fluid
+  page_bottom: Page bottom
+  footer: Footer
+  footer_fluid: Footer Fluid
+
+libraries:
+  - radix/style
+  - consum_es/style
+
+libraries-override:
+  radix/bootstrap: false
+
+ckeditor_stylesheets:
+  - assets/css/consum_es.style.css
+
+component-libraries:
+  consum_es:
+    paths:
+      - ./src/components
+
+# Information added by Drupal.org packaging script on 2020-01-26
+version: '8.x-4.7'
+project: 'radix'
+datestamp: 1580057585

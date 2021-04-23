@@ -1,0 +1,22 @@
+uuid: fa33b10b-dcad-45db-822a-6b3ec295f9d5
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.team_consum
+id: node.team_consum.promote
+field_name: promote
+entity_type: node
+bundle: team_consum
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

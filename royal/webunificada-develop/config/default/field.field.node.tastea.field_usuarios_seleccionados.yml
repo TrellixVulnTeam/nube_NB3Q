@@ -1,0 +1,28 @@
+uuid: 6b89a82f-b6ad-4ef3-878c-529a4143c98f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_usuarios_seleccionados
+    - node.type.tastea
+id: node.tastea.field_usuarios_seleccionados
+field_name: field_usuarios_seleccionados
+entity_type: node
+bundle: tastea
+label: 'Usuarios seleccionados'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

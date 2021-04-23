@@ -1,0 +1,43 @@
+Index: modules/simple_ldap_user/src/SimpleLdapUserManager.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/modules/simple_ldap_user/src/SimpleLdapUserManager.php b/modules/simple_ldap_user/src/SimpleLdapUserManager.php
+--- a/modules/simple_ldap_user/src/SimpleLdapUserManager.php	(revision 20d247438b618073701e2c38f2867c3d72d06923)
++++ b/modules/simple_ldap_user/src/SimpleLdapUserManager.php	(date 1613665140371)
+@@ -188,6 +188,34 @@
+     $name_attribute = $this->config->get('name_attribute');
+     $mail_attribute = $this->config->get('mail_attribute');
+ 
++    // If User already exist, we don't create
++    $user_changed = false;
++    $user = user_load_by_name($attribute_values[$name_attribute][0]);
++    if (!$user instanceof UserInterface) {
++      $user = user_load_by_mail($attribute_values[$mail_attribute][0]);
++    }
++    if ($user instanceof UserInterface) {
++      // If Accountname was changed, we update
++      if ($user->getAccountName() != $attribute_values[$name_attribute][0]) {
++        $user->setUsername($attribute_values[$name_attribute][0]);
++        $user_changed = true;
++      }
++      // If mail was changed, we update
++      if ($user->getEmail() != $attribute_values[$mail_attribute][0]) {
++        $user->setEmail($attribute_values[$mail_attribute][0]);
++        $user_changed = true;
++      }
++      // If User is blocked, we unblocked
++      if ($user->isBlocked()) {
++        $user->activate()->save();
++        $user_changed = true;
++      }
++      if ($user_changed) {
++        $user->save();
++      }
++      return $user;
++    }
++
+     /** @var \Drupal\user\UserInterface $new_user */
+     $new_user = $this->entity_manager->getStorage('user')->create(array(
+         'name' => $attribute_values[$name_attribute][0],

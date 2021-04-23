@@ -1,0 +1,14 @@
+uuid: 33e7eb2a-674a-4abf-a2df-cee74747d425
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.mini_card
+label: 'Mini Card'
+targetEntityType: node
+cache: true

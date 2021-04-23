@@ -1,0 +1,35 @@
+<?php
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_node_access().
+ */
+function consum_mundoconsum_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  if ($node->bundle() == 'pagina_privada') {
+    switch ($op) {
+      case 'view':
+        if ($account->hasPermission('view private page content')) {
+          return AccessResult::allowed();
+        }
+        else {
+          return AccessResult::forbidden();
+        }
+    }
+  }
+  elseif ($node->bundle() == 'pagina_mundoconsum') {
+    switch ($op) {
+      case 'view':
+        if ($account->hasPermission('view mundoconsum content')) {
+          return AccessResult::allowed();
+        }
+        else {
+          return AccessResult::forbidden();
+        }
+    }
+  }
+  // No opinion.
+  return AccessResult::neutral();
+}

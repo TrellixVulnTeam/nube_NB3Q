@@ -1,0 +1,14 @@
+uuid: 26c584d5-4d27-4ced-958b-9b24fb4c2f1a
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.viaje_reviewer
+  module:
+    - user
+id: user_add_role_action.viaje_reviewer
+label: 'Añade el rol Viaje reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: viaje_reviewer

@@ -1,0 +1,18 @@
+uuid: 3fc217b3-9469-411a-af64-4ea442921f94
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.paso_receta
+id: node.paso_receta.scheduled_transition_state
+field_name: scheduled_transition_state
+entity_type: node
+bundle: paso_receta
+label: 'Scheduled transition state'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

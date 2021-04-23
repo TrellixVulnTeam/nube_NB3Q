@@ -1,0 +1,30 @@
+{{ {'#cache': {'max-age': 0}} }}
+<section class="comunidad-user-compact">
+  <div class="col--1 col-12">
+    <div class="picture-user-message d-flex justify-content-center">
+      {% if elements.user_picture %}
+        {{ elements.user_picture }}
+      {% else %}
+        <img src="/themes/custom/consum_es/assets/img/avatar.png" />
+      {% endif %}
+    </div>
+    <div class="name-user">
+      {{ elements.field_nombre }}
+    </div>
+    <div class="follow-user-button d-flex justify-content-center">
+      {# Follow button #}
+      {% set is_followed = false %}
+      {% for key in current_user.field_siguiendo %}
+        {% if user.uid.0.value == key.value.target_id %}
+          {% set is_followed = true %}
+        {% endif %}
+      {% endfor %}
+      {% if is_followed %}
+        <a id="follow-{{ user.uid.0.value }}" class="boton2 btn-unfollow-user use-ajax" href="/consum-events/unfollow/{{ user.uid.0.value }}">unfollow</a>
+      {% else %}
+        <a id="follow-{{ user.uid.0.value }}" class="boton1 use-ajax" href="/consum-events/follow/{{ user.uid.0.value }}">follow</a>
+      {% endif %}
+      {# End follow button #}
+    </div>
+  </div>
+</section>

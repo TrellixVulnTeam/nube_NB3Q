@@ -1,0 +1,27 @@
+uuid: 23ed07cb-acd5-4fdd-8959-a98818b0674b
+langcode: es
+status: true
+dependencies: {  }
+id: live_split
+label: 'Live Split'
+description: ''
+folder: ../config/splits/live
+module:
+  varnish: 0
+  adv_varnish: 0
+theme: {  }
+blacklist: {  }
+graylist:
+  - consum_iam_mdm.settings
+  - consum_openid.settings.consum
+  - consum_tol_integration.settings
+  - google_analytics.settings
+  - openid_connect.settings.consum
+  - search_api.server.solr
+  - simple_ldap.role
+  - simple_ldap.server
+  - system.performance
+  - varnish.settings
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

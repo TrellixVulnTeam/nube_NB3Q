@@ -1,0 +1,21 @@
+# Schema for the configuration files of the royal_blocks module.
+royal_blocks.settings:
+  type: config_object
+  label: 'Royal Blocks Config Settings'
+  mapping:
+    socialnetworks:
+      type: mapping
+      label: 'Social Networks Settings'
+      mapping:
+        twitter_id:
+          type: string
+          label: 'Twitter ID'
+        facebook_id:
+          type: string
+          label: 'Facebook ID'
+        instagram_id:
+          type: string
+          label: 'Instagram ID'
+        youtube_id:
+          type: string
+          label: 'Youtube ID'

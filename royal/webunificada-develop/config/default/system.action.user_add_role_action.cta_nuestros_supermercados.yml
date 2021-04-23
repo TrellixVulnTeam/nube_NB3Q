@@ -1,0 +1,14 @@
+uuid: 8ff5eaae-6286-4b8d-a866-21c0cfd52d85
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.cta_nuestros_supermercados
+  module:
+    - user
+id: user_add_role_action.cta_nuestros_supermercados
+label: 'Añade el rol Cta. Nuestros supermercados + Sobre nosotros al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: cta_nuestros_supermercados

@@ -1,0 +1,14 @@
+uuid: 963163c7-b185-47b4-ab0c-1de199310370
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'Modo de visualización para vistas que proporciona información al usuario cuando ha sido seleccionado para un producto Tastea'
+id: node.tastea_seleccionado
+label: 'Tastea seleccionado'
+targetEntityType: node
+cache: true

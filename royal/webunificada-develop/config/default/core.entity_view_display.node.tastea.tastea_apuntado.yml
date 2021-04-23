@@ -1,0 +1,118 @@
+uuid: 33e3cb46-125e-4b87-bb13-274232d1571e
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.tastea_apuntado
+    - field.field.node.tastea.body
+    - field.field.node.tastea.field_fecha_caducidad_cupon
+    - field.field.node.tastea.field_fecha_de_finalizacion
+    - field.field.node.tastea.field_image
+    - field.field.node.tastea.field_inf_nutr_grasa
+    - field.field.node.tastea.field_inf_nutr_hidratos
+    - field.field.node.tastea.field_inf_nutr_kcal
+    - field.field.node.tastea.field_inf_nutr_kj
+    - field.field.node.tastea.field_inf_nutr_proteinas
+    - field.field.node.tastea.field_inf_nutr_sal
+    - field.field.node.tastea.field_like
+    - field.field.node.tastea.field_tol_item
+    - field.field.node.tastea.field_usuarios_apuntados
+    - field.field.node.tastea.field_usuarios_seleccionados
+    - image.style.large
+    - node.type.tastea
+  module:
+    - datetime
+    - image
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.tastea.tastea_apuntado
+targetEntityType: node
+bundle: tastea
+mode: tastea_apuntado
+content:
+  addtoany:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_fecha_de_finalizacion:
+    weight: 3
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: large
+      image_link: content
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_like:
+    type: entity_reference_entity_id
+    weight: 7
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_usuarios_apuntados:
+    weight: 4
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_usuarios_seleccionados:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  langcode:
+    type: language
+    weight: 6
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_fecha_caducidad_cupon: true
+  field_inf_nutr_grasa: true
+  field_inf_nutr_hidratos: true
+  field_inf_nutr_kcal: true
+  field_inf_nutr_kj: true
+  field_inf_nutr_proteinas: true
+  field_inf_nutr_sal: true
+  field_tol_item: true
+  search_api_excerpt: true

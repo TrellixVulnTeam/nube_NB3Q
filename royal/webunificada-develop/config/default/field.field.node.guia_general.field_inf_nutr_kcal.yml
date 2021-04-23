@@ -1,0 +1,23 @@
+uuid: 9ec804f7-6da1-47ed-b60e-47b18c47ebc4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_inf_nutr_kcal
+    - node.type.guia_general
+id: node.guia_general.field_inf_nutr_kcal
+field_name: field_inf_nutr_kcal
+entity_type: node
+bundle: guia_general
+label: 'Información Nutricional (Kcal)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

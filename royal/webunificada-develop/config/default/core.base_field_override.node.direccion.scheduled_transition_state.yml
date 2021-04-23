@@ -1,0 +1,18 @@
+uuid: 605459d2-c29e-44b9-917a-b44371682b47
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.direccion
+id: node.direccion.scheduled_transition_state
+field_name: scheduled_transition_state
+entity_type: node
+bundle: direccion
+label: 'Scheduled transition state'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

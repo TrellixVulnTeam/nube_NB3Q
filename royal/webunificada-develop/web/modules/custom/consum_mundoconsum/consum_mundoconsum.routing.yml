@@ -1,0 +1,14 @@
+mundoconsum_test.form:
+  path: '/mundoconsum/test'
+  defaults:
+    _controller: '\Drupal\consum_mundoconsum\Controller\TestController::landing'
+    _title: 'State editor'
+  requirements:
+    _permission: 'access content'
+consum_mundoconsum.form:
+  path: '/admin/config/services/mundoconsum'
+  defaults:
+    _title: 'MundoConsum integration'
+    _form: '\Drupal\consum_mundoconsum\Form\MundoconsumConnectionForm'
+  requirements:
+    _permission: 'access content'

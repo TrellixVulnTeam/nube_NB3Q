@@ -1,0 +1,18 @@
+uuid: 642bf85b-3bc5-4506-b5e5-0e516fd48267
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.guia_general
+id: node.guia_general.created
+field_name: created
+entity_type: node
+bundle: guia_general
+label: Fecha
+description: 'La fecha en que el nodo fue creado.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

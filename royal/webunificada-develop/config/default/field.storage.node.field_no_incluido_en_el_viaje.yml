@@ -1,0 +1,21 @@
+uuid: e46de28d-9283-422c-88b2-d6373a463bd0
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_no_incluido_en_el_viaje
+field_name: field_no_incluido_en_el_viaje
+entity_type: node
+type: string
+settings:
+  max_length: 100
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

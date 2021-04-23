@@ -1,0 +1,64 @@
+.page-baja-socio-cliente {
+  .row-form-baja-socio-cliente {
+    background-color: white;
+    & > div {
+      padding: 75px 100px;
+    }
+    .descripcion {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+    select {
+      border-radius: 30px;
+      border: 1px solid #3a3a41;
+      color: #3a3a41;
+      /*.form-actions{
+        display: none;
+    }*/
+    }
+    label {
+      font-weight: bold;
+    }
+    fieldset {
+      padding: 0px;
+      background-color: transparent;
+      border: none;
+      margin-bottom: 0px !important;
+      .card-header {
+        border: none;
+        background-color: transparent;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        padding-left: 0px;
+        .fieldset-legend {
+          font-weight: bold;
+        }
+      }
+
+      .card-body {
+        padding-top: 0px;
+        margin-bottom: 20px;
+      }
+    }
+
+    #edit-explicacion-motivo--wrapper {
+      .card-header {
+        padding: 0px;
+      }
+      .card-body {
+        margin-bottom: 0px;
+        padding: 0px;
+        padding-left: 0px;
+        #edit-explicacion-motivo {
+          display: flex;
+          .form-item {
+            padding-right: 10px;
+          }
+        }
+        label{
+          font-weight: 100;
+        }
+      }
+    }
+  }
+}

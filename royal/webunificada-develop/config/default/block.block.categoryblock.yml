@@ -1,0 +1,29 @@
+uuid: 8c2ae58d-77ea-4d01-b6b3-4a42b03331b9
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - royal_blocks
+  theme:
+    - consum_es
+id: categoryblock
+theme: consum_es
+region: sidebar_first
+weight: -45
+provider: null
+plugin: category_block
+settings:
+  id: category_block
+  label: Categorías
+  provider: royal_blocks
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      magazine: magazine
+      team_consum: team_consum
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

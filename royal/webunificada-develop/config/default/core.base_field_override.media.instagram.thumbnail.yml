@@ -1,0 +1,37 @@
+uuid: aae351b8-51b5-4f7d-89d3-9bb5a40423fe
+langcode: es
+status: true
+dependencies:
+  config:
+    - media.type.instagram
+  module:
+    - image
+id: media.instagram.thumbnail
+field_name: thumbnail
+entity_type: media
+bundle: instagram
+label: Miniatura
+description: 'La miniatura del elemento de multimedia.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_extensions: 'png gif jpg jpeg'
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  max_resolution: ''
+  min_resolution: ''
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  max_filesize: ''
+  handler: default
+  handler_settings: {  }
+field_type: image

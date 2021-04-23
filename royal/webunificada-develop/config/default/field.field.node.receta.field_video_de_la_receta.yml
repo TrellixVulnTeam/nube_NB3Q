@@ -1,0 +1,19 @@
+uuid: 9dff7341-8e1b-41e4-a2fa-a7e335f411b5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_de_la_receta
+    - node.type.receta
+id: node.receta.field_video_de_la_receta
+field_name: field_video_de_la_receta
+entity_type: node
+bundle: receta
+label: 'Vídeo de la receta'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

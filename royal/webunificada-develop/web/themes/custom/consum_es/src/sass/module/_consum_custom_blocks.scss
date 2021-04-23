@@ -1,0 +1,79 @@
+// CTA2
+.cta2col {
+    background-color: $gray-200;
+    border-radius: 0.5rem;
+    height: 270px;
+    overflow: hidden;
+    margin-top: $grid-gutter-width / 2;
+    margin-bottom: $grid-gutter-width / 2;
+    margin-left: 0px;
+    margin-right: 0px;
+
+    &.texto-blanco,
+    &.texto-blanco h1,
+    &.texto-blanco h2,
+    &.texto-blanco h3,
+    &.texto-blanco h4,
+    &.texto-blanco h5,
+    &.texto-blanco h6,
+    &.texto-blanco p {
+        color: #fff;
+    }
+
+    &.h-100 {
+        min-height: 270px;
+    }
+    &.row,
+    .row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .img_cen {
+    min-height: 270px;
+    .icon {
+        text-align: center;
+        }
+    }
+
+    .img_sup .image-background {
+        height: 285px;
+        div.col-md-12:nth-child(2) {
+            height: 270px;
+            }
+    }
+
+
+    h4.seccion {
+    background-color: $fondo2;
+    width: 80%;
+    margin-top: 2rem;
+    padding: 5px;
+    color: $gris3;
+    text-align: center;
+    font-size: 16pt;
+    }
+    .text-right .seccion {
+    float: right;
+    border-radius: 0.5rem 0px 0px 0.5rem;
+    }
+    .text-left .seccion {
+    float: left;
+    border-radius: 0px 0.5rem 0.5rem 0px;
+    }
+    .img_sup .text-right .seccion {
+    float: left;
+    border-radius: 0px 0.5rem 0.5rem 0px;
+    width: 50%;
+    }
+    .image-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 270px;
+    background-position: center;
+    }
+
+    h4 {
+    font-weight: bold;
+    }
+}

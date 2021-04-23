@@ -1,0 +1,29 @@
+uuid: fe4dea68-d5a1-45c1-82e8-2130a2897cd0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categoria_maridaje
+    - node.type.guia_de_vino
+    - taxonomy.vocabulary.vino_maridaje
+id: node.guia_de_vino.field_categoria_maridaje
+field_name: field_categoria_maridaje
+entity_type: node
+bundle: guia_de_vino
+label: Maridaje
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      vino_maridaje: vino_maridaje
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

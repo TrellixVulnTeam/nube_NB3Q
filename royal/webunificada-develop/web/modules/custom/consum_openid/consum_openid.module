@@ -1,0 +1,71 @@
+<?php
+
+use Drupal\Core\Session\AccountInterface;
+
+function consum_openid_locale_translation_projects_alter(&$projects) {
+
+  // The translations
+  $projects['consum_openid'] = array(
+    'info' => array(
+      'interface translation server pattern' => 'modules/custom/consum_openid/translations/%project.%language.po',
+    ),
+  );
+}
+
+/**
+ * Implements hook_user_cancel().
+ */
+function consum_openid_user_cancel($edit, $account, $method) {
+  switch ($method) {
+    case 'user_cancel_reassign':
+      Drupal::service('consum_openid.authmap')->deleteExternalAccount($account, 'consum');
+      break;
+  }
+}
+
+/**
+ * Implements hook_user_logout().
+ */
+function consum_openid_user_logout(AccountInterface $account)
+{
+  if (Drupal::currentUser()->isAuthenticated()) {
+    Drupal::service('consum_openid.authmap')->logoutExternalAccount($account, 'consum');
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ * We need call to checksession in IAM Server if user is authenticated
+ */
+function consum_openid_page_attachments_alter(array &$attachments)
+{
+  $configuration = Drupal::config('openid_connect.settings.consum')->get('settings');
+  $check_session_enable = !empty($configuration['check_session_enable']) ? $configuration['check_session_enable'] : false;
+  $logged_in = Drupal::currentUser()->isAuthenticated();
+  if ($check_session_enable && $logged_in) {
+    $client_id = $configuration['client_id'];
+    $check_session_url = $configuration['check_session_endpoint'];
+    $redirect_url = $configuration['logout_redirect_uri'];
+
+    $authorization_endpoint = $configuration['authorization_endpoint'];
+    $src = $check_session_url . "?client_id=" . $client_id . "&redirect_uri=" . $redirect_url;
+    $session_state = !empty($_SESSION["session_state"]) ? $_SESSION["session_state"] : '';
+    $opIFrame = [
+      '#tag' => 'iframe',
+      '#attributes' => [
+        'src' => $src,
+        'width' => '0',
+        'height' => '0',
+        'frameborder' => 0,
+        'id' => 'opIFrame',
+      ],
+    ];
+    $attachments['#attached']['html_head'][] = [$opIFrame, 'opIFrame'];
+    $attachments['#attached']['library'][] = 'consum_openid/consum_iam';
+    $attachments['#attached']['drupalSettings']['consum_openid']['client_id'] = $client_id;
+    $attachments['#attached']['drupalSettings']['consum_openid']['session_state'] = $session_state;
+    $attachments['#attached']['drupalSettings']['consum_openid']['logged_in'] = $logged_in;
+    $attachments['#attached']['drupalSettings']['consum_openid']['target_origin'] = $check_session_url;
+    $attachments['#attached']['drupalSettings']['consum_openid']['authorization_endpoint'] = $authorization_endpoint;
+  }
+}

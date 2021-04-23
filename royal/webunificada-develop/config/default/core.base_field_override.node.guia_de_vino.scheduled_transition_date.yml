@@ -1,0 +1,20 @@
+uuid: b89fe47f-ecc5-434a-a816-93cd8c4e08b7
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.guia_de_vino
+  module:
+    - datetime
+id: node.guia_de_vino.scheduled_transition_date
+field_name: scheduled_transition_date
+entity_type: node
+bundle: guia_de_vino
+label: 'Scheduled transition date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

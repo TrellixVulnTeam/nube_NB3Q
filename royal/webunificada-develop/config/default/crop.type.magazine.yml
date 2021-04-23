@@ -1,0 +1,12 @@
+uuid: 0915a1a1-966d-4373-89d1-9961aa9fe5e5
+langcode: es
+status: true
+dependencies: {  }
+id: magazine
+label: Magazine
+description: 'Corte para plantilla de contenidos magazine'
+aspect_ratio: '4:5'
+soft_limit_width: 400
+soft_limit_height: 500
+hard_limit_width: 800
+hard_limit_height: 1000

@@ -1,0 +1,105 @@
+uuid: 86fafda6-16f1-4241-9e5b-4dcc378f3465
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.tastea.body
+    - field.field.node.tastea.field_fecha_caducidad_cupon
+    - field.field.node.tastea.field_fecha_de_finalizacion
+    - field.field.node.tastea.field_image
+    - field.field.node.tastea.field_inf_nutr_grasa
+    - field.field.node.tastea.field_inf_nutr_hidratos
+    - field.field.node.tastea.field_inf_nutr_kcal
+    - field.field.node.tastea.field_inf_nutr_kj
+    - field.field.node.tastea.field_inf_nutr_proteinas
+    - field.field.node.tastea.field_inf_nutr_sal
+    - field.field.node.tastea.field_like
+    - field.field.node.tastea.field_tol_item
+    - field.field.node.tastea.field_usuarios_apuntados
+    - field.field.node.tastea.field_usuarios_seleccionados
+    - node.type.tastea
+  module:
+    - datetime
+    - image
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.tastea.card
+targetEntityType: node
+bundle: tastea
+mode: card
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_fecha_de_finalizacion:
+    weight: 3
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_image:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_like:
+    type: entity_reference_entity_id
+    weight: 6
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_usuarios_apuntados:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_usuarios_seleccionados:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_fecha_caducidad_cupon: true
+  field_inf_nutr_grasa: true
+  field_inf_nutr_hidratos: true
+  field_inf_nutr_kcal: true
+  field_inf_nutr_kj: true
+  field_inf_nutr_proteinas: true
+  field_inf_nutr_sal: true
+  field_tol_item: true
+  langcode: true
+  search_api_excerpt: true

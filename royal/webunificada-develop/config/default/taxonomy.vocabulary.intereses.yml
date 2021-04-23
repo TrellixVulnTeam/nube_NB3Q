@@ -1,0 +1,8 @@
+uuid: 965fbfb3-ba46-40f0-b12b-2ba83a49bfba
+langcode: es
+status: true
+dependencies: {  }
+name: Intereses
+vid: intereses
+description: 'Temáticas de interés de un usuario, para su perfil de la Comunidad'
+weight: 0

@@ -1,0 +1,8 @@
+uuid: ed060156-b920-447b-be29-940ad77baf78
+langcode: es
+status: true
+dependencies: {  }
+name: 'Tipo de plato'
+vid: tipo_de_plato
+description: 'Tipo de plato de una receta'
+weight: 0

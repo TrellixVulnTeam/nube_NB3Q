@@ -1,0 +1,14 @@
+.container-section-prev{
+  &.arrow-inline{
+    position: absolute;
+    top: 48.5px;
+    z-index: 1;
+  }
+  a, span{
+    width: 30px;
+    height: 25px;
+  }
+  a{
+    display: flex;
+  }
+}

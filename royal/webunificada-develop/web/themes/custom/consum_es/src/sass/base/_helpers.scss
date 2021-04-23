@@ -1,0 +1,1211 @@
+/* primary colors */
+
+.naranja1 {
+  color: $naranja1;
+}
+
+.naranja2 {
+  color: $naranja2;
+}
+
+.naranja3 {
+  color: $naranja3;
+}
+
+.rojo1 {
+  color: $rojo1;
+}
+
+.rojo2 {
+  color: $rojo2;
+}
+
+.rojo3 {
+  color: $rojo3;
+}
+
+/* secundary colors */
+
+.azul1 {
+  color: $azul1;
+}
+
+.azul2 {
+  color: $azul2;
+}
+
+.azul3 {
+  color: $azul3;
+}
+
+/* color for texts and buttons */
+
+.gris1 {
+  color: $gris1;
+}
+
+.gris2 {
+  color: $gris2;
+}
+
+.gris3 {
+  color: $gris3;
+}
+
+.blanco {
+  color: $white;
+}
+
+.negro {
+  color: $black;
+}
+
+/* background color */
+
+.fondo-blanco {
+  background-color: $white !important;
+}
+.fondo-naranja-claro {
+  background-color: $naranja1 !important;
+}
+.fondo-naranja {
+  background-color: $naranja2 !important;
+}
+.fondo-marron {
+  background-color: $naranja3 !important;
+}
+.fondo-salmon {
+  background-color: $rojo1 !important;
+}
+.fondo-arcilla {
+  background-color: $rojo2 !important;
+}
+.fondo-burdeos {
+  background-color: $rojo3 !important;
+}
+.fondo-morado {
+  background-color: #955471 !important;
+}
+.fondo-verde-claro {
+  background-color: #96cfbd !important;
+}
+.fondo-verde {
+  background-color: #d5df74 !important;
+}
+
+// bisel border
+// -----------------------------------------------------------------------------
+
+.sin-bisel {
+  // rounded-0
+  border-radius: 0px !important;
+}
+
+.bisel-superior {
+  // rounded-top
+  border-radius: 5pt 5pt 0 0 !important;
+}
+.bisel-inferior {
+  // rounded-bottom
+  border-radius: 0 0 5pt 5pt !important;
+}
+
+.bisel-all {
+  // rounded-bottom
+  border-radius: 5pt !important;
+}
+// Buttons
+// -----------------------------------------------------------------------------
+
+.boton1,
+.boton2,
+.boton3,
+.btn-primary,
+.feed-icon {
+  font-family: "NunitoSans-Bold";
+  text-decoration: none;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
+.boton1,
+.btn-primary,
+.feed-icon {
+  transition: all ease-in-out 0.2s;
+  border-radius: 100px;
+  background: $rojo2;
+  border: 1px solid $rojo2;
+  color: $white !important;
+}
+
+.boton2 {
+  transition: all ease-in-out 0.2s;
+  border-radius: 100px;
+  background: $white;
+  color: $rojo2;
+  border: 1px solid $rojo2;
+}
+
+.boton3 {
+  transition: all ease-in-out 0.2s;
+  border-radius: 100px;
+  background: $white;
+  color: $gris3;
+}
+
+.boton1:hover,
+.boton2:hover,
+.boton3:hover,
+.btn-primary:hover,
+.feed-icon:hover {
+  border-color: $gris3;
+  background: $gris3;
+  text-decoration: none;
+  color: $white !important;
+}
+
+//Sombreados
+
+.sombreado-blanco-naranja {
+  background-color: $white;
+  color: #f8951d;
+}
+
+// Modals
+.modal-cm {
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1;
+    opacity: 1;
+    span {
+      height: 20px;
+      width: 20px;
+      display: flex;
+    }
+  }
+  .modal-content {
+    border: none;
+    border-radius: 1rem;
+    .modal-body {
+      padding: 75px 100px;
+    }
+  }
+}
+
+//Carousels
+.carousel-cc {
+  .carousel-control-prev {
+    width: auto;
+    .carousel-control-prev-icon {
+      width: 25px;
+      height: 25px;
+      background-image: svg-url-color("#3a3a41", "#3a3a41", "left");
+    }
+  }
+  .carousel-control-next {
+    width: auto;
+    .carousel-control-next-icon {
+      width: 25px;
+      height: 25px;
+      background-image: svg-url-color("#3a3a41", "#3a3a41", "right");
+    }
+  }
+}
+
+// Icons
+// -----------------------------------------------------------------------------
+
+.btn-ci {
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 1rem;
+  width: 1rem;
+}
+
+.ci-compartir {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "share");
+}
+
+.ci-marcador {
+  background-image: svg-url-color("transparent", "#3a3a41", "marcador");
+}
+
+.ci-marcador-activo {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "marcador");
+}
+
+.ci-accesibilidad {
+  background-image: url("../img/accesibilidad.svg");
+}
+
+.ci-add {
+  background-image: url("../img/add.svg");
+}
+
+.ci-atencion {
+  background-image: url("../img/atencion.svg");
+}
+
+.ci-buscar {
+  background-image: url("../img/buscar.svg");
+}
+
+.ci-campana {
+  background-image: url("../img/campana.svg");
+}
+
+.ci-card {
+  background-image: url("../img/card.svg");
+}
+
+.ci-carrito {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "cart");
+}
+
+.ci-casa {
+  background-image: url("../img/casa.svg");
+}
+
+.ci-cesta {
+  background-image: url("../img/cesta.svg");
+}
+
+.ci-charla {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "charla");
+}
+
+.ci-check {
+  background-image: url("../img/check.svg");
+}
+
+.ci-close {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "close");
+}
+.ci-reloj {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "reloj");
+}
+
+.ci-cocina {
+  background-image: url("../img/cocina.svg");
+}
+
+.ci-cocinero {
+  background-image: url("../img/cocinero.svg");
+}
+
+.ci-comentario {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "comentario");
+}
+
+.ci-copyright {
+  background-image: url("../img/copyright.svg");
+}
+
+.ci-corazon {
+  background-image: svg-url-color("transparent", "#3a3a41", "corazon");
+}
+
+.ci-corazon-activo {
+  background-image: svg-url-color("#DD5A30", "#DD5A30", "corazon");
+}
+
+.ci-correo {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "correo");
+}
+
+.ci-cubiertos {
+  background-image: url("../img/cubiertos.svg");
+}
+
+.ci-doc {
+  background-image: url("../img/doc.svg");
+}
+
+.ci-down {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "down");
+}
+
+.ci-exit {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "exit");
+}
+
+.ci-facebook {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "facebook");
+}
+
+.ci-favorito {
+  background-image: url("../img/favorito.svg");
+}
+
+.ci-gear {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "gear");
+}
+
+.ci-instagram {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "instagram");
+}
+
+.ci-interrogation {
+  background-image: url("../img/interrogation.svg");
+}
+
+.ci-informacion {
+  background-image: svg-url-color("#dd5a31", "#dd5a31", "info");
+}
+
+.ci-left {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "left");
+}
+
+.ci-left2 {
+  background-image: url("../img/left2.svg");
+}
+
+.ci-left3 {
+  background-image: url("../img/left3.png");
+}
+
+.ci-link {
+  background-image: url("../img/link.svg");
+}
+
+.ci-lista {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "lista");
+}
+
+.ci-localizacion {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "localizacion");
+}
+
+.ci-mac {
+  background-image: url("../img/mac.svg");
+}
+
+.ci-menu {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "menu");
+}
+
+.ci-micro {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "micro");
+}
+
+.ci-movil {
+  background-image: url("../img/movil.svg");
+}
+
+.ci-nueve {
+  background-image: url("../img/nueve.svg");
+}
+
+.ci-off {
+  background-image: url("../img/off.svg");
+}
+
+.ci-on {
+  background-image: url("../img/on.svg");
+}
+
+.ci-opciones {
+  background-image: url("../img/opciones.svg");
+}
+
+.ci-phone {
+  background-image: url("../img/phone.svg");
+}
+
+.ci-quimica {
+  background-image: url("../img/quimica.svg");
+}
+
+.ci-right {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "right");
+}
+
+.ci-right2 {
+  background-image: url("../img/right2.svg");
+}
+
+.ci-semillas {
+  background-image: url("../img/semillas.svg");
+}
+
+.ci-share {
+  background-image: url("../img/share.svg");
+}
+
+.ci-transporte {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "transporte");
+}
+
+.ci-twitter {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "twitter");
+}
+
+.ci-uno {
+  background-image: url("../img/uno.svg");
+}
+
+.ci-uno2 {
+  background-image: url("../img/uno2.svg");
+}
+
+.ci-up {
+  background-image: url("../img/up.svg");
+}
+
+.ci-user {
+  background-image: url("../img/user.svg");
+}
+
+.ci-verdura {
+  background-image: url("../img/verdura.svg");
+}
+
+.ci-web {
+  background-image: url("../img/web.svg");
+}
+
+.ci-download {
+  background-image: svg-url-color("#dd5a31", "#dd5a31", "download");
+}
+
+.ci-youtube {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "youtube");
+}
+
+/* Category icons */
+
+.category-ico {
+  background-repeat: no-repeat;
+  height: 2rem;
+  padding-left: 3rem;
+  font-size: 13pt;
+  margin-bottom: 0px;
+  background-position-y: center;
+}
+
+.category-id-8 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "cocina");
+}
+.category-id-9 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "frescos");
+}
+.category-id-10 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "los5de");
+}
+.category-id-11 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "mundovinicola");
+}
+.category-id-29 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "a_examen");
+}
+.category-id-12 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "actualidad");
+}
+.category-id-30 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "cerveza");
+}
+.category-id-14 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "saber_comprar");
+}
+.category-id-2 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "belleza");
+}
+.category-id-3 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "maquillaje");
+}
+.category-id-4 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "cabello");
+}
+.category-id-5 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "hombre");
+  background-size: 30px;
+}
+.category-id-6,
+.category-id-23 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "infantil");
+}
+.category-id-25 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "trucos");
+}
+.category-id-26 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "hogar");
+}
+.category-id-27 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "ropa");
+}
+.category-id-28 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "perfiles");
+}
+
+.category-id-20 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "deporte");
+}
+
+.category-id-21 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "salud");
+}
+
+.category-id-18 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "mascota");
+}
+
+.category-id-16 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "viajar");
+}
+
+.category-id-17 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "es_eco");
+}
+
+.category-id-15 {
+  background-image: svg-url-color("#3a3a41", "#3a3a41", "conocete");
+}
+
+/* Icons recomendador */
+
+.icon-maridaje-carnes {
+  background-image: url("/sites/default/files/recomendador/ico_carnes.png");
+}
+
+.icon-maridaje-pescados {
+  background-image: url("/sites/default/files/recomendador/ico_pescados.png");
+}
+
+.icon-maridaje-arroces {
+  background-image: url("/sites/default/files/recomendador/ico_arroces.png");
+}
+
+.icon-maridaje-mariscos {
+  background-image: url("/sites/default/files/recomendador/ico_mariscos.png");
+}
+
+.icon-maridaje-pastas {
+  background-image: url("/sites/default/files/recomendador/ico_pastas.png");
+}
+
+.icon-maridaje-quesos {
+  background-image: url("/sites/default/files/recomendador/ico_quesos.png");
+}
+
+.icon-maridaje-embutidos {
+  background-image: url("/sites/default/files/recomendador/ico_embutidos.png");
+}
+
+.icon-maridaje-ensaladas {
+  background-image: url("/sites/default/files/recomendador/ico_ensaladas.png");
+}
+
+.icon-maridaje-sopas {
+  background-image: url("/sites/default/files/recomendador/ico_sopas.png");
+}
+
+.icon-maridaje-legumbres {
+  background-image: url("/sites/default/files/recomendador/ico_legumbres.png");
+}
+
+.icon-maridaje-postres {
+  background-image: url("/sites/default/files/recomendador/ico_carnes.png");
+}
+
+.icon-maridaje-aperitivos {
+  background-image: url("/sites/default/files/recomendador/ico_aperitivos.png");
+}
+
+.icon-maridaje-cocina-etnica {
+  background-image: url("/sites/default/files/recomendador/ico_cocina_etnica.png");
+}
+
+.icon-maridaje-contodo {
+  background-image: url("/sites/default/files/recomendador/ico_con_todo.png");
+}
+
+//ICON TERMINOS Y CONDICIONES
+
+.ci-avisolegal {
+  background-image: url("/themes/custom/consum_es/assets/img/terminos-y-condiciones/avisolegal.svg");
+}
+
+.ci-condicionesweb {
+  background-image: url("/themes/custom/consum_es/assets/img/terminos-y-condiciones/condicionesweb.svg");
+}
+
+.ci-condicionesapp {
+  background-image: url("/themes/custom/consum_es/assets/img/terminos-y-condiciones/condicionesapp.svg");
+}
+
+.ci-valoraciones {
+  background-image: url("/themes/custom/consum_es/assets/img/terminos-y-condiciones/valoraciones.svg");
+}
+
+.ci-condicionescompra {
+  background-image: url("/themes/custom/consum_es/assets/img/terminos-y-condiciones/condicionescompra.svg");
+}
+
+.ci-redessociales {
+  background-image: url("/themes/custom/consum_es/assets/img/terminos-y-condiciones/redessociales.svg");
+}
+
+.ci-seguridad {
+  background-image: url("/themes/custom/consum_es/assets/img/terminos-y-condiciones/seguridad.svg");
+}
+
+.ci-condicionesmundoconsum {
+  background-image: url("/themes/custom/consum_es/assets/img/terminos-y-condiciones/condicionesmundoconsum.svg");
+}
+
+.ci-app {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/app.svg");
+}
+
+.ci-atencioncliente {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/atencioncliente.svg");
+}
+
+.ci-canaldenuncias {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/canaldenuncias.svg");
+}
+
+.ci-compraonline {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/compraonline.svg");
+}
+
+.ci-consumes {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/consumes.svg");
+}
+
+.ci-facturas {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/facturas.svg");
+}
+
+.ci-mundoconsum {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/mundoconsum.svg");
+}
+
+.ci-newsletters {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/newsletters.svg");
+}
+
+.ci-portalempleo {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/portalempleo.svg");
+}
+
+.ci-serviciodomicilio {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/serviciodomicilio.svg");
+}
+
+.ci-teamconsum {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/teamconsum.svg");
+}
+
+.ci-videovigilancia {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/videovigilancia.svg");
+}
+
+.ci-wifi {
+  background-image: url("/themes/custom/consum_es/assets/img/politica-privacidad/wifi.svg");
+}
+
+.ci-tarjetamc {
+  background-image: url("/themes/custom/consum_es/assets/img/atencion-cliente/tarjetamc.svg");
+}
+
+.ci-nuestrosproductos {
+  background-image: url("/themes/custom/consum_es/assets/img/atencion-cliente/nuestrosproductos.svg");
+}
+
+.ci-nuestrossupermercados {
+  background-image: url("/themes/custom/consum_es/assets/img/atencion-cliente/nuestrossupermercados.svg");
+}
+
+.ci-compraonline {
+  background-image: url("/themes/custom/consum_es/assets/img/atencion-cliente/compraonline.svg");
+}
+
+.ci-trabajaconnosotros {
+  background-image: url("/themes/custom/consum_es/assets/img/atencion-cliente/trabajaconnosotros.svg");
+}
+
+.ci-invertircooperativa {
+  background-image: url("/themes/custom/consum_es/assets/img/atencion-cliente/invertircooperativa.svg");
+}
+
+.ci-consum {
+  background-image: url("/themes/custom/consum_es/assets/img/logo_redes.png");
+}
+
+.ci-tickets {
+  background-image: url("/themes/custom/consum_es/assets/img/tikets.png");
+}
+.ci-wishlist {
+  background-image: url("/themes/custom/consum_es/assets/img/lista.svg");
+}
+.ci-miembros {
+  background-image: url("/themes/custom/consum_es/assets/img/mundo-consum/miembros.png");
+}
+.ci-perfil {
+  background-image: url("/themes/custom/consum_es/assets/img/mundo-consum/perfil.png");
+}
+.ci-publicaciones {
+  background-image: url("/themes/custom/consum_es/assets/img/mundo-consum/publicaciones.png");
+}
+.ci-faq-community {
+  background-image: url("/themes/custom/consum_es/assets/img/mundo-consum/faq-community.png");
+}
+.ci-messages {
+  background-image: url("/themes/custom/consum_es/assets/img/correo.svg");
+}
+.ci-edit {
+  background-image: url("/themes/custom/consum_es/assets/img/mundo-consum/edit_negro.png");
+}
+
+/* Fonts */
+
+.size-10pt {
+  font-size: 10pt;
+}
+
+.size-12pt {
+  font-size: 12pt;
+}
+
+.size-14pt {
+  font-size: 14pt;
+}
+
+/* Regions */
+
+.custom-row-region-navbar-principal {
+  background-color: $white;
+  /*border-bottom: 1px solid $gris2;*/
+}
+
+/* No gutters */
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+/* Video embed */
+
+.video-embed-field-responsive-video iframe {
+  border-radius: 1rem;
+}
+
+/* Infinite Scroll */
+
+.js-pager__items li.pager__item {
+  text-align: center;
+  list-style-type: none;
+}
+.js-pager__items a.button {
+  @extend .boton1;
+}
+
+/* Modal */
+
+.modal-open .modal {
+  z-index: 9999999;
+}
+/* Sidebar first */
+
+#sidebar_first .block {
+  margin-top: $grid-gutter-width / 2;
+}
+
+/* Truncate 4 lines block */
+
+.truncate-4lines {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  hyphens: auto;
+  height: 80px; // nueva
+  margin-bottom: 2rem; // nueva
+}
+
+/* Truncate 3 lines block (default) */
+
+.truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  hyphens: auto;
+  height: 74px;
+}
+
+/* force full width in Catálogo de vinos view*/
+.blazy--view--catalogo-vinos .ficha-vino {
+  width: 100% !important;
+  min-width: 100% !important;
+  background: $white;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+//FORMS
+.form-cf {
+  margin: auto;
+  a {
+    color: #f8951d;
+  }
+  .background-gris {
+    background-color: #f1f1f1;
+  }
+  .texto-gris {
+    color: #a9a7b0;
+  }
+  .padding-1rem {
+    padding: 1rem;
+  }
+  .border-radius {
+    border-radius: 0.5rem;
+  }
+  .p-without-m {
+    p:last-of-type {
+      margin-bottom: 0px;
+    }
+  }
+  .password-parent,
+  .confirm-parent {
+    position: relative;
+    input {
+      padding-right: 35px;
+    }
+  }
+  .password-parent {
+    label {
+      display: none;
+    }
+    .ci-view {
+      top: 30px;
+    }
+  }
+  .confirm-parent {
+    label:after {
+      content: " *";
+    }
+  }
+  #edit-password {
+    position: relative;
+    & > label {
+      float: left;
+      position: relative;
+      top: -1px;
+    }
+  }
+  div.password-confirm {
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 0.5rem;
+    display: none;
+    &[data-confirm="password-equals"] {
+      color: #6bc562;
+      display: block;
+    }
+    &[data-confirm="password-no-equals"] {
+      color: red;
+      display: block;
+    }
+  }
+  input[data-password="password-equals"] {
+    background-color: #c6ebc2;
+    color: #6bc562 !important;
+  }
+  input[data-password="password-no-equals"] {
+    background-color: #ffc7ce;
+  }
+  .password-suggestions.password-suggestions-display {
+    display: block !important;
+  }
+  .password-suggestions {
+    display: none !important;
+    position: absolute;
+    background-color: white;
+    z-index: 2;
+    border-radius: 0.5rem;
+    border: 1px solid #f8951d;
+    padding: 1.5rem 1rem;
+    max-width: 300px;
+    top: 32px;
+    left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 1px 3px 10px rgba(51, 51, 51, 0.4);
+    &:before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      background-color: white;
+      position: absolute;
+      top: -8px;
+      right: 28px;
+      transform: rotate(45deg);
+      border-left: 1px solid #f8951d;
+      border-top: 1px solid #f8951d;
+    }
+    ul {
+      font-size: 14px;
+      font-weight: 100;
+      padding: 0;
+      color: #a9a7b0;
+      margin-bottom: 0;
+      list-style-type: none;
+      li {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  .password-strength {
+    text-align: right;
+    .password-strength__indicator {
+      background-color: #f8951d;
+    }
+    .password-strength__title {
+      margin-bottom: 0px;
+      font-size: 14px;
+      font-weight: bold;
+      display: none;
+      margin-top: 0.5rem;
+      &[data-security="is-strong"] {
+        color: blue;
+      }
+      &[data-security="is-good"] {
+        color: #6bc562;
+      }
+      &[data-security="is-fair"] {
+        color: #f8951d;
+      }
+      &[data-security="is-weak"] {
+        color: red;
+      }
+      &.is-security {
+        display: block;
+      }
+    }
+  }
+  .ci-info {
+    background-image: svg-url-color("#f8951d", "#f8951d", "info");
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-left: 5px;
+    position: relative;
+    top: -3px;
+    z-index: 1;
+  }
+  .ci-view {
+    background-image: svg-url-color("#3a3a41", "#3a3a41", "ojo");
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 33px;
+    &:hover {
+      background-image: svg-url-color("#f8951d", "#f8951d", "ojo");
+    }
+  }
+  & > .form-wrapper {
+    background-color: white;
+    padding: 75px 100px;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  & > .form-group > h4 {
+    margin-bottom: 2rem;
+  }
+  .form-item {
+    input,
+    textarea,
+    select {
+      border-radius: 2rem;
+      border: 1px solid #3a3a41;
+      color: #3a3a41;
+    }
+    label {
+      margin-bottom: 0px;
+      font-size: 14px;
+    }
+  }
+  .form-submit.btn-300 {
+    max-width: 300px;
+    width: 100%;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
+.block--consumiamloginblock{
+  display: flex;
+  align-items: center;
+  input{
+    margin: 0px;
+    margin-right: 25px;
+    padding: 5px 10px;
+  }
+}
+
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  .custom-switch {
+    padding-top: 21px;
+    input {
+      --active: #dd5a30;
+      --active-inner: #fff;
+      --focus: 2px rgba(39, 94, 254, 0.3);
+      --border: #fff;
+      --border-hover: #9996a1;
+      --background: #9996a1;
+      --disabled: #9996a1;
+      --disabled-inner: #9996a1;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      height: 21px;
+      outline: none;
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      margin: 0;
+      cursor: pointer;
+      border: 1px solid #9996a1 !important;
+      background: var(--b, var(--background));
+      transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: calc(100% - 5px);
+      background-image: url(/themes/custom/consum_es/assets/img/no_check_checkbox.jpg);
+      &:after {
+        content: "";
+        display: block;
+        left: 0;
+        top: 0;
+        position: absolute;
+        transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+          opacity var(--d-o, 0.2s);
+      }
+      &:checked {
+        --b: var(--active);
+        --bc: var(--active);
+        --d-o: 0.3s;
+        --d-t: 0.6s;
+        --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+        border: 1px solid #dd5a30 !important;
+      }
+      &:disabled {
+        --b: var(--disabled);
+        cursor: not-allowed;
+        opacity: 0.9;
+        &:checked {
+          --b: var(--disabled-inner);
+          --bc: var(--border);
+        }
+        & + label {
+          cursor: not-allowed;
+        }
+      }
+      &:hover {
+        &:not(:checked) {
+          &:not(:disabled) {
+            --bc: var(--border-hover);
+          }
+        }
+      }
+      &:focus {
+        box-shadow: 0 0 0 var(--focus);
+        /*border: 1px solid #9996a1;*/
+      }
+      &:not(.switch) {
+        width: 21px;
+        &:after {
+          opacity: var(--o, 0);
+        }
+        &:checked {
+          --o: 1;
+        }
+      }
+      & + label {
+        font-size: 14px;
+        line-height: 21px;
+        display: inline-block;
+        vertical-align: top;
+        cursor: pointer;
+        margin-left: 4px;
+      }
+      &:not(.switch) {
+        border-radius: 7px;
+        &:after {
+          width: 5px;
+          height: 9px;
+          border: 2px solid var(--active-inner);
+          border-top: 0;
+          border-left: 0;
+          left: 7px;
+          top: 4px;
+          transform: rotate(var(--r, 20deg));
+        }
+        &:checked {
+          --r: 43deg;
+        }
+      }
+      &.switch {
+        width: 45px;
+        border-radius: 11px;
+        &:after {
+          left: 2px;
+          top: 2px;
+          border-radius: 50%;
+          width: 15px;
+          height: 15px;
+          background: var(--ab, var(--border));
+          transform: translateX(var(--x, 0));
+        }
+        &:checked {
+          --ab: var(--active-inner);
+          --x: 24px;
+          background-repeat: no-repeat;
+          background-position-y: center;
+          background-position-x: 5px;
+          background-image: url(/themes/custom/consum_es/assets/img/check_checkbox.jpg);
+        }
+        &:disabled {
+          &:not(:checked) {
+            &:after {
+              opacity: 0.6;
+            }
+          }
+        }
+      }
+    }
+  }
+}

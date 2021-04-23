@@ -1,0 +1,14 @@
+uuid: 606c2b45-38da-4d28-93b3-65b007a67016
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.pagina_privada_creator
+  module:
+    - user
+id: user_remove_role_action.pagina_privada_creator
+label: 'Elimina el rol Página privada creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: pagina_privada_creator

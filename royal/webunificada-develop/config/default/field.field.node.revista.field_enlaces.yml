@@ -1,0 +1,23 @@
+uuid: 2727cbd3-7479-4d9b-8be2-2d0226d198ac
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_enlaces
+    - node.type.revista
+  module:
+    - link
+id: node.revista.field_enlaces
+field_name: field_enlaces
+entity_type: node
+bundle: revista
+label: 'Enlace al FlipBook'
+description: 'Enlace a la revista online'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

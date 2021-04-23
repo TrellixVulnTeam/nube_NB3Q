@@ -1,0 +1,18 @@
+uuid: 4b1626d5-c563-4092-ba53-f9196db73a91
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.precio_receta
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.precio_receta
+target_entity_type_id: taxonomy_term
+target_bundle: precio_receta
+default_langcode: site_default
+language_alterable: false

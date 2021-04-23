@@ -1,0 +1,18 @@
+uuid: a64c7be8-2cd3-4b3b-96bc-bf41a8f2b50e
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_notificacion_comentario_mi
+field_name: field_notificacion_comentario_mi
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

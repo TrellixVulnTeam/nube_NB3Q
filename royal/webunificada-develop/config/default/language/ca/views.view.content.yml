@@ -1,0 +1,29 @@
+description: 'Encontrar y administrar contenido.'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Reset
+      fields:
+        title:
+          label: Título
+        type:
+          label: 'Tipo de contenido'
+        operations:
+          label: Operations
+      filters:
+        title:
+          expose:
+            label: Título
+        type:
+          expose:
+            label: 'Tipo de contenido'
+      empty:
+        area_text_custom:
+          content: 'No hay contenido disponible.'
+  page_1:
+    display_options:
+      tab_options:
+        description: 'Encontrar y administrar contenido'

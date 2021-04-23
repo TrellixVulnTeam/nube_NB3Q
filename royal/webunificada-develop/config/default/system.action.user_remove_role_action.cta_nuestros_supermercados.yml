@@ -1,0 +1,14 @@
+uuid: 22a78406-b9df-4ff8-8dad-98cda148292c
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.cta_nuestros_supermercados
+  module:
+    - user
+id: user_remove_role_action.cta_nuestros_supermercados
+label: 'Elimina el rol Cta. Nuestros supermercados + Sobre nosotros al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cta_nuestros_supermercados

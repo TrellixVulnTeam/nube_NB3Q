@@ -1,0 +1,14 @@
+uuid: 9e16d09a-a852-4226-af64-4c2e84174334
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.centro_creator
+  module:
+    - user
+id: user_remove_role_action.centro_creator
+label: 'Elimina el rol Centro creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: centro_creator

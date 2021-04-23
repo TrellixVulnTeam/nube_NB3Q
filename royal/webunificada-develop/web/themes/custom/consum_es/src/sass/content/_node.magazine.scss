@@ -1,0 +1,64 @@
+// Magazine
+// -----------------------------------------------------------------------------
+.magazine-bloque-1 h1 {
+  font-size: 35pt;
+}
+article.node--type-magazine {
+  /* margin-top: 0px; */
+}
+
+.magazine-article {
+    p {
+      font-size: 1.5rem !important;
+    }   
+  }
+  .node--type-magazine {
+    .magazine__body  img {
+        max-width: 100%;
+    }
+  }
+
+  // vídeo
+
+.magazine__field-video {
+  background-color: $white;
+}
+
+// imágenes interiores
+
+.magazine__field-imagenes-interiores {
+    .field__item {
+        max-width: 50%;
+        padding: 10px;
+    }
+    .field__items {
+        display: inline-flex;
+    }
+}
+
+.imagen-destacada-magazine img{
+min-width: 100%;
+}
+
+.magazine-bloque-1,
+.magazine-bloque-1-2,
+.magazine-bloque-2,
+.magazine-comments {
+  background-color: $white;
+  padding: 2rem;
+}
+.magazine-bloque-1 {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.magazine-bloque-1-2 {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.magazine-bloque-2,
+.magazine-comments {
+  border-radius: 0.5rem;
+}
+.magazine-bloque-1 img,
+.magazine-bloque-1-2 img,
+.magazine-bloque-2 img {
+  max-width: 100%;
+}

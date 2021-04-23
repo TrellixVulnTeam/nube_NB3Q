@@ -1,0 +1,150 @@
+uuid: 54919700-a763-43e1-8325-65ccee3b1e15
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.full
+    - field.field.node.team_consum.body
+    - field.field.node.team_consum.field_actividad_team_consum
+    - field.field.node.team_consum.field_bloque_2
+    - field.field.node.team_consum.field_comments
+    - field.field.node.team_consum.field_contenido_descargable
+    - field.field.node.team_consum.field_edad_team_consum
+    - field.field.node.team_consum.field_enlaces
+    - field.field.node.team_consum.field_enlaces_de_descarga
+    - field.field.node.team_consum.field_image
+    - field.field.node.team_consum.field_like
+    - field.field.node.team_consum.field_pasos_team_consum
+    - field.field.node.team_consum.field_subtitle
+    - field.field.node.team_consum.field_tematica_team_consum
+    - image.style.large
+    - node.type.team_consum
+  module:
+    - comment
+    - file
+    - image
+    - link
+    - options
+    - text
+    - user
+id: node.team_consum.default
+targetEntityType: node
+bundle: team_consum
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_actividad_team_consum:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_bloque_2:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_comments:
+    weight: 113
+    label: hidden
+    settings:
+      view_mode: full
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_contenido_descargable:
+    weight: 109
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_edad_team_consum:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_enlaces:
+    weight: 108
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_enlaces_de_descarga:
+    weight: 110
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_image:
+    weight: 111
+    label: above
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_pasos_team_consum:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_subtitle:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_tematica_team_consum:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_like: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,20 @@
+uuid: c9f10137-5694-4720-8334-3105644fcfb4
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_days
+field_name: field_days
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

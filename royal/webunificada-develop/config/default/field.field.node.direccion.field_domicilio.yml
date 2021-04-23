@@ -1,0 +1,19 @@
+uuid: 058ae42a-c437-410a-9b71-ffd20d8e9b86
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_domicilio
+    - node.type.direccion
+id: node.direccion.field_domicilio
+field_name: field_domicilio
+entity_type: node
+bundle: direccion
+label: Domicilio
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

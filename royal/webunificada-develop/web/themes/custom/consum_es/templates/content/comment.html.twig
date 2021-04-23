@@ -1,0 +1,109 @@
+{#
+/**
+ * @file
+ * Template for a comment.
+ */
+#}
+
+{# VARIABLES FOR LIKE FIELD #}
+{% set likes = (content.field_like|length) - 17 %}
+{% set likeObject = content.field_like %}
+{% set heart = '' %}
+
+{# LOOP FOR CURRENT USER LIKE MATCH #}
+{% for key in likeObject|keys %}
+  {% if key matches '/^\\d+$/' %}
+    {% if likeObject[key]['#title'] == user.account.name %}
+      {% set heart = 'ci-corazon-activo' %}
+    {% endif %}
+    {% if likeObject[key]['#title'] != user.account.name %}
+      {% set heart = 'ci-corazon' %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{#% if parent_comment is empty %#}
+<article{{ attributes.addClass('js-comment', 'mb-4') }}>
+  {#
+    Hide the "new" indicator by default, let a piece of JavaScript ask the
+    server which comments are new for the user. Rendering the final "new"
+    indicator here would break the render cache.
+  #}
+  <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>  
+
+{# CONTROLA VISUALIZACION COMENTARIOS PUBLICADOS #}
+
+   <div class="row row-comments">
+    <div class="col-md-12 d-flex">
+      <div class="imagen-perfil">
+        {{ user_picture }}
+      </div>
+      <div{{ content_attributes.addClass('card') }}>
+        <div class="card-header justify-content-between">
+          <div class="d-block">
+            <span class="font-weight-bold"> {{ author_comment_name.0.value }} {{ author_comment_apellido1.0.value }} </span>
+            <span class="pl-3 font-italic"> {{ 'Hace' }} {{ created }} </span>
+          </div>
+          <div class="d-block">
+            <span class="float-left"> {{ author_comment_location.0.value }} </span>
+          </div>
+        </div>
+
+        <div class="card-body">
+          {#{% if title %}
+            {{ title_prefix }}
+            <h3{{ title_attributes.addClass('visually-hidden') }}>{{ title }}</h3>
+            {{ title_suffix }}
+          {% endif %}#}
+          {{ content|without('links') }}
+          <div class="d-flex justify-content-between">
+            <div class="d-flex align-items-center likes-comments">
+              <span>
+                {% if likes > 0 %}
+                  <span id="{{comment.id}}"> {{ likes }} </span>
+                {% else %}
+                  <span id="{{comment.id}}"> 0 </span>
+                {% endif %}
+                {% if logged_in %}
+                  {% if heart %}
+                    <a class="use-ajax" href="/like-comment/{{comment.id}}/{{user.id}}">
+                      <span id="heart-{{comment.id}}" class="btn-ci {{ heart }}">
+                    </a>
+                  {% else %}
+                    <a class="use-ajax" href="/like-comment/{{comment.id}}/{{user.id}}">
+                      <span id="heart-{{comment.id}}" class="btn-ci ci-corazon">
+                    </a>
+                  {% endif %}
+                {% else %}
+                  <span class="btn-ci ci-corazon"></span>
+                {% endif %}
+                {% if elements['subcomments'] %}
+                  <span>{{ elements['subcomments'] }}</span>
+                {% else %}
+                  <span>0</span>
+                {% endif %}
+                <span class="btn-ci ci-comentario"></span>
+              </span>
+            </div>
+            <div class="float-right btn-actions">
+              {{ content.links }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    {#
+      Indicate the semantic relationship between parent and child comments for
+      accessibility. The list is difficult to navigate in a screen reader
+      without this information.
+    #}
+    {% if parent %}
+      <p class="visually-hidden">{{ parent }}</p>
+    {% endif %}
+  </footer>
+
+</article>
+{#% endif %#}

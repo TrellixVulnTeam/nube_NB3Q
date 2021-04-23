@@ -1,0 +1,20 @@
+uuid: c3268a6f-9420-4004-973d-5ab65d21cd6e
+langcode: es
+status: true
+dependencies:
+  config:
+    - media.type.video_file
+id: media.video_file.uid
+field_name: uid
+entity_type: media
+bundle: video_file
+label: 'Escrito por'
+description: 'El ID de usuario del autor.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\media\Entity\Media::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

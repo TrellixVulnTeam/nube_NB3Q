@@ -1,0 +1,8 @@
+uuid: 10e98c7c-eda8-4a95-a4a2-c5f867d435f3
+langcode: es
+status: true
+dependencies: {  }
+name: Temática
+vid: tematica_team_consum
+description: 'Temática Team Consum'
+weight: 0

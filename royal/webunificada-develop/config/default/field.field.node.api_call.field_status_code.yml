@@ -1,0 +1,19 @@
+uuid: 67a458bb-5e50-4931-b05a-e9ae00fdfc80
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_status_code
+    - node.type.api_call
+id: node.api_call.field_status_code
+field_name: field_status_code
+entity_type: node
+bundle: api_call
+label: status_code
+description: 'Último código de estado devuelto en la respuesta de la API.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

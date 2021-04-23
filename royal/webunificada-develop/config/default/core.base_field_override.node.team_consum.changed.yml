@@ -1,0 +1,18 @@
+uuid: 66283d01-8e98-4d3a-a8d3-938ec54fd030
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.team_consum
+id: node.team_consum.changed
+field_name: changed
+entity_type: node
+bundle: team_consum
+label: Modificado
+description: 'La fecha en que el nodo fue editado por última vez.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

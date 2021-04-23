@@ -1,0 +1,30 @@
+uuid: 3a3e231b-8c29-4388-abc2-e9408ce88f1c
+langcode: es
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - field.storage.comment.field_like
+_core:
+  default_config_hash: fE0BCGNr0ng7HaSfLCaxljXlqpmMZaWjlNWx2MpYo2g
+id: comment.comment.field_like
+field_name: field_like
+entity_type: comment
+bundle: comment
+label: Like
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

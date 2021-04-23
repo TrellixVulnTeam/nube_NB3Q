@@ -1,0 +1,20 @@
+uuid: 9fd7784b-d826-46f7-ad73-0338bd6a1838
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.guia_general
+  module:
+    - path
+id: node.guia_general.path
+field_name: path
+entity_type: node
+bundle: guia_general
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,14 @@
+uuid: a0f474f6-7286-4ddb-bd3d-69a2780bfe1b
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.pagina_privada_creator
+  module:
+    - user
+id: user_add_role_action.pagina_privada_creator
+label: 'Añade el rol Página privada creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: pagina_privada_creator

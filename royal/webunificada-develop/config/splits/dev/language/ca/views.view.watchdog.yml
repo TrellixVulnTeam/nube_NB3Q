@@ -1,0 +1,36 @@
+label: Guardián
+description: 'Mensajes recientes del registro'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Reset
+      fields:
+        nothing:
+          admin_label: Icona
+        severity:
+          label: Gravedad
+        type:
+          label: Tipo
+        timestamp:
+          label: Fecha
+        message:
+          label: Mensaje
+        name:
+          label: Usuario
+        link:
+          label: Operations
+      filters:
+        type:
+          expose:
+            label: Tipo
+        severity:
+          expose:
+            label: Gravedad
+      title: 'Mensajes recientes del registro'
+      empty:
+        area:
+          admin_label: 'No hay mensajes disponibles.'
+          content: 'No hay mensajes disponibles.'

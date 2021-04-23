@@ -1,0 +1,18 @@
+uuid: c25c98ff-db82-45dc-a2bd-ff91a967baff
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.noticia
+id: node.noticia.changed
+field_name: changed
+entity_type: node
+bundle: noticia
+label: Modificado
+description: 'La fecha en que el nodo fue editado por última vez.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

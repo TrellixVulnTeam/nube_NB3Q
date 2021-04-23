@@ -1,0 +1,14 @@
+uuid: be02256d-3185-40a2-9ac4-1c5cfa81c02d
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.menu_creator
+  module:
+    - user
+id: user_remove_role_action.menu_creator
+label: 'Elimina el rol Menú creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: menu_creator

@@ -1,0 +1,32 @@
+uuid: cbf1c36f-4218-4321-896d-b8bdaf3a8803
+langcode: es
+status: true
+dependencies:
+  module:
+    - consum_theme_blocks
+    - node
+  theme:
+    - consum_es
+id: sectionprev_2
+theme: consum_es
+region: content
+weight: -23
+provider: null
+plugin: section-prev-block
+settings:
+  id: section-prev-block
+  label: 'Section Prev Tastea'
+  provider: consum_theme_blocks
+  label_display: '0'
+  target: _parent
+  autocomplete: '2911'
+  link: ''
+  position: default
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      tastea: tastea
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

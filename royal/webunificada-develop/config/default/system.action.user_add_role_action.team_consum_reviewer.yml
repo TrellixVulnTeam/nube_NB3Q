@@ -1,0 +1,14 @@
+uuid: f97c5ba8-df99-4976-9171-3eb643f3f4a4
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.team_consum_reviewer
+  module:
+    - user
+id: user_add_role_action.team_consum_reviewer
+label: 'Añade el rol Team Consum reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: team_consum_reviewer

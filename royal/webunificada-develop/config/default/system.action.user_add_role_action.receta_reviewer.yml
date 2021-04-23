@@ -1,0 +1,14 @@
+uuid: d3cabe80-e8f7-4ea3-8442-d3d2ed17c90f
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.receta_reviewer
+  module:
+    - user
+id: user_add_role_action.receta_reviewer
+label: 'Añade el rol Receta reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: receta_reviewer

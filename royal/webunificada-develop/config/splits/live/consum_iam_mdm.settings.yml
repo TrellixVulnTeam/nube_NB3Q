@@ -1,0 +1,7 @@
+api_mdm_endpoint: 'https://mdmunomi.consum.es/eventcollector'
+api_mdm_modification: WEBCONSUM-DEV
+api_mdm_scope: WEBCONSUM-DEV
+api_emas_endpoint: 'http://10.6.12.112:9690/gloriaadapter/events/newByProject'
+_core:
+  default_config_hash: WSHR1yjPEDWd-3slJ4v_txdELXUIDVG5RqgOtiuj_7s
+langcode: es

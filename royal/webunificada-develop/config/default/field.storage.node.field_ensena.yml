@@ -1,0 +1,27 @@
+uuid: 19b45530-6293-4fb0-9662-6c61294d1570
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_ensena
+field_name: field_ensena
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: consum
+      label: Consum
+    -
+      value: charter
+      label: Charter
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

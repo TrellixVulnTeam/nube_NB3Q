@@ -1,0 +1,16 @@
+uuid: 15f0dc39-5081-4c1c-8ff0-c93b9d667396
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.pagina_privada
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.pagina_privada
+target_entity_type_id: node
+target_bundle: pagina_privada
+default_langcode: site_default
+language_alterable: false

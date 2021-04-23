@@ -1,0 +1,18 @@
+uuid: 8dcfe47c-d6a4-434b-a094-eb8926ed2c84
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category
+id: taxonomy_term.category.name
+field_name: name
+entity_type: taxonomy_term
+bundle: category
+label: Nombre
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

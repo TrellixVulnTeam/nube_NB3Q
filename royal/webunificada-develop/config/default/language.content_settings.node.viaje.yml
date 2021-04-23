@@ -1,0 +1,16 @@
+uuid: 4991ebb4-24e3-4423-8e8e-e619fb6ec488
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.viaje
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.viaje
+target_entity_type_id: node
+target_bundle: viaje
+default_langcode: site_default
+language_alterable: false

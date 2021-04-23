@@ -1,0 +1,14 @@
+uuid: 192c4a02-89b7-483e-bbc6-4d42df30b833
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.revista_creator
+  module:
+    - user
+id: user_remove_role_action.revista_creator
+label: 'Elimina el rol Revista creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: revista_creator

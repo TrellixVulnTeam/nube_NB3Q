@@ -1,0 +1,22 @@
+
+{#
+/**
+ * @file
+ * Template for a block.
+ */
+#}
+{#
+    Variables
+  pagesTitles: Pages titles of breadcrumb
+#}
+{% set items=pagesTitles|length %}
+{#{ vardumper() }#}
+
+<div class="">
+  {% for key,item in pagesTitles %}
+    <span><a href="{{pagesTitles[key].1 }}"> {{ pagesTitles[key].0 }} </a></span>
+    {% if key < (items - 1) %}
+      <span> {{ ' / ' }}</span>
+    {% endif %}
+  {% endfor %}
+</div>

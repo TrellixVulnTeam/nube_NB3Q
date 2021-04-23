@@ -1,0 +1,112 @@
+.page-direcciones-entrega {
+  .target-direccion {
+    background-color: $white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: calc(100% - 20px);
+    .title-target {
+      background-color: #f8951d;
+      border-radius: 10px 10px 0px 0px;
+      padding: 20px 35px;
+      overflow: auto;
+      p {
+        color: $white;
+        margin-bottom: 0px;
+        font-weight: bold;
+        float: left;
+      }
+      img {
+        float: right;
+      }
+    }
+    .content-target {
+      padding: 20px 35px;
+      .title-field {
+        font-size: 18px;
+        span {
+          font-weight: bold;
+        }
+      }
+      .telf-field {
+        font-size: 18px;
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .target-new-direccion {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #3a3a41;
+    cursor: pointer;
+    height: calc(100% - 20px);
+    padding: 20px 35px;
+    .txt-global {
+      text-align: center;
+      img {
+        margin-bottom: 20px;
+      }
+      p {
+        font-weight: bold;
+      }
+    }
+  }
+
+  #addAddress {
+    h3 {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .modal-content {
+      border-radius: 10px;
+      .modal-body {
+        padding: 75px 100px;
+        .js-form-item {
+          label {
+            margin-bottom: 0px;
+            font-size: 14px;
+          }
+          input,
+          textarea,
+          select {
+            border-radius: 30px;
+            border: 1px solid #3a3a41;
+            color: #3a3a41;
+          }
+        }
+        .close {
+          position: absolute;
+          top: 0px;
+          right: 10px;
+          span {
+            font-size: 45px;
+            font-weight: 100;
+            color: #3a3a41;
+          }
+        }
+        .form-actions {
+          .webform-button--submit {
+            float: right;
+          }
+          .webform-button--reset{
+            background: none;
+            border: none;
+            color: #3a3a41 !important;
+            text-transform: initial;
+            font-family: "NunitoSans-Regular";
+            background-image: svg-url-color("#3a3a41","#3a3a41","papelera");
+            background-repeat: no-repeat;
+            background-size: 20px;
+            background-position-y: center;
+            &:hover{
+              text-decoration: underline;
+              color: #dd5a31 !important;
+              background-image: svg-url-color("#dd5a31","#dd5a31","papelera");
+            }
+          }
+        }
+      }
+    }
+  }
+}

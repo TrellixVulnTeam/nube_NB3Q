@@ -1,0 +1,25 @@
+uuid: 50a37002-748d-414e-b055-05ad96f1e5de
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.menu-accesibilidad
+  module:
+    - system
+  theme:
+    - consum_es
+id: menuaccesibilidad_2
+theme: consum_es
+region: sidebar
+weight: -45
+provider: null
+plugin: 'system_menu_block:menu-accesibilidad'
+settings:
+  id: 'system_menu_block:menu-accesibilidad'
+  label: 'Menú accesibilidad'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,8 @@
+uuid: 9f8f2b76-a6d3-4054-866c-8fb34999bd2d
+langcode: es
+status: true
+dependencies: {  }
+name: Estación
+vid: estacion
+description: ''
+weight: 0

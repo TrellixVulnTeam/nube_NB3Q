@@ -1,0 +1,21 @@
+uuid: 33409866-6558-489b-8493-02049953c139
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_workflow
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  lightning_workflow:
+    workflow: editorial
+name: Evento
+type: evento
+description: "Eventos que suceden respecto a la línea de tiempo de un usuario. Hay eventos automáticos, como cuando se consiguen logros, y eventos realizados que, a su vez, pueden desencadenar otros eventos.\r\n\r\nPor ejemplo, si un usuario comenta una receta, se desencadenan dos eventos: \r\n\r\n1- Usuario X ha publicado un comentario\r\n2- La receta del usuario Y ha recibido un comentario"
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

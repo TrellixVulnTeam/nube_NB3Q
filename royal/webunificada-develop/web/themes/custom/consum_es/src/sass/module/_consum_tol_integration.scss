@@ -1,0 +1,160 @@
+// Bloque y campo de artículos de la Tol.
+// -----------------------------------------------------------------------------
+
+.tol-product {
+    display: block;
+    max-width: 80%;
+    margin-left: 10%;
+}
+
+.tol-product-image {
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+.tol-product-content {
+    background-color: $fondo1;
+    height: 250px;
+    p {
+        height: 25%;
+    }
+}
+
+.tol-product-title {
+    height: 20%;
+    line-height: initial;
+    a {
+        font-size: 12pt;
+        font-weight: bold;
+    }
+}
+
+.tol-article-description {
+    font-size: 10pt;
+    margin-bottom: 6px !important;
+}
+
+.tol-price {
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+.carousel-multi-item {
+    position: relative;
+}
+
+.controls-top {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 10%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.fa-arrow-right {
+    float: right;
+}
+
+.shopping-cart-button {
+    margin: 7.5%;
+    img {
+        width: 20px;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
+
+
+// Articles carousel
+// -----------------------------------------------------------------------------
+.carousel-inner {
+    width: 90%;
+    margin: auto;
+
+    .boton-ci {
+        height: 11rem;
+        width: 1rem;
+    }
+
+    .tol-product {
+        display: block;
+        margin-top: 30px;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+        max-width: 100%;
+    }
+    .tol-product-image {
+        width: 100%;
+        min-height: 200px;
+        padding: 10px;
+        border-radius: 15px 15px 0 0;
+    }
+    
+    .tol-product-content {
+        background-color: $fondo2;
+        height: 270px;
+        padding: 20px;
+        border-radius: 0 0 15px 15px
+    }
+    
+    .tol-product-title {
+        min-height: 70px;
+        position: relative;
+        z-index: 9999;
+    }
+    .tol-article-description {
+        line-height: 14pt;
+        margin-top: 20px;
+    }
+    .tol-price {
+        position: absolute;
+    }
+    .shopping-cart-button {
+        position: absolute;
+        width: 130px;
+        margin: 0px;
+        bottom: 10px;
+        text-align:center;
+    }
+}
+
+// Carrito de la compra
+// -----------------------------------------------------------------------------
+#shopping-cart {
+    p {
+        font-size: 12pt;
+    }
+    .cart-product-description p {
+        font-size: 10pt;
+        line-height: 15pt;
+        text-align: left;
+    }
+    .cart-products-wrapper {
+        margin-top: 10px;
+        border-bottom: 1px solid #e4e4e4;
+    }
+    .boton1 {
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    .cart-title {
+        font-weight:bold;
+    }
+     .modal-dialog {
+        width: 100%;
+        max-width: 400px!important;
+        margin-top: 150px;
+        float: right;
+    }
+    .cart-summary .row {
+        border-bottom: 1px solid #e4e4e4;
+        padding-top: 10px;
+    }
+
+}

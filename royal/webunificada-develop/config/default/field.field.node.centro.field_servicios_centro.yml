@@ -1,0 +1,21 @@
+uuid: fd4b173b-aae6-47aa-80f1-a87eaa2e7684
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_servicios_centro
+    - node.type.centro
+  module:
+    - options
+id: node.centro.field_servicios_centro
+field_name: field_servicios_centro
+entity_type: node
+bundle: centro
+label: Servicios
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

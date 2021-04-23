@@ -1,0 +1,487 @@
+// Recetas
+// -----------------------------------------------------------------------------
+
+
+.receta--full{
+  .row-target{
+    margin-bottom: 25px;
+    border-radius: 15px;
+    padding: 40px;
+    position: relative;
+  }
+
+  .row-target-n-p{
+    margin-bottom: 25px;
+    border-radius: 15px;
+    position: relative;
+  }
+
+  .p-tb-20{
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .border-bottom-section{
+    border-bottom: 1px solid $fondo2;
+  }
+
+  .p-l-20{
+    padding-left: 20px;
+  }
+
+  .p-r-20{
+    padding-right: 20px;
+  }
+
+  .p-t-20{
+    padding-top: 20px;
+  }
+
+  .p-b-20{
+    padding-bottom: 20px;
+  }
+
+  .p-l-40{
+    padding-left: 40px;
+  }
+
+  .p-r-40{
+    padding-right: 40px;
+  }
+
+  .p-t-40{
+    padding-top: 40px;
+  }
+
+  .p-b-40{
+    padding-bottom: 40px;
+  }
+
+  .valores-nutricionales{
+    background-color: $fondo1;
+    border-radius: 50px;
+    padding: 15px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 105px;
+    min-width: 105px;
+    .circle{
+      color: #f6941d;
+      background-color: white;
+      padding: 20px;
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      margin: auto;
+      text-align: center;
+      p{
+        margin-bottom: 0px;
+        font-weight: bold;;
+      }
+    }
+    .txt{
+      font-size: medium;
+      margin-bottom: 0px;
+      text-align: center;
+      padding-top: 10px;
+      line-height: 15px;
+    }
+  }
+
+  .team-category{
+    padding-left: 20px;
+  }
+
+  .row-1{
+    .col--1{
+      .row-in-1{
+        .col--1{
+          div{
+            font-weight: bold;
+            padding-right: 20px;
+          }
+          span{
+            width: 30px;
+            height: 25px;
+            background-position-x: center;
+            background-position-y: center;
+            margin-right: 5px;
+          }
+        }
+      }
+    } 
+    .col--3{
+      div{
+        font-weight: bold;
+      }
+      span{
+        width: 20px;
+        margin-left: 5px;
+        margin-right: 10px;
+      }
+    }
+  }
+  
+  .row-3, .row-5{
+    .nav-tabs{
+      border: none;
+      li{
+        margin-bottom: 0px;
+        cursor: pointer;
+        p{
+          border: none;
+          margin-bottom: 0px;
+          position: relative;
+          top: 1px;
+          padding: 0;
+          margin-right: 50px;
+        }
+        .active{
+          color: rgb(246, 148, 29) !important;
+          cursor: pointer;
+          border-bottom: 1px solid rgb(246, 148, 29) !important;
+          margin-bottom: 0px;
+          padding-bottom: 16px;
+        }
+      }
+    }
+
+    .col--2{
+      .row-in-1{
+        p{
+          margin-bottom: 0px;
+          font-size: medium;
+        }
+      }
+
+      .boton1{
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-left: 40px;
+        background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2058.03%2058.03%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%2C.cls-2%7Bfill%3A%23fff%3B%7D.cls-1%7Bstroke%3A%23fff%3Bstroke-miterlimit%3A10%3Bstroke-width%3A1.75px%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3EpictoRecurso%20129picto%3C%2Ftitle%3E%3Cg%20id%3D%22Capa%5f2%22%20data-name%3D%22Capa%202%22%3E%3Cg%20id%3D%22Capa%5f1-2%22%20data-name%3D%22Capa%201%22%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M37.3%2C29.72%2C22.56%2C44.47a.92.92%2C0%2C0%2C0%2C1.3%2C1.31L39.27%2C30.37a.92.92%2C0%2C0%2C0%2C0-1.3L23.86%2C13.67a.91.91%2C0%2C0%2C0-.65-.27A.93.93%2C0%2C0%2C0%2C22.56%2C15Z%22%2F%3E%3Cg%20id%3D%22%5f8%22%20data-name%3D%228%22%3E%3Cpath%20class%3D%22cls-2%22%20d%3D%22M29%2C0A29%2C29%2C0%2C1%2C0%2C58%2C29%2C29%2C29%2C0%2C0%2C0%2C29%2C0Zm0%2C54.4A25.39%2C25.39%2C0%2C1%2C1%2C54.4%2C29%2C25.38%2C25.38%2C0%2C0%2C1%2C29%2C54.4Z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E);
+        background-repeat: no-repeat;
+        background-position-x: 8px;
+        background-size: 25px;
+        background-position-y: center;
+        &:focus{
+          outline:0px;
+        }
+      }
+    }
+
+    ul.preparacion-pasos{
+      list-style: none;
+      border-left: 1px solid $fondo2;
+      margin-left: 20px;
+      padding-left: 20px;
+      margin-bottom: 0px;
+      li>div{
+        cursor: pointer;
+        &[aria-expanded="true"]{  
+          span {
+            background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2053.95%2053.95%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23f6941d%3Bstroke%3A%23f6941d%3Bstroke-miterlimit%3A10%3Bstroke-width%3A0.46px%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3EpictoRecurso%20111picto%3C%2Ftitle%3E%3Cg%20id%3D%22Capa%5f2%22%20data-name%3D%22Capa%202%22%3E%3Cg%20id%3D%22Capa%5f1-2%22%20data-name%3D%22Capa%201%22%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M14.82%2C25.76a1.22%2C1.22%2C0%2C0%2C0-2.43%2C0c0%2C3.19%2C3.52%2C7.58%2C3.92%2C8.07a1.22%2C1.22%2C0%2C1%2C0%2C1.88-1.55C16.89%2C30.69%2C14.82%2C27.52%2C14.82%2C25.76Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M40.35%2C24.55a1.22%2C1.22%2C0%2C0%2C0-1.22%2C1.21c0%2C1.75-2.06%2C4.93-3.37%2C6.52A1.23%2C1.23%2C0%2C0%2C0%2C35.93%2C34a1.25%2C1.25%2C0%2C0%2C0%2C.77.27%2C1.22%2C1.22%2C0%2C0%2C0%2C.94-.44c.4-.49%2C3.92-4.88%2C3.92-8.07A1.21%2C1.21%2C0%2C0%2C0%2C40.35%2C24.55Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M27%2C24.55a1.21%2C1.21%2C0%2C0%2C0-1.22%2C1.21v7.29a1.22%2C1.22%2C0%2C1%2C0%2C2.43%2C0V25.76A1.21%2C1.21%2C0%2C0%2C0%2C27%2C24.55Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M40.35%2C5.09A12.63%2C12.63%2C0%2C0%2C0%2C38%2C5.34a14.53%2C14.53%2C0%2C0%2C0-22.13%2C0%2C12.63%2C12.63%2C0%2C0%2C0-2.31-.25%2C13.37%2C13.37%2C0%2C0%2C0-6%2C25.29l0%2C18.38a5%2C5%2C0%2C0%2C0%2C5%2C5h29a5%2C5%2C0%2C0%2C0%2C5-5V30.37A13.37%2C13.37%2C0%2C0%2C0%2C40.35%2C5.09ZM44%2C48.76a2.53%2C2.53%2C0%2C0%2C1-2.53%2C2.53h-29A2.53%2C2.53%2C0%2C0%2C1%2C10%2C48.76V44H44Zm.75-20.29a.77.77%2C0%2C0%2C0-.18.1%2C1.19%2C1.19%2C0%2C0%2C0-.38.36%2C1.37%2C1.37%2C0%2C0%2C0-.18.49.74.74%2C0%2C0%2C0%2C0%2C.21V41.56H10l0-11.92c0-.06%2C0-.13%2C0-.2a1.28%2C1.28%2C0%2C0%2C0-.2-.5%2C1.1%2C1.1%2C0%2C0%2C0-.36-.35l-.19-.1a10.93%2C10.93%2C0%2C0%2C1%2C4.37-21c.24%2C0%2C.49%2C0%2C.73%2C0a14.49%2C14.49%2C0%2C0%2C0-1.94%2C7.25%2C1.22%2C1.22%2C0%2C1%2C0%2C2.43%2C0%2C12.16%2C12.16%2C0%2C1%2C1%2C24.31%2C0%2C1.22%2C1.22%2C0%2C1%2C0%2C2.43%2C0%2C14.49%2C14.49%2C0%2C0%2C0-1.94-7.25c.24%2C0%2C.49%2C0%2C.73%2C0a10.93%2C10.93%2C0%2C0%2C1%2C4.4%2C20.94Z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E);
+          }
+        }
+      }  
+      li{
+        position: relative;
+        left: -35px;
+        margin-bottom: 40px;
+        &:last-of-type{
+          margin-bottom: 0px;
+        }
+        span{
+          width: 30px;
+          background-color: white;
+          margin-right: 25px;
+        }
+        a{
+          font-weight: bold;
+          font-size: 18px;
+        }
+
+        p{
+          padding-left: 55px;
+          font-size: 18px;
+          &:last-of-type{
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+    .youtube-player{
+      width: 100%;
+      max-width: 500px;
+      height: 280px;
+    }
+
+    img{
+      width: 100%;
+    }
+  }
+
+  .row-5{
+    .modal-dialog{
+      width: 1000px;
+      max-width: 1000px;
+      top: 100px;
+      .modal-content{
+        padding: 80px 40px 40px 40px;
+        border-radius: 10px;
+      }
+    }
+    .row-in-1{
+      .col--1, .col--4, .col--5, .col--6{
+        .boton1{
+          margin-top: 0px !important;
+          margin-bottom: 0px !important;
+          padding-left: 40px;
+          background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2058.03%2058.03%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%2C.cls-2%7Bfill%3A%23fff%3B%7D.cls-1%7Bstroke%3A%23fff%3Bstroke-miterlimit%3A10%3Bstroke-width%3A1.75px%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3EpictoRecurso%20129picto%3C%2Ftitle%3E%3Cg%20id%3D%22Capa%5f2%22%20data-name%3D%22Capa%202%22%3E%3Cg%20id%3D%22Capa%5f1-2%22%20data-name%3D%22Capa%201%22%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M37.3%2C29.72%2C22.56%2C44.47a.92.92%2C0%2C0%2C0%2C1.3%2C1.31L39.27%2C30.37a.92.92%2C0%2C0%2C0%2C0-1.3L23.86%2C13.67a.91.91%2C0%2C0%2C0-.65-.27A.93.93%2C0%2C0%2C0%2C22.56%2C15Z%22%2F%3E%3Cg%20id%3D%22%5f8%22%20data-name%3D%228%22%3E%3Cpath%20class%3D%22cls-2%22%20d%3D%22M29%2C0A29%2C29%2C0%2C1%2C0%2C58%2C29%2C29%2C29%2C0%2C0%2C0%2C29%2C0Zm0%2C54.4A25.39%2C25.39%2C0%2C1%2C1%2C54.4%2C29%2C25.38%2C25.38%2C0%2C0%2C1%2C29%2C54.4Z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E);
+          background-repeat: no-repeat;
+          background-position-x: 8px;
+          background-size: 25px;
+          background-position-y: center;
+          &:focus{
+            outline:0px;
+          }
+        }
+        .boton2{
+          margin-top: 0px !important;
+          margin-bottom: 0px !important;
+          padding-left: 40px;
+          background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2058.03%2058.03%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%2C.cls-2%7Bfill%3A%23dd5a31%3B%7D.cls-1%7Bstroke%3A%23dd5a31%3Bstroke-miterlimit%3A10%3Bstroke-width%3A1.75px%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3EpictoRecurso%20130picto%3C%2Ftitle%3E%3Cg%20id%3D%22Capa%5f2%22%20data-name%3D%22Capa%202%22%3E%3Cg%20id%3D%22Capa%5f1-2%22%20data-name%3D%22Capa%201%22%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M20.73%2C28.31%2C35.48%2C13.56a.93.93%2C0%2C1%2C0-1.31-1.31L18.77%2C27.66a.9.9%2C0%2C0%2C0%2C0%2C1.3l15.4%2C15.4a.92.92%2C0%2C0%2C0%2C.65.27.88.88%2C0%2C0%2C0%2C.65-.27.93.93%2C0%2C0%2C0%2C0-1.31Z%22%2F%3E%3Cg%20id%3D%22%5f8%22%20data-name%3D%228%22%3E%3Cpath%20class%3D%22cls-2%22%20d%3D%22M29%2C58A29%2C29%2C0%2C1%2C0%2C0%2C29%2C29%2C29%2C0%2C0%2C0%2C29%2C58Zm0-54.4A25.39%2C25.39%2C0%2C1%2C1%2C3.63%2C29%2C25.38%2C25.38%2C0%2C0%2C1%2C29%2C3.63Z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E);
+          background-repeat: no-repeat;
+          background-position-x: 8px;
+          background-size: 25px;
+          background-position-y: center;
+          &:focus{
+            outline:0px;
+          }
+        }
+        text-align: center;
+        h3{
+          margin-bottom: 50px;
+        }
+        p{
+          font-weight: bold;
+        }
+      }
+      .col--4, .col--5{
+        margin-top: 50px;
+      }
+      
+      .nav-tabs{
+        margin-top: 10px;
+        div{
+          background-color: #495057;
+          height: 3px;
+          width: 30px;
+          border-bottom: none !important;
+          border-radius: 0px;
+          padding: 0px;
+          padding-bottom: 0px;
+          border: none;
+          margin-left: 3px;
+          margin-right: 3px;
+          opacity: .5;
+          cursor: pointer !important;
+          &.active{
+            opacity: 1 !important;
+          }
+        }
+      }
+    }
+    li>div{
+      cursor: default !important;
+    }
+
+    iframe, img{
+      border-radius: 10px;
+    }
+  }
+
+  
+
+  .selection {
+    position: relative;
+    margin-left: 450%;
+    margin-top: -30%;
+  }
+
+  .recipes-ci {
+    display: inline-block;
+    background-repeat: no-repeat;
+    height: 2rem;
+    width: 2.5rem;
+  }
+
+  .ci-nutricion {
+    background-image: url("../img/infonutricional.png");
+  }
+
+  .ci-tiempo {
+    background-image: url("../img/reloj.png");
+  }
+
+  .ci-imprime {
+    background-image: url("../img/impresora.png");
+  }
+
+  .ci-compartir {
+    background-image: url("../img/compartir.png");
+  }
+
+  .carousel-indicators{
+    bottom: -40px;
+    li{
+      background-color: $gray-700;
+    }
+  }
+}
+
+.recetas .etiquetas {
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 3rem;
+  width: 15rem;
+  background-image: url("../img/etiquetas.png");
+}
+
+.recetas .btn-add {
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 3rem;
+  width: 16rem;
+  background-image: url("../img/botonadd.png");
+}
+
+.recetas .btn-lectura {
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 3rem;
+  width: 11rem;
+  background-image: url("../img/botonlectura.png");
+}
+
+.recetas .ci-persona {
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 1.3rem;
+  width: 1.3rem;
+  background-image: url("../img/user.svg");
+}
+
+.recetas .ci-less {
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-image: url("../img/menos.png");
+}
+
+.recetas .ci-add {
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-image: url("../img/add.svg");
+}
+
+.recetas .btn-addcarro {
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 3rem;
+  width: 15rem;
+  background-image: url("../img/addcarro.png");
+}
+
+.recetas .btn-3puntos {
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 2rem;
+  width: 1rem;
+  background-image: url("../img/3puntos.png");
+}
+
+.recetas .btn-carrito {
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 2.5rem;
+  width: auto;
+  background-image: url("../img/btncarrito.png");
+}
+
+.recetas .underline {
+  float:left;
+  height: 40px;
+  border-bottom: 1px solid #f6941d;
+}
+
+.recetas .hr {
+  height: 40px;
+  border-bottom: 3px solid $fondo1;
+}
+
+div.contextual-region.block.block--consum-es-local-tasks.my-3 {
+  z-index: 1 !important;
+}
+
+.recetas .miga-de-pan {
+  margin-right: 0px;
+}
+
+.recetas:before {
+  content:'';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.recetas h1 {
+  color: white;
+  position: relative;
+  padding-top: 8rem;
+}
+
+.recetas {
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  /*margin-top: $grid-gutter-width / 2;*/
+  margin-bottom: $grid-gutter-width / 2;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 500px;
+  position: relative;
+}
+
+.page-recetas main>section{
+  margin-top: -15%;
+}
+
+.selection{
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+  .txt-selection{
+    background-image: url(/themes/custom/consum_es/assets/img/seleccion_consum.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+    width: 216px;
+    height: 95px;
+    p{
+      margin-bottom: 0px;
+      font-weight: bold;
+      color: white;
+      margin-left: 40px;
+      width: 110px;
+    }
+  }
+}

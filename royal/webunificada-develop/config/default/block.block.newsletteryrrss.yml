@@ -1,0 +1,20 @@
+uuid: 291d8fec-ed1c-4b2a-a3b6-aeb91f27c549
+langcode: es
+status: true
+dependencies:
+  module:
+    - consum_theme_blocks
+  theme:
+    - consum_es
+id: newsletteryrrss
+theme: consum_es
+region: footer_fluid
+weight: -47
+provider: null
+plugin: newsletter-rrss-block
+settings:
+  id: newsletter-rrss-block
+  label: 'Newsletter y RRSS'
+  provider: consum_theme_blocks
+  label_display: '0'
+visibility: {  }

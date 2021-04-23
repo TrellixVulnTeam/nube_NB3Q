@@ -1,0 +1,21 @@
+uuid: 1b0619ec-f6cf-4487-9e86-cf78805b4528
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_workflow
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:menu_link_content:27570a59-e8c8-40d2-b17a-4943af64744c'
+  lightning_workflow:
+    workflow: editorial
+name: Noticia
+type: noticia
+description: 'Noticias de prensa de Consum.es'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,20 @@
+uuid: aedb99b7-c642-4e03-9e71-4c7454a69ee5
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_tematica_team_consum
+field_name: field_tematica_team_consum
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

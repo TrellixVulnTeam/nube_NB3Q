@@ -1,0 +1,21 @@
+uuid: 5b1dcaae-7702-497a-97f3-463ea34e83e3
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_anexo_patio
+field_name: field_anexo_patio
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

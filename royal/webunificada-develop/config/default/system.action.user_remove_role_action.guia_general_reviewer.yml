@@ -1,0 +1,14 @@
+uuid: 14e6401f-73ab-4977-8d4a-55a8c16cc16f
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.guia_general_reviewer
+  module:
+    - user
+id: user_remove_role_action.guia_general_reviewer
+label: 'Elimina el rol Guía general reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: guia_general_reviewer

@@ -1,0 +1,22 @@
+uuid: a89f08ff-ce11-4d27-ac3e-41cdcda4188d
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.pagina_mundoconsum
+id: node.pagina_mundoconsum.promote
+field_name: promote
+entity_type: node
+bundle: pagina_mundoconsum
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

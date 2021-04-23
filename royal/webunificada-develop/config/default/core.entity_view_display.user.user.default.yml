@@ -1,0 +1,356 @@
+uuid: 4a42daa4-a08f-4fbb-b8fd-0cebc7aebb16
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_apellido1
+    - field.field.user.user.field_apellido2
+    - field.field.user.user.field_aplicacion_modificacion
+    - field.field.user.user.field_codigo_socio
+    - field.field.user.user.field_direccion
+    - field.field.user.user.field_documento_principal_numero
+    - field.field.user.user.field_estado_socio_cliente
+    - field.field.user.user.field_favorites
+    - field.field.user.user.field_id_mdm
+    - field.field.user.user.field_intereses
+    - field.field.user.user.field_mdm_sync
+    - field.field.user.user.field_medalla_bodega
+    - field.field.user.user.field_medalla_cuidarnos
+    - field.field.user.user.field_medalla_hogar
+    - field.field.user.user.field_medalla_nutricion
+    - field.field.user.user.field_medalla_participacion
+    - field.field.user.user.field_medalla_recetas
+    - field.field.user.user.field_medalla_vivir_viajar
+    - field.field.user.user.field_nombre
+    - field.field.user.user.field_notificacion_comentario_mi
+    - field.field.user.user.field_notificacion_email_amigo
+    - field.field.user.user.field_perfil_de_facebook
+    - field.field.user.user.field_perfil_de_instagram
+    - field.field.user.user.field_perfil_de_twitter
+    - field.field.user.user.field_puntos
+    - field.field.user.user.field_siguiendo
+    - field.field.user.user.field_sobre_mi
+    - field.field.user.user.field_ver_perfil_de_facebook
+    - field.field.user.user.field_ver_perfil_de_instagram
+    - field.field.user.user.field_ver_perfil_de_twitter
+    - field.field.user.user.user_picture
+    - views.view.my_community_feed
+    - views.view.my_community_follow_users
+  module:
+    - consum_comunidad
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - royal_blocks
+    - royal_layouts
+    - text
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: col-3-6-3
+        layout_settings:
+          label: ''
+          extra_classes: ''
+        components:
+          79b6604b-b65f-4381-b28e-b045012f9c34:
+            uuid: 79b6604b-b65f-4381-b28e-b045012f9c34
+            region: contentmain
+            configuration:
+              id: 'views_block:my_community_feed-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          11183deb-2c0f-44e7-afeb-f6d3e89369da:
+            uuid: 11183deb-2c0f-44e7-afeb-f6d3e89369da
+            region: column2
+            configuration:
+              id: 'views_block:my_community_follow_users-block_2'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          b95d6df5-6d56-4f0d-b0ee-4f1b353d0341:
+            uuid: b95d6df5-6d56-4f0d-b0ee-4f1b353d0341
+            region: column2
+            configuration:
+              id: cta_block
+              label: 'Click To Action'
+              provider: royal_blocks
+              label_display: '0'
+              image1:
+                - '1147'
+              gradient: 1
+              image2: {  }
+              text1: ''
+              text2: 'Leer más'
+              text3: ''
+              alto: customblock-h
+              customHeiht: ''
+              target: _parent
+              autocomplete: '2885'
+              link: ''
+              color_bot: boton3
+              color_fondo: custom-color
+              custom_color: '#808080'
+              visibility: _none
+              ocultar:
+                movil: 0
+                tablet: 0
+                escritorio: 0
+              texto1:
+                value: "<h3 class=\"blanco\">¿Has creado un plato digno de ser compartido?</h3>\r\n"
+                format: rich_text
+              texto2: 'Comparte tu receta'
+              customHeight: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
+          83a5cf88-85e2-4b5a-b5e7-ab25a7ced4f1:
+            uuid: 83a5cf88-85e2-4b5a-b5e7-ab25a7ced4f1
+            region: column1
+            configuration:
+              id: community_navigation_block
+              label: 'Community Navigation'
+              provider: consum_comunidad
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          68eb7b30-7958-4c03-9894-19349cb57a83:
+            uuid: 68eb7b30-7958-4c03-9894-19349cb57a83
+            region: column1
+            configuration:
+              id: community_profile_block
+              label: 'Community Profile'
+              provider: consum_comunidad
+              label_display: '0'
+              user: {  }
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      whitelisted_blocks: {  }
+      blacklisted_blocks: {  }
+      allowed_layouts: {  }
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_intereses:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_medalla_bodega:
+    weight: 19
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: column1
+  field_medalla_cuidarnos:
+    weight: 24
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: column1
+  field_medalla_hogar:
+    weight: 18
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: column1
+  field_medalla_nutricion:
+    weight: 21
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: column1
+  field_medalla_participacion:
+    weight: 22
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: column1
+  field_medalla_recetas:
+    weight: 20
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: column1
+  field_medalla_vivir_viajar:
+    weight: 23
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: column1
+  field_notificacion_comentario_mi:
+    weight: 14
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_notificacion_email_amigo:
+    weight: 15
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_perfil_de_facebook:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_perfil_de_instagram:
+    weight: 12
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_perfil_de_twitter:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_puntos:
+    weight: 17
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_siguiendo:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_sobre_mi:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_ver_perfil_de_facebook:
+    weight: 9
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ver_perfil_de_instagram:
+    weight: 13
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ver_perfil_de_twitter:
+    weight: 11
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  follow_user:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: column1
+  member_for:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_apellido1: true
+  field_apellido2: true
+  field_aplicacion_modificacion: true
+  field_codigo_socio: true
+  field_direccion: true
+  field_documento_principal_numero: true
+  field_estado_socio_cliente: true
+  field_favorites: true
+  field_id_mdm: true
+  field_mdm_sync: true
+  field_nombre: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_picture: true

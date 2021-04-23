@@ -1,0 +1,23 @@
+uuid: e799a067-04a8-4df4-9bb6-66d20cc6e145
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grasas
+    - node.type.receta
+id: node.receta.field_grasas
+field_name: field_grasas
+entity_type: node
+bundle: receta
+label: 'Grasas (gr)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

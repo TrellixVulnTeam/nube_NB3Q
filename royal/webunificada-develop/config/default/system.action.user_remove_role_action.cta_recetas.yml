@@ -1,0 +1,14 @@
+uuid: 286d15ac-b5f0-42bc-9d82-8f911e071f4b
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.cta_recetas
+  module:
+    - user
+id: user_remove_role_action.cta_recetas
+label: 'Elimina el rol Cta. Recetas al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cta_recetas

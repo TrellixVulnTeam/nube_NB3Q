@@ -1,0 +1,37 @@
+uuid: e56c09ed-cf35-480d-86a1-b8109f0344ad
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.category.field_icono
+    - taxonomy.vocabulary.category
+  module:
+    - image
+    - text
+id: taxonomy_term.category.default
+targetEntityType: taxonomy_term
+bundle: category
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_icono:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

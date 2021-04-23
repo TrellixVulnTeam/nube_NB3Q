@@ -1,0 +1,28 @@
+menusettings:
+  content_types:
+    centro: centro
+    evento: evento
+    receta: receta
+    diario_de_viaje: 0
+    direccion: 0
+    faq: 0
+    guia_de_vino: 0
+    guia_general: 0
+    landing_page: 0
+    magazine: 0
+    menu: 0
+    noticia: 0
+    page: 0
+    pagina_mundoconsum: 0
+    pagina_privada: 0
+    paso_receta: 0
+    revista: 0
+    tastea: 0
+    team_consum: 0
+    viaje: 0
+    webform: 0
+  items_level_1:
+    items:
+      item1:
+        content_type: guia_de_vino
+        node: '103'

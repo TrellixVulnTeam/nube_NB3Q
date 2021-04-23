@@ -1,0 +1,14 @@
+uuid: 2070dac7-6cb4-44fa-ae18-75f445d67167
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.comun_editores_internos
+  module:
+    - user
+id: user_remove_role_action.comun_editores_internos
+label: 'Elimina el rol Común editores internos al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: comun_editores_internos

@@ -1,0 +1,27 @@
+uuid: b5d798fb-6147-49e1-9d57-d58cd1a18f2c
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: 'Usuario de Mundo Consum, que tiene número de socio-cliente'
+id: mundo_consum
+label: 'Mundo Consum'
+weight: -22
+is_admin: null
+permissions:
+  - 'access comments'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'edit own comments'
+  - 'opt-in or out of google analytics tracking'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use advanced search'
+  - 'view media'
+  - 'view mundoconsum content'
+  - 'view own unpublished content'
+  - 'view private page content'

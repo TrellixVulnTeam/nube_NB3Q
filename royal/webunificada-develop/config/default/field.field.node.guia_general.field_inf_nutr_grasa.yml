@@ -1,0 +1,23 @@
+uuid: 40a57737-80c5-4f76-b213-e3e00ab844c9
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_inf_nutr_grasa
+    - node.type.guia_general
+id: node.guia_general.field_inf_nutr_grasa
+field_name: field_inf_nutr_grasa
+entity_type: node
+bundle: guia_general
+label: 'Información Nutricional (Grasa)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

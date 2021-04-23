@@ -1,0 +1,56 @@
+uuid: 4ca3a01c-75c3-43bf-a79f-4c72527b4bb0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.paso_receta.field_descripcion
+    - field.field.node.paso_receta.field_image
+    - field.field.node.paso_receta.field_tiempo_prep
+    - node.type.paso_receta
+  module:
+    - image
+    - text
+    - user
+id: node.paso_receta.default
+targetEntityType: node
+bundle: paso_receta
+mode: default
+content:
+  field_descripcion:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image:
+    weight: 104
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_tiempo_prep:
+    weight: 103
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

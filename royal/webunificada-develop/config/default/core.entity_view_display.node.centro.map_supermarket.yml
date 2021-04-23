@@ -1,0 +1,96 @@
+uuid: e059eb17-be05-48bb-9020-a5b0b208ea35
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.map_supermarket
+    - field.field.node.centro.field_codigo_centro
+    - field.field.node.centro.field_codigo_postal
+    - field.field.node.centro.field_coordenadas
+    - field.field.node.centro.field_domicilio
+    - field.field.node.centro.field_ensena
+    - field.field.node.centro.field_estado_centro
+    - field.field.node.centro.field_fecha_festivos
+    - field.field.node.centro.field_festivos_centro
+    - field.field.node.centro.field_horario
+    - field.field.node.centro.field_id_ensena_centro
+    - field.field.node.centro.field_id_poblacion_centro
+    - field.field.node.centro.field_id_provincia_centro
+    - field.field.node.centro.field_ip_tienda
+    - field.field.node.centro.field_localizacion
+    - field.field.node.centro.field_notificacion_centro
+    - field.field.node.centro.field_old_id
+    - field.field.node.centro.field_poblacion
+    - field.field.node.centro.field_provincia
+    - field.field.node.centro.field_servicios_centro
+    - field.field.node.centro.field_telefono
+    - field.field.node.centro.field_tol_item
+    - node.type.centro
+  module:
+    - layout_builder
+    - options
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.centro.map_supermarket
+targetEntityType: node
+bundle: centro
+mode: map_supermarket
+content:
+  field_domicilio:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_horario:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_servicios_centro:
+    type: list_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_telefono:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_codigo_centro: true
+  field_codigo_postal: true
+  field_coordenadas: true
+  field_ensena: true
+  field_estado_centro: true
+  field_fecha_festivos: true
+  field_festivos_centro: true
+  field_id_ensena_centro: true
+  field_id_poblacion_centro: true
+  field_id_provincia_centro: true
+  field_ip_tienda: true
+  field_localizacion: true
+  field_notificacion_centro: true
+  field_old_id: true
+  field_poblacion: true
+  field_provincia: true
+  field_tol_item: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

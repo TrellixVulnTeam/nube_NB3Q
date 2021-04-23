@@ -1,0 +1,26 @@
+uuid: 674daf5f-dda9-4b73-a8fe-19ffed89ef18
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_medalla_cuidarnos
+  module:
+    - user
+id: user.user.field_medalla_cuidarnos
+field_name: field_medalla_cuidarnos
+entity_type: user
+bundle: user
+label: 'Medalla cuidarnos'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,4 @@
+api_mdm_endpoint: 'https://mdmunomi-pre.consum.es'
+api_mdm_modification: 'WEBCONSUM-DEV'
+api_mdm_scope: 'WEBCONSUM-DEV'
+api_emas_endpoint: 'http://10.6.12.112:9690/gloriaadapter/events/newByProject'

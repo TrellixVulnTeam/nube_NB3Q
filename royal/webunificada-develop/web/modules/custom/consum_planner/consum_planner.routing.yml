@@ -1,0 +1,24 @@
+savemenu.form:
+  path: '/node/{node}/save'
+  defaults:
+    _title: 'Set your menu name'
+    _form: '\Drupal\consum_planner\Form\SaveMenuForm'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node
+deletefieldelement.form:
+  path: '/node/{node}/delete/{refid}'
+  defaults:
+    _title: 'Set your menu name'
+    _form: '\Drupal\consum_planner\Form\DeleteFieldElementForm'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node
+      refid:
+        type: entity:node

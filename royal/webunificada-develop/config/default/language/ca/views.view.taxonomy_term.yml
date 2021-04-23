@@ -1,0 +1,8 @@
+label: 'Término de taxonomía'
+description: 'Contenido perteneciente a un término de taxonomía determinado.'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Reset

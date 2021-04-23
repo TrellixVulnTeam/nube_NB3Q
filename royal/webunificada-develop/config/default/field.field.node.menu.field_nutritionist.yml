@@ -1,0 +1,23 @@
+uuid: 9876fe80-ad3a-4096-b5ac-fac82b0e029b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nutritionist
+    - node.type.menu
+id: node.menu.field_nutritionist
+field_name: field_nutritionist
+entity_type: node
+bundle: menu
+label: Nutricionista
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

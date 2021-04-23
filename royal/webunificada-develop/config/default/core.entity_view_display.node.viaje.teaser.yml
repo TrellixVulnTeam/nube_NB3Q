@@ -1,0 +1,73 @@
+uuid: c3e55dc6-bc3c-4480-acb5-0cbe699c76cd
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.viaje.body
+    - field.field.node.viaje.field_archivo_descargable
+    - field.field.node.viaje.field_aviso_viaje
+    - field.field.node.viaje.field_categoria_del_viaje
+    - field.field.node.viaje.field_comments
+    - field.field.node.viaje.field_destacado_del_viaje
+    - field.field.node.viaje.field_diario_de_viaje
+    - field.field.node.viaje.field_duracion_viaje
+    - field.field.node.viaje.field_fecha_de_salida
+    - field.field.node.viaje.field_image
+    - field.field.node.viaje.field_imagenes_itinerario_viaje
+    - field.field.node.viaje.field_incluido_en_el_viaje
+    - field.field.node.viaje.field_itinerario_viaje
+    - field.field.node.viaje.field_like
+    - field.field.node.viaje.field_no_incluido_en_el_viaje
+    - field.field.node.viaje.field_precio
+    - field.field.node.viaje.field_precio_por_puntos
+    - field.field.node.viaje.field_url_reserva
+    - field.field.node.viaje.field_usuarios_apuntados
+    - node.type.viaje
+  module:
+    - text
+    - user
+id: node.viaje.teaser
+targetEntityType: node
+bundle: viaje
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_archivo_descargable: true
+  field_aviso_viaje: true
+  field_categoria_del_viaje: true
+  field_comments: true
+  field_destacado_del_viaje: true
+  field_diario_de_viaje: true
+  field_duracion_viaje: true
+  field_fecha_de_salida: true
+  field_image: true
+  field_imagenes_itinerario_viaje: true
+  field_incluido_en_el_viaje: true
+  field_itinerario_viaje: true
+  field_like: true
+  field_no_incluido_en_el_viaje: true
+  field_precio: true
+  field_precio_por_puntos: true
+  field_url_reserva: true
+  field_usuarios_apuntados: true
+  langcode: true
+  search_api_excerpt: true

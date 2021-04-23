@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Template for a block.
+ */
+#}
+{#
+    Variables
+  ocultar: dispositivos en los que el bloque no se mostrará. Opciones: 'escritorio', 'movil', 'tablet'
+  offset: position node of serach query
+  vista: View mode
+#}
+{% include '@radix/block/block.twig' with {
+  html_tag: 'div',
+} %}
+
+<div class="multiviews
+{% if ocultar['escritorio'] %}  d-lg-none d-xl-none {% else %} d-lg-block d-xl-block  {% endif %}
+{% if ocultar['tablet'] %} d-md-none {% else %} d-md-block {% endif %}
+{% if ocultar['movil'] %} d-none d-sm-none {% else %} d-xs-block d-sm-block {% endif %}
+"> {{ vista }}
+</div>

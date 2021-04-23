@@ -1,0 +1,45 @@
+label: Multimedia
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Reset
+      fields:
+        thumbnail__target_id:
+          label: Miniatura
+        name:
+          label: 'Nombre del elemento multimedia'
+        bundle:
+          label: Tipo
+        status:
+          label: Estado
+          settings:
+            format_custom_true: Publicado
+            format_custom_false: 'Sin publicar'
+        operations:
+          label: Operations
+      filters:
+        name:
+          expose:
+            label: 'Nombre del elemento multimedia'
+        bundle:
+          expose:
+            label: Tipo
+        status:
+          expose:
+            label: Verdad
+          group_info:
+            label: 'Estado de publicación'
+            group_items:
+              1:
+                title: Publicado
+              2:
+                title: 'Sin publicar'
+      title: Multimedia
+      empty:
+        area_text_custom:
+          content: 'No hay contenidos multimedia disponibles'
+  media_page_list:
+    display_title: Multimedia

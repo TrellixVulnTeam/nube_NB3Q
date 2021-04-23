@@ -1,0 +1,23 @@
+uuid: 53c5415b-e617-412a-8908-f5768f6368fd
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_precio_por_puntos
+    - node.type.viaje
+id: node.viaje.field_precio_por_puntos
+field_name: field_precio_por_puntos
+entity_type: node
+bundle: viaje
+label: 'Precio por puntos'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

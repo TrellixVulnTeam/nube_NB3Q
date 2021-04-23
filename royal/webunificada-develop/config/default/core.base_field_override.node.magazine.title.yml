@@ -1,0 +1,18 @@
+uuid: e6ea4339-d425-44b6-b677-591fd5dd352d
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.magazine
+id: node.magazine.title
+field_name: title
+entity_type: node
+bundle: magazine
+label: Título
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

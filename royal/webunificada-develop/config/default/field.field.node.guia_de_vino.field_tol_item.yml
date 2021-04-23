@@ -1,0 +1,21 @@
+uuid: a84ff679-5cf7-4178-968b-56e87983bea3
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tol_item
+    - node.type.guia_de_vino
+  module:
+    - consum_tol_integration
+id: node.guia_de_vino.field_tol_item
+field_name: field_tol_item
+entity_type: node
+bundle: guia_de_vino
+label: 'Artículos TOL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: tol_item_field_type

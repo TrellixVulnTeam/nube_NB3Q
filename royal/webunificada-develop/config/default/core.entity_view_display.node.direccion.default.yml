@@ -1,0 +1,151 @@
+uuid: 08fd94db-8919-4302-b977-6d757a6039d0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.direccion.body
+    - field.field.node.direccion.field_anexo
+    - field.field.node.direccion.field_anexo_patio
+    - field.field.node.direccion.field_codigo_calle
+    - field.field.node.direccion.field_codigo_postal
+    - field.field.node.direccion.field_domicilio
+    - field.field.node.direccion.field_escalera
+    - field.field.node.direccion.field_pais
+    - field.field.node.direccion.field_patio
+    - field.field.node.direccion.field_piso
+    - field.field.node.direccion.field_poblacion
+    - field.field.node.direccion.field_provincia
+    - field.field.node.direccion.field_puerta
+    - field.field.node.direccion.field_tipovia
+    - node.type.direccion
+  module:
+    - text
+    - user
+id: node.direccion.default
+targetEntityType: node
+bundle: direccion
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_anexo:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_anexo_patio:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_codigo_calle:
+    weight: 113
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_codigo_postal:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_domicilio:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_escalera:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pais:
+    weight: 114
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_patio:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_piso:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_poblacion:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_provincia:
+    weight: 112
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_puerta:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_tipovia:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,27 @@
+uuid: 70a31a13-cf2e-4534-93e2-524fbd931fa7
+langcode: es
+status: true
+dependencies: {  }
+id: guia_de_vino_creator
+label: 'Guía de vino creator'
+weight: -3
+is_admin: false
+permissions:
+  - 'access ckeditor_media_browser entity browser pages'
+  - 'access contextual links'
+  - 'access image_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media_browser entity browser pages'
+  - 'access toolbar'
+  - 'configure any layout'
+  - 'create guia_de_vino content'
+  - 'create url aliases'
+  - 'edit own guia_de_vino content'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition review'
+  - 'use moderation sidebar'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view guia_de_vino revisions'
+  - 'view latest version'
+  - 'view own unpublished content'

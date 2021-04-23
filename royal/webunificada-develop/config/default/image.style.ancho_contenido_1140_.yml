@@ -1,0 +1,15 @@
+uuid: 6e1aaa91-4a8f-4dfc-80f9-0aa8429968fb
+langcode: es
+status: true
+dependencies: {  }
+name: ancho_contenido_1140_
+label: 'Ancho Contenido (1140)'
+effects:
+  42bf0f2e-31da-4800-aff3-5ecd073265d7:
+    uuid: 42bf0f2e-31da-4800-aff3-5ecd073265d7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1140
+      height: 600
+      anchor: center-center

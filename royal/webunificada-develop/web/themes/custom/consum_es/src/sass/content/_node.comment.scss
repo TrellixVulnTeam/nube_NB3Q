@@ -1,0 +1,52 @@
+// Comment
+// -----------------------------------------------------------------------------
+
+
+  // Comment Form
+
+#edit-comment-body-0-format-help,
+#edit-comment-body-0-format,
+#edit-comment-body-0-format-guidelines {
+    display: none;
+}
+#edit-comment-body-wrapper {
+  label.js-form-required.form-required {
+    display: none;
+  }
+}
+.comment-comment-form.comment-form {
+  display: flex;
+}
+.comment-form  #edit-actions--3 {
+  padding-left: 1rem;
+}
+#cke_edit-comment-body-0-value {
+  span#cke_1_bottom.cke_bottom.cke_reset_all {
+    display: none;
+  }
+}
+#cke_edit-comment-body-0-value {
+  div#cke_inner.cke_reset {
+    height: 70px !important;
+  }  
+  iframe.cke_wysiwyg_frame.cke_reset {
+    height: 70px !important;
+  }
+  #cke_1_contents {
+    height: 70px !important;
+  }
+}
+#comment-form {
+  #edit-actions.form-actions.js-form-wrapper.form-wrapper {
+    padding-left: 1rem;
+  }
+}
+#edit-comment-body-0-value {
+  resize: none;
+}
+
+// Avatar comments
+
+div.user__user-picture a img.img-fluid {
+  border-radius: 100px;
+}

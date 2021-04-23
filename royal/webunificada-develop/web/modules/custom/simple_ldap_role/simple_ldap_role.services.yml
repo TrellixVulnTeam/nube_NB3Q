@@ -1,0 +1,8 @@
+services:
+  simple_ldap_role.event_subscriber:
+    class: Drupal\simple_ldap_role\Event\LdapAuthRoleEventSubscriber
+    tags:
+      - {name: event_subscriber}
+  simple_ldap_role.manager:
+    class: Drupal\simple_ldap_role\SimpleLdapRoleManager
+    arguments: ['@simple_ldap.server', '@config.factory', '@entity_type.manager']

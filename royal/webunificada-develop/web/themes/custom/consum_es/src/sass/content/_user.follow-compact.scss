@@ -1,0 +1,54 @@
+.view-comunidad-seguir-compacto {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: $white;
+  border-radius: 0.5rem;
+  padding-top: 20px;
+  header{
+      p{
+          font-weight: bold;
+          text-align: center;
+      }
+  }
+  .comunidad-user-compact {
+    .picture-user-message {
+      img {
+        width: 65px;
+        height: 65px;
+        margin-bottom: 7.5px;
+        object-fit: cover;
+      }
+    }
+    .name-user {
+      font-weight: bold;
+      text-transform: lowercase;
+      text-align: center;
+      div {
+        text-transform: capitalize;
+        margin-bottom: 7.5px;
+      }
+    }
+
+    .follow-user-button {
+      a {
+        cursor: pointer;
+        margin: 0px;
+        &.btn-unfollow-user{
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+  .more-link {
+    text-align: center;
+    line-height: 60px;
+    margin-top: 20px;
+    a {
+      @extend .boton1;
+      margin-bottom: 20px;
+      position: relative;
+      top: -10px;
+    }
+  }
+}

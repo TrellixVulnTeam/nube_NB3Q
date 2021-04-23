@@ -1,0 +1,19 @@
+uuid: c5f4330b-eb19-43d0-a999-cedcc68fe37c
+langcode: es
+status: true
+dependencies: {  }
+id: evento_reviewer
+label: 'Evento reviewer'
+weight: 22
+is_admin: false
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'delete any evento content'
+  - 'edit any evento content'
+  - 'use editorial transition archive'
+  - 'use editorial transition publish'
+  - 'use editorial transition review'
+  - 'use moderation sidebar'
+  - 'view any unpublished content'
+  - 'view latest version'

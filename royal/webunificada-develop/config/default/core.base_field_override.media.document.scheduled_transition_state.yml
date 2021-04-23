@@ -1,0 +1,18 @@
+uuid: 32f76f1d-7ae2-4d26-905d-e3b4ab0b3d0b
+langcode: es
+status: true
+dependencies:
+  config:
+    - media.type.document
+id: media.document.scheduled_transition_state
+field_name: scheduled_transition_state
+entity_type: media
+bundle: document
+label: 'Scheduled transition state'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

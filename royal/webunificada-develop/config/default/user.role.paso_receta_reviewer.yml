@@ -1,0 +1,19 @@
+uuid: a5d3a25a-58a6-4cfe-9968-7786ec7220ce
+langcode: es
+status: true
+dependencies: {  }
+id: paso_receta_reviewer
+label: 'Paso de la receta reviewer'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'delete any paso_receta content'
+  - 'edit any paso_receta content'
+  - 'use editorial transition archive'
+  - 'use editorial transition publish'
+  - 'use editorial transition review'
+  - 'use moderation sidebar'
+  - 'view any unpublished content'
+  - 'view latest version'

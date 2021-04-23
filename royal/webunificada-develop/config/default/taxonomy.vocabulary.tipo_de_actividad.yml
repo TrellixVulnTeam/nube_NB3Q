@@ -1,0 +1,8 @@
+uuid: f0033436-833e-419c-a31e-0568c1bef6bb
+langcode: es
+status: true
+dependencies: {  }
+name: 'Tipo de actividad'
+vid: tipo_de_actividad
+description: ''
+weight: 0

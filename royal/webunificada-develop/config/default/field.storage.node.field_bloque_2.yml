@@ -1,0 +1,19 @@
+uuid: 1523218b-1731-4919-a8b4-c2aae68ab710
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_bloque_2
+field_name: field_bloque_2
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

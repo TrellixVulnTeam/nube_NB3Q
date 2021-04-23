@@ -1,0 +1,27 @@
+uuid: c7ef40f6-d71a-42ff-b598-02ba1aa20fdd
+langcode: es
+status: true
+dependencies: {  }
+id: receta_creator
+label: 'Receta creator'
+weight: 1
+is_admin: false
+permissions:
+  - 'access ckeditor_media_browser entity browser pages'
+  - 'access contextual links'
+  - 'access image_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media_browser entity browser pages'
+  - 'access toolbar'
+  - 'configure any layout'
+  - 'create receta content'
+  - 'create url aliases'
+  - 'edit own receta content'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition review'
+  - 'use moderation sidebar'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view receta revisions'

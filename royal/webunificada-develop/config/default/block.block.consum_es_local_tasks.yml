@@ -1,0 +1,74 @@
+uuid: 5a9a1714-5645-4665-a07d-59a661a0f0e7
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - consum_es
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: consum_es_local_tasks
+theme: consum_es
+region: content
+weight: -26
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Pestañas
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      administrator: administrator
+      page_creator: page_creator
+      layout_manager: layout_manager
+      page_reviewer: page_reviewer
+      landing_page_creator: landing_page_creator
+      landing_page_reviewer: landing_page_reviewer
+      media_creator: media_creator
+      media_manager: media_manager
+      magazine_creator: magazine_creator
+      magazine_reviewer: magazine_reviewer
+      direccion_creator: direccion_creator
+      webform_creator: webform_creator
+      direccion_reviewer: direccion_reviewer
+      webform_reviewer: webform_reviewer
+      team_consum_creator: team_consum_creator
+      team_consum_reviewer: team_consum_reviewer
+      guia_general_creator: guia_general_creator
+      guia_general_reviewer: guia_general_reviewer
+      guia_de_vino_creator: guia_de_vino_creator
+      guia_de_vino_reviewer: guia_de_vino_reviewer
+      paso_receta_creator: paso_receta_creator
+      paso_receta_reviewer: paso_receta_reviewer
+      receta_creator: receta_creator
+      receta_reviewer: receta_reviewer
+      menu_creator: menu_creator
+      menu_reviewer: menu_reviewer
+      noticia_creator: noticia_creator
+      noticia_reviewer: noticia_reviewer
+      centro_creator: centro_creator
+      centro_reviewer: centro_reviewer
+      revista_creator: revista_creator
+      revista_reviewer: revista_reviewer
+      faq_creator: faq_creator
+      faq_reviewer: faq_reviewer
+      pagina_privada_creator: pagina_privada_creator
+      pagina_privada_reviewer: pagina_privada_reviewer
+      viaje_creator: viaje_creator
+      viaje_reviewer: viaje_reviewer
+      diario_de_viaje_creator: diario_de_viaje_creator
+      diario_de_viaje_reviewer: diario_de_viaje_reviewer
+      tastea_creator: tastea_creator
+      tastea_reviewer: tastea_reviewer
+      evento_creator: evento_creator
+      evento_reviewer: evento_reviewer
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

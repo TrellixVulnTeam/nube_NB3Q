@@ -1,0 +1,32 @@
+uuid: 14d62e41-db8a-4af5-bc67-2719b4e069c6
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: 'Grupo de LDAP: traduccion-drupal-consum.es'
+id: cta_traduccion
+label: 'Cta. Traducción'
+weight: 34
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access in-place editing'
+  - 'access toolbar'
+  - 'create content translations'
+  - 'create url aliases'
+  - 'translate guia_de_vino node'
+  - 'translate guia_general node'
+  - 'translate magazine node'
+  - 'translate paso_receta node'
+  - 'translate precio_receta taxonomy_term'
+  - 'translate receta node'
+  - 'translate revista node'
+  - 'translate team_consum node'
+  - 'update content translations'
+  - 'use text format rich_text'
+  - 'view own unpublished content'
+  - 'view the administration theme'

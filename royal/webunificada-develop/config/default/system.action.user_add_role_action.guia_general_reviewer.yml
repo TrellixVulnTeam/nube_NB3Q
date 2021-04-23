@@ -1,0 +1,14 @@
+uuid: 95b18c16-ffb1-4b62-bcc3-58b91cc0739c
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.guia_general_reviewer
+  module:
+    - user
+id: user_add_role_action.guia_general_reviewer
+label: 'Añade el rol Guía general reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: guia_general_reviewer

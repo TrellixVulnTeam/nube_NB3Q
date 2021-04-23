@@ -1,0 +1,20 @@
+Index: modules/simple_ldap_user/src/Form/SimpleLdapUserSettingsForm.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/modules/simple_ldap_user/src/Form/SimpleLdapUserSettingsForm.php b/modules/simple_ldap_user/src/Form/SimpleLdapUserSettingsForm.php
+--- a/modules/simple_ldap_user/src/Form/SimpleLdapUserSettingsForm.php	(revision 20d247438b618073701e2c38f2867c3d72d06923)
++++ b/modules/simple_ldap_user/src/Form/SimpleLdapUserSettingsForm.php	(date 1613409841449)
+@@ -218,7 +218,10 @@
+         // Just absorb. No attributes are added to the list.
+       }
+     }
+-
++  // consum patch: add cn atribute if not exists
++  if (empty($attributes['cn'])) {
++      $attributes['cn'] = 'cn';
++  }
+     asort($attributes);
+     return $attributes;
+   }

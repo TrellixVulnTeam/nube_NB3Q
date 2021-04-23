@@ -1,0 +1,27 @@
+uuid: fb640184-3578-41c0-9ea1-6ca2537eea36
+langcode: es
+status: true
+dependencies: {  }
+id: direccion_creator
+label: 'Dirección creator'
+weight: -11
+is_admin: false
+permissions:
+  - 'access ckeditor_media_browser entity browser pages'
+  - 'access contextual links'
+  - 'access image_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media_browser entity browser pages'
+  - 'access toolbar'
+  - 'configure any layout'
+  - 'create direccion content'
+  - 'create url aliases'
+  - 'edit own direccion content'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition review'
+  - 'use moderation sidebar'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view direccion revisions'
+  - 'view latest version'
+  - 'view own unpublished content'

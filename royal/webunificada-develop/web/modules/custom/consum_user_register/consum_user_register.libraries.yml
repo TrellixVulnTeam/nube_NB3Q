@@ -1,0 +1,6 @@
+consum_user_register:
+  js:
+    js/consum_user_register.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

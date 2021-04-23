@@ -1,0 +1,23 @@
+uuid: 15f4d73e-2924-4576-8914-56150f2a066b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_enlaces
+    - node.type.team_consum
+  module:
+    - link
+id: node.team_consum.field_enlaces
+field_name: field_enlaces
+entity_type: node
+bundle: team_consum
+label: Enlaces
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

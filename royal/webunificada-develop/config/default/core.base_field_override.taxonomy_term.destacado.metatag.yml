@@ -1,0 +1,18 @@
+uuid: 78e2accb-0b41-4587-ad6e-e21a2b7a80c2
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.destacado
+id: taxonomy_term.destacado.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: destacado
+label: 'Meta etiquetas'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

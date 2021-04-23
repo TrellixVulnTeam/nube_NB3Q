@@ -1,0 +1,20 @@
+uuid: e5dfca48-cd84-480c-beae-0a55c0d369b4
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.destacado
+  module:
+    - path
+id: taxonomy_term.destacado.path
+field_name: path
+entity_type: taxonomy_term
+bundle: destacado
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

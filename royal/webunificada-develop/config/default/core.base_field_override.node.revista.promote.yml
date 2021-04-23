@@ -1,0 +1,22 @@
+uuid: 14737f5b-21f7-4919-9d95-e54f1799e12c
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.revista
+id: node.revista.promote
+field_name: promote
+entity_type: node
+bundle: revista
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

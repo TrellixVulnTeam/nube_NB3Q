@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Drupal 8\\n"
+"MIME-Version: 1.0\\n"
+"Content-Type: text/plain; charset=UTF-8\\n"
+"Content-Transfer-Encoding: 8bit\\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\\n"
+
+msgid "The password must be between 10 and 25 characters."
+msgstr "La contrasenya ha de tenir entre 10 y 25 caràcters."
+
+msgid "The password must include at least one uppercase letter."
+msgstr "La contrasenya ha de tenir alguna mayúscula."
+
+msgid "The password must include at least one lowercase letter."
+msgstr "La contrasenya ha de tenir alguna minúscula."
+
+msgid "The password must include at least one number."
+msgstr "La contrasenya ha de tenir algun nombre."
+
+msgid "The indicated email already exists in the system."
+msgstr "L'email indicat ja existeix en el sistema."
+
+msgid "Continue Socio-Client registration"
+msgstr "Continuar registre Soci-Client"
+
+msgid "Continue"
+msgstr "Continuar"
+
+msgid "Must be registered to apply to be a partner-client."
+msgstr "Ha d'estar registrat per a sol·licitar ser soci-client."
+
+msgid "You’re already a partner. You can’t make this request."
+msgstr "Vosté ja és soci, no pot realitzar aquesta sol·licitud."
+
+msgid "You already have an request in progress. I’m sorry."
+msgstr "Vosté ja té una sol·licitud en curs."

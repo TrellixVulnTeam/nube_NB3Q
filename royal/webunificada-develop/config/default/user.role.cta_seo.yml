@@ -1,0 +1,33 @@
+uuid: 9617cf8d-1e0a-4418-99c6-50ddd00f0cbc
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: 'Grupo de LDAP: seo-drupal-consum.es'
+id: cta_seo
+label: 'Cta. SEO'
+weight: 33
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access google analytics reports'
+  - 'access in-place editing'
+  - 'administer google analytics'
+  - 'administer google analytics reports api'
+  - 'administer meta tags'
+  - 'administer nodes'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer statistics'
+  - 'administer url aliases'
+  - 'administer yoast seo'
+  - 'use moderation dashboard'
+  - 'use moderation sidebar'
+  - 'use yoast seo'
+  - 'view any moderation dashboard'
+  - 'view any unpublished content'
+  - 'view post access counter'
+  - 'view the administration theme'

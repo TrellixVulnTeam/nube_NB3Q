@@ -1,0 +1,21 @@
+uuid: 21de048a-7f53-4a04-892f-d3e496773e7b
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_workflow
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:menu_link_content:2faf3034-7759-4264-9b59-0f2deac45eeb'
+  lightning_workflow:
+    workflow: editorial
+name: Centro
+type: centro
+description: 'Red de supermercados de Consum'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

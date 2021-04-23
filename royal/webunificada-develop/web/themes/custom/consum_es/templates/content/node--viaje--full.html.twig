@@ -1,0 +1,471 @@
+{#
+/**
+ * @file
+ * Visual mode Vivir & Viajar
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{% set classes = [
+  'node',
+  'node--type-' ~ (node.bundle|clean_class),
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky'
+] %}
+
+<article {{ attributes.addClass(classes) }}>
+  <div class="row row-1">
+    <div class="col-md-12 col--1">
+      <div class="row row-1-1">
+        <div class="col-md-4 col--1-1">
+          <img src="{{ file_url(node.field_image.entity.fileuri) }}">
+          {% if 'now'|date('U') < node.field_fecha_de_salida.0.value|date('U') %}
+            {% if node.field_aviso_viaje.0.value %}
+              <div class="container-aviso d-flex align-items-center"><span class="ico-aviso"></span> <span>{{ node.field_aviso_viaje.0.value }}</span></div>
+            {% endif %}
+          {% else %}
+            <div class="container-aviso last d-flex align-items-center"><span class="ico-candado"></span> <span>Viaje concluido</span></div>
+          {% endif %}
+        </div>
+        <div class="col-md-8 col--2-1">
+          <div class="container-1">
+            <div class="container-viaje-precio d-flex align-items-center">
+              <h1>
+                {{ label }}
+              </h1>
+              <div class="container-precio d-flex align-items-center justify-content-end">
+                <div class="container-precio-iva">
+                  <p class="precio">{{ node.field_precio.0.value }}€/<span>persona</span></p>
+                  <p class="iva">Iva incluido</p>
+                  {% if logged_in %}
+                    {% if node.field_precio_por_puntos.0.value %}
+                      <p class="points"><span>o</span> {{ node.field_precio_por_puntos.0.value }} puntos</p>
+                    {% endif %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <div class="container-salida-reservar d-flex align-items-center">
+              <div class="container-salida d-flex align-items-center">
+                <span class="ico-salida"></span> <span>SALIDA el {{ node.field_fecha_de_salida.0.value|date('d F Y') }}</span>
+              </div>
+              <div class="container-reservar d-flex align-items-center justify-content-end">
+              {% if 'now'|date('U') < node.field_fecha_de_salida.0.value|date('U') %}
+                {% if logged_in %}
+                  <a href="{{ node.field_url_reserva.0.value }}" target="_blank" class="boton1">Reservar</a>
+                {% else %}
+                  <a href="#" target="_blank" class="boton1">Sólo para socios, regístrate</a>
+                {% endif %}
+              {% endif %}
+              </div>
+            </div>
+            <div class="container-duracion d-flex align-items-center">
+              <span class="ico-duracion"></span> <span>{{ node.field_duracion_viaje.0.value }} día de duración</span>
+            </div>
+            <div class="container-categories team-category team-category-team-consum">
+              {% if content.field_categoria_del_viaje %}
+                {{ content.field_categoria_del_viaje }}
+              {% endif %}
+            </div>
+            {{ content.body }}
+            {# CARD FOOTER #}
+              {% include directory ~ '/templates/content/footer--card.html.twig' %}
+            {# END CARD FOOTER #}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-2">
+    <div class="col-md-9 col--1">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <p class="nav-link active" data-toggle="tab" href="#itinerario">
+            Itinerario
+          </p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link" data-toggle="tab" href="#diarios-viaje">
+            Diarios de viaje
+          </p>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active container" id="itinerario">
+          <p>{{ node.field_itinerario_viaje.0.value|raw }}
+          {% if node.field_imagenes_itinerario_viaje|length > 0 %}
+            {% if node.field_imagenes_itinerario_viaje|length > 3 %}
+              <div id="carouselImagesItinerarioViaje" class="carousel slide carousel-cc" data-ride="carousel">
+                <div class="carousel-inner">
+                  {% for row in node.field_imagenes_itinerario_viaje|batch(3, 'no') if key|first != '#' %}
+                    <div class="carousel-item{% if loop.index == 1 %} active{% endif %}">
+                      <div class="row">
+                        {% for image in row %}
+                          {% if image != 'no' %}
+                            <div class="col-md-4">
+                              <img src="{{ file_url(image.entity.uri.value) }}" data-toggle="modal" data-target="#img-itinerario-viaje-{{image.entity.fid.value}}">
+                              <!-- Modal -->
+                              <div class="modal fade modal-cm" id="img-itinerario-viaje-{{image.entity.fid.value}}" tabindex="-1" role="dialog" aria-labelledby="img-itinerario-viaje-{{image.entity.fid.value}}" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                  <div class="modal-content">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true" class="ci-close"></span>
+                                    </button>
+                                    <div class="modal-body">
+                                      <img src="{{ file_url(image.entity.uri.value) }}">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+                      </div>  
+                    </div>
+                  {% endfor %}
+                </div>
+                <ol class="carousel-indicators">
+                  {% for row in node.field_imagenes_itinerario_viaje|batch(3, 'no') if key|first != '#' %}
+                    <li data-target="#carouselImagesItinerarioViaje" data-slide-to="{{loop.index - 1}}"{% if loop.index == 1 %} class="active"{% endif %}></li>
+                  {% endfor %}
+                </ol>
+                <a class="carousel-control-prev" href="#carouselImagesItinerarioViaje" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselImagesItinerarioViaje" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            {% else %}
+              <div class="row row-without-carousel">
+              {% for row in node.field_imagenes_itinerario_viaje if key|first != '#' %}  
+                <div class="col-md-4 col-img-user">
+                  <img src="{{ file_url(row.entity.uri.value) }}" data-toggle="modal" data-target="#img-itinerario-viaje-{{row.entity.fid.value}}">
+                  <!-- Modal -->
+                  <div class="modal fade modal-cm" id="img-itinerario-viaje-{{row.entity.fid.value}}" tabindex="-1" role="dialog" aria-labelledby="img-itinerario-{{row.entity.fid.value}}" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true" class="ci-close"></span>
+                        </button>
+                        <div class="modal-body">
+                          <img src="{{ file_url(row.entity.uri.value) }}">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+              </div>
+            {% endif %}
+          {% endif %}
+          {% if node.field_archivo_descargable.0.value %}
+            <div class="d-flex justify-content-end">
+              <a href="{{ file_url(node.field_archivo_descargable.entity.fileuri) }}" class="boton2 d-flex" download><span class="ci-download"></span> Descargar PDF</a>
+            </div>
+          {% endif %}
+        </div>
+        <div class="tab-pane container" id="diarios-viaje">
+          {% if node.field_diario_de_viaje|length > 0 %}
+            <div id="accordion-diario-de-viaje">
+              {% for key, item in node.field_diario_de_viaje|reverse if key|first != '#' %}
+                <div class="d-flex align-items-center title" data-toggle="collapse" aria-controls="paso-id-{{ item.entity.id }}" data-target="#paso-id-{{ item.entity.id }}" {% if loop.index == 1 %}aria-expanded="true" {% endif %}>
+                  <a>
+                    {{ item.entity.title.value }}
+                  </a>
+                </div>
+                <div class="collapse {% if loop.index == 1 %}show {% endif %}" id="paso-id-{{ item.entity.id }}" data-parent="#accordion-diario-de-viaje">
+                  {% if item.entity.body.summary %}
+                    <p>{{ item.entity.body.summary }}<p>
+                  {% endif %}
+                  {% if item.entity.field_imagenes_diario_de_viaje|length > 0 %}
+                    {% if item.entity.field_imagenes_diario_de_viaje|length > 3 %}
+                      <div id="carouselImagesDiarioDeViaje" class="carousel slide carousel-cc" data-ride="carousel">
+                        <div class="carousel-inner">
+                          {% for row in item.entity.field_imagenes_diario_de_viaje|batch(3, 'no') if key|first != '#' %}
+                            <div class="carousel-item{% if loop.index == 1 %} active{% endif %}">
+                              <div class="row">
+                                {% for image in row %}
+                                  {% if image != 'no' %}
+                                    <div class="col-md-4">
+                                      <img src="{{ file_url(image.entity.uri.value) }}" data-toggle="modal" data-target="#img-dirario-de-viaje-{{image.entity.fid.value}}">
+                                      <!-- Modal -->
+                                      <div class="modal fade modal-cm" id="img-dirario-de-viaje-{{image.entity.fid.value}}" tabindex="-1" role="dialog" aria-labelledby="img-dirario-de-viaje-{{image.entity.fid.value}}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                          <div class="modal-content">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true" class="ci-close"></span>
+                                            </button>
+                                            <div class="modal-body">
+                                              <img src="{{ file_url(image.entity.uri.value) }}">
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  {% endif %}
+                                {% endfor %}
+                              </div>  
+                            </div>
+                          {% endfor %}
+                        </div>
+                        <ol class="carousel-indicators">
+                          {% for row in item.entity.field_imagenes_diario_de_viaje|batch(3, 'no') if key|first != '#' %}
+                            <li data-target="#carouselImagesDiarioDeViaje" data-slide-to="{{loop.index - 1}}"{% if loop.index == 1 %} class="active"{% endif %}></li>
+                          {% endfor %}
+                        </ol>
+                        <a class="carousel-control-prev" href="#carouselImagesDiarioDeViaje" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselImagesDiarioDeViaje" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    {% else %}
+                      <div class="row row-without-carousel">
+                      {% for row in item.entity.field_imagenes_diario_de_viaje if key|first != '#' %}  
+                        <div class="col-md-4 col-img-user">
+                          <img src="{{ file_url(row.entity.uri.value) }}" data-toggle="modal" data-target="#img-dirario-de-viaje-{{row.entity.fid.value}}">
+                          <!-- Modal -->
+                          <div class="modal fade modal-cm" id="img-dirario-de-viaje-{{row.entity.fid.value}}" tabindex="-1" role="dialog" aria-labelledby="img-dirario-de-viaje-{{row.entity.fid.value}}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true" class="ci-close"></span>
+                                </button>
+                                <div class="modal-body">
+                                  <img src="{{ file_url(row.entity.uri.value) }}">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      {% endfor %}
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                  {{ item.entity.body.value|raw }}
+                  {% if loop.index == 1 %}
+                    <div class="container-subir-fotos cta2col img_der_33 texto-blanco row justify-content-center align-items-center">
+                      <div class="image-background col-md-4 order-md-2 p-0 text-right">
+                      </div>
+                      <div class="col-md-8 order-md-1 pl-5 pr-5 pt-4 pb-4">
+                        <h3 class="blanco">¿Has participado en el viaje?</h3>
+                        <br><a target="" class="boton3" href="" role="button" data-toggle="modal" data-target="#subir-fotos">Subir fotos</a>                  
+                      </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade modal-cm" id="subir-fotos" tabindex="-1" role="dialog" aria-labelledby="subir-fotos" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="ci-close"></span>
+                          </button>
+                          <div class="modal-body">
+                            <h3>Subir imágenes</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                            <div class="container-dashed">
+                              {{
+                                {
+                                  '#type': 'webform',
+                                  '#webform': 'subir_fotos_diario_de_viaje'
+                                }
+                              }}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                  <h5>Así de bien nos lo hemos pasado</h5>
+                  {% if item.entity.field_imagenes_usrs_diario_viaje|length > 0 %}
+                    {% if item.entity.field_imagenes_usrs_diario_viaje|length > 6 %}
+                      <div id="carouselImagesUserDiarioDeViaje" class="carousel slide carousel-cc" data-ride="carousel">
+                        <div class="carousel-inner">
+                          {% for row in item.entity.field_imagenes_usrs_diario_viaje|batch(6, 'no') if key|first != '#' %}
+                            <div class="carousel-item{% if loop.index == 1 %} active{% endif %}">
+                              <div class="row">
+                                {% for image in row %}
+                                  {% if image != 'no' %}
+                                    {#{ vardumper(image.entity.image.entity.fileuri) }#}
+                                    <div class="col-md-4 col-img-user">
+                                      <img src="{{ file_url(image.entity.image.entity.fileuri) }}" data-toggle="modal" data-target="#img-user-dirario-de-viaje-{{image.entity.mid.value}}">
+                                      <!-- Modal -->
+                                      <div class="modal fade modal-cm" id="img-user-dirario-de-viaje-{{image.entity.mid.value}}" tabindex="-1" role="dialog" aria-labelledby="img-user-dirario-de-viaje-{{image.entity.mid.value}}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                          <div class="modal-content">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true" class="ci-close"></span>
+                                            </button>
+                                            <div class="modal-body">
+                                              <img src="{{ file_url(image.entity.image.entity.fileuri) }}">
+                                              <p>{{ image.entity.image.title }}</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  {% endif %}
+                                {% endfor %}
+                              </div>
+                            </div>
+                          {% endfor %}
+                        </div>
+                        <ol class="carousel-indicators">
+                          {% for row in item.entity.field_imagenes_usrs_diario_viaje|batch(6, 'no') if key|first != '#' %}
+                            <li data-target="#carouselImagesUserDiarioDeViaje" data-slide-to="{{loop.index - 1}}"{% if loop.index == 1 %} class="active"{% endif %}></li>
+                          {% endfor %}
+                        </ol>
+                        <a class="carousel-control-prev" href="#carouselImagesUserDiarioDeViaje" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselImagesUserDiarioDeViaje" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    {% else %}
+                      <div class="row row-without-carousel">
+                      {% for row in item.entity.field_imagenes_usrs_diario_viaje if key|first != '#' %}  
+                        <div class="col-md-4 col-img-user">
+                          <img src="{{ file_url(row.entity.image.entity.fileuri) }}" data-toggle="modal" data-target="#img-user-dirario-de-viaje-{{row.entity.mid.value}}">
+                          <!-- Modal -->
+                          <div class="modal fade modal-cm" id="img-user-dirario-de-viaje-{{row.entity.mid.value}}" tabindex="-1" role="dialog" aria-labelledby="img-user-dirario-de-viaje-{{row.entity.mid.value}}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true" class="ci-close"></span>
+                                </button>
+                                <div class="modal-body">
+                                  <img src="{{ file_url(row.entity.image.entity.fileuri) }}">
+                                  <p>{{ row.entity.image.title }}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      {% endfor %}
+                      </div>
+                    {% endif %}  
+                  {% else %}
+                  <p>No hay imágenes en la galería actualmente.</p>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            <p>No hay diarios de viaje.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col--2">
+      <div class="row row-2-1">
+        <div class="col-md-12 col--2-1">
+          <div class="container-destacado">
+            <span class="ico-destacado"></span>
+            <p>Destacado del viaje</p>
+            <div class="destacados">
+              {{ content.field_destacado_del_viaje}}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col--2-2">
+          <div class="container-incluidos">
+            <p>Incluidos:</p>
+            <div class="incluidos">
+              {{ content.field_incluido_en_el_viaje}}
+            </div>
+            <p>No-incluidos:</p>
+            <div class="no-incluidos">
+              {{ content.field_no_incluido_en_el_viaje}}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col--3-2">
+          {{ viajes_relacionados }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-3 bg-white" style="margin-top: 20px; border-radius: 15px; padding-left: 20px; padding-right: 20px; padding-bottom: 40px;"> 
+    <div class="col-md-12 d-flex justify-content-center col-number-comments">
+      <span class="btn-ci ci-comentario"></span>
+      <span> Comentarios </span>
+      {% if node.field_comments.0.comment_count %}
+        {{ node.field_comments.0.comment_count }}
+      {% else %}
+        0
+      {% endif %}
+    </div>
+    <div class="col-md-12">
+      {{ content.field_comments }}
+    </div>
+  </div>
+</article>

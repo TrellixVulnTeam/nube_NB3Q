@@ -1,0 +1,14 @@
+uuid: 69cc8448-6f83-4f0e-8f37-94cb6e3b087e
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.map_supermarket
+label: 'Supermercado Mapa'
+targetEntityType: node
+cache: true

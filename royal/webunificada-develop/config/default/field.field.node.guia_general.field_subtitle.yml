@@ -1,0 +1,21 @@
+uuid: ca4944d7-c87c-4985-b37b-ae51cb41a9ae
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.guia_general
+  module:
+    - text
+id: node.guia_general.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: guia_general
+label: Subtítulo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

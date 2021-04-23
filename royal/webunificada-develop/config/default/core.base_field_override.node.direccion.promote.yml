@@ -1,0 +1,22 @@
+uuid: e22ecc35-cc48-4d49-ac4d-8f2c0fad3d0f
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.direccion
+id: node.direccion.promote
+field_name: promote
+entity_type: node
+bundle: direccion
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

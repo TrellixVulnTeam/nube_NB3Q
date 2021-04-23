@@ -1,0 +1,30 @@
+uuid: b506baea-9740-4764-9be4-4d4c58dd9722
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.faq
+  module:
+    - system
+    - views
+  theme:
+    - consum_es
+id: views_block__faq_faq_todo_2
+theme: consum_es
+region: content
+weight: -10
+provider: null
+plugin: 'views_block:faq-faq_todo'
+settings:
+  id: 'views_block:faq-faq_todo'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: '20'
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/2799
+    negate: false
+    context_mapping: {  }

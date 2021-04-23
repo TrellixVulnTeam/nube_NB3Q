@@ -1,0 +1,14 @@
+uuid: 8ff7ab2c-2e9d-45d4-b495-0c2be0044502
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.receta_creator
+  module:
+    - user
+id: user_remove_role_action.receta_creator
+label: 'Elimina el rol Receta creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: receta_creator

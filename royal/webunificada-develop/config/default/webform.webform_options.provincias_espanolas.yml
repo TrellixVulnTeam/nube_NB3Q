@@ -1,0 +1,9 @@
+uuid: 8871b8de-4410-4e98-865e-ff5ae328b98f
+langcode: es
+status: true
+dependencies: {  }
+id: provincias_espanolas
+label: 'Provincias Españolas'
+category: Geographic
+likert: false
+options: "alava: 'Alava (Araba)'\nalbacete: Albacete\nalicante: Alicante\nalmeria: Almería\nasturias: Asturias\navila: Ávila\nbadajoz: Badajoz\nbarcelona: Barcelona\nburgos: Burgos\ncaceres: Cáceres\ncadiz: Cádiz\ncantabria: Cantabria\ncastellon: Castellón\nciudad_real: 'Ciudad Real'\ncordoba: Córdoba\ncuenca: Cuenca\ngerona: 'Gerona (Girona)'\ngranada: Granada\nguipuzcoa: 'Guipúzcoa (Gipuzkoa)'\nhuelva: Huelva\nhuesca: Huesca\nislas_baleares: 'Islas Baleares'\njaen: Jaén\nla_coruna: 'La Coruña (Acoruña)'\nla_rioja: 'La Rioja'\nlas_palmas: 'Las Palmas'\nleon: León\nlerida: 'Lérida (Lleida)'\nlugo: Lugo\nmadrid: Madrid\nmalaga: Málaga\nmurcia: Murcia\nnavarra: Navarra\norense: 'Orense (Ourense)'\npalencia: Palencia\npontevedra: Pontevedra\nsalamanca: Salamanca\nsanta_cruz_de_tenerife: 'Santa Cruz de Tenerife'\nsegovia: Segovia\nsevilla: Sevilla\nsoria: Soria\ntarragona: Tarragona\nteruel: Teruel\ntoledo: Toledo\nvalencia: Valencia\nvalladolid: Valladolid\nvizcaya: 'Vizcaya (Bizkaya)'\nzamora: Zamora\nzaragoza: Zaragoza"

@@ -1,0 +1,14 @@
+uuid: 3dfab7a6-eeb9-4b18-9567-2019ac5430aa
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.guia_general_creator
+  module:
+    - user
+id: user_remove_role_action.guia_general_creator
+label: 'Elimina el rol Guía general creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: guia_general_creator

@@ -1,0 +1,18 @@
+uuid: 545017a5-d819-4e79-8086-f43997db7517
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category
+id: taxonomy_term.category.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: category
+label: Modificado
+description: 'La fecha en que el término fue creado por última vez.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

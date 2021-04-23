@@ -1,0 +1,8 @@
+name: 'Consum Like Favorites'
+type: module
+description: 'Adds favorites and likes fields'
+core: 8.x
+package: 'Consum'
+dependencies:
+  - addtoany:addtoany
+  - consum_comunidad_events:consum_comunidad_events

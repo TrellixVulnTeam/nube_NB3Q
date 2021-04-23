@@ -1,0 +1,18 @@
+uuid: 87fb3eca-7254-47ee-ad5d-c481cf66211b
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tematica_team_consum
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.tematica_team_consum
+target_entity_type_id: taxonomy_term
+target_bundle: tematica_team_consum
+default_langcode: site_default
+language_alterable: false

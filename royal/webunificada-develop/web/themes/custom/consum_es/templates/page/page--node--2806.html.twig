@@ -1,0 +1,183 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+
+<div class="page page-baja-socio-cliente">
+  <div class="global-head">
+    {% if page.navbar_accessibility %}
+      <div class="container-fluid custom-container-region-navbar-accessibility">
+        <div class="row justify-content-end custom-row-region-navbar-accessibility d-none d-sm-flex d-md-flex">
+          {{ page.navbar_accessibility }}
+        </div>
+      </div>
+    {% endif %}
+    {% if page.navbar_principal %}
+      <div class="container-fluid custom-container-region-navbar-principal">
+        <div class="row custom-row-region-navbar-principal">
+          {{ page.navbar_principal }}
+          {% if page.sidebar %}
+            <!-- Sidebar -->
+            <nav class="sidebar">
+              <!-- Close sidebar menu -->
+              <div class="dismiss">
+                <div class="ci-close"></div>
+              </div>
+              {{ page.sidebar }}
+            </nav>
+            <!-- End sidebar -->
+            <!-- Light overlay -->
+            <div class="overlay"></div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    {% if page.menu_personalizado %}
+      <div class="container-fluid custom-container-region-menu-personalizado">
+        <div class="row custom-row-region-menu-personalizado">
+          {{ page.menu_personalizado }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  {% if page.cabeceras_interiores %}
+    <div class="container-fluid custom-container-region-cabeceras-interiores">
+      <div class="row custom-row-region-cabeceras-interiores no-gutters">
+        {{ page.cabeceras_interiores }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% embed '@radix/navbar/navbar.twig'
+    with {
+      placement: 'sticky-top',
+      container: 'fixed',
+      color: 'light',
+      utility_classes: ['bg-light']
+    }
+  %}
+    {% block branding %}
+      {% if page.navbar_branding %}
+        {{ page.navbar_branding }}
+      {% endif %}
+    {% endblock %}
+    {% block left %}
+      {% if page.navbar_left %}
+        <div class="mr-auto">
+          {{ page.navbar_left }}
+        </div>
+      {% endif %}
+    {% endblock %}
+    {% block right %}
+      {% if page.navbar_right %}
+        {{ page.navbar_right }}
+      {% endif %}
+    {% endblock %}
+  {% endembed %}
+
+  <main class="pb-5">
+    {% if page.header %}
+      <header class="page__header mb-3">
+        <div class="container">
+          {{ page.header }}
+        </div>
+      </header>
+    {% endif %}
+
+    <div id="main-wrapper" class="layout-main-wrapper clearfix">
+      {% block content %}
+        <div class="row row-offcanvas container"
+          style="margin-left:auto;margin-right:auto;">
+          {% if page.sidebar_first %}
+            {# NEW REGION SIDEBAR FIRTS ASIG #}
+            <div class="page__sidebar-first col-md-3 pr-0 order-md-2"
+              id="sidebar_first">
+              <aside class="section">
+                {{ page.sidebar_first }}
+              </aside>
+            </div>
+            {% if page.content %}
+              <div class="page__content container col-md-9 pr-5 pl-0 order-md-1"
+                id="content">
+                <main {{ content_attributes }}>
+                  <section class="section">
+                    {{ page.content }}
+                  </section>
+                </main>
+              </div>
+            {% endif %}
+          {% else %}
+            {% if page.content %}
+              <div class="page__content container" id="content">
+                <main {{ content_attributes }}>
+                  <section class="section">
+                    {{ page.content }}
+                    <div class="row row-form-baja-socio-cliente">
+                      <div class="col-md-12">
+                      <p class="descripcion">Para cualquier duda puede llamar al número de teléfono 900 500 126 o enviar un correo electrónico al email atencioncliente@consum.es indicando su consulta que le será respondida con brevedad.</p>
+                        {{
+                          {
+                            '#type': 'webform',
+                            '#webform': 'baja_socio_cliente'
+                          }
+                        }}
+                      <!--a class="boton2" data-toggle="modal" data-target="#messageVerify">Aceptar</a>
+                      <a href="/node/2800" class="boton1">Cancelar</a-->  
+                      </div>
+                    </div>
+                    <div class="modal fade" id="messageVerify" tabindex="-1" role="dialog">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h3>Darme de baja</h3>
+                            <p>Si solicitas la baja definitiva como socio-cliente, dejarás de disfrutar de todas las ventajas de nuestro programa de fidelización (cheque regalo, ofertas, información personalizada, etc) En caso de querer solicitar la restricción de envío de información, por favor, <a href="#">hazlo aquí.</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal fade" id="messageOk" tabindex="-1" role="dialog">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h3><span class="btn-ci ci-info"></span> Su solicitud de baja ha sido solicitada</h3>
+                            <p>Le informamos que su solicitud de baja va a ser tramitada, por lo tanto, en la próxima reunión del Consejo Rector se tomará constancia de la misma, y habida cuenta de que con la cesación de la relación societaria con esta Cooperativa, sus datos personales ya no son necesarios para los fines para los que fueron recogidos, le comunicamos que esta Cooperativa procede a suprimir sus datos personales, pasando a integrarse en un fichero histórico, y quedando automáticamente bloqueados y a disposición de las Autoridades y Administraciones, en caso de ser requeridos, durante el periodo legal de prescripción.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </main>
+              </div>
+            {% endif %}
+          {% endif %}
+        </div>
+      {% endblock %}
+    </div>
+  </main>
+
+  {% if page.footer %}
+    <footer class="page__footer">
+      <div class="container">
+        <div class="d-flex justify-content-md-between align-items-md-center">
+          {{ page.footer }}
+        </div>
+      </div>
+    </footer>
+  {% endif %}
+
+  {% if page.footer_fluid %}
+    <div class="container-fluid custom-container-region-footer-fluid">
+      <div class="row custom-row-region-footer-fluid">
+        {{ page.footer_fluid }}
+      </div>
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,22 @@
+uuid: ca36dd8f-170e-42db-9916-d61deb26b220
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.noticia
+id: node.noticia.status
+field_name: status
+entity_type: node
+bundle: noticia
+label: Publicado
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

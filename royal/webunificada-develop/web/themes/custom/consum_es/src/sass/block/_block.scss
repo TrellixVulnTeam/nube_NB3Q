@@ -1,0 +1,586 @@
+// Menú Secciones
+// -----------------------------------------------------------------------------
+
+.block--menu-secciones {
+    min-width: 100%;
+}
+
+.block--menu-secciones ul{
+    width: 100%;
+}
+
+.block--menu-secciones>ul>li{
+    display: none;
+}
+
+.block--menu-secciones>ul>li.active{
+    display: block;
+    width: 100%;
+}
+
+.block--menu-secciones>ul>li.active>a{
+    display: none;
+}
+
+.block--menu-secciones>ul>li.active>.dropdown-menu{
+    background-color: transparent;
+    border: none;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+}
+
+.block--menu-secciones>ul>li.active>.dropdown-menu>ul>li.dropdown{
+    cursor: pointer;
+}
+
+.block--menu-secciones>ul>li.active>.dropdown-menu>ul>li:first-of-type{
+    display: none;
+}
+
+.block--menu-secciones .dropdown-toggle::after{
+    display: none !important;
+}
+
+.block--menu-secciones .navbar-nav {
+    flex-direction: row!important;
+}
+.block--menu-secciones .navbar-nav .nav-item {
+    font-family: 'NunitoSans-Bold';
+    a{
+        border-right: 0.1rem solid #b9b8bf;
+        padding-right: 25px;
+        padding-left: 25px;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+.block--menu-secciones .navbar-nav .navbar-nav .nav-item.active{
+    cursor: pointer;
+}
+
+.block--menu-secciones  .navbar-nav  .is-active, .block--menu-secciones  .navbar-nav  .active>a{
+    color: $rojo2;
+    text-decoration: underline;
+}
+
+// Submenú Secciones
+// -----------------------------------------------------------------------------
+
+.block--submenu-secciones {
+    min-width: 100%;
+}
+
+.block--submenu-secciones>ul{
+    width: 100%;
+}
+
+.block--submenu-secciones>ul>li{
+    display: none;
+}
+
+.block--submenu-secciones>ul>li.active{
+    display: block;
+    width: 100%;
+}
+
+.block--submenu-secciones>ul>li.active>a{
+    display: none;
+}
+
+.block--submenu-secciones>ul>li.active>.dropdown-menu{
+    display: block;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.block--submenu-secciones>ul>li.active>.dropdown-menu>ul{
+    width: 100%;
+}
+
+.block--submenu-secciones>ul>li.active>.dropdown-menu>ul>li{
+    display: none;
+}
+
+.block--submenu-secciones>ul>li.active>.dropdown-menu>ul>li.active{
+    display: block;
+    margin: 0px;
+    width: 100%;
+}
+
+.block--submenu-secciones>ul>li.active>.dropdown-menu>ul>li.active>a{
+    display: none;
+}
+
+.block--submenu-secciones>ul>li.active>.dropdown-menu>ul>li.active>.dropdown-menu{
+    display: block;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.block--submenu-secciones>ul>li.active>.dropdown-menu>ul>li.active>.dropdown-menu>ul{
+    display: flex;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    a{
+        width: fit-content;
+        margin-left: 45px !important;
+        font-weight: bold;
+    }
+}
+
+.block--submenu-secciones>ul>li.active>.dropdown-menu>ul>li.active>.dropdown-menu>ul>li.active a{
+    color: #dd5a31;
+    text-decoration: underline;
+}
+
+.block--submenu-secciones>ul>li.active>.dropdown-menu>ul>li.active>.dropdown-menu>ul>li:first-of-type{
+    display: none;
+}
+
+.block--submenu-secciones ul>li ul>li ul>li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0rem 0rem 0rem 1.5rem;
+    &active{
+        background-color: transparent !important;
+    }
+}
+
+.block--submenu-secciones .div-toggle{
+    display: none;
+}
+
+.block--submenu-secciones .dropdown-item.is-active{
+    background-color: transparent !important;
+    color: $rojo2 !important;
+}
+
+.block--submenu-secciones .navbar-nav {
+    flex-direction: row !important;
+}
+
+.block--submenu-secciones .navbar-nav .is-active {
+    color: $rojo2;
+}
+
+.block--submenu-secciones .dropdown-item:hover, .block--submenu-secciones .dropdown-item:focus{
+    color: $naranja1;
+    background-color: transparent !important;
+}
+
+// Título categoría Hamburguesa
+// -----------------------------------------------------------------------------
+.block--title-categoria {
+    max-width: 200px!important;
+    display: flex;
+    font-family: "NunitoSans-Black";
+    font-size: 18px;
+    margin-bottom: 0;
+}
+.block--navegacionprincipal-2 .nav-item{
+    display: none;
+}
+.block--navegacionprincipal-2 .active{
+    display: block!important;
+}
+
+//ICONS GLOBAL ITEMS MENÚ
+.icon-node{
+    background-repeat: no-repeat;
+    background-size: 30px 25px;
+    background-position-x: 25px;
+    background-position-y: center;
+    a{
+        margin-left: 65px !important;
+    }
+}
+
+//ICON ITEM MENÚ TEAM CONSUM
+.icon-node-51{
+    background-image: url(/themes/custom/consum_es/assets/img/teamconsum.png);
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-position-x: center;
+    background-position-y: center;
+    padding-left: 30px;
+    a{
+        color: transparent !important;
+    }
+}
+
+.sidebar{
+    .icon-node-51{
+        background-position-x: left;
+        margin-left: 30px;
+        margin-top: 10px;
+        a{
+            border-bottom: none !important;
+        }
+    }
+}
+
+//ICONS ITEMS MENÚ HOGAR
+.icon-node-8{
+    background-image: svg-url-color("#3a3a41","#3a3a41","hogar");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","hogar");
+    }
+}
+
+.icon-node-9{
+    background-image: svg-url-color("#3a3a41","#3a3a41","ropa");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","ropa");
+    }
+}
+
+.icon-node-10{
+    background-image: svg-url-color("#3a3a41","#3a3a41","perfiles");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","perfiles");
+    }
+}
+
+.icon-node-11{
+    background-image: svg-url-color("#3a3a41","#3a3a41","trucos");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","trucos");
+    }
+}
+
+.icon-node-152{
+    background-image: svg-url-color("#3a3a41","#3a3a41","organizador");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","organizador");
+    }
+}
+
+//ICONS ITEMS MENÚ ALIMENTACIÓN
+.icon-node-16{
+    background-image: svg-url-color("#3a3a41","#3a3a41","los5de");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","los5de");
+    }
+}
+
+.icon-node-15{
+    background-image: svg-url-color("#3a3a41","#3a3a41","frescos");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","frescos");
+    }
+}
+
+.icon-node-19{
+    background-image: svg-url-color("#3a3a41","#3a3a41","cocina");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","cocina");
+    }
+}
+
+.icon-node-18{
+    background-image: svg-url-color("#3a3a41","#3a3a41","actualidad");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","actualidad");
+    }
+}
+
+.icon-node-17{
+    background-image: svg-url-color("#3a3a41","#3a3a41","mundovinicola");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","mundovinicola");
+    }
+}
+
+.icon-node-2586{
+    background-image: svg-url-color("#3a3a41","#3a3a41","cerveza");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","cerveza");
+    }
+}
+
+//ICONS ITEMS ESTILO DE VIDA
+.icon-node-53{
+    background-image: svg-url-color("#3a3a41","#3a3a41","saber_comprar");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","saber_comprar");
+    }
+}
+
+.icon-node-54{
+    background-image: svg-url-color("#3a3a41","#3a3a41","conocete");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","conocete");
+    }
+}
+
+.icon-node-55{
+    background-image: svg-url-color("#3a3a41","#3a3a41","viajar");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","viajar");
+    }
+}
+
+.icon-node-56{
+    background-image: svg-url-color("#3a3a41","#3a3a41","es_eco");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","es_eco");
+    }
+}
+
+.icon-node-57{
+    background-image: svg-url-color("#3a3a41","#3a3a41","mascota");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","mascota");
+    }
+}
+
+.icon-node-2585{
+    background-image: svg-url-color("#3a3a41","#3a3a41","a_examen");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","a_examen");
+    }
+}
+
+//ICONS ITEMS MENÚ BELLEZA
+.icon-node-13{
+    background-image: svg-url-color("#3a3a41","#3a3a41","maquillaje");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","maquillaje");
+    }
+}
+
+.icon-node-42{
+    background-image: svg-url-color("#3a3a41","#3a3a41","belleza");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","belleza");
+    }
+}
+
+.icon-node-46{
+    background-image: svg-url-color("#3a3a41","#3a3a41","cabello");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","cabello");
+    }
+}
+
+.icon-node-47{
+    background-image: svg-url-color("#3a3a41","#3a3a41","hombre");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","hombre");
+    }
+}
+
+.icon-node-48{
+    background-image: svg-url-color("#3a3a41","#3a3a41","infantil");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","infantil");
+    }
+}
+
+//ICONS ITEMS MENÚ SALUD
+
+.icon-node-58{
+    background-image: svg-url-color("#3a3a41","#3a3a41","deporte");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","deporte");
+    }
+}
+
+.icon-node-59{
+    background-image: svg-url-color("#3a3a41","#3a3a41","salud");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","salud");
+    }
+}
+
+//ICONS VINOTECA
+
+.icon-node-140{
+    background-image: svg-url-color("#3a3a41","#3a3a41","recomendador");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","recomendador");
+    }
+}
+
+.icon-node-141, .icon-node-142, .icon-node-143, .icon-node-144{
+    background-image: svg-url-color("#3a3a41","#3a3a41","vino");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","vino");
+    }
+}
+
+//ICONS ITEMS MUNDOCONSUM MI CUENTA
+
+.icon-node-2802{
+    background-image: svg-url-color("#3a3a41","#3a3a41","mis_datos");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","mis_datos");
+    }
+}
+.icon-node-2803{
+    background-image: svg-url-color("#3a3a41","#3a3a41","direcciones_entrega");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","direcciones_entrega");
+    }
+}
+.icon-node-2804{
+    background-image: svg-url-color("#3a3a41","#3a3a41","comunicaciones");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","comunicaciones");
+    }
+}
+.icon-node-2805{
+    background-image: svg-url-color("#3a3a41","#3a3a41","tarjetas_mc");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","tarjetas_mc");
+    }
+}
+.icon-node-2806{
+    background-image: svg-url-color("#3a3a41","#3a3a41","baja_sc");
+    &:hover{
+        background-image: svg-url-color("#f8951d","#f8951d","baja_sc");
+    }
+}
+
+.custom-row-region-menu-personalizado{
+    .icon-node-2810>a{
+        background-image: url("/themes/custom/consum_es/assets/img/mundo-consum/icon_mundo_consum.png");
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-position-x: 15px;
+        padding-left: 45px !important;
+        .icon-node-2810{
+            background-image: none;
+            padding-left: 0px;
+        }
+    }
+    .icon-node-2798>a{
+        background-image: url("/themes/custom/consum_es/assets/img/mundo-consum/icon_mi_ahorro.png");
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-position-x: 15px;
+        padding-left: 45px !important;
+        .icon-node-2798{
+            background-image: none;
+            padding-left: 0px;
+        }
+    }
+    .icon-node-2799>a{
+        background-image: url("/themes/custom/consum_es/assets/img/mundo-consum/icon_mi_comunidad.png");
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-position-x: 15px;
+        padding-left: 45px !important;
+        .icon-node-2799{
+            background-image: none;
+            padding-left: 0px;
+        }
+    }
+    .icon-node-2800>a{
+        background-image: url("/themes/custom/consum_es/assets/img/mundo-consum/icon_mi_cuenta.png");
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-position-x: 15px;
+        padding-left: 45px !important;
+        .icon-node-2800{
+            background-image: none;
+            padding-left: 0px;
+        }
+    }
+    .icon-node-2801>a{
+        background-image: url("/themes/custom/consum_es/assets/img/mundo-consum/icon_tastea.png");
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-position-x: 15px;
+        padding-left: 45px !important;
+        .icon-node-2801{
+            background-image: none;
+            padding-left: 0px;
+        }
+    }
+}
+// Bloque y campo de artículos de la Tol.
+// -----------------------------------------------------------------------------
+.tol-product {
+    display: block;
+    max-width: 80%;
+    margin-left: 10%;
+}
+
+.tol-product-image {
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+.tol-product-content {
+    background-color: #f1f1f1;
+    height: 250px;
+    p {
+        height: 25%;
+    }
+}
+
+.tol-product-title {
+    height: 20%;
+    a {
+        font-size: 12pt;
+        font-weight: bold;
+    }
+}
+
+.tol-article-description {
+    font-size: 10pt;
+    margin-bottom: 6px !important;
+}
+
+.tol-price {
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+.carousel-multi-item {
+    position: relative;
+}
+
+.controls-top {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 10%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.fa-arrow-right {
+    float: right;
+}
+
+.shopping-cart-button {
+    margin: 7.5%;
+    img {
+        width: 20px;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
+
+.tastea-paso{
+    p, h3{
+      color: #31b5dd;
+      font-weight: bold;  
+    }
+}

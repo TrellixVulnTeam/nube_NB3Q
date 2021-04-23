@@ -1,0 +1,16 @@
+name: Royal Migrate
+description: Modulo para la migracion de contenido Wordpress hacia Drupal.
+package: Consum
+type: module
+version: 0.1
+core: 8.x
+dependencies:
+  - migrate
+  - migrate_plus
+  - migrate_tools
+  - config_devel
+  #  - migrate_file
+  # - migrate_source_csv
+  # - migrate_source_xml
+install:
+  - migrate_plus.migration.royal_migrate.migrate_cuidarnos

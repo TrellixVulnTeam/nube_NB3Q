@@ -1,0 +1,20 @@
+uuid: ecb75783-e6e0-4e25-94d7-7aaa3d466d95
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_apellido1
+  module:
+    - user
+id: user.user.field_apellido1
+field_name: field_apellido1
+entity_type: user
+bundle: user
+label: 'Primer Apellido'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

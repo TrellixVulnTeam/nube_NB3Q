@@ -1,0 +1,19 @@
+uuid: c6aa3cba-e557-47bc-860d-667c7f2d3188
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_itinerario_viaje
+field_name: field_itinerario_viaje
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,718 @@
+.planificador-form{
+    background-color: $white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    .num_webform {
+        border: 3px solid $black;
+        width: 70px;
+        height: 70px;
+        padding-top: 15px;
+        border-radius: 100px;
+        font-weight: bold;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+  
+  ul.thumbnails.image_picker_selector li {
+      margin: 0px 12px 12px 12px !important;
+  }  
+  
+  .js-webform-image-select { left: 0px;}
+  ul.thumbnails.image_picker_selector li .thumbnail img { border-radius: 1rem; max-width: 185px; width: 185px;}
+  ul.thumbnails.image_picker_selector li .thumbnail { 
+      border: none; 
+      max-width: 185px; 
+      position: relative; 
+      outline:none !important;
+      outline-width: 0 !important;
+      box-shadow: none;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      padding: 0px !important;
+      cursor: pointer;
+  }
+  .thumbnails.image_picker_selector p {
+      text-align: center;
+      color: $white;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+  }
+  ul.thumbnails.image_picker_selector { margin: auto; margin-top: 3rem; }
+  ul.thumbnails.image_picker_selector li .thumbnail.selected img { visibility: hidden; }
+  ul.thumbnails.image_picker_selector li .thumbnail.selected { background-color: $naranja2; border-radius: 1rem; }
+  ul.thumbnails.image_picker_selector .thumbnail.focused { border: none!important; }
+  
+  label {
+      font-size: 1.5rem;
+      font-weight: bold;
+      width: 100%;
+      text-align: center;
+  }
+  .webform-button--next,
+  .webform-button--previous,
+  .webform-button--submit{
+    border-radius: 25px!important;
+  }
+  
+  .webform-button--next, .webform-button--submit{
+    background-color: $rojo2!important;
+    border: 1px solid $rojo2!important;
+  }
+  
+.webform-button--next{
+    padding-left: 40px;
+    background-image: svg-url-color("#fff","#fff","right-2");
+    background-repeat: no-repeat;
+    background-position-x: 8px;
+    background-size: 25px;
+    background-position-y: center;
+  }
+  
+  .webform-button--submit{
+    float: right;
+    padding-left: 40px;
+    background-image: svg-url-color("#fff","#fff","check");
+    background-repeat: no-repeat;
+    background-position-x: 8px;
+    background-size: 25px;
+    background-position-y: center;
+  }
+  
+   .webform-button--previous{
+    background-color: $white!important;
+    border: 1px solid $rojo2!important;
+    color: $rojo2!important;
+    padding-left: 40px;
+    background-image: svg-url-color("#dd5a31","#dd5a31","left-2");
+    background-repeat: no-repeat;
+    background-position-x: 8px;
+    background-size: 25px;
+    background-position-y: center;
+  }
+  
+   .webform-button--previous:hover,
+   .webform-button--previous:active,
+   .webform-button--previous:visited,
+   .webform-button--previous:focus{
+    color: $rojo2 !important;
+  }
+    .webform-actions {
+    text-align: center;
+  }
+  /* DENOMINACIÓN DE ORIGEN */
+    .webform-term-checkboxes {
+    width: 100%; 
+  }
+   .webform-term-checkboxes, .webform-type-checkboxes {
+   border: none!important; 
+  }
+   .webform-term-checkboxes .card-header, .webform-type-checkboxes .card-header{
+    border: none!important;
+    background-color: $white;
+    border: none;
+    text-align: center;
+  }
+   .webform-term-checkboxes  .fieldset-legend, .webform-type-checkboxes .fieldset-legend  {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: auto;
+  }
+    .webform-term-checkboxes legend {
+    text-align: center;
+  }
+  
+   .webform-term-checkboxes  .form-check-input {
+      width: 100%;
+      margin-left: 0px;
+      position: absolute;
+      margin-top: 0px;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+      cursor: pointer;
+      opacity: 0;
+  }
+    
+   .webform-term-checkboxes .form-check-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+   .webform-term-checkboxes .form-check {
+  border: 1px solid $gris3;
+  margin: 5px;
+  height: 34px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 4px;
+  padding-bottom: 34px;
+  border-radius: 25px; 
+  }
+   .webform-term-checkboxes  .form-check.checkbox-checked{
+    background-color: $naranja2;
+    border: 1px solid $naranja2 !important;
+    color: $white;
+  }
+  .form-checkboxes {
+   text-align: center; 
+  }
+  .webform-term-checkboxes-scroll {
+    border: none!important;
+    margin-bottom: 1rem;
+  }
+  .webform-term-checkboxes-scroll .fieldset-wrapper {
+   border: none!important; 
+  }
+  
+  .js-form-type-range{
+    text-align: center;
+    margin-bottom: 60px !important;
+  }
+  
+  .description{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .js-webform-term-checkboxes .card-header{
+   padding-bottom: 0px; 
+  } 
+  
+  .js-webform-term-checkboxes .card-body{
+   padding-top: 0px; 
+  }
+  
+  /* SHOW MORE */
+  fieldset[data-drupal-selector="edit-dieta"].webform-term-checkboxes .field-suffix, fieldset[data-drupal-selector="edit-alergia"].webform-term-checkboxes .field-suffix{
+    display: none;
+  }
+
+  &.active-more-dieta fieldset[data-drupal-selector="edit-dieta"].webform-term-checkboxes .field-suffix, &.active-more-alergia fieldset[data-drupal-selector="edit-alergia"].webform-term-checkboxes .field-suffix{
+      border: 1px solid $gris3;
+      margin: 5px;
+      margin-left: 10px;
+      margin-right: 10px;
+      height: 34px;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-top: 5px;
+      padding-bottom: 35px;
+      border-radius: 25px;
+      font-size: 19px;
+      font-weight: bold;
+      text-decoration: none;
+      color: $gris3 !important;
+      display: none;
+      cursor: pointer;
+  }
+  
+  &.active-more-dieta fieldset[data-drupal-selector="edit-dieta"].webform-term-checkboxes .field-suffix:hover, &.active-more-alergia fieldset[data-drupal-selector="edit-alergia"].webform-term-checkboxes .field-suffix:hover{
+     background-color: $gris3;
+     color: $white !important;
+  }  
+  
+  &.active-more-dieta fieldset[data-drupal-selector="edit-dieta"] .js-webform-webform-term-checkboxes.after-hover-active:after, &.active-more-alergia fieldset[data-drupal-selector="edit-alergia"] .js-webform-webform-term-checkboxes.after-hover-active:after{
+     background-color: $gris3;
+     color: $white;
+  }  
+  
+  &.active-more-dieta fieldset[data-drupal-selector="edit-dieta"] .js-webform-webform-term-checkboxes:after, &.active-more-alergia fieldset[data-drupal-selector="edit-alergia"] .js-webform-webform-term-checkboxes:after{
+   content: "Ver más"; 
+   display: inline-block!important;
+   border: 1px solid $gris3;
+   margin: 5px;
+   height: 34px;
+   padding-left: 25px;
+   padding-right: 25px;
+   padding-top: 4px;
+   padding-bottom: 34px;
+   border-radius: 25px;
+   font-size: 19px;
+   font-weight: bold;
+   cursor: pointer;
+  }
+  
+  &.active-more-dieta fieldset[data-drupal-selector="edit-dieta"] .js-webform-webform-term-checkboxes.show-less:after, &.active-more-alergia fieldset[data-drupal-selector="edit-alergia"] .js-webform-webform-term-checkboxes.show-less:after{
+   display: none !important;
+  }
+  
+  &.active-more-dieta fieldset[data-drupal-selector="edit-dieta"].webform-term-checkboxes .form-check, &.active-more-alergia fieldset[data-drupal-selector="edit-alergia"].webform-term-checkboxes .form-check{
+     display: none;
+  }
+  
+  fieldset[data-drupal-selector="edit-dieta"].webform-term-checkboxes .form-check:nth-child(-n+9), fieldset[data-drupal-selector="edit-alergia"].webform-term-checkboxes .form-check:nth-child(-n+9){
+     display: inline-block;
+  }
+  
+  &.active-more-dieta fieldset[data-drupal-selector="edit-dieta"].webform-term-checkboxes .form-check:nth-child(10), &.active-more-alergia fieldset[data-drupal-selector="edit-alergia"].webform-term-checkboxes .form-check:nth-child(10){
+    display: inline-block;
+    width: 121.08px;
+    position: absolute;
+    cursor: pointer;
+    border: none;
+  }
+  
+  &.active-more-dieta fieldset[data-drupal-selector="edit-dieta"].webform-term-checkboxes .show-less .form-check:nth-child(10), &.active-more-alergia fieldset[data-drupal-selector="edit-alergia"].webform-term-checkboxes .show-less .form-check:nth-child(10){
+    display: none;
+  }
+  
+  &.active-more-dieta fieldset[data-drupal-selector="edit-dieta"].webform-term-checkboxes .form-check:nth-child(10) label, &.active-more-dieta fieldset[data-drupal-selector="edit-dieta"].webform-term-checkboxes .form-check:nth-child(10) input, &.active-more-alergia fieldset[data-drupal-selector="edit-alergia"].webform-term-checkboxes .form-check:nth-child(10) label, &.active-more-alergia fieldset[data-drupal-selector="edit-alergia"].webform-term-checkboxes .form-check:nth-child(10) input{
+    display: none;
+  }
+  
+  &.active-more-dieta fieldset[data-drupal-selector="edit-dieta"].webform-term-checkboxes .form-check.show-all, &.active-more-alergia fieldset[data-drupal-selector="edit-alergia"].webform-term-checkboxes .form-check.show-all{
+    display: inline-block !important; 
+  }
+  
+  /* FIN SHOW MORE */
+  
+  .webform-options-display-buttons-wrapper .js-form-type-checkbox{
+    padding-left: 0px;
+    width: 188px;
+    height: 188px;
+  }
+  
+   .js-form-type-checkbox input{
+    display: none; 
+  }
+  
+   .webform-options-display-buttons .webform-options-display-buttons-wrapper{
+    margin: 0 7.5px 10px 7.5px;
+  }
+  
+  .webform-options-display-buttons label.webform-options-display-buttons-label {
+      display: table-cell;
+      height: 100%;
+      padding: 10px;
+      text-align: center;
+      vertical-align: middle;
+      color: $gris3;
+      border: 2px solid $gris3;
+      border-radius: 10px;
+      background-color: $white;
+      cursor: pointer;
+      user-select: none;
+  }
+  
+  .webform-options-display-buttons input:hover+label.webform-options-display-buttons-label{
+    border: 2px solid $gris3;
+    color: $gris3;
+  }
+  
+.webform-options-display-buttons input:checked+label.webform-options-display-buttons-label {
+      color: $white !important;
+      border-color: $naranja2 !important;
+      background-color: $naranja2;
+  }
+  
+  .webform-button--reset{
+      background-color: $gris3!important;
+      border: 1px solid $gris3!important;
+      border-radius: 25px!important;
+  }
+  
+  .webform-button--previous{
+     float: left; 
+  }
+  
+  .webform-button--next, .webform-button--reset{
+     float: right; 
+  }
+  
+  .form-actions{
+     overflow: hidden; 
+  }
+  
+  .webform-button--reset{
+    margin-right: 10px;
+  }
+  
+  /*INPUT RANGE*/
+  
+  input[type='range'] {
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    border: none !important;
+  }
+  
+  input[type='range']:focus{
+    box-shadow: 0 0 0 0rem rgba(0,0,0,0);
+  }
+
+  input[type='range'],
+  input[type='range']::-webkit-slider-runnable-track,
+  input[type='range']::-webkit-slider-thumb{
+    -webkit-appearance: none;
+  }
+  input[type='range'],
+  input[type='range']::-moz-range-thumb,
+  input[type='range']::-moz-range-track{
+    -moz-appearance: none;
+  }
+  input[type='range'],
+  input[type='range']::-ms-thumb,
+  input[type='range']::-ms-track{
+    -ms-appearance: none;
+  }
+  
+  input[type='range']::-webkit-slider-runnable-track{
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, $naranja2, $naranja2), $gris1;
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    -webkit-appearance: none;
+  }
+  input[type='range']::-moz-range-track{
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, $naranja2, $naranja2), $gris1;
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    -moz-appearance: none;
+  }
+  input[type='range']::-ms-track {
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, $naranja2, $naranja2), $gris1;
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    -ms-appearance: none;
+  }
+
+  input[type='range']::-webkit-slider-thumb{
+    height: 30px;
+    width: 30px;
+    margin-top: -10px;
+    background: $naranja2;
+    border-radius: 50%;
+    border: 2px solid $naranja2;
+    -webkit-appearance: none;
+  }
+  input[type='range']::-moz-range-thumb {
+    height: 30px;
+    width: 30px;
+    margin-top: -10px;
+    background: $naranja2;
+    border-radius: 50%;
+    border: 2px solid $naranja2;
+    -moz-appearance: none;
+  }
+  input[type='range']::-ms-thumb {
+    height: 30px;
+    width: 30px;
+    /*margin-top: -10px;*/
+    background: $naranja2;
+    border-radius: 50%;
+    border: 2px solid $naranja2;
+    -ms-appearance: none;
+  }
+
+  .form-actions .ajax-progress{
+    padding-top: 0px;
+    margin-top: 7px;
+    margin-left: 5px;
+  }
+
+  .form-actions.left .ajax-progress{
+    float: left;
+  }
+
+  .form-actions.right .ajax-progress{
+    float: right;
+  }
+}
+
+.recomendador-form{
+    background-color: $white;
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+    .num_webform {
+    border: 3px solid $black;
+    width: 70px;
+    height: 70px;
+    padding-top: 15px;
+    border-radius: 100px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  ul.thumbnails.image_picker_selector li {
+      margin: 0px 12px 12px 12px !important;
+  }  
+  
+  .js-webform-image-select { left: 0px;}
+  ul.thumbnails.image_picker_selector li .thumbnail img { border-radius: 1rem; max-width: 220px; }
+  ul.thumbnails.image_picker_selector li .thumbnail {
+      border: none;
+      max-width: 220px;
+      position: relative;
+      outline:none !important;
+      outline-width: 0 !important;
+      box-shadow: none;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      padding: 0px !important;
+      cursor: pointer;
+  }
+  .thumbnails.image_picker_selector p {
+      text-align: center;
+      color: $white;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+  }
+    ul.thumbnails.image_picker_selector { margin: auto; margin-top: 3rem; }
+  ul.thumbnails.image_picker_selector li .thumbnail.selected img { visibility: hidden; }
+  ul.thumbnails.image_picker_selector li .thumbnail.selected { background-color: $rojo1; border-radius: 1rem; }
+  ul.thumbnails.image_picker_selector .thumbnail.focused { border: none!important; }
+  
+  label {
+      font-size: 1.5rem;
+      font-weight: bold;
+      width: 100%;
+      text-align: center;
+  }
+  
+  .webform-button--next,
+  .webform-button--previous,
+  .webform-button--submit{
+    border-radius: 25px!important;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: right;
+  }
+
+  .webform-button--previous{
+    float: left;
+  }
+  
+  .webform-button--next, .webform-button--submit{
+    background-color: $rojo2!important;
+    border: 1px solid $rojo2!important;
+  }
+  
+    .webform-button--previous{
+    background-color: $white!important;
+    border: 1px solid $rojo2!important;
+    color: $rojo2!important;
+  }
+  
+  .webform-button--previous:hover,
+  .webform-button--previous:active,
+  .webform-button--previous:visited,
+  .webform-button--previous:focus{
+    color: $rojo2 !important;
+  }
+  
+  .webform-actions {
+    text-align: center;
+    overflow: hidden;
+    width: fit-content;
+    margin: auto;
+  }
+  
+  /* MARIDAJES */
+  
+  .form-item-maridajes-quiz > label{
+   width: 100%;
+   text-align: center;
+  }
+  .form-item-maridajes-quiz h3 {
+     text-align: center;
+  }
+  .form-item-maridajes-quiz .thumbnails.image_picker_selector li {
+    margin: 0px 6px 12px 6px !important;
+  }
+  .form-item-maridajes-quiz .thumbnails.image_picker_selector p {
+      text-align: center;
+      color: $white;
+      font-size: 1.2rem;
+      width: 110px;
+  }
+  
+  .form-item-maridajes-quiz .thumbnails.image_picker_selector p div{
+    height: 40px;
+    width: 100%;
+    margin-bottom: 5px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }  
+  
+  /* DENOMINACIÓN DE ORIGEN */
+  .webform-term-checkboxes {
+    width: 100%;
+  }
+  .webform-term-checkboxes {
+   border: none!important;
+  }
+  .webform-term-checkboxes .card-header {
+    border: none!important;
+    background-color: $white;
+    border: none;
+    text-align: center;
+  }
+  .webform-term-checkboxes  .fieldset-legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: auto;
+  }
+  .webform-term-checkboxes legend {
+    text-align: center;
+  }
+  
+  .webform-term-checkboxes  .form-check-input {
+      width: 100%;
+      margin-left: 0px;
+      position: absolute;
+      margin-top: 0px;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+      cursor: pointer;
+      opacity: 0;
+  }
+   
+  .webform-term-checkboxes .form-check-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .webform-term-checkboxes  .form-check {
+  border: 2px solid $black;
+  margin: 5px;
+  height: 34px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 45px;
+  border-radius: 10px;
+  }
+  .webform-term-checkboxes  .form-check.checkbox-checked{
+    background-color: $rojo1;
+    border: 2px solid $rojo1 !important;
+    color: $white;
+  }
+  .form-checkboxes {
+   text-align: center;
+  }
+  .webform-term-checkboxes-scroll {
+    border: none!important;
+    margin-bottom: 1rem;
+  }
+  .webform-term-checkboxes-scroll .fieldset-wrapper {
+   border: none!important;
+  }
+  
+  /* SHOW MORE */
+  
+  .webform-term-checkboxes .field-suffix{
+      margin: 5px;
+      margin-left: 10px;
+      margin-right: 10px;
+      height: 34px;
+      font-size: 19px;
+      font-weight: bold;
+      text-decoration: none;
+      color: $gris3 !important;
+      display: none;
+      cursor: pointer;
+      border: 2px solid $black;
+      margin: 5px;
+      height: 34px;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-top: 15px;
+      padding-bottom: 45px;
+      border-radius: 10px;
+  }
+  
+  .webform-term-checkboxes .field-suffix:hover{
+     background-color: $black;
+     color: $white !important;
+  }  
+  
+  .js-webform-webform-term-checkboxes.after-hover-active:after{
+     background-color: $black;
+     color: $white;
+  }  
+  
+  .js-webform-webform-term-checkboxes:after{
+   content: "Ver más"; 
+   font-weight: bold;
+   display: inline-block!important;
+   border: 2px solid $black;
+   margin: 5px;
+   height: 34px;
+   padding-left: 25px;
+   padding-right: 25px;
+   padding-top: 15px;
+   padding-bottom: 45px;
+   border-radius: 10px;
+   cursor: pointer;
+   font-size: 19px;
+  }
+  
+  .js-webform-webform-term-checkboxes.show-less:after{
+   display: none !important;
+  }
+  
+  .webform-term-checkboxes .form-check{
+     display: none;
+  }
+  
+  .webform-term-checkboxes .form-check:nth-child(-n+9){
+     display: inline-block;
+  }
+  
+  .webform-term-checkboxes .form-check:nth-child(10){
+    display: inline-block;
+    width: 123.08px;
+    position: absolute;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .webform-term-checkboxes .show-less .form-check:nth-child(10){
+    display: none;
+  }
+  
+  .webform-term-checkboxes .form-check:nth-child(10) label, .webform-term-checkboxes .form-check:nth-child(10) input{
+    display: none;
+  }
+  
+  .webform-term-checkboxes .form-check.show-all{
+    display: inline-block !important; 
+  }
+  
+  .webform-button--reset{
+      background-color: $gris3!important;
+      border: 1px solid $gris3!important;
+      border-radius: 25px!important;
+      margin-left: 5px;
+    margin-right: 5px;
+    float: right;
+  }
+}  
+  

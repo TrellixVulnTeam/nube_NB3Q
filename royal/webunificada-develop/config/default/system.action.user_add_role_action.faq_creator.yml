@@ -1,0 +1,14 @@
+uuid: ab3db6ed-d5a8-4dca-ae33-952c28a54b0b
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.faq_creator
+  module:
+    - user
+id: user_add_role_action.faq_creator
+label: 'Añade el rol FaQ creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: faq_creator

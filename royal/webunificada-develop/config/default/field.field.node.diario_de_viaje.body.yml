@@ -1,0 +1,23 @@
+uuid: 7bac8418-00f6-43bd-829d-ea415544f286
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.diario_de_viaje
+  module:
+    - text
+id: node.diario_de_viaje.body
+field_name: body
+entity_type: node
+bundle: diario_de_viaje
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

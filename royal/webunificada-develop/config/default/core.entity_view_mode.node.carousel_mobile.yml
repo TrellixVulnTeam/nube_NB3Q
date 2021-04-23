@@ -1,0 +1,14 @@
+uuid: 57e317ca-d24d-43ff-b189-bde309634e6c
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.carousel_mobile
+label: 'Carousel Mobile'
+targetEntityType: node
+cache: true

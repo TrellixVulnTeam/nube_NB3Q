@@ -1,0 +1,31 @@
+uuid: 03d5dccf-04cd-4dbd-aaa9-178dbd82940b
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - royal_blocks
+  theme:
+    - consum_es
+id: newsletterblock
+theme: consum_es
+region: sidebar_first
+weight: -44
+provider: null
+plugin: newsletter_block
+settings:
+  id: newsletter_block
+  label: 'Newsletter Block'
+  provider: royal_blocks
+  label_display: '0'
+  orientation: vertical
+  heigth: ''
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      magazine: magazine
+      team_consum: team_consum
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

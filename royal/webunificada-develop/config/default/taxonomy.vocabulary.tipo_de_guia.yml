@@ -1,0 +1,8 @@
+uuid: 81b31f76-67c5-4d33-99c3-78d980bc6e2e
+langcode: es
+status: true
+dependencies: {  }
+name: 'Tipo de guía'
+vid: tipo_de_guia
+description: ''
+weight: 0

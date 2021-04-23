@@ -1,0 +1,22 @@
+uuid: abc53eee-ad52-45fd-a021-ad2382278528
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - consum_es
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: consum_es_content
+theme: consum_es
+region: content
+weight: -20
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenido principal de la página'
+  provider: system
+  label_display: '0'
+visibility: {  }

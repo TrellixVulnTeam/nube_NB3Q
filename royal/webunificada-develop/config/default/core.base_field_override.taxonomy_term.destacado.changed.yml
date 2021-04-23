@@ -1,0 +1,18 @@
+uuid: 03f11b73-d391-48ae-966b-54f8cb21577f
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.destacado
+id: taxonomy_term.destacado.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: destacado
+label: Modificado
+description: 'La fecha en que el término fue creado por última vez.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

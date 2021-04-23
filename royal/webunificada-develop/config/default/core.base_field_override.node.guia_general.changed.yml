@@ -1,0 +1,18 @@
+uuid: 2e6b8108-7e96-4754-82ff-4f5f8803c888
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.guia_general
+id: node.guia_general.changed
+field_name: changed
+entity_type: node
+bundle: guia_general
+label: Modificado
+description: 'La fecha en que el nodo fue editado por última vez.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

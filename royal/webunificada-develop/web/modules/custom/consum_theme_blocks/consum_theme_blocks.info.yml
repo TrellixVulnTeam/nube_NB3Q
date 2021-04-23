@@ -1,0 +1,5 @@
+name: 'Consum Theme Blocks'
+type: module
+description: 'Consum Theme Blocks module'
+core: 8.x
+package: 'Consum'

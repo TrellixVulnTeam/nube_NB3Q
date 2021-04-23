@@ -1,0 +1,27 @@
+uuid: 8e441a7c-0e13-4f71-8c72-406be8aa6f45
+langcode: es
+status: true
+dependencies: {  }
+id: api_call_creator
+label: 'api call creator'
+weight: 23
+is_admin: false
+permissions:
+  - 'access ckeditor_media_browser entity browser pages'
+  - 'access contextual links'
+  - 'access image_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media_browser entity browser pages'
+  - 'access toolbar'
+  - 'configure any layout'
+  - 'create api_call content'
+  - 'create url aliases'
+  - 'edit own api_call content'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition review'
+  - 'use moderation sidebar'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view api_call revisions'
+  - 'view latest version'
+  - 'view own unpublished content'

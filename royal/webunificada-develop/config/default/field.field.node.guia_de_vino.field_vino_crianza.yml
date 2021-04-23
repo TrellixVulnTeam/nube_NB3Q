@@ -1,0 +1,19 @@
+uuid: 6d8ee5cf-d390-4f1c-8726-adc6fe9b5d02
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vino_crianza
+    - node.type.guia_de_vino
+id: node.guia_de_vino.field_vino_crianza
+field_name: field_vino_crianza
+entity_type: node
+bundle: guia_de_vino
+label: Crianza
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

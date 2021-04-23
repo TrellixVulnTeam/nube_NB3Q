@@ -1,0 +1,21 @@
+uuid: 345b6249-1ec2-4e81-98dd-b07704179854
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tol_item
+    - node.type.receta
+  module:
+    - consum_tol_integration
+id: node.receta.field_tol_item
+field_name: field_tol_item
+entity_type: node
+bundle: receta
+label: 'Artículos TOL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: tol_item_field_type

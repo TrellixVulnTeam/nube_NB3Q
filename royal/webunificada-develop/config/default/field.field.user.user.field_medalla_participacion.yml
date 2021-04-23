@@ -1,0 +1,26 @@
+uuid: 5ddee982-fb99-439c-a877-f560344ffe39
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_medalla_participacion
+  module:
+    - user
+id: user.user.field_medalla_participacion
+field_name: field_medalla_participacion
+entity_type: user
+bundle: user
+label: 'Medalla participación'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

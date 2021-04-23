@@ -1,0 +1,14 @@
+uuid: 70278b5b-252f-442b-b297-4a0e87a14f50
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'Modo de visualización para vista de artículos con imagen a la izquierda de proporción 1/3'
+id: node.card_img_izq_4_8
+label: 'Card img-izq-4-8'
+targetEntityType: node
+cache: true

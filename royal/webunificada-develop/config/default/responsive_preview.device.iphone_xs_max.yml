@@ -1,0 +1,11 @@
+id: iphone_xs_max
+uuid: 470a77ea-91eb-4c3d-a0e6-32f265215c58
+label: 'iPhone XS Max'
+weight: -9
+status: 1
+orientation: portrait
+dimensions:
+  width: 1242
+  height: 2688
+  dppx: !!float 3
+langcode: es

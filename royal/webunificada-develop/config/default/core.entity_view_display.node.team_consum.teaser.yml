@@ -1,0 +1,58 @@
+uuid: bf2eea86-c625-40ef-a065-4447945a49e3
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.team_consum.body
+    - field.field.node.team_consum.field_actividad_team_consum
+    - field.field.node.team_consum.field_bloque_2
+    - field.field.node.team_consum.field_comments
+    - field.field.node.team_consum.field_contenido_descargable
+    - field.field.node.team_consum.field_edad_team_consum
+    - field.field.node.team_consum.field_enlaces
+    - field.field.node.team_consum.field_enlaces_de_descarga
+    - field.field.node.team_consum.field_image
+    - field.field.node.team_consum.field_pasos_team_consum
+    - field.field.node.team_consum.field_subtitle
+    - field.field.node.team_consum.field_tematica_team_consum
+    - node.type.team_consum
+  module:
+    - text
+    - user
+id: node.team_consum.teaser
+targetEntityType: node
+bundle: team_consum
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_actividad_team_consum: true
+  field_bloque_2: true
+  field_comments: true
+  field_contenido_descargable: true
+  field_edad_team_consum: true
+  field_enlaces: true
+  field_enlaces_de_descarga: true
+  field_image: true
+  field_pasos_team_consum: true
+  field_subtitle: true
+  field_tematica_team_consum: true
+  langcode: true
+  search_api_excerpt: true

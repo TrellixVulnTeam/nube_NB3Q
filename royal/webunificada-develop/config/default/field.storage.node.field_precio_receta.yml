@@ -1,0 +1,20 @@
+uuid: 3b470c5e-8992-401b-97d6-af1675e53ec0
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_precio_receta
+field_name: field_precio_receta
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

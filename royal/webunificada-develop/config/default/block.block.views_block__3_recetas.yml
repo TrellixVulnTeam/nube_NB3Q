@@ -1,0 +1,32 @@
+uuid: 71b4e7f8-167a-437c-965f-371a6a68b2b5
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.3_recetas
+  module:
+    - node
+    - views
+  theme:
+    - consum_es
+id: views_block__3_recetas
+theme: consum_es
+region: content
+weight: -18
+provider: null
+plugin: 'views_block:3_recetas-block_1'
+settings:
+  id: 'views_block:3_recetas-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      receta: receta
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

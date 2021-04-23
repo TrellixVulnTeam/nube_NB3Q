@@ -1,0 +1,20 @@
+uuid: 3c9ea554-f123-48b0-bf77-0456fe6eae37
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_articulo_destacado
+field_name: field_articulo_destacado
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

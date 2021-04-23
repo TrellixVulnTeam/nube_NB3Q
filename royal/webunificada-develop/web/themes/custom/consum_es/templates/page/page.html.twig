@@ -1,0 +1,150 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+<div class="page">
+  <div class="global-head">
+    {% if page.navbar_accessibility %}
+      <div class="container-fluid custom-container-region-navbar-accessibility">
+        <div class="row justify-content-end custom-row-region-navbar-accessibility d-none d-sm-flex d-md-flex">
+          {{ page.navbar_accessibility }}
+        </div>
+      </div>
+    {% endif %}
+    {% if page.navbar_principal %}
+      <div class="container-fluid custom-container-region-navbar-principal">
+        <div class="row custom-row-region-navbar-principal">
+          {{ page.navbar_principal }}
+          {% if page.sidebar %}
+            <!-- Sidebar -->
+            <nav class="sidebar">
+              <!-- Close sidebar menu -->
+              <div class="dismiss">
+                <div class="ci-close"></div>
+              </div>
+              {{ page.sidebar }}
+            </nav>
+            <!-- End sidebar -->
+            <!-- Light overlay -->
+            <div class="overlay"></div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    {% if page.menu_personalizado %}
+      <div class="container-fluid custom-container-region-menu-personalizado">
+        <div class="row custom-row-region-menu-personalizado">
+          {{ page.menu_personalizado }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  {% if page.cabeceras_interiores %}
+    <div class="container-fluid custom-container-region-cabeceras-interiores">
+      <div class="row custom-row-region-cabeceras-interiores no-gutters">
+        {{ page.cabeceras_interiores }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% embed '@radix/navbar/navbar.twig'
+    with {
+      placement: 'sticky-top',
+      container: 'fixed',
+      color: 'light',
+      utility_classes: ['bg-light']
+    }
+  %}
+    {% block branding %}
+      {% if page.navbar_branding %}
+        {{ page.navbar_branding }}
+      {% endif %}
+    {% endblock %}
+    {% block left %}
+      {% if page.navbar_left %}
+        <div class="mr-auto">
+          {{ page.navbar_left }}
+        </div>
+      {% endif %}
+    {% endblock %}
+    {% block right %}
+      {% if page.navbar_right %}
+        {{ page.navbar_right }}
+      {% endif %}
+    {% endblock %}
+  {% endembed %}
+
+  <main>
+    {% if page.header %}
+      <header class="page__header mb-3">
+        <div class="container">
+          {{ page.header }}
+        </div>
+      </header>
+    {% endif %}
+
+    <div id="main-wrapper" class="layout-main-wrapper clearfix">
+      {% block content %}
+        <div class="row row-offcanvas container"
+          style="margin-left:auto;margin-right:auto;">
+          {% if page.sidebar_first %}
+            {# NEW REGION SIDEBAR FIRTS ASIG #}
+            <div class="page__sidebar-first col-md-3 pr-0 order-md-2"
+              id="sidebar_first">
+              <aside class="section">
+                {{ page.sidebar_first }}
+              </aside>
+            </div>
+            {% if page.content %}
+              <div class="page__content container col-md-9 pr-5 pl-0 order-md-1"
+                id="content">
+                <main {{ content_attributes }}>
+                  <section class="section">
+                    {{ page.content }}
+                  </section>
+                </main>
+              </div>
+            {% endif %}
+          {% else %}
+            {% if page.content %}
+              <div class="page__content container" id="content">
+                <main {{ content_attributes }}>
+                  <section class="section">
+                    {{ page.content }}
+                  </section>
+                </main>
+              </div>
+            {% endif %}
+          {% endif %}
+        </div>
+        {% if page.content_fluid %}
+          <div class="container-fluid custom-container-region-content-fluid">
+            <div class="row custom-row-region-content-fluid">
+              {{ page.content_fluid }}
+            </div>
+          </div>
+        {% endif %}
+      {% endblock %}
+    </div>
+  </main>
+
+  {% if page.footer %}
+    <footer class="page__footer">
+      <div class="container">
+        <div class="d-flex justify-content-md-between align-items-md-center">
+          {{ page.footer }}
+        </div>
+      </div>
+    </footer>
+  {% endif %}
+
+  {% if page.footer_fluid %}
+    <div class="container-fluid custom-container-region-footer-fluid">
+      <div class="row custom-row-region-footer-fluid">
+        {{ page.footer_fluid }}
+      </div>
+    </div>
+  {% endif %}
+</div>

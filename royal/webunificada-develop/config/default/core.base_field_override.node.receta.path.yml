@@ -1,0 +1,20 @@
+uuid: 01d0b6b1-2e2d-4b8a-a5ad-d6a9fd0f692a
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.receta
+  module:
+    - path
+id: node.receta.path
+field_name: path
+entity_type: node
+bundle: receta
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

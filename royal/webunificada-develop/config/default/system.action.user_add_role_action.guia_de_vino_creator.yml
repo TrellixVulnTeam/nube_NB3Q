@@ -1,0 +1,14 @@
+uuid: f31560f2-0194-4a5c-b8f0-b401d5ba061a
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.guia_de_vino_creator
+  module:
+    - user
+id: user_add_role_action.guia_de_vino_creator
+label: 'Añade el rol Guía de vino creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: guia_de_vino_creator

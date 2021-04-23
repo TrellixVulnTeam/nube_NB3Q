@@ -1,0 +1,26 @@
+uuid: d4c25d00-8f04-4682-a9da-f9c9abf8a340
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_medalla_vivir_viajar
+  module:
+    - user
+id: user.user.field_medalla_vivir_viajar
+field_name: field_medalla_vivir_viajar
+entity_type: user
+bundle: user
+label: 'Medalla vivir&viajar'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

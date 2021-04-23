@@ -1,0 +1,14 @@
+uuid: 833ba264-cf67-411e-a890-1150b74df42d
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.card_img_der_6_6
+label: 'Card img-der-6-6'
+targetEntityType: node
+cache: true

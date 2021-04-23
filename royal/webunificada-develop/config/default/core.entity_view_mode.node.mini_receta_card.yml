@@ -1,0 +1,14 @@
+uuid: 9bb8bff4-3c8e-4c10-b44c-04c331401372
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.mini_receta_card
+label: 'Mini Receta Card'
+targetEntityType: node
+cache: true

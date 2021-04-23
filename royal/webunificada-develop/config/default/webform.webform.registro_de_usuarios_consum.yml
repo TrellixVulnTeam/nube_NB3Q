@@ -1,0 +1,213 @@
+uuid: 7c53fc58-d516-4c7f-bd33-503b9792c600
+langcode: es
+status: open
+dependencies:
+  module:
+    - consum_user_register
+    - webform_entity_print
+third_party_settings:
+  webform_entity_print:
+    template:
+      header: ''
+      footer: ''
+      css: ''
+    export_types:
+      pdf:
+        enabled: true
+        link_text: ''
+        link_attributes: {  }
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: registro_de_usuarios_consum
+title: 'Registro de usuarios Consum'
+description: 'Permite el registro de usuarios Lite y Socio Cliente, dandolos de alta en el IAM'
+category: ''
+elements: "'#attributes':\n  class:\n    - 'form-cf col-md-8 '\nprocessed_text:\n  '#type': processed_text\n  '#text': |\n    <h1 class=\"gris3 text-align-center\">Crea tu cuenta Consum</h1>\n    \n    <h4 class=\"gris3 text-align-center\">Ups, ya tengo cuenta. <a href=\"/user/login\">Iniciar sesión</a></h4>\n    \n  '#format': rich_text\ncontainer_01:\n  '#type': container\n  email:\n    '#type': email\n    '#title': 'Indícanos tu email (comprueba que el email es el correcto)'\n    '#required': true\n  password:\n    '#type': password_confirm\n    '#title': 'Elige contraseña (mínimo 10 caracteres)'\n    '#required': true\n    '#wrapper_type': form_element\n    '#format_items': ul\n    '#format_items_html': ''\n    '#format_items_text': ''\n  flexbox:\n    '#type': webform_flexbox\n    '#align_items': center\n    socio_cliente:\n      '#type': container\n      container_02:\n        '#type': container\n        '#format': container\n        processed_text_01:\n          '#type': processed_text\n          '#text': |\n            <p><b>Socio-Cliente</b> (opcional)</p>\n            \n          '#format': rich_text\n        socio_cliente_options:\n          '#type': checkboxes\n          '#title': Socio-Cliente\n          '#multiple': 2\n          '#options':\n            new: 'Darme de alta como socio-cliente'\n            current: 'Ya soy socio-cliente'\n          '#options_display': two_columns\n          '#options_all_value': ''\n          '#options_all_text': ''\n          '#options_none_value': ''\n          '#options_none_text': ''\n          '#wrapper_type': container\n        documento_principal_numero:\n          '#type': textfield\n          '#title': DNI/NIE/PASAPORTE\n          '#states':\n            visible:\n              ':input[name=\"socio_cliente_options[current]\"]':\n                checked: true\n          '#required': true\n        numero_socio:\n          '#type': textfield\n          '#title': 'Número de socio'\n          '#states':\n            visible:\n              ':input[name=\"socio_cliente_options[current]\"]':\n                checked: true\n          '#required': true\n  processed_text_02:\n    '#type': processed_text\n    '#text': |\n      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n      \n    '#format': rich_text\n  acepto_politica_proteccion_datos:\n    '#type': checkbox\n    '#title': 'Acepto los términos y uso de política de protección de datos'\n    '#required': true\n  acepto_atencion_cliente:\n    '#type': checkbox\n    '#title': 'QUIERO que el equipo de Atención al Cliente de CONSUM pueda ayudarme a resolver mis dudas e incidencias en remoto'\n  actions:\n    '#type': webform_actions\n    '#title': 'Submit button(s)'\n    '#submit__label': Continuar\n    '#submit__attributes':\n      class:\n        - btn-300"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: user/consum-register
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_title: '¿Casi casi!'
+  confirmation_message: "Te hemos enviado un mail a:<br />\r\n<strong>[webform_submission:values:email]</strong><br />\r\n<br />\r\nPara finalizar tu registro, s&iacute;mplemente tienes que pinchar sobre el enlace que ver&aacute;s dentro del mail."
+  confirmation_url: /form/registro-de-socio-cliente
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: Continue
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  consum_user_register:
+    id: consum_user_register
+    label: 'Consum user register'
+    notes: ''
+    handler_id: consum_user_register
+    status: true
+    conditions: {  }
+    weight: 0
+    settings: {  }
+variants: {  }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>90E830FF-B8CD-4873-BE25-8B1BA816456F</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-732.000000, -32.000000)">
+            <g id="add-person" transform="translate(732.000000, 32.000000)">
+                <circle id="Oval" fill="#DE5A31" cx="17.5" cy="17.5" r="17.5"></circle>
+                <g id="Group" transform="translate(4.000000, 8.000000)">
+                    <image id="plus-icon" x="0" y="6" width="7" height="7" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAA0mlDQ1BJQ0MgUHJvZmlsZQAAGJVjYGCsSCwoyGESYGDIzSspcg9yjIyIjFJgv8rAzsDIAAaJycUFjgEBPgw4wbdrELWXdUFm4VaHFbCkpBYnA+ktQFyaXFBUwsDAqANkq5eXFIDYIUC2SHZIkDOQnQFk80HVg4C0c2JOZlJRYklqioJ7UWKlgnN+Tn5RcUFiciqJriAClKRWlIBo5/yCyqLM9IwSBUegb1OBduYWlJakFukoeOYl6zEwgMIPouNzIDhcGMXOJJcWlUGNYWQyZmAAABFdNMUdedORAAAAc0lEQVQ4Ee1SQRKAIAgEX8L/X0Cv2ywj09mhprMeFNgFlUWELDiO5QQSZUGgRZWghSVksZWQdScw0iVYgN2KSD0vVU9pP2yuoeqjRmqSJ6V8KbLlhAllbNj9F5vo1SXzWBuxpnXs1A/hxgKvHr+h6clUlR2Qjkwqbq2MSwAAAABJRU5ErkJggg=="></image>
+                    <path d="M21.0710937,12.9289063 C19.9819141,11.8397656 18.6855078,11.0334766 17.2710547,10.5453906 C18.7859766,9.50199219 19.78125,7.75578125 19.78125,5.78125 C19.78125,2.59347656 17.1877734,0 14,0 C10.8122266,0 8.21875,2.59347656 8.21875,5.78125 C8.21875,7.75578125 9.21402344,9.50199219 10.7289844,10.5453906 C9.31453125,11.0334766 8.018125,11.8397656 6.92894531,12.9289063 C5.04019531,14.8176953 4,17.3289062 4,20 L5.5625,20 C5.5625,15.3475391 9.34753906,11.5625 14,11.5625 C18.6524609,11.5625 22.4375,15.3475391 22.4375,20 L24,20 C24,17.3289062 22.9598047,14.8176953 21.0710937,12.9289063 Z M14,10 C11.6737891,10 9.78125,8.1075 9.78125,5.78125 C9.78125,3.455 11.6737891,1.5625 14,1.5625 C16.3262109,1.5625 18.21875,3.455 18.21875,5.78125 C18.21875,8.1075 16.3262109,10 14,10 Z" id="Shape" fill="#FFFFFF"></path>
+                </g>
+                <g id="user" transform="translate(7.000000, 8.000000)"></g>
+            </g>
+        </g>
+    </g>
+</svg>

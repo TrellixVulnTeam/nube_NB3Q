@@ -1,0 +1,235 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{% set classes = [
+  'node',
+  'node--type-' ~ (node.bundle|clean_class),
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  'view-mode-card',
+  view_mode ? 'node--view-mode-' ~ (view_mode|clean_class)
+] %}
+
+{% set image_uri =
+  file_url(
+    node.field_contenido_referenciado.entity.field_image.entity.uri.value
+  )
+%}
+
+{% if user.id == node.uid.target_id %}
+  {% set messages_events = {
+    '0': 'me ha gustado la publicación',
+    '1': 'has comentado la publicación',
+    '2': 'has realizado una publicación',
+    '3': 'has compartido la publicación'
+  } %}
+{% else %}
+  {% set messages_events = {
+    '0': 'le ha gustado la publicación',
+    '1': 'ha comentado la publicación',
+    '2': 'ha realizado una publicación',
+    '3': 'ha compartido la publicación'
+  } %}
+{% endif %}
+
+<article {{ attributes.addClass(classes) }}>
+  <div class="bg-white pb-3">
+    <div class="row-1 row position-relative">
+      <div class="col--1 col-12">
+        <div class="label-container d-flex align-items-center">
+          <div class="picture_user_message">
+            {% if author_picture %}
+              {{ author_picture }}
+            {% else %}
+              <img src="/themes/custom/consum_es/assets/img/avatar.png">
+            {% endif %}
+          </div>
+          {% if node.field_tipo_de_evento.value == 'dar_like' %}
+            <p>
+              {{messages_events.0}} <img src="/themes/custom/consum_es/assets/img/like_event.svg" />
+            </p>
+          {% elseif node.field_tipo_de_evento.value == 'dar_comentario' %}
+            <p>
+              {{messages_events.1}}
+            </p>
+          {% elseif node.field_tipo_de_evento.value == 'crear_contenido' %}
+            <p>
+              {{messages_events.2}}
+            </p>
+          {% elseif node.field_tipo_de_evento.value == 'compartir_redes' %}
+            <p>
+              {{messages_events.3}}
+            </p>
+          {% endif %}
+          <div class="medallas_notificacion">
+            <ul class="nav nav-tabs d-flex">
+              <li class="nav-item">
+                <p class="nav-link">
+                  {% if node.uid.entity.field_medalla_vivir_viajar.value != null %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_vivir_viajar_{{node.uid.entity.field_medalla_vivir_viajar.value}}.svg"></img>
+                  {% else %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_vivir_viajar_0.svg"></img>
+                  {% endif %}
+                </p>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link">
+                  {% if node.uid.entity.field_medalla_bodega.value != null %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_bodega_{{node.uid.entity.field_medalla_bodega.value}}.svg"></img>
+                  {% else %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_bodega_0.svg"></img>
+                  {% endif %}
+                </p>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link">
+                  {% if node.uid.entity.field_medalla_recetas.value != null %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_recetas_{{node.uid.entity.field_medalla_recetas.value}}.svg"></img>
+                  {% else %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_recetas_0.svg"></img>
+                  {% endif %}
+                </p>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link">
+                  {% if node.uid.entity.field_medalla_cuidarnos.value != null %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_cuidarnos_{{node.uid.entity.field_medalla_cuidarnos.value}}.svg"></img>
+                  {% else %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_cuidarnos_0.svg"></img>
+                  {% endif %}
+                </p>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link">
+                  {% if node.uid.entity.field_medalla_nutricion.value != null %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_nutricion_{{node.uid.entity.field_medalla_nutricion.value}}.svg"></img>
+                  {% else %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_nutricion_0.svg"></img>
+                  {% endif %}
+                </p>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link">
+                  {% if node.uid.entity.field_medalla_hogar.value != null %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_hogar_{{node.uid.entity.field_medalla_hogar.value}}.svg"></img>
+                  {% else %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_hogar_0.svg"></img>
+                  {% endif %}
+                </p>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link">
+                  {% if node.uid.entity.field_medalla_participacion.value != null %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_participacion_{{node.uid.entity.field_medalla_participacion.value}}.svg"></img>
+                  {% else %}
+                    <img src="/themes/custom/consum_es/assets/img/comunidad/medalla_participacion_0.svg"></img>
+                  {% endif %}
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {% if node.field_tipo_de_evento.value == 'dar_comentario' %}
+          <div class="container-background-opacity d-flex align-items-center justify-content-center">
+            {{
+              node.field_comentario_de_referencia.entity.comment_body.value|raw
+            }}
+          </div>
+        {% endif %}
+        <img src="{{ image_uri }}" />
+      </div>
+    </div>
+    <div class="row-2 row">
+      <div class="col--1 col-12">
+        <div class="container-title">
+          {% if label and not page %}
+            <h1 {{ title_attributes.addClass('node__title') }}>
+              <a href="{{
+                url(
+                  'entity.node.canonical',
+                  {
+                    node: node.field_contenido_referenciado.target_id
+                  }
+                )
+                }}">
+                {{ node.field_contenido_referenciado.entity.title.value }}
+              </a>
+            </h1>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col--2 col-12">
+        {# CARD FOOTER #}
+          {% include directory ~ '/templates/content/footer--card.html.twig' %}
+        {# END CARD FOOTER #}
+      </div>
+    </div>
+  </div>
+</article>

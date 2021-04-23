@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Template for a Dropdown menu component.
+ */
+#}
+{% if items %}
+<div class="dropdown-menu">
+  <ul{{ attributes.addClass(nav_classes) }}>
+    {% block items %}
+      {% for item in items %}
+        {% set nav_item_classes = [
+          'nav-item',
+          item.in_active_trail ? ' active',
+          item.is_expanded and item.below ? ' dropdown',
+          item.is_custom_active ? ' active',
+          item.is_custom_class ? item.is_custom_class_name
+        ] %}
+        {% set nav_link_classes = ['nav-link'] %}
+        {% if item.url.options.attributes.class is iterable %}
+          {% set nav_link_classes = nav_link_classes|merge(item.url.options.attributes.class) %}
+        {% elseif item.url.options.attributes.class %}
+          {% set nav_link_classes = nav_link_classes|merge([item.url.options.attributes.class]) %}
+        {% endif %}
+        <li class="{{ nav_item_classes|join('') }}" {% if item.is_custom_class %} data-node="{{ item.is_custom_data }}" {% endif %}>
+          {% if item.is_expanded and item.below %}
+            {% if item.is_external %}
+              {{ link(item.title, item.url, { 'target= "_blank", class': nav_link_classes|merge(['dropdown-toggle']) }) }}
+            {% else %}
+              {{ link(item.title, item.url, { 'class': nav_link_classes|merge(['dropdown-toggle']) }) }}
+            {% endif %}
+            <div class="div-toggle" data-toggle="dropdown"></div>
+            {% if item.below %}
+              {% include '@consum_es/dropdown/dropdown-menu-level-3.twig' with {
+                items: item.below
+              } %}
+            {% endif %}
+          {% else %}
+            {% if item.is_external %}
+              {{ link(item.title, item.url, { 'target= "_blank", class': nav_link_classes }) }}
+            {% else %}
+              {{ link(item.title, item.url, { 'class': nav_link_classes }) }}
+            {% endif %}
+          {% endif %}
+        </li>
+      {% endfor %}
+    {% endblock %}
+  </ul>
+</div>  
+{% endif %}

@@ -1,0 +1,14 @@
+uuid: f5afe049-ddaf-4f60-beda-9dfb207da62b
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.noticia_reviewer
+  module:
+    - user
+id: user_add_role_action.noticia_reviewer
+label: 'Añade el rol Noticia reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: noticia_reviewer

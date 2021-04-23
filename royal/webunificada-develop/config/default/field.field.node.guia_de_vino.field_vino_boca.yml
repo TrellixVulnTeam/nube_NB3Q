@@ -1,0 +1,19 @@
+uuid: 98ae0c61-8ee9-4578-bab4-5dd1620bf056
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vino_boca
+    - node.type.guia_de_vino
+id: node.guia_de_vino.field_vino_boca
+field_name: field_vino_boca
+entity_type: node
+bundle: guia_de_vino
+label: Boca
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

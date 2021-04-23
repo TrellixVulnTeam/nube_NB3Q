@@ -1,0 +1,7 @@
+name: 'Consum Administration'
+type: module
+description: 'Generic administration pages'
+core: 8.x
+package: 'Consum'
+dependencies:
+  - block

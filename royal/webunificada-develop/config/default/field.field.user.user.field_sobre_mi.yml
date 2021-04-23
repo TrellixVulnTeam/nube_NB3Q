@@ -1,0 +1,21 @@
+uuid: f03c6556-ede6-4921-a655-6771daeefc43
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_sobre_mi
+  module:
+    - text
+    - user
+id: user.user.field_sobre_mi
+field_name: field_sobre_mi
+entity_type: user
+bundle: user
+label: 'Sobre mí'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

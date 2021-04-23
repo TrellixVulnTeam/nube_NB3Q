@@ -1,0 +1,22 @@
+enabled: consum
+settings:
+  redirect_url: ''
+  client_id: DRUPAL99
+  client_secret: u0VNiSAH_8LHImdRo0YKLJfbquAa
+  authorization_endpoint: 'https://iam-pre.consum.es/oauth2/authorize'
+  token_endpoint: 'https://iam-pre.consum.es/oauth2/token'
+  userinfo_endpoint: 'https://iam-pre.consum.es/oauth2/userinfo'
+  create_user_endpoint: 'https://adminiam-pre.consum.es/api/identity/user/v1.0/me'
+  create_user_callback: 'https://iam-pre.consum.es:443/authenticationendpoint/login.do'
+  cancel_user_endpoint: 'https://adminiam-pre.consum.es/scim2/Users'
+  logout_user_endpoint: 'https://iam-pre.consum.es/oidc/logout'
+  logout_redirect_uri: 'http://drupal99.consum.red/user/logout/success'
+  claims_emailaddress_uri: 'http://wso2.org/claims/emailaddress'
+  claims_identificationNumber_uri: 'http://wso2.org/claims/nickname'
+  check_session_endpoint: 'https://iam-pre.consum.es/oidc/checksession'
+  check_session_enable: 1
+  iam_user: adminSOPRA
+  iam_password: tienda123
+  guzzle_verify: 'false'
+  guzzle_cert_path: ''
+  debug_mode: 1

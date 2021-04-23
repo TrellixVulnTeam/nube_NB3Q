@@ -1,0 +1,92 @@
+.view-comunidad-seguir {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 0.5rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  &.white {
+    background-color: $white;
+  }
+  &.destacado{
+    .div-destacado{
+      display: block !important;
+      background-color: #f8951d;
+      color: $white;
+      border-radius: 5px;
+      padding: 2.5px 10px;
+      position: absolute;
+      left: 15px;
+      top: 30px;
+      font-size: 14px;
+      img{
+        width: auto !important;
+        height: 20px !important;
+        margin-bottom: 0px !important;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+  header {
+    text-align: center;
+    p {
+      font-weight: bold;
+      text-align: center;
+    }
+    span {
+      position: relative;
+      top: -10px;
+    }
+  }
+  .comunidad-user-compact {
+    .picture-user-message {
+      .div-destacado{
+        display: none;
+      }
+      img {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 7.5px;
+        object-fit: cover;
+      }
+    }
+    .name-user {
+      font-weight: bold;
+      text-transform: lowercase;
+      text-align: center;
+      div {
+        text-transform: capitalize;
+        margin-bottom: 7.5px;
+      }
+    }
+
+    .info-user {
+      p {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 0px;
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .follow-user-button {
+      margin-top: 7.5px a {
+        cursor: pointer;
+        margin: 0px;
+      }
+    }
+  }
+  .more-link {
+    text-align: center;
+    line-height: 60px;
+    margin-top: 20px;
+    a {
+      @extend .boton1;
+      margin-bottom: 20px;
+      position: relative;
+      top: -10px;
+    }
+  }
+}

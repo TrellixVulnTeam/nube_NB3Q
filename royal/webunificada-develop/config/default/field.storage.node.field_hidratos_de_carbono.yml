@@ -1,0 +1,20 @@
+uuid: 37b75658-adb8-45a0-a298-8c07086543d2
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_hidratos_de_carbono
+field_name: field_hidratos_de_carbono
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

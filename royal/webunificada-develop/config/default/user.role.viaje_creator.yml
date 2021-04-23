@@ -1,0 +1,27 @@
+uuid: 46ad92ac-4d5f-45df-b415-6ae0c4c51893
+langcode: es
+status: true
+dependencies: {  }
+id: viaje_creator
+label: 'Viaje creator'
+weight: 15
+is_admin: false
+permissions:
+  - 'access ckeditor_media_browser entity browser pages'
+  - 'access contextual links'
+  - 'access image_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media_browser entity browser pages'
+  - 'access toolbar'
+  - 'configure any layout'
+  - 'create url aliases'
+  - 'create viaje content'
+  - 'edit own viaje content'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition review'
+  - 'use moderation sidebar'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view viaje revisions'

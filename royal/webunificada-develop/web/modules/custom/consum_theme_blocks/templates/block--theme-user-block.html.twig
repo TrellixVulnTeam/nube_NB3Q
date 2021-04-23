@@ -1,0 +1,28 @@
+<div class="container-user">
+    {% if user_picture == "false" %}
+        <span class="btn-ci ci-user btn-user-menu" data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser"></span>
+    {% else %}
+        <img class="user_picture btn-user-menu" src="{{ user_picture }}"  data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
+    {% endif %}
+    <div class="collapse{% if not user_login %} collapse-no-login{% endif %}" id="collapseUser">
+        {% if user_login %}
+            <div class="d-flex align-items-center justify-content-center">
+                <div>
+                    <p class="d-flex align-items-center"><span class="ico-ci ico-20 ci-mensajeria"></span> Mensajes</p>
+                    <p class="d-flex align-items-center"><a href="/user" class="d-flex align-items-center"><span class="ico-ci ico-20 ci-gear"></span> Área Personal</a></p>
+                    <p class="d-flex align-items-center"><a href="{% if user_mundo_consum %}/mundo-consum-logueado{% else %}/mundo-consum{% endif %}" class="d-flex align-items-center"><span class="ico-ci ico-20 ci-mundo-consum"></span> Mundo Consum</a></p>
+                    <p class="d-flex align-items-center"><a href="/user/logout" class="d-flex align-items-center"><span class="ico-ci ico-20 ci-exit"></span> Salir</a></p>
+                </div>
+            </div>
+        {% else %}
+            <div class="d-flex align-items-center justify-content-center no-login">
+                <div>
+                    {{ btn_iam_login }}
+                    <p>¿No tienes cuenta?</p>
+                    <a href="/user/register" class="enlace-registro">Regístrate</a>
+                </div>
+            </div>
+        {% endif %}
+        <div class="t-e"></div>
+    </div>
+</div>

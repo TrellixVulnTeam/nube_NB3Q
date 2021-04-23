@@ -1,0 +1,14 @@
+uuid: 2640634b-3217-4f88-a727-97777dd302a2
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.direccion_creator
+  module:
+    - user
+id: user_add_role_action.direccion_creator
+label: 'Añade el rol Dirección creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: direccion_creator

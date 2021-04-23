@@ -1,0 +1,14 @@
+uuid: 6f3703eb-96a3-44fd-92c1-69436fda6eb0
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.receta_creator
+  module:
+    - user
+id: user_add_role_action.receta_creator
+label: 'Añade el rol Receta creator al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: receta_creator

@@ -1,0 +1,23 @@
+uuid: e1592099-823c-433e-9cdf-59db647e926a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fibra
+    - node.type.receta
+id: node.receta.field_fibra
+field_name: field_fibra
+entity_type: node
+bundle: receta
+label: 'Fibra (gr)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

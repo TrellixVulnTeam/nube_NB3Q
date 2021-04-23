@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Template for col-4-4-4.
+ *
+ * Variables:
+ * - $css_id: An optional CSS id to use for the layout.
+ * - $content: An array of content, each item in the array is keyed to one
+ * panel of the layout. This layout supports the following sections:
+ */
+#}
+{%
+    set container_classes = [
+    'panel-display',
+    'clearfix'
+]
+%}
+{% if classes %}
+    {% set container_classes = container_classes|merge(classes) %}
+{% endif %}
+{% if class %}
+    {% set container_classes = container_classes|merge(class) %}
+{% endif %}
+
+<div {{ attributes.addClass(container_classes) }}{% if css_id %}{{ css_id }}{% endif %}>
+
+  <div class="container-fluid {{ settings.extra_classes }}">
+    <div class="row">
+      <div class="col-md-4 panel-panel">
+        <div {{ region_attributes.column1.addClass('panel-panel-inner') }}>
+          {% if content.column1 %}
+            {{ content.column1 }}
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-md-4 panel-panel">
+        <div {{ region_attributes.column2.addClass('panel-panel-inner') }}>
+          {% if content.column2 %}
+            {{ content.column2 }}
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-md-4 panel-panel">
+        <div {{ region_attributes.column3.addClass('panel-panel-inner') }}>
+          {% if content.column3 %}
+            {{ content.column3 }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div><!-- /.col-4-4-4 -->

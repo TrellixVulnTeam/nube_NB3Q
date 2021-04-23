@@ -1,0 +1,37 @@
+basedn_group: 'ou=grupos,dc=s2,dc=consum'
+basedn_user: 'ou=usuarios,dc=s2,dc=consum'
+scope: sub
+object_class:
+  groupofnames: groupofnames
+roles:
+  administrator:
+    - superadmin-drupal-consum.es-pre
+  cta_admin:
+    - administrador-drupal-consum.es-pre
+  cta_maquetacion_y_diseno:
+    - maquetacion-drupal-consum.es-pre
+  cta_mundoconsum:
+    - mundoconsum-drupal-consum.es-pre
+  cta_administracion_de_contenidos_entrenosotros:
+    - entrenosotros-drupal-consum.es-pre
+  cta_guias:
+    - guias-drupal-consum.es-pre
+  cta_recetas:
+    - recetas-drupal-consum.es-pre
+  cta_nuestros_supermercados:
+    - supermercados-drupal-consum.es-pre
+  cta_editor_externo:
+    - editor-externo-drupal-consum.es-pre
+  cta_seo:
+    - seo-drupal-consum.es-pre
+  cta_traduccion:
+    - traduccion-drupal-consum.es-pre
+  comun_editores_internos:
+    - administrador-drupal-consum.es-pre
+    - maquetacion-drupal-consum.es-pre
+    - entrenosotros-drupal-consum.es-pre
+    - mundoconsum-drupal-consum.es-pre
+    - guias-drupal-consum.es-pre
+    - recetas-drupal-consum.es-pre
+    - supermercados-drupal-consum.es-pre
+langcode: es

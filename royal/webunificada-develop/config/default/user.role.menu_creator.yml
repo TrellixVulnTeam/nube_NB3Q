@@ -1,0 +1,27 @@
+uuid: ad33d750-2ab8-4afb-96c0-e504a917e77c
+langcode: es
+status: true
+dependencies: {  }
+id: menu_creator
+label: 'Menú creator'
+weight: 3
+is_admin: false
+permissions:
+  - 'access ckeditor_media_browser entity browser pages'
+  - 'access contextual links'
+  - 'access image_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media_browser entity browser pages'
+  - 'access toolbar'
+  - 'configure any layout'
+  - 'create menu content'
+  - 'create url aliases'
+  - 'edit own menu content'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition review'
+  - 'use moderation sidebar'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view menu revisions'
+  - 'view own unpublished content'

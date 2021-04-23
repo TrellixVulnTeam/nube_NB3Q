@@ -1,0 +1,69 @@
+uuid: 850ff336-7683-4b3f-aec8-d417ec85416b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.revista.field_categoria_revista
+    - field.field.node.revista.field_enlaces
+    - field.field.node.revista.field_file
+    - field.field.node.revista.field_image
+    - node.type.revista
+  module:
+    - file
+    - image
+    - link
+    - user
+id: node.revista.default
+targetEntityType: node
+bundle: revista
+mode: default
+content:
+  field_categoria_revista:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_enlaces:
+    weight: 104
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_file:
+    weight: 103
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_image:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

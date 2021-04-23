@@ -1,0 +1,217 @@
+{#
+/**
+ * @file
+ * Template content Tastea (full)
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    'node--tastea',
+  ]
+%}
+{# Initialize and declare selected_user and signed_user #}
+{% set selected_user = false %}
+{% set signed_user = false %}
+{% set tastea_closed = false %}
+{% set tastea_background = '#31b5dd' %}
+{% if 'now'|date('U') > node.field_fecha_de_finalizacion.0.value|date('U') %}
+  {% set tastea_closed = true %}
+  {% set tastea_background = '#ffc653' %}
+{% endif %}
+
+{# Get if user is selected #}
+      {% if node.field_usuarios_seleccionados %}
+            {% for key, item in node.field_usuarios_seleccionados if key|first != '#' %}
+               {% if item.target_id == user.id %}
+                  {% set selected_user = true %}
+              {% endif  %}
+           {% endfor %}
+        {% endif %}  
+      
+{# Get if user is selected #}
+{% if node.field_usuarios_apuntados %}
+    {% for key, item in node.field_usuarios_apuntados if key|first != '#' %}
+        {% if item.target_id == user.id %}
+          {% set signed_user = true %}
+        {% endif  %}
+    {% endfor %}
+{% endif %} 
+
+
+<article{{ attributes.addClass(classes) }}>
+  <div class="row row-1">
+    {% if not selected_user %}
+      <div class="col-md-4 col--1 d-flex align-items-center justify-content-center">
+        <img src="{{ file_url(node.field_image.entity.fileuri) }}" class="img-tastea">
+        {% if not signed_user %}
+          <div id="container-state"></div>
+        {% else %}
+          <div id="container-state" class="container-state d-flex align-items-center">
+            <span>Estás apuntado</span>
+          </div>
+        {% endif %}  
+      </div>
+      <div class="col-md-8 col--2 col-content">
+        <h5>{{ label }}</h5>
+        {% if signed_user %}
+          <p id="message-status-tastea">Ya te has apuntado, en breve sabrás si has sido seleccionado</p>
+        {% else %}
+          <p id="message-status-tastea">Apúntate para conseguir una muestra gratis</p>
+        {% endif %}  
+        <div class="row row-date-end-subscribe d-flex align-items-center">
+          <div class="col-md-7 col--2-1">
+            <div class="container-salida d-flex align-items-center">
+              <span class="ico-salida"></span> <span>Hasta el {{ node.field_fecha_de_finalizacion.0.value|date('d-m-Y') }}</span>
+            </div>
+          </div>
+          <div class="col-md-5 col--2-2">
+            {% if not logged_in %}
+              <a class="boton1" href="/user/register">Regístrate para poder probar el producto</a>
+            {% else %}
+              {% if not signed_user %}
+                <a class="boton1 use-ajax" id="subscribe-tastea" href="/subscribe-product-tastea/{{node.id}}/{{user.id}}">Quiero probar</a>
+              {% else %}
+                <span class="btn-suerte">¡Suerte!</span>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div> 
+        {{ node.body.0.value|raw }}
+      </div>
+    {% else %}
+      <div class="col-md-3 col--1">
+        <img src="{{ file_url(node.field_image.entity.fileuri) }}" class="img-tastea">
+        <div class="container-state d-flex align-items-center">
+          <span>Estás seleccionado</span>
+        </div>
+        <img class="img-right" src="{{ url('<front>') }}/themes/custom/consum_es/assets/img/tastea/tastea-ok.png" alt="check">  
+      </div>
+      <div class="col-md-9 col--2 col-content" style="background-color:{{ tastea_background }};">
+        {% if tastea_closed %}
+          <h4 class="gris">El periodo para probar el producto ha finalizado.<br>¡Ahora anímate a dejarnos una opinión!</h4>
+          <a class="boton3" href="#">Puedes publicar una opinión</a>
+        {% else %}
+          <h4 class="blanco">¡Enhorabuena! Has sido seleccionado/a para la prueba de{{label}}</h4>
+          <p class="blanco fecha-valida">Tienes hasta el día {{ node.field_fecha_caducidad_cupon.0.value}} para canjear tu cupón.</p>
+          <p class="blanco message">Dirígete a tu tienda Consum más cercana para obtener el producto y poder compartir tu opinión</p>
+          <a class="boton3" href="{{ url('entity.node.canonical', { 'node': 2808 }) }}">Ver cupón</a>          
+        {% endif %}
+      </div>
+    {% endif %}
+    {# CARD FOOTER #}
+      {% include directory ~ '/templates/content/footer--card.html.twig' %}
+    {# END CARD FOOTER #}
+  </div>
+  <div class="row row-2">
+    <div class="col-md-12">
+      <p class="title">Sobre el producto</p>
+      <hr>
+    </div>
+    <div class="col-md-3 mb-5">
+      <div class="article-tol">
+         {{ content.field_tol_item }}
+      </div>
+    </div>
+    <div class="col-md-9 mb-5">
+     {{ content.body }}
+          <p class="title"><span class="recipes-ci ci-nutricion"></span>Información nutricional (100gr)</p>
+          <div class="valores-nutricionales">
+            <div class="d-flex justify-content-center row">
+              <div class="val-nut  col-md-2">
+                <div class="circle d-flex align-items-center">{{ content.field_inf_nutr_kcal }}</div>
+                <p>kcal</p>
+              </div>
+              <div class="val-nut col-md-2">
+                <div class="circle d-flex align-items-center">{{ content.field_inf_nutr_kj }}</div>
+                <p>kj</p>
+              </div>
+              <div class="val-nut col-md-2">
+                <div class="circle d-flex align-items-center">{{ content.field_inf_nutr_grasa }}</div>
+                <p>grasa</p>
+              </div>
+              <div class="val-nut col-md-2">
+                <div class="circle d-flex align-items-center">{{ content.field_inf_nutr_hidratos }}</div>
+                <p>Hidratos de carbono</p>
+              </div>
+              <div class="val-nut col-md-2">
+                <div class="circle d-flex align-items-center">{{ content.field_inf_nutr_proteinas }}</div>
+                <p>Proteínas</p>
+              </div>
+              <div class="val-nut col-md-2">
+                <div class="circle d-flex align-items-center">{{ content.field_inf_nutr_sal }}</div>
+                <p>Sal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>

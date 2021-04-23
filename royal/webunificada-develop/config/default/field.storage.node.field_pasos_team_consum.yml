@@ -1,0 +1,33 @@
+uuid: 8fe5b09c-cc63-46e4-8b6a-9895f0db58fa
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_pasos_team_consum
+field_name: field_pasos_team_consum
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: consulta
+      label: Consulta
+    -
+      value: imprime
+      label: Imprime
+    -
+      value: recorta
+      label: Recorta
+    -
+      value: juega
+      label: Juega
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

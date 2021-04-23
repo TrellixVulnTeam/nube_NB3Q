@@ -1,0 +1,152 @@
+{#
+/**
+ * @file
+ * Visual mode Map Supermarket
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{% set classes = [
+  'node',
+  'node--type-' ~ (node.bundle|clean_class),
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  'page-list-supermarket'
+] %}
+
+<article {{ attributes.addClass(classes) }}>
+  <div class="row">
+    {% block logo %}
+      <div class="col-auto col-supermarket-logo d-flex align-items-center">
+        {% if node.field_ensena.value == 'charter' %}
+          <img src="/themes/custom/consum_es/assets/img/icon_charter.png" />
+        {% else %}
+          <img src="/themes/custom/consum_es/assets/img/icon_consum.png" />
+        {% endif %}
+      </div>
+    {% endblock %}
+
+    {% block content %}
+      <div class="col supermarket-description">
+        <div class="row">
+          <div class="col-12 col-distancia d-flex justify-content-end">
+            <p><img src="/themes/custom/consum_es/assets/img/como_llegar.svg"><span></span> 0,0 km</p>
+          </div>
+          <div class="col">
+            <div class="supermarket-label">
+              <p>
+                {{ node.title.value }}
+              </p>
+            </div>
+            <div class="supermarket-data">
+              <p>
+                {{ node.field_domicilio.value }}
+              </p>
+              <p>
+                Abiertos {{ node.field_horario.value|lower }}
+              </p>
+              <p>
+                Telf: {{ node.field_telefono.value }}
+              </p>
+            </div>
+          </div>
+          <div class="col-auto d-flex align-items-center col-arrow">
+            <a href="{{ url }}"
+              class="d-flex align-items-center justify-content-center">
+              <span class="btn-ci ci-right"></span>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="supermarket-services">
+              {% for key, service in content.field_servicios_centro if key|first != '#' %}
+                {% if service["#markup"]|lower == 'compra a domicilio' %}
+                  <img src="/themes/custom/consum_es/assets/img/transporte.svg">
+                {% endif %}
+                {% if service["#markup"]|lower == "compra online" %}
+                  <img src="/themes/custom/consum_es/assets/img/web.svg">
+                {% endif %}
+                {% if service["#markup"]|lower == "parking" %}
+                  <img src="/themes/custom/consum_es/assets/img/servicio_parking.svg">
+                {% endif %}
+                {% if service["#markup"]|lower == "gasolinera" %}
+                  <img src="/themes/custom/consum_es/assets/img/servicio_gasolina.svg">
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="supermarket-link">
+              <a href="{{ url }}" class="supermarket-goto-button3">
+                {{ 'Conocer la tienda'|t }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+    <div class="col-12">
+      <hr />
+    </div>
+  </div>
+</article>

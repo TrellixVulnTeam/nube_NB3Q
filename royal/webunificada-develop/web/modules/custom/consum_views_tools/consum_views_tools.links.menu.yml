@@ -1,0 +1,5 @@
+consum_views_tools.admin_settings_form:
+  title: 'Consum Views Tools'
+  parent: system.admin_config_system
+  description: 'Configure consum_views_tools settings'
+  route_name: consum_views_tools.admin_settings_form

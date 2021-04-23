@@ -1,0 +1,14 @@
+uuid: bf872e49-de2f-4344-a5a6-427f5b33c329
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.cta_admin
+  module:
+    - user
+id: user_remove_role_action.cta_admin
+label: 'Elimina el rol Cta. Admin al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cta_admin

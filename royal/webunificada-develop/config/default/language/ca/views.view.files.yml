@@ -1,0 +1,60 @@
+label: Archivos
+description: 'Encontrar y administrar archivos.'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Reset
+      fields:
+        filename:
+          label: Nom
+        filemime:
+          label: 'Tipo MIME'
+        status:
+          label: Estado
+          settings:
+            format_custom_false: Temporal
+            format_custom_true: Permanente
+        created:
+          label: 'Fecha de subida'
+        changed:
+          label: 'Fecha de modificación'
+        count:
+          label: 'Usado en'
+      filters:
+        filename:
+          expose:
+            label: 'Nombre de archivo'
+        filemime:
+          expose:
+            label: 'Tipo MIME'
+        status:
+          expose:
+            label: Estado
+      title: Archivos
+      empty:
+        area_text_custom:
+          content: 'No hay archivos disponibles.'
+  page_1:
+    display_title: 'Vista general de archivos'
+    display_options:
+      menu:
+        title: Archivos
+  page_2:
+    display_title: 'Usos del archivo'
+    display_options:
+      fields:
+        entity_label:
+          label: Entidad
+        type:
+          label: 'Tipo de entidad'
+        module:
+          label: 'Registrando módulo'
+        count:
+          label: 'Conteo de usos'
+      title: 'Usos del archivo'
+      arguments:
+        fid:
+          title: 'Información de uso del fichero para {{ arguments.fid }}'

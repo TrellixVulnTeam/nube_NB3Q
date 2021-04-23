@@ -1,0 +1,19 @@
+uuid: f7ecc694-4692-4ab2-975b-c10496c192e3
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipovia
+    - node.type.direccion
+id: node.direccion.field_tipovia
+field_name: field_tipovia
+entity_type: node
+bundle: direccion
+label: 'Tipo Via'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

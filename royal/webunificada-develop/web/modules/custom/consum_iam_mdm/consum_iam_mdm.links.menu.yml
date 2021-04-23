@@ -1,0 +1,5 @@
+consum_iam_mdm.admin_settings_form:
+  title: 'Consum MDM'
+  parent: system.admin_config_system
+  description: 'Configure consum_iam_mdm settings'
+  route_name: consum_iam_mdm.form

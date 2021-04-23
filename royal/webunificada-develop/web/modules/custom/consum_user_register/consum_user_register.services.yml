@@ -1,0 +1,7 @@
+services:
+  consum_user_register.event_subscriber:
+    class: Drupal\consum_user_register\Event\ConsumRegisterSubscriber
+    tags:
+      - { name: event_subscriber}
+    arguments: ['@resolver_manager.entity']
+

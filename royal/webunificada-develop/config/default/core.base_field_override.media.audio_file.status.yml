@@ -1,0 +1,22 @@
+uuid: ddb35e2b-e98f-4053-b720-59085020552b
+langcode: es
+status: true
+dependencies:
+  config:
+    - media.type.audio_file
+id: media.audio_file.status
+field_name: status
+entity_type: media
+bundle: audio_file
+label: Publicado
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

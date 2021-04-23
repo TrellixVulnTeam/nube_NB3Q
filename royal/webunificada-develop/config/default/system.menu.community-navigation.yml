@@ -1,0 +1,8 @@
+uuid: 04d32d1e-b6ee-48aa-8e06-7cc384a6161c
+langcode: es
+status: true
+dependencies: {  }
+id: community-navigation
+label: 'Community Navigation'
+description: 'Menú de navegación de la página de comunidad.'
+locked: false

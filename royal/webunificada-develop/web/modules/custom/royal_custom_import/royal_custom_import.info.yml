@@ -1,0 +1,8 @@
+name: 'Royal Custom Import'
+description: 'Módulo para el trasvase de tipos de contenidos desde los Docker locales'
+package: Consum
+type: module
+version: 1.1
+core: 8.x
+dependencies:
+  - menu_ui

@@ -1,0 +1,204 @@
+uuid: 155f35ea-74e6-46e3-8e4b-85cc15bb3c02
+langcode: es
+status: open
+dependencies:
+  module:
+    - webform_entity_print
+third_party_settings:
+  webform_entity_print:
+    template:
+      header: ''
+      footer: ''
+      css: ''
+    export_types:
+      pdf:
+        enabled: true
+        link_text: ''
+        link_attributes: {  }
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: recomendador
+title: 'Recomendador de vinos'
+description: ''
+category: ''
+elements: "'#attributes':\n  class:\n    - recomendador-form\ntipo_de_vino:\n  '#type': webform_wizard_page\n  '#title': '¿Qué tipo de vino quieres que te recomendemos?'\n  '#open': true\n  '#next_button_label': Siguiente\n  tipo_de_vino_quiz:\n    '#type': webform_image_select\n    '#title': '<h3 class=\"num_webform\">1</h3><h3>¿Qué tipo de vino quieres que te recomendemos?</h3>'\n    '#images':\n      116:\n        text: Blancos\n        src: /sites/default/files/recomendador/vino_blanco_150.png\n      117:\n        text: Rosados\n        src: /sites/default/files/recomendador/vino_rosado_150.png\n      118:\n        text: Tintos\n        src: /sites/default/files/recomendador/vino_tinto_150.png\n      121:\n        text: Espumosos\n        src: /sites/default/files/recomendador/vino_espumoso_150.png\n      120:\n        text: Generosos\n        src: /sites/default/files/recomendador/vino_generoso_150.png\n      119:\n        text: Ecológicos\n        src: /sites/default/files/recomendador/vino_ecologico_150.png\n    '#show_label': true\n    '#filter__placeholder': ''\n    '#filter__singlular': ''\n    '#filter__plural': ''\n    '#filter__no_results': ''\n    '#required': true\n    '#required_error': 'This field is required'\n    '#label_attributes':\n      class:\n        - title_tipo_vino\nmaridajes:\n  '#type': webform_wizard_page\n  '#title': Maridajes\n  '#open': true\n  '#prev_button_label': Volver\n  '#next_button_label': Siguiente\n  maridajes_quiz:\n    '#type': webform_image_select\n    '#title': '<h3 class=\"num_webform\">2</h3><h3>Maridajes</h3>'\n    '#multiple': true\n    '#images':\n      182:\n        text: '<div class=\"icon-maridaje-carnes\"></div>Carnes'\n        src: /sites/default/files/recomendador/carnes.png\n      183:\n        text: '<div class=\"icon-maridaje-pescados\"></div>Pescados'\n        src: /sites/default/files/recomendador/pescados.png\n      184:\n        text: '<div class=\"icon-maridaje-arroces\"></div>Arroces'\n        src: /sites/default/files/recomendador/arroces.png\n      185:\n        text: '<div class=\"icon-maridaje-mariscos\"></div>Marisco'\n        src: /sites/default/files/recomendador/mariscos.png\n      186:\n        text: '<div class=\"icon-maridaje-pastas\"></div>Pastas'\n        src: /sites/default/files/recomendador/pastas.png\n      187:\n        text: '<div class=\"icon-maridaje-quesos\"></div>Quesos'\n        src: /sites/default/files/recomendador/quesos.png\n      188:\n        text: '<div class=\"icon-maridaje-embutidos\"></div>Embutidos'\n        src: /sites/default/files/recomendador/embutidos.png\n      189:\n        text: '<div class=\"icon-maridaje-ensaladas\"></div>Ensaladas'\n        src: /sites/default/files/recomendador/ensaladas.png\n      190:\n        text: '<div class=\"icon-maridaje-sopas\"></div>Sopas y guisos'\n        src: /sites/default/files/recomendador/sopas.png\n      191:\n        text: '<div class=\"icon-maridaje-legumbres\"></div>Legumbres'\n        src: /sites/default/files/recomendador/legumbres.png\n      192:\n        text: '<div class=\"icon-maridaje-postres\"></div>Postres'\n        src: /sites/default/files/recomendador/postres.png\n      193:\n        text: '<div class=\"icon-maridaje-aperitivos\"></div>Aperitivos'\n        src: /sites/default/files/recomendador/aperitivos.png\n      194:\n        text: '<div class=\"icon-maridaje-cocina-etnica\"></div>Cocina étnica'\n        src: /sites/default/files/recomendador/cocina-etnica.png\n      196:\n        text: '<div class=\"icon-maridaje-contodo\"></div>Con todo'\n        src: /sites/default/files/recomendador/contodo.png\n    '#show_label': true\n    '#filter__placeholder': ''\n    '#filter__singlular': ''\n    '#filter__plural': ''\n    '#filter__no_results': ''\nregion:\n  '#type': webform_wizard_page\n  '#title': '¿Prefieres alguna D.O. o región concreta?'\n  '#open': true\n  '#prev_button_label': Volver\n  '#next_button_label': Siguiente\n  region_quiz:\n    '#type': webform_term_checkboxes\n    '#title': '<h3 class=\"num_webform\">3</h3><h3>¿Prefieres alguna D.O. o región concreta?</h3>'\n    '#title_display': before\n    '#field_suffix': 'Ver menos'\n    '#options_all_value': ''\n    '#options_all_text': ''\n    '#options_none_value': ''\n    '#options_none_text': ''\n    '#vocabulary': vino_region\n    '#breadcrumb_delimiter': ''\n    '#scroll': false\ntipo_de_uva:\n  '#type': webform_wizard_page\n  '#title': '¿Tienes en mente algún tipo de uva? Elige una variedad'\n  '#open': true\n  '#prev_button_label': Volver\n  '#next_button_label': Siguiente\n  variedad_quiz:\n    '#type': webform_term_checkboxes\n    '#title': '<h3 class=\"num_webform\">4</h3><h3>¿Tienes en mente algún tipo de uva? <br>Elige una variedad</h3>'\n    '#title_display': before\n    '#field_suffix': 'Ver menos'\n    '#options_all_value': ''\n    '#options_all_text': ''\n    '#options_none_value': ''\n    '#options_none_text': ''\n    '#vocabulary': vino_uva\n    '#breadcrumb_delimiter': ''\n    '#scroll': false\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Siguiente\n  '#reset__label': Resetear"
+css: ''
+javascript: ''
+settings:
+  ajax: true
+  ajax_scroll_top: form
+  ajax_progress_type: throbber
+  ajax_effect: fade
+  ajax_speed: 1000
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: webform
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: true
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: true
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: false
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: inline
+  confirmation_title: ''
+  confirmation_message: '<h3 class="text-center mt-5 mb-5">Estos son los vinos que hemos seleccionado para t&iacute;</h3>'
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: 'Nueva Búsqueda'
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: true
+  results_disabled_ignore: true
+  results_customize: false
+  token_view: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

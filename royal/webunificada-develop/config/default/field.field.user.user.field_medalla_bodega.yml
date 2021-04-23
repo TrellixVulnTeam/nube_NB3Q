@@ -1,0 +1,26 @@
+uuid: 1176ff9e-dc31-4646-80a4-f02262a9d7d6
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_medalla_bodega
+  module:
+    - user
+id: user.user.field_medalla_bodega
+field_name: field_medalla_bodega
+entity_type: user
+bundle: user
+label: 'Medalla bodega'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

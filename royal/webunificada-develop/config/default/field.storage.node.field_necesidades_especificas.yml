@@ -1,0 +1,20 @@
+uuid: 9513eeb2-707c-45d6-bd16-7cc712369df6
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_necesidades_especificas
+field_name: field_necesidades_especificas
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

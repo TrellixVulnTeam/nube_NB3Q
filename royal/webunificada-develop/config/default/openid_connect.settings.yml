@@ -1,0 +1,41 @@
+always_save_userinfo: true
+connect_existing_users: false
+override_registration_settings: false
+user_login_display: hidden
+userinfo_mappings:
+  timezone: zoneinfo
+  metatag: 0
+  path: 0
+  field_apellido1: 0
+  field_apellido2: 0
+  field_aplicacion_modificacion: 0
+  field_codigo_socio: 0
+  field_direccion: 0
+  field_documento_principal_numero: 0
+  field_favorites: 0
+  field_id_mdm: 0
+  field_intereses: 0
+  field_mdm_sync: 0
+  field_medalla_bodega: 0
+  field_medalla_cuidarnos: 0
+  field_medalla_hogar: 0
+  field_medalla_nutricion: 0
+  field_medalla_participacion: 0
+  field_medalla_recetas: 0
+  field_medalla_vivir_viajar: 0
+  field_nombre: 0
+  field_notificacion_comentario_mi: 0
+  field_notificacion_email_amigo: 0
+  field_perfil_de_facebook: 0
+  field_perfil_de_instagram: 0
+  field_perfil_de_twitter: 0
+  field_puntos: 0
+  field_siguiendo: 0
+  field_sobre_mi: 0
+  field_ver_perfil_de_facebook: 0
+  field_ver_perfil_de_instagram: 0
+  field_ver_perfil_de_twitter: 0
+  user_picture: 0
+_core:
+  default_config_hash: YpBA3MmDuJpZ9SM3DE4kR0lTY89bf2y3g0sS7s3TQ4k
+langcode: es

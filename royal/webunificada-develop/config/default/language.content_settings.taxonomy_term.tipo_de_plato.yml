@@ -1,0 +1,18 @@
+uuid: 29bf79c8-82b6-41da-914d-b8dcf739a99a
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tipo_de_plato
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.tipo_de_plato
+target_entity_type_id: taxonomy_term
+target_bundle: tipo_de_plato
+default_langcode: site_default
+language_alterable: false

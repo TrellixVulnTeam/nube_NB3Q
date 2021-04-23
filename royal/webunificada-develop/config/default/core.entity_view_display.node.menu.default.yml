@@ -1,0 +1,171 @@
+uuid: 470779d4-e4c1-4cf9-9157-c3859f181938
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.menu.body
+    - field.field.node.menu.field_comments
+    - field.field.node.menu.field_days
+    - field.field.node.menu.field_diet
+    - field.field.node.menu.field_foods
+    - field.field.node.menu.field_image
+    - field.field.node.menu.field_like
+    - field.field.node.menu.field_nutricionista
+    - field.field.node.menu.field_nutritionist
+    - field.field.node.menu.field_recipes_1
+    - field.field.node.menu.field_recipes_2
+    - field.field.node.menu.field_recipes_3
+    - field.field.node.menu.field_recipes_4
+    - field.field.node.menu.field_recipes_5
+    - field.field.node.menu.field_recipes_6
+    - field.field.node.menu.field_recipes_7
+    - node.type.menu
+  module:
+    - comment
+    - image
+    - options
+    - text
+    - user
+id: node.menu.default
+targetEntityType: node
+bundle: menu
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_comments:
+    weight: 13
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_days:
+    weight: 4
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_diet:
+    weight: 14
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_foods:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_image:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_nutritionist:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_recipes_1:
+    type: entity_reference_entity_view
+    weight: 5
+    region: content
+    label: above
+    settings:
+      view_mode: menu_recipe
+      link: false
+    third_party_settings: {  }
+  field_recipes_2:
+    weight: 6
+    label: above
+    settings:
+      view_mode: menu_recipe
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_recipes_3:
+    type: entity_reference_entity_view
+    weight: 7
+    region: content
+    label: above
+    settings:
+      view_mode: menu_recipe
+      link: false
+    third_party_settings: {  }
+  field_recipes_4:
+    type: entity_reference_entity_view
+    weight: 8
+    region: content
+    label: above
+    settings:
+      view_mode: menu_recipe
+      link: false
+    third_party_settings: {  }
+  field_recipes_5:
+    type: entity_reference_entity_view
+    weight: 9
+    region: content
+    label: above
+    settings:
+      view_mode: menu_recipe
+      link: false
+    third_party_settings: {  }
+  field_recipes_6:
+    type: entity_reference_entity_view
+    weight: 10
+    region: content
+    label: above
+    settings:
+      view_mode: menu_recipe
+      link: false
+    third_party_settings: {  }
+  field_recipes_7:
+    type: entity_reference_entity_view
+    weight: 11
+    region: content
+    label: above
+    settings:
+      view_mode: menu_recipe
+      link: false
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_like: true
+  field_nutricionista: true
+  langcode: true
+  search_api_excerpt: true

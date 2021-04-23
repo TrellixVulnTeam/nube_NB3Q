@@ -1,0 +1,321 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function royal_blocks_theme()
+{
+  return array(
+    'content_social_networks' => array(
+      'variables' => array(
+        'social_network' => NULL,
+        'social_network_id' => NULL,
+        'customHeight' => NULL,
+        'border' => NULL,
+      ),
+      'template' => 'block--social-networks-block',
+    ),
+
+    'content_carousel_taxonomy' => array(
+      'variables' => array(
+        'terms' => NULL,
+      ),
+      'template' => 'block--carousel-taxonomy-block',
+    ),
+    'content_recipes_header' => array(
+      'variables' => array(
+        'image' => NULL,
+        'title' => NULL,
+        'selection' => NULL,
+      ),
+      'template' => 'block--recipes-header-block',
+    ),
+    'content_imagenhover' => array(
+      'variables' => array(
+        'alt' => NULL,
+        'target' => NULL,
+        'enlace' => NULL,
+        'border' => NULL,
+        'img1' => NULL,
+        'img2' => NULL,
+        'ocultar' => NULL,
+      ),
+      'template' => 'block--imagenhover-block',
+    ),
+    'content_customtext' => array(
+      'variables' => array(
+        'texto1' => NULL,
+        'alto' => NULL,
+        'customHeight' => NULL,
+        'color_fondo' => NULL,
+        'visibility' => NULL,
+        'ocultar' => NULL
+      ),
+      'template' => 'block--customtext-block',
+    ),
+    'content_multiviews' => array(
+      'variables' => array(
+        'vista' => NULL,
+        'ocultar' => NULL
+      ),
+      'template' => 'block--multiviews-block',
+    ),
+    'content_cabecera' => array(
+      'variables' => array(
+        'listLinks' => NULL,
+        'tituloDinamico' => NULL,
+        'titulo' => NULL,
+        'img1' => NULL,
+        'img2' => NULL,
+        'ocultar' => NULL
+      ),
+      'template' => 'block--cabecera-block',
+    ),
+    'content_popup_custom' => array(
+      'variables' => array(
+        'img1' => NULL,
+        'gradient' => NULL,
+        'img2' => NULL,
+        'texto1' => NULL,
+        'texto2' => NULL,
+        'modal_id' => NULL,
+        'modal_text' => NULL,
+        'alto' => NULL,
+        'customHeight' => NULL,
+        'color_bot' => NULL,
+        'color_fondo' => NULL,
+        'ocultar' => NULL
+      ),
+      'template' => 'block--popup-custom-block',
+    ),
+    'content_cta' => array(
+      'variables' => array(
+        'img1' => NULL,
+        'gradient' => NULL,
+        'img2' => NULL,
+        'texto1' => NULL,
+        'texto2' => NULL,
+        'alto' => NULL,
+        'customHeight' => NULL,
+        'enlace' => NULL,
+        'color_bot' => NULL,
+        'color_fondo' => NULL,
+        'custom_color' => NULL,
+        'target' => NULL,
+        'visibility' => NULL,
+        'ocultar' => NULL
+      ),
+      'template' => 'block--cta-block',
+    ),
+    'content_cta2col' => array(
+      'variables' => array(
+        'img1' => NULL,
+        'gradient' => NULL,
+        'img2' => NULL,
+        'icon' => NULL,
+        'texto1' => NULL,
+        'texto2' => NULL,
+        'enlace' => NULL,
+        'texto_enlace' => NULL,
+        'color_bot' => NULL,
+        'target' => NULL,
+        'maquetacion' => NULL,
+        'color_fondo' => NULL,
+        'visibility' => NULL,
+        'ocultar' => NULL,
+        'custom_class' => NULL,
+        'posicion_btn' => NULL,
+        'alineacion_icon' => NULL
+      ),
+      'template' => 'block--cta2col-block',
+    ),
+    'content_carousel' => array(
+      'variables' => array(
+        'img1' => NULL,
+        'img2' => NULL,
+        'img3' => NULL,
+        'img4' => NULL,
+        'img5' => NULL,
+      ),
+      'template' => 'block--carousel-block',
+    ),
+    'content_carousel_unlimited' => array(
+      'variables' => array(
+        'num_items' => NULL,
+        'visibility' => NULL,
+        'items' => NULL,
+      ),
+      'template' => 'block--carousel-unlimited-block',
+    ),
+    'content_user' => array(
+      'variables' => array(
+        'user_picture' => NULL,
+      ),
+      'template' => 'block--user-block',
+    ),
+    'content_logo' => array(
+      'template' => 'block--logo-block',
+    ),
+    'content_btnhamburguesa' => array(
+      'template' => 'block--btnhamburguesa-block',
+    ),
+    'content_localizacion' => array(
+      'template' => 'block--localizacion-block',
+    ),
+    'content_politicas_copyright' => array(
+      'template' => 'block--politicascopyright-block',
+    ),
+    'content_newsletter_rrss' => array(
+      'template' => 'block--newsletter-rrss-block',
+    ),
+    'content_horario_ac' => array(
+      'template' => 'block--horario-ac-block',
+    ),
+    'content_iconsapp_atcli' => array(
+      'template' => 'block--iconsappatcli-block',
+    ),
+    'content_items_user' => array(
+      'template' => 'block--itemsuser-block',
+    ),
+    'content_iconsearch' => array(
+      'template' => 'block--iconsearch-block',
+    ),
+
+    // Variables category_block
+    'content_category' => array(
+      'variables' => array(
+        'entityType' => NULL,
+        'nameCategory' => NULL,
+        'dateFormated' => NULL,
+        'termId' => NULL,
+        'totalComments' => NULL,
+        'addtoany' => NULL,
+        'label' => NULL,
+        'path' => NULL,
+        'nid' => NULL,
+        'listLikes' => NULL,
+        'flagMatch' => NULL,
+        'node' => NULL,
+      ),
+      'template' => 'block--category-block',
+    ),
+
+    // variables recent_magazine_block
+    'content_recent_magazine' => array(
+      'variables' => array(
+        'category' => '',
+        'ocultar' => '',
+        'offset' => '',
+        'vista' => '',
+      ),
+      'template' => 'block--recent-magazine-block',
+    ),
+
+    // variables recent_team_consum_block
+    'content_recent_team_consum' => array(
+      'variables' => array(
+        'ocultar' => '',
+        'offset' => '',
+        'vista' => '',
+      ),
+      'template' => 'block--recent-team-consum-block',
+    ),
+
+    // variables recent_guides_block
+    'content_recent_guides' => array(
+      'variables' => array(
+        'tipo_guia' => '',
+        'ocultar' => '',
+        'offset' => '',
+        'vista' => '',
+      ),
+      'template' => 'block--recent-guides-block',
+    ),
+
+    // variables social_nets_block
+    'content_social_nets' => array(
+      'variables' => array(
+        'social_net' => '',
+        'image' => '',
+      ),
+      'template' => 'block--social-nets-block',
+    ),
+
+    // variables newsletter_block
+    'content_newsletter' => array(
+      'variables' => array(
+        'newsletter_img' => '',
+        'heigth' => '',
+      ),
+      'template' => 'block--newsletter-block',
+    ),
+
+     // variables custom_breadcrumb_block
+     'content_custom_breadcrumb' => array(
+      'variables' => array(
+        'pagesTitles' => '',
+      ),
+      'template' => 'block--custom-breadcrumb-block',
+    ),
+
+  );
+}
+
+
+/**
+ * Implements hook_preprocess_image_widget().
+ */
+function royal_blocks_preprocess_image_widget(&$variables)
+{
+  $element = $variables['element'];
+
+  $variables['attributes'] = array('class' => array('image-widget', 'js-form-managed-file', 'form-managed-file', 'clearfix'));
+
+  if (!empty($element['fids']['#value'])) {
+    $file = reset($element['#files']);
+    $element['file_' . $file->id()]['filename']['#suffix'] = ' <span class="file-size">(' . format_size($file->getSize()) . ')</span> ';
+    $file_variables = array(
+      'style_name' => $element['#preview_image_style'],
+      'uri' => $file->getFileUri(),
+    );
+
+    // Determine image dimensions.
+    if (isset($element['#value']['width']) && isset($element['#value']['height'])) {
+      $file_variables['width'] = $element['#value']['width'];
+      $file_variables['height'] = $element['#value']['height'];
+    } else {
+      $image = \Drupal::service('image.factory')->get($file->getFileUri());
+      if ($image->isValid()) {
+        $file_variables['width'] = $image->getWidth();
+        $file_variables['height'] = $image->getHeight();
+      } else {
+        $file_variables['width'] = $file_variables['height'] = NULL;
+      }
+    }
+
+    $element['preview'] = array(
+      '#weight' => -10,
+      '#theme' => 'image_style',
+      '#width' => $file_variables['width'],
+      '#height' => $file_variables['height'],
+      '#style_name' => $file_variables['style_name'],
+      '#uri' => $file_variables['uri'],
+    );
+
+    // Store the dimensions in the form so the file doesn't have to be
+    // accessed again. This is important for remote files.
+    $element['width'] = array(
+      '#type' => 'hidden',
+      '#value' => $file_variables['width'],
+    );
+    $element['height'] = array(
+      '#type' => 'hidden',
+      '#value' => $file_variables['height'],
+    );
+  }
+
+  $variables['data'] = array();
+  foreach (\Drupal\Core\Render\Element::children($element) as $child) {
+    $variables['data'][$child] = $element[$child];
+  }
+}

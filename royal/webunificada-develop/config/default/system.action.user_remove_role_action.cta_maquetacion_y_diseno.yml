@@ -1,0 +1,14 @@
+uuid: 22357320-fe29-4b6b-b44d-b6ef264b41c7
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.cta_maquetacion_y_diseno
+  module:
+    - user
+id: user_remove_role_action.cta_maquetacion_y_diseno
+label: 'Elimina el rol Cta. Maquetación y diseño al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cta_maquetacion_y_diseno

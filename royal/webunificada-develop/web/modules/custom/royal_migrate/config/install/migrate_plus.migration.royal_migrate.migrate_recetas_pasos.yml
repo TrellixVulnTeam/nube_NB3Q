@@ -1,0 +1,54 @@
+id: migrate_recetas_pasos
+label: 'Migrate Recetas Pasos from the xml file'
+
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: simple_xml
+  urls:
+    - 'modules/custom/royal_migrate/sources/PASOS.xml'
+  # An xpath-like selector corresponding to the items to be imported.
+  item_selector: /_rct_preparacion/DATA_RECORD
+
+  ids:
+    id_receta:
+      type: string
+
+  fields:
+    -
+      name: id_receta
+      label: 'Receta asociada'
+      selector: id_receta
+
+    -
+      name: orden
+      label: 'Orden'
+      selector: orden
+
+    -
+      name: descripcion
+      label: 'Descripcion'
+      selector: descripcion
+
+
+process:
+  title:
+    plugin: recetas_manage_pasos
+    source: file
+  # nid: post_parent
+  # title: title
+  # field_image:
+  #   plugin: image_import
+  #   source: file
+  #   destination: 'constants/file_destination'
+  #   title: file_title
+  #   alt: file_title
+destination:
+  plugin: noop
+  # default_bundle: magazine
+# migration_dependencies:
+#   required:
+#     - migrate_cuidarnos
+
+
+

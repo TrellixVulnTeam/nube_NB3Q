@@ -1,0 +1,22 @@
+uuid: 7f1ba886-abdd-4e7b-9ee9-d0be76cf1f98
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.destacado
+id: taxonomy_term.destacado.status
+field_name: status
+entity_type: taxonomy_term
+bundle: destacado
+label: Publicado
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

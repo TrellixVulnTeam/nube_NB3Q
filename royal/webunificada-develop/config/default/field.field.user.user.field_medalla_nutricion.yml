@@ -1,0 +1,26 @@
+uuid: e1adb5a4-f583-4402-889e-c264b0fb95fe
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_medalla_nutricion
+  module:
+    - user
+id: user.user.field_medalla_nutricion
+field_name: field_medalla_nutricion
+entity_type: user
+bundle: user
+label: 'Medalla nutrición'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

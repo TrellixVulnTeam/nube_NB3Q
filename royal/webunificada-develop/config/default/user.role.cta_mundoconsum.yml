@@ -1,0 +1,36 @@
+uuid: 4f5b4341-0095-4b32-b0d2-75ef2b59029c
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: 'Grupo de LDAP: mundoconsum-drupal-consum.es'
+id: cta_mundoconsum
+label: 'Cta. MundoConsum'
+weight: 27
+is_admin: null
+permissions:
+  - 'create diario_de_viaje content'
+  - 'create faq content'
+  - 'create tastea content'
+  - 'create terms in categoria_faq'
+  - 'create terms in categoria_viaje'
+  - 'create viaje content'
+  - 'delete any diario_de_viaje content'
+  - 'delete any faq content'
+  - 'delete any tastea content'
+  - 'delete any viaje content'
+  - 'delete terms in categoria_faq'
+  - 'delete terms in categoria_viaje'
+  - 'edit any diario_de_viaje content'
+  - 'edit any faq content'
+  - 'edit any tastea content'
+  - 'edit any viaje content'
+  - 'edit terms in categoria_faq'
+  - 'edit terms in categoria_viaje'
+  - 'view diario_de_viaje revisions'
+  - 'view faq revisions'
+  - 'view tastea revisions'
+  - 'view viaje revisions'

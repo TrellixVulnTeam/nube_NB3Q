@@ -1,0 +1,29 @@
+uuid: 3047b81f-a7f4-4d0f-8fd2-aab15faa8b10
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_de_dieta
+    - node.type.receta
+    - taxonomy.vocabulary.tipo_de_dieta
+id: node.receta.field_tipo_de_dieta
+field_name: field_tipo_de_dieta
+entity_type: node
+bundle: receta
+label: 'Tipo de dieta'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tipo_de_dieta: tipo_de_dieta
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,34 @@
+uuid: 7007bfad-f402-4590-b8ed-da176bfa1953
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.revista.field_categoria_revista
+    - field.field.node.revista.field_enlaces
+    - field.field.node.revista.field_file
+    - field.field.node.revista.field_image
+    - node.type.revista
+  module:
+    - user
+id: node.revista.teaser
+targetEntityType: node
+bundle: revista
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_categoria_revista: true
+  field_enlaces: true
+  field_file: true
+  field_image: true
+  langcode: true
+  search_api_excerpt: true

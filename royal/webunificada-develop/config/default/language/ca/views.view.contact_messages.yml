@@ -1,0 +1,24 @@
+label: 'Mensajes de contacto'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Reset
+      fields:
+        message_bulk_form:
+          action_title: 'Con selección'
+        contact_form_label:
+          label: 'Formulario de contacto'
+        operations:
+          label: Operations
+      filters:
+        contact_form:
+          expose:
+            label: 'Formulario de contacto'
+      title: 'Mensajes de contacto'
+  page_1:
+    display_options:
+      menu:
+        title: Lista
+        description: 'Mensajes de contacto'

@@ -1,0 +1,14 @@
+uuid: db7b7461-46ef-4cc4-af77-f8cfc4e22609
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.guia_de_vino_reviewer
+  module:
+    - user
+id: user_remove_role_action.guia_de_vino_reviewer
+label: 'Elimina el rol Guía de vino reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: guia_de_vino_reviewer

@@ -1,0 +1,15 @@
+{#
+    Variables
+	vista: Vista a mostrar
+#}
+
+
+<div class="multiviews
+{% if ocultar['escritorio'] %}  d-lg-none d-xl-none {% else %} d-lg-block d-xl-block  {% endif %}
+{% if ocultar['tablet'] %} d-md-none {% else %} d-md-block {% endif %}
+{% if ocultar['movil'] %} d-none d-sm-none {% else %} d-xs-block d-sm-block {% endif %}
+"> {{ vista }}
+</div>
+
+
+

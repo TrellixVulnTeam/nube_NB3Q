@@ -1,0 +1,14 @@
+uuid: 57ab802f-9dc8-41b8-a8c6-bcbc0bef4877
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.cta_mundoconsum
+  module:
+    - user
+id: user_add_role_action.cta_mundoconsum
+label: 'Añade el rol Cta. MundoConsum al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: cta_mundoconsum

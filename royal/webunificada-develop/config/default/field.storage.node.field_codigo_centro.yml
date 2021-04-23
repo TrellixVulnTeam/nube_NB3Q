@@ -1,0 +1,20 @@
+uuid: 7d3855e5-f92b-45bf-9ec8-8f34fb232752
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_codigo_centro
+field_name: field_codigo_centro
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

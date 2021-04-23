@@ -1,0 +1,21 @@
+uuid: 651c8595-4467-4b2d-aaf4-46f3781630f5
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_tiempo_prep_total
+field_name: field_tiempo_prep_total
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

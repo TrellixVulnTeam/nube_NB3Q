@@ -1,0 +1,20 @@
+uuid: 5b8133af-dc53-4806-b8cd-b14e6977acb7
+langcode: es
+status: true
+dependencies:
+  module:
+    - consum_theme_blocks
+  theme:
+    - consum_es
+id: botonhamburguesa
+theme: consum_es
+region: navbar_principal
+weight: -46
+provider: null
+plugin: btn-hamburguesa-block
+settings:
+  id: btn-hamburguesa-block
+  label: 'Botón hamburguesa'
+  provider: consum_theme_blocks
+  label_display: '0'
+visibility: {  }

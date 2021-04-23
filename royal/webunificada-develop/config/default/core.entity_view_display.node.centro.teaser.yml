@@ -1,0 +1,68 @@
+uuid: db0b5b1d-1e5b-4239-9429-f7840dde5846
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.centro.field_codigo_centro
+    - field.field.node.centro.field_codigo_postal
+    - field.field.node.centro.field_coordenadas
+    - field.field.node.centro.field_domicilio
+    - field.field.node.centro.field_ensena
+    - field.field.node.centro.field_estado_centro
+    - field.field.node.centro.field_fecha_festivos
+    - field.field.node.centro.field_festivos_centro
+    - field.field.node.centro.field_horario
+    - field.field.node.centro.field_id_ensena_centro
+    - field.field.node.centro.field_id_poblacion_centro
+    - field.field.node.centro.field_id_provincia_centro
+    - field.field.node.centro.field_ip_tienda
+    - field.field.node.centro.field_localizacion
+    - field.field.node.centro.field_notificacion_centro
+    - field.field.node.centro.field_old_id
+    - field.field.node.centro.field_poblacion
+    - field.field.node.centro.field_provincia
+    - field.field.node.centro.field_servicios_centro
+    - field.field.node.centro.field_telefono
+    - field.field.node.centro.field_tol_item
+    - node.type.centro
+  module:
+    - user
+id: node.centro.teaser
+targetEntityType: node
+bundle: centro
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_codigo_centro: true
+  field_codigo_postal: true
+  field_coordenadas: true
+  field_domicilio: true
+  field_ensena: true
+  field_estado_centro: true
+  field_fecha_festivos: true
+  field_festivos_centro: true
+  field_horario: true
+  field_id_ensena_centro: true
+  field_id_poblacion_centro: true
+  field_id_provincia_centro: true
+  field_ip_tienda: true
+  field_localizacion: true
+  field_notificacion_centro: true
+  field_old_id: true
+  field_poblacion: true
+  field_provincia: true
+  field_servicios_centro: true
+  field_telefono: true
+  field_tol_item: true
+  langcode: true
+  search_api_excerpt: true

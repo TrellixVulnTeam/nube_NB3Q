@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Default theme implementation to webform confirmation.
+ *
+ * Available variables:
+ * - progress: Progress bar.
+ * - message: Confirmation message.
+ * - back_url: URL to the previous webform submission.
+ *
+ * @see template_preprocess_webform_confirmation()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="recomendador-form">
+	{% if vista is empty %}
+		<div>
+            <h3 class="text-center mt-5 mb-5">
+                {% trans %} This search had no results. {% endtrans %}
+            </h3>
+        </div>
+		<div class="content">
+			<div class="col-12"><p style="text-align:center; padding-bottom:3%"> {% trans %}Please, repeat your search to find your wines.{% endtrans %}</p></div>
+    {% else %}
+		<div>{{ message }}</div>
+        <div class="content">
+            <div class="row">{{ vista }}</div>
+    {% endif %}
+            {% if back %}
+                <div class="webform-confirmation__back text-center pt-5">
+                    <a href="{{ back_url }}" rel="prev" title="{{ back_label }}" class="button js-webform-confirmation-back-link-ajax boton1">{{ back_label }}</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

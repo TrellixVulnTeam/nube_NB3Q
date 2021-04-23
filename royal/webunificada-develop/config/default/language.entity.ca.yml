@@ -1,0 +1,9 @@
+uuid: fba65d7c-1fe7-49d9-a31a-168a829741f2
+langcode: ca
+status: true
+dependencies: {  }
+id: ca
+label: Benvinguts
+direction: ltr
+weight: 1
+locked: false

@@ -1,0 +1,14 @@
+uuid: d9955d77-67f9-4199-9065-98d60d4be642
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.cta_mundoconsum
+  module:
+    - user
+id: user_remove_role_action.cta_mundoconsum
+label: 'Elimina el rol Cta. MundoConsum al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cta_mundoconsum

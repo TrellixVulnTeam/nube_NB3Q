@@ -1,0 +1,14 @@
+uuid: 798ddcf1-5bea-437d-ae30-f4a3d77da66b
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.diario_de_viaje_reviewer
+  module:
+    - user
+id: user_remove_role_action.diario_de_viaje_reviewer
+label: 'Elimina el rol Diario de viaje reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: diario_de_viaje_reviewer

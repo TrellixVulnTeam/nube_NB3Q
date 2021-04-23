@@ -1,0 +1,8 @@
+uuid: 564d59fd-12d0-45c3-93a0-076ab85ca89d
+langcode: es
+status: true
+dependencies: {  }
+name: 'Vino - Tipología'
+vid: vino_tipologia
+description: 'Tipología del tipo de vino'
+weight: 0

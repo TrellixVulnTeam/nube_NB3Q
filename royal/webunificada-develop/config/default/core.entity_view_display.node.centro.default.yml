@@ -1,0 +1,223 @@
+uuid: ed203ecb-647b-4cef-b407-0e1ae10b7538
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.centro.field_codigo_centro
+    - field.field.node.centro.field_codigo_postal
+    - field.field.node.centro.field_coordenadas
+    - field.field.node.centro.field_domicilio
+    - field.field.node.centro.field_ensena
+    - field.field.node.centro.field_estado_centro
+    - field.field.node.centro.field_fecha_festivos
+    - field.field.node.centro.field_festivos_centro
+    - field.field.node.centro.field_horario
+    - field.field.node.centro.field_id_ensena_centro
+    - field.field.node.centro.field_id_poblacion_centro
+    - field.field.node.centro.field_id_provincia_centro
+    - field.field.node.centro.field_ip_tienda
+    - field.field.node.centro.field_localizacion
+    - field.field.node.centro.field_notificacion_centro
+    - field.field.node.centro.field_old_id
+    - field.field.node.centro.field_poblacion
+    - field.field.node.centro.field_provincia
+    - field.field.node.centro.field_servicios_centro
+    - field.field.node.centro.field_telefono
+    - field.field.node.centro.field_tol_item
+    - node.type.centro
+  module:
+    - consum_tol_integration
+    - datetime
+    - geofield_map_extras
+    - options
+    - user
+id: node.centro.default
+targetEntityType: node
+bundle: centro
+mode: default
+content:
+  field_codigo_centro:
+    weight: 119
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_codigo_postal:
+    weight: 106
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_coordenadas:
+    weight: 103
+    label: hidden
+    settings:
+      width: 200
+      height: 200
+      optionals_parameters: '{"zoom":15,"maptype":"roadmap"}'
+    third_party_settings: {  }
+    type: geofield_embed_google_map
+    region: content
+  field_domicilio:
+    weight: 109
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ensena:
+    weight: 105
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_estado_centro:
+    weight: 115
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_fecha_festivos:
+    weight: 114
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_festivos_centro:
+    weight: 113
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_horario:
+    weight: 110
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_id_ensena_centro:
+    weight: 118
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_id_poblacion_centro:
+    weight: 116
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_id_provincia_centro:
+    weight: 117
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_ip_tienda:
+    weight: 120
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_localizacion:
+    weight: 104
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_notificacion_centro:
+    weight: 121
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_old_id:
+    weight: 102
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_poblacion:
+    weight: 108
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_provincia:
+    weight: 107
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_servicios_centro:
+    weight: 112
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_telefono:
+    weight: 111
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_tol_item:
+    weight: 122
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: tol_item_formatter_type
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

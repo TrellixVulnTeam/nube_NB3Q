@@ -1,0 +1,20 @@
+uuid: 4a0d6283-5174-4b59-94b3-f97ce599820f
+langcode: es
+status: false
+dependencies:
+  module:
+    - consum_openid
+  theme:
+    - consum_es
+id: consumiamloginblock
+theme: consum_es
+region: navbar_accessibility
+weight: 0
+provider: null
+plugin: consum_iam_login_block
+settings:
+  id: consum_iam_login_block
+  label: 'Consum IAM Login Block'
+  provider: consum_openid
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,4 @@
+services:
+  mundoconsum.connection:
+    class: Drupal\consum_mundoconsum\MundoconsumConnection
+    arguments: ['@config.factory', '@http_client']

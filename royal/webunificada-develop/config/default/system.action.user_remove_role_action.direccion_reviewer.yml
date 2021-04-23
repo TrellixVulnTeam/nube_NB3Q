@@ -1,0 +1,14 @@
+uuid: 15d50344-9b8f-4524-aff9-e7b34957620c
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.direccion_reviewer
+  module:
+    - user
+id: user_remove_role_action.direccion_reviewer
+label: 'Elimina el rol Dirección reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: direccion_reviewer

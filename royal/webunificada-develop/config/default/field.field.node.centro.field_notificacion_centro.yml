@@ -1,0 +1,19 @@
+uuid: e1db8bb0-02c5-4138-8bd4-15c105b4d038
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notificacion_centro
+    - node.type.centro
+id: node.centro.field_notificacion_centro
+field_name: field_notificacion_centro
+entity_type: node
+bundle: centro
+label: Notificación
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

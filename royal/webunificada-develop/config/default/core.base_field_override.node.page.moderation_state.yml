@@ -1,0 +1,18 @@
+uuid: 6d20db58-ae0d-40bd-a231-f853f43c2479
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.moderation_state
+field_name: moderation_state
+entity_type: node
+bundle: page
+label: 'Estado de moderación'
+description: 'El estado de moderación de esta pieza de contenido.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,14 @@
+uuid: 68532297-e3e0-4065-a1ef-f50dc629b6fc
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.magazine_reviewer
+  module:
+    - user
+id: user_remove_role_action.magazine_reviewer
+label: 'Elimina el rol Magazine reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: magazine_reviewer

@@ -1,0 +1,30 @@
+uuid: 3787d4d8-3ad0-4209-9ac1-4f7865a5a38b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_intereses
+    - taxonomy.vocabulary.intereses
+  module:
+    - user
+id: user.user.field_intereses
+field_name: field_intereses
+entity_type: user
+bundle: user
+label: Intereses
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      intereses: intereses
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

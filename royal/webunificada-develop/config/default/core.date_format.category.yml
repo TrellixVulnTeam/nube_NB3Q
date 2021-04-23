@@ -1,0 +1,8 @@
+uuid: 97b3c24d-e61e-495e-9d94-a95e4668320d
+langcode: es
+status: true
+dependencies: {  }
+id: category
+label: Category
+locked: false
+pattern: 'j \d\e F \d\e Y'

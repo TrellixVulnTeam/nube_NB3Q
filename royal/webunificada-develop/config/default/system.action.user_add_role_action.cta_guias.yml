@@ -1,0 +1,14 @@
+uuid: 07d00411-3ee6-4ceb-81d0-516ce825b25a
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.cta_guias
+  module:
+    - user
+id: user_add_role_action.cta_guias
+label: 'Añade el rol Cta. Guías al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: cta_guias

@@ -1,0 +1,8 @@
+name: Consum Comunidad Events
+description: Custom management of Consum Comunidad Events on webpage.
+package: Consum
+type: module
+core: 8.x
+dependencies:
+    - consum_comunidad:consum_comunidad
+    - consum_like_favorites:consum_like_favorites

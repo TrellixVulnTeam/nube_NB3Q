@@ -1,0 +1,34 @@
+label: 'Contenido moderado'
+description: 'Encuentra y modera contenido.'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Reset
+      fields:
+        title:
+          label: Título
+        type:
+          label: 'Tipo de contenido'
+        moderation_state:
+          label: 'Estado de moderación'
+        operations:
+          label: Operations
+      filters:
+        title:
+          expose:
+            label: Título
+        type:
+          expose:
+            label: 'Tipo de contenido'
+        moderation_state:
+          expose:
+            label: 'Estado de moderación'
+      title: 'Contenido moderado'
+      empty:
+        area_text_custom:
+          content: 'No hay contenido moderado disponible. Solo las versiones pendientes de contenido, como los borradores, se enumeran aquí.'
+  moderated_content:
+    display_title: 'Contenido moderado'

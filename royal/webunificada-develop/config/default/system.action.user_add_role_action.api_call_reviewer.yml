@@ -1,0 +1,14 @@
+uuid: 4b0a6988-df02-4ad2-81a6-4a3adeb918bb
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.api_call_reviewer
+  module:
+    - user
+id: user_add_role_action.api_call_reviewer
+label: 'Añade el rol api call reviewer al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: api_call_reviewer

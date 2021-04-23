@@ -1,0 +1,14 @@
+uuid: 3b1b7f27-ebe5-4567-b4cc-45fb65eab1db
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'Trucos de vídeo para vistas de vídeos de belleza de 3 columnas (Magazine)'
+id: node.truco_video
+label: 'Truco video'
+targetEntityType: node
+cache: true

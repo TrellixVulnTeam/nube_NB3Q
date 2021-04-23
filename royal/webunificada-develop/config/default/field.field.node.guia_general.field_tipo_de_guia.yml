@@ -1,0 +1,29 @@
+uuid: 83b7f08f-249f-403a-b101-56f33e735a2c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_de_guia
+    - node.type.guia_general
+    - taxonomy.vocabulary.tipo_de_guia
+id: node.guia_general.field_tipo_de_guia
+field_name: field_tipo_de_guia
+entity_type: node
+bundle: guia_general
+label: 'Tipo de guía'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tipo_de_guia: tipo_de_guia
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

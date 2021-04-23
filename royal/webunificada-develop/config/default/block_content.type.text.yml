@@ -1,0 +1,10 @@
+uuid: 8ab3700e-8a29-4f12-9149-fecb78e62ead
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: HWuP26X-aujTBHZoUPAMbYuRxeTHBBQkVkV1qwQz1DM
+id: text
+label: Texto
+revision: 0
+description: 'A text block contains a title and a body.'

@@ -1,0 +1,63 @@
+uuid: 0036a794-692d-424b-8cd9-4370239b7328
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.paso_receta.field_descripcion
+    - field.field.node.paso_receta.field_image
+    - field.field.node.paso_receta.field_tiempo_prep
+    - image.style.thumbnail
+    - node.type.paso_receta
+  module:
+    - image
+    - lightning_media
+    - text
+id: node.paso_receta.default
+targetEntityType: node
+bundle: paso_receta
+mode: default
+content:
+  field_descripcion:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_image:
+    type: image_image
+    weight: 3
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings:
+      lightning_media:
+        file_links: true
+        remove_button: true
+  field_tiempo_prep:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

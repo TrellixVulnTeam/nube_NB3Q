@@ -1,0 +1,18 @@
+uuid: 5e51aea7-9815-442a-859a-f2c875b6c195
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.guia_de_vino
+id: node.guia_de_vino.title
+field_name: title
+entity_type: node
+bundle: guia_de_vino
+label: Título
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

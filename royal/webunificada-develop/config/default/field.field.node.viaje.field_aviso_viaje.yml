@@ -1,0 +1,21 @@
+uuid: 9424e0e3-0f5f-4fa6-94f5-07fd5316bbee
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_aviso_viaje
+    - node.type.viaje
+  module:
+    - options
+id: node.viaje.field_aviso_viaje
+field_name: field_aviso_viaje
+entity_type: node
+bundle: viaje
+label: 'Aviso viaje'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

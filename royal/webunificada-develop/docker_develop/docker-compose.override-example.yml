@@ -1,0 +1,29 @@
+version: "3.5"
+
+services:
+  pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: "${PROJECT_NAME}_pma"
+    environment:
+      PMA_HOST: $DB_HOST
+      PMA_USER: $DB_USER
+      PMA_PASSWORD: $DB_PASSWORD
+      PHP_UPLOAD_MAX_FILESIZE: 1G
+      PHP_MAX_INPUT_VARS: 1G
+    ports:
+      - '8088:80'
+    networks:
+      - backend
+
+  node:
+    image: wodby/node:$NODE_TAG
+    container_name: "${PROJECT_NAME}_node"
+    working_dir: "${THEME_PATH}"
+    expose:
+      - "3000"
+    networks:
+      - backend
+    volumes:
+      - ../html:/var/www/html
+    # This command is used to keep the node container alive.
+    command: tail -f /dev/null

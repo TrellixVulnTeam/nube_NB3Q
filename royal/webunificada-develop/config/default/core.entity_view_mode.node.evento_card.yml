@@ -1,0 +1,14 @@
+uuid: 083f2cbe-e196-4b17-a688-e0dceca766d1
+langcode: es
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'Miniatura de los eventos de la Comunidad Consum'
+id: node.evento_card
+label: 'Evento Card'
+targetEntityType: node
+cache: true

@@ -1,0 +1,18 @@
+uuid: ac2ca57b-11cb-4b6b-a937-af7e3232efd1
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.team_consum
+id: node.team_consum.title
+field_name: title
+entity_type: node
+bundle: team_consum
+label: Título
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: 599a4466-f8f6-4ed7-8101-eaec4d5d8dab
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.magazine
+id: node.magazine.scheduled_transition_state
+field_name: scheduled_transition_state
+entity_type: node
+bundle: magazine
+label: 'Scheduled transition state'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

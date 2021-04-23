@@ -1,0 +1,38 @@
+uuid: 38204766-c74e-4e03-ab47-a1e05889f505
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.pagina_privada.body
+    - field.field.node.pagina_privada.layout_builder__layout
+    - node.type.pagina_privada
+  module:
+    - text
+    - user
+id: node.pagina_privada.teaser
+targetEntityType: node
+bundle: pagina_privada
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  layout_builder__layout: true
+  search_api_excerpt: true

@@ -1,0 +1,20 @@
+consum_like_favorites.likes:
+  path: like/{nid}/{uid}
+  defaults:
+    _controller: '\Drupal\consum_like_favorites\Controller\ConsumLikeFavoritesController::likes'
+  requirements:
+    _permission: 'access content'
+
+consum_like_favorites.favorites:
+  path: favorites/{nid}/{uid}
+  defaults:
+    _controller: '\Drupal\consum_like_favorites\Controller\ConsumLikeFavoritesController::favorites'
+  requirements:
+    _permission: 'access content'
+
+consum_like_favorites.likes_comment:
+  path: like-comment/{cid}/{uid}
+  defaults:
+    _controller: '\Drupal\consum_like_favorites\Controller\ConsumLikeFavoritesController::likes_comment'
+  requirements:
+    _permission: 'access content'

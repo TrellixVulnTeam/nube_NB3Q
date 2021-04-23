@@ -1,0 +1,20 @@
+uuid: fea5d347-29e2-4a60-b22f-e86ceb086b9c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_perfil_de_instagram
+  module:
+    - user
+id: user.user.field_perfil_de_instagram
+field_name: field_perfil_de_instagram
+entity_type: user
+bundle: user
+label: 'Perfil de Instagram'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

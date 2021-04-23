@@ -1,0 +1,134 @@
+{
+    "name": "acquia/lightning-project",
+    "type": "project",
+    "description": "Project template for Drupal 8 sites built with the Lightning distribution.",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "acquia/lightning": "~4.1.11",
+        "cweagans/composer-patches": "^1.6.0",
+        "drupal/core-composer-scaffold": "~8.9",
+        "drupal/bootstrap_library": "^1.11",
+        "drupal/admin_toolbar": "^2.0",
+        "drupal/devel": "^2.1",
+        "drupal/simple_oauth_extras": "^3.16",
+        "drupal/console": "~1.0",
+        "drupal/responsive_preview": "^1.0@beta",
+        "drupal/charts": "^3.1",
+        "drupal/google_analytics": "^3.0",
+        "drupal/google_analytics_reports": "^3.0@beta",
+        "drupal/yoast_seo": "^1.5",
+        "drupal/components": "^1.1",
+        "drupal/radix": "^4.7",
+        "drupal/radix_layouts": "^4.1",
+        "drupal/search_api_solr": "^3.9",
+        "drupal/varnish": "1.x-dev",
+        "drupal/seckit": "^1.2",
+        "drupal/layout_builder_modal": "^1.0",
+        "drupal/layout_builder_at": "^2.10",
+        "drupal/entity_print": "^2.2",
+        "drupal/migrate_plus": "^4.2",
+        "drupal/migrate_tools": "^4.5",
+        "drupal/config_devel": "^1.7",
+        "drupal/webform": "^5.18",
+        "drupal/views_layout": "^1.2",
+        "drupal/config_split": "^1.4",
+        "drupal/geofield": "^1.15",
+        "drupal/geofield_map": "^2.67",
+        "drupal/geocoder": "^3.11",
+        "drupal/addtoany": "^1.14",
+        "drupal/fivestar": "^1.0@alpha",
+        "drupal/openid_connect": "^1.0",
+        "ext-json": "*",
+        "drupal/webform_encrypt": "^1.0@alpha",
+        "drupal/twig_vardumper": "^2.2",
+        "drupal/adv_varnish": "^3.2",
+        "drupal/simple_ldap": "^1.0@alpha",
+        "drupal/permissions_filter": "^1.2"
+    },
+    "require-dev": {
+        "drush/drush": "^9.0",
+        "drupal/migrate_plus": "^4.2",
+        "drupal/migrate_tools": "^4.3",
+        "drupal/config_devel": "^1.7"
+    },
+    "config": {
+        "process-timeout": 0
+    },
+    "extra": {
+        "composer-exit-on-patch-failure": true,
+        "enable-patching": true,
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "patches": {
+            "drupal/radix": {
+                "Integrate with OffCanvas (Layout Builder)": "https://www.drupal.org/files/issues/2020-02-16/integrate-with-offcanvas-3053579-12.patch"
+            },
+            "drupal/simple_ldap": {
+                "Array and string offset access syntax with curly braces is deprecated": "https://www.drupal.org/files/issues/2020-06-16/bugfix-php-7.4-curly-braces-method_3151212_7.patch",
+                "Automated Drupal 9 compatibility fixes": "https://www.drupal.org/files/issues/2020-06-06/simple_ldap.1.x-dev.rector.patch",
+                "Add cn Attribute if not exists": "patches/simple_ldap/Add__cn__attribute_if_not_exists.patch",
+                "Unblock and update user if exists in drupal": "patches/simple_ldap/Unblock_and_update_user_if_exists_in_drupal.patch",
+                "Check whether the user exists on LDAP to set fields readonly in user form": "patches/simple_ldap/Check_whether_the_user_exists_on_LDAP_to_set_fields_readonly_in_user_form.patch"
+            }
+        },
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./web"
+            }
+        }
+    },
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "assets": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        "dev": {
+            "type": "github",
+            "url": "https://github.com/acquia/lightning-dev",
+            "no-api": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-install-cmd": "@composer drupal:scaffold",
+        "post-update-cmd": "@composer drupal:scaffold",
+        "post-create-project-cmd": "rm -r -f .travis.yml behat.yml .travis-ci",
+        "nuke": "rm -r -f web/modules/contrib web/profiles/contrib/lightning vendor composer.lock",
+        "quick-start": [
+            "composer install",
+            "php web/core/scripts/drupal quick-start lightning --no-interaction"
+        ]
+    }
+}

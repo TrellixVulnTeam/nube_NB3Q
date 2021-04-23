@@ -1,0 +1,47 @@
+uuid: 6281e360-6f81-42e2-8904-a883c7468c7b
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.api_call.field_body
+    - field.field.node.api_call.field_created
+    - field.field.node.api_call.field_error
+    - field.field.node.api_call.field_method
+    - field.field.node.api_call.field_response
+    - field.field.node.api_call.field_retryed
+    - field.field.node.api_call.field_status_code
+    - field.field.node.api_call.field_success
+    - field.field.node.api_call.field_url
+    - field.field.node.api_call.field_user_modified
+    - node.type.api_call
+  module:
+    - user
+id: node.api_call.teaser
+targetEntityType: node
+bundle: api_call
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_body: true
+  field_created: true
+  field_error: true
+  field_method: true
+  field_response: true
+  field_retryed: true
+  field_status_code: true
+  field_success: true
+  field_url: true
+  field_user_modified: true
+  langcode: true
+  search_api_excerpt: true

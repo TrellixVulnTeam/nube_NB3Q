@@ -1,0 +1,23 @@
+uuid: b8e38c8d-d517-458e-8fff-c4edcd774202
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.pagina_mundoconsum
+  module:
+    - text
+id: node.pagina_mundoconsum.body
+field_name: body
+entity_type: node
+bundle: pagina_mundoconsum
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,20 @@
+uuid: 5ecf9e16-2197-46c0-841c-488f94e8eec8
+langcode: es
+status: true
+dependencies:
+  config:
+    - media.type.instagram
+  module:
+    - path
+id: media.instagram.path
+field_name: path
+entity_type: media
+bundle: instagram
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path
