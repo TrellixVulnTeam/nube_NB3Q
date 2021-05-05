@@ -1,9 +1,0 @@
-name: Simple LDAP Role
-description: Simple LDAP role authorization.
-type: module
-core_version_requirement: ^8 || ^9
-configure: simple_ldap.role
-core: 8.x
-package: LDAP
-dependencies:
-  - simple_ldap_user

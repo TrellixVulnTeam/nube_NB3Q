@@ -1,6 +1,0 @@
-consum_theme_blocks.settings:
-    title: Menú Settings
-    parent: system.admin_config_system
-    route_name: consum_theme_blocks.settings
-    description: 'Configuration the active item menu of the content types'
-    weight: 0

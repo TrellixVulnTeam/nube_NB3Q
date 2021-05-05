@@ -1,5 +1,0 @@
-name: 'Consum Social Networks'
-type: module
-description: 'Provides custom block width social networks Twitter, Youtube, Facebook and Instagram'
-core: 8.x
-package: 'Consum'

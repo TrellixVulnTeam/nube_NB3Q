@@ -1,9 +1,0 @@
-uuid: cac975e1-6a8b-45a5-96f0-3b3f91c7a3da
-langcode: es
-status: true
-dependencies: {  }
-id: en
-label: Welcome
-direction: ltr
-weight: 2
-locked: false

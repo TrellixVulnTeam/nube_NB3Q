@@ -1,8 +1,0 @@
-uuid: 70e780cf-29e3-48b5-a5ea-70568648087d
-langcode: es
-status: true
-dependencies: {  }
-id: unete
-label: Únete
-description: 'Menú Únete para el footer.'
-locked: false

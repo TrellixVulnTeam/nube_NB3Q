@@ -1,8 +1,0 @@
-name: Royal Layouts
-description: Layouts personalizados para usar con Layer Builder
-package: Consum
-type: module
-core: 8.x
-dependencies:
-    - block
-    - layout_discovery

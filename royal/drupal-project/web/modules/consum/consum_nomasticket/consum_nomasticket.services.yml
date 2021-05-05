@@ -1,0 +1,5 @@
+services:
+  nomasticket.connection:
+    class: Drupal\consum_nomasticket\Services\NomasticketConnection
+    arguments: ['@logger.factory', '@config.factory', '@http_client']
+

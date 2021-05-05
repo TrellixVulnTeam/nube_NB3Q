@@ -1,6 +1,0 @@
-consum.admin:
-    title: 'Administración variables de entorno Consum'
-    description: 'Aquí puedes configurar las variables de entornos para Consum.es'
-    route_name: administracion.description
-    weight: 120
-    parent: system.admin_config_development

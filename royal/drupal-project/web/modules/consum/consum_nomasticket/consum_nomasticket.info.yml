@@ -1,0 +1,5 @@
+name: 'Consum Nomasticket'
+type: module
+description: 'Consum Connection Nomasticket module'
+core: 8.x
+package: 'Consum'

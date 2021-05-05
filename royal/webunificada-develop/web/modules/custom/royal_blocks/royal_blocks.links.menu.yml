@@ -1,6 +1,0 @@
-royal_blocks.settings:
-    title: Consum Social Networks Settings
-    parent: system.admin_config_system
-    route_name: royal_blocks.settings
-    description: 'Configuration Consum Social Networks'
-    weight: 0

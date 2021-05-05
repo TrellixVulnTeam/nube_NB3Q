@@ -1,7 +1,0 @@
-name: 'Consum HouseWork Organizer'
-type: module
-description: 'Tasks organizator'
-core: 8.x
-package: 'Consum'
-dependencies:
-  - block

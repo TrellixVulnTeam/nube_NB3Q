@@ -1,8 +1,0 @@
-uuid: 34a2db28-e8dd-48b5-8e96-70f1bea64642
-langcode: es
-status: true
-dependencies: {  }
-name: 'Precio Receta'
-vid: precio_receta
-description: ''
-weight: 0

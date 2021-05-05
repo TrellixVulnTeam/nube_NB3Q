@@ -1,8 +1,0 @@
-uuid: 270d2a93-f9a9-46fe-beab-90b095e407b6
-langcode: es
-status: true
-dependencies: {  }
-name: 'Categoría del viaje'
-vid: categoria_viaje
-description: ''
-weight: 0

@@ -1,9 +1,0 @@
-label: Archivo
-description: 'Todo el contenido, por mes.'
-display:
-  default:
-    display_options:
-      title: 'Archivo mensual'
-      exposed_form:
-        options:
-          reset_button_label: Reset

@@ -1,8 +1,0 @@
-uuid: d9aa9553-bbbb-4aad-8f4e-d25f229c2e25
-langcode: es
-status: true
-dependencies: {  }
-name: Destacado
-vid: destacado
-description: 'El propósito de esta categoría es indicar que contenidos aparecen como destacados'
-weight: 0

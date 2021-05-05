@@ -1,8 +1,0 @@
-uuid: 08958ecc-2899-4dd1-b2a3-f7da2c837b4d
-langcode: es
-status: true
-dependencies: {  }
-id: comprar
-label: Comprar
-description: 'Menú Comprar para el footer.'
-locked: false

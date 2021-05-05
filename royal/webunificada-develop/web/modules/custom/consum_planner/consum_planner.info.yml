@@ -1,7 +1,0 @@
-name: 'Consum Planner'
-type: module
-description: 'Consum Planner module'
-core: 8.x
-package: 'Consum'
-dependencies:
-  - webform:webform

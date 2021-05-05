@@ -1,7 +1,0 @@
-name: 'Consum TOL Integration'
-type: module
-description: 'Consum Online Shop integration'
-core: 8.x
-package: 'Consum'
-dependencies:
-  - rest

@@ -1,9 +1,0 @@
-uuid: 15c4cade-cd46-4d9b-8e2f-d29010e13920
-langcode: es
-status: true
-dependencies: {  }
-id: es
-label: Bienvenido
-direction: ltr
-weight: 0
-locked: false

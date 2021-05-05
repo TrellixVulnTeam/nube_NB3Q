@@ -1,5 +1,0 @@
-name: 'Consum Fields'
-type: module
-description: 'Module for fields plugins'
-core: 8.x
-package: 'Consum'

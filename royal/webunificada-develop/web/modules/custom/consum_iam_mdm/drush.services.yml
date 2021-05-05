@@ -1,5 +1,0 @@
-services:
-  consum_iam_mdm.commands:
-    class: \Drupal\consum_iam_mdm\Commands\RetryFailedApiCalls
-    tags:
-      - { name: drush.command }

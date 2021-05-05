@@ -1,4 +1,0 @@
-consum_comunidad:
-    version: '1.0'
-    js:
-      js/consum_comunidad.js: {}

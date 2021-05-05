@@ -1,8 +1,0 @@
-uuid: 28d89678-9ed5-46ee-ae6b-3609b9c920b5
-langcode: es
-status: true
-dependencies: {  }
-name: 'Edad Team Consum'
-vid: edad_team_consum
-description: 'Edad en los tipos de contenido de Team Consum'
-weight: 0

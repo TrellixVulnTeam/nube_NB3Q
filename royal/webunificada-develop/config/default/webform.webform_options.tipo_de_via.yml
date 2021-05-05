@@ -1,9 +1,0 @@
-uuid: 0f19cfe3-9202-4de1-98df-a30a7e177a28
-langcode: es
-status: true
-dependencies: {  }
-id: tipo_de_via
-label: 'Tipo de vía'
-category: Geographic
-likert: false
-options: "avenida: Avenida\ncalle: Calle\nplaza: Plaza\ncarretera: Carretera\ncamino: Camino\npasaje: Pasaje\nbulevar: Bulebar\nurbanización: Urbanización"

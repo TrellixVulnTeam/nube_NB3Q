@@ -1,8 +1,0 @@
-uuid: b7382643-9400-4171-afbb-ac7fea7591bf
-langcode: es
-status: true
-dependencies: {  }
-name: 'Vino - Maridaje'
-vid: vino_maridaje
-description: ''
-weight: 0

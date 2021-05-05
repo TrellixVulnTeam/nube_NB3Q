@@ -1,8 +1,0 @@
-uuid: 7e90781d-2944-4032-9e04-c3389d1502f4
-langcode: es
-status: true
-dependencies: {  }
-id: menu-accesibilidad
-label: 'Menú accesibilidad'
-description: 'Enlace de web accesible y atención al cliente.'
-locked: false

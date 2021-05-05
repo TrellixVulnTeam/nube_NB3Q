@@ -1,2 +1,0 @@
-@Library('pipeline-library@feature/drupal') _
-phpPipeline()

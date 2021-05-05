@@ -1,8 +1,0 @@
-consum_iam:
-    js:
-      js/consum_iam.js: {}
-    dependencies:
-      - core/jquery
-      - core/jquery.cookie
-      - core/drupal
-      - core/drupalSettings

@@ -1,8 +1,0 @@
-uuid: 7b532c5e-6d81-4e0f-8381-99ee5d998c94
-langcode: es
-status: true
-dependencies: {  }
-id: sobre-nosotros
-label: 'Sobre Nosotros'
-description: 'Menú Sobre Nosotros para el footer.'
-locked: false

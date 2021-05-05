@@ -1,0 +1,7 @@
+consum_nomasticket.url:
+  path: '/nomasticket/url'
+  defaults:
+    _controller: '\Drupal\consum_nomasticket\Controller\NomasticketController::ticketsAction'
+    _title: 'NO MAS TICKET'
+  requirements:
+    _permission: 'access content'

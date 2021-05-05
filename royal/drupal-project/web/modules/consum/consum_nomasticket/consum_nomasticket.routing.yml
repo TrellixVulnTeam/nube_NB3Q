@@ -1,0 +1,15 @@
+consum_nomasticket.config_url:
+  path: '/admin/config/services/consum_nomasticket'
+  defaults:
+    _title: 'Consum Nomasticket Config'
+    _form: '\Drupal\consum_nomasticket\Form\ConsumNomasticketConfigForm'
+  requirements:
+    _permission: 'access content'
+
+consum_nomasticket.url:
+  path: '/consum_nomasticket'
+  defaults:
+    _title: 'Consum Nomasticket Url'
+    _form: '\Drupal\consum_nomasticket\Form\ConsumNomasticketForm'
+  requirements:
+    _permission: 'access content'

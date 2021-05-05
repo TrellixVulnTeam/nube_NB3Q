@@ -1,8 +1,0 @@
-name: Consum Views Tools
-description: Tools to extend views features
-package: Consum
-type: module
-core: 8.x
-dependencies:
-    - views
-    - views_layout

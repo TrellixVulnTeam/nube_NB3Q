@@ -1,8 +1,0 @@
-name: Consum Comunidad
-description: Custom Blocks Consum Comunidad for use with Layer Builder
-package: Consum
-type: module
-core: 8.x
-dependencies:
-    - block
-    - layout_discovery

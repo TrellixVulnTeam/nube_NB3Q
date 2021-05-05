@@ -1,8 +1,0 @@
-uuid: 7e92e8bb-0823-4ad7-93d9-eb9bd9e0618c
-langcode: es
-status: true
-dependencies: {  }
-name: 'Vino - D.O. / Región'
-vid: vino_region
-description: ''
-weight: 0

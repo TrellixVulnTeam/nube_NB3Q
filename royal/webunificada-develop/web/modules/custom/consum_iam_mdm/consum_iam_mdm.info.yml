@@ -1,6 +1,0 @@
-name: Consum IAM MDM
-description: Modulo para la habilitación de servicios custom del IAM-MDM
-package: Consum
-type: module
-version: 0.1
-core: 8.x

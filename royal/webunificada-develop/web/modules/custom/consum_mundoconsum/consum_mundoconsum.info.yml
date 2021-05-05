@@ -1,7 +1,0 @@
-name: 'Consum Mundoconsum'
-type: module
-description: 'Consum MundoConsum integration module'
-core: 8.x
-package: 'Consum'
-dependencies:
-  - rest

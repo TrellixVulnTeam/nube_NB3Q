@@ -1,0 +1,5 @@
+consum_nomasticket.admin_settings_url:
+  title: 'Consum Nomasticket'
+  parent: system.admin_config_system
+  description: 'Configure consum_nomasticket_integration settings'
+  route_name: consum_nomasticket.config_url

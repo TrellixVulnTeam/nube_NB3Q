@@ -1,4 +1,0 @@
-services:
-  apimanagermdm.connection:
-    class: Drupal\consum_iam_mdm\ApiManagerMDM
-    arguments: ['@logger.factory', '@config.factory', '@http_client']

@@ -1,8 +1,0 @@
-uuid: d6e8c466-0bb9-4669-8f75-fc1730822452
-langcode: es
-status: true
-dependencies: {  }
-name: 'Tipo de comida'
-vid: tipo_de_comida
-description: ''
-weight: 0

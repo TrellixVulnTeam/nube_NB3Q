@@ -1,8 +1,0 @@
-btnhamburguesa:
-    version: '1.0'
-    js:
-      js/btnhamburguesa.js: {}
-global:
-    version: '1.0'
-    js:
-      js/global.js: {}      

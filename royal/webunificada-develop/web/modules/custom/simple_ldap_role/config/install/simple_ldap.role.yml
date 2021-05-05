@@ -1,6 +1,0 @@
-basedn_group: ''
-basedn_user: ''
-scope: sub
-object_class:
-  groupofnames: groupofnames
-roles: []
